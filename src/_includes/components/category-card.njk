@@ -1,0 +1,35 @@
+{% set categoryProducts = [] %}
+{% for product in products %}
+  {% if product.is_active and product.category == category.slug %}
+    {% set categoryProducts = categoryProducts.concat([product]) %}
+  {% endif %}
+{% endfor %}
+
+<a href="/categories/{{ category.slug }}/" class="text-decoration-none">
+  <div class="category-home-box">
+    <div class="category-home-img-wrap">
+      <img
+        src="{{ category.image or '/assets/images/categories/default-category.jpeg' }}"
+        alt="{{ category.name_ar or category.name }}"
+        class="category-home-img"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='/assets/images/categories/default-category.jpeg';"
+      >
+    </div>
+
+    <div class="category-home-content">
+      <h3 class="category-home-title fs-5">
+        <span
+          data-ar="{{ category.name_ar or category.name }}"
+          data-en="{{ category.name_en or category.name }}"
+        >{{ category.name_ar or category.name }}</span>
+      </h3>
+
+      <p
+        class="category-home-count"
+        data-ar="{{ categoryProducts.length }} منتج"
+        data-en="{{ categoryProducts.length }} products"
+      >{{ categoryProducts.length }} منتج</p>
+    </div>
+  </div>
+</a>

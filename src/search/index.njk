@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+title: Search
+---
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="fw-bold" data-i18n="searchPageTitle">بحث المنتجات</h1>
+      <p class="text-muted" data-i18n="searchPageSubtitle">ابحث بالاسم أو الوصف أو الكاتيجوري.</p>
+    </div>
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+        <div class="input-group input-group-lg">
+          <input type="text" id="productSearchInput" class="form-control" placeholder="ابحث عن منتج..." data-i18n-placeholder="searchPlaceholder">
+          <button class="btn btn-dark px-4" type="button" onclick="filterProducts()" data-i18n="search">بحث</button>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4" id="productsGrid">
+      {% for product in products %}
+        {% if product.is_active != false %}
+        <div class="col-md-6 col-lg-4 product-list-item">
+          {% include "components/product-card.njk" %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="text-center py-5 d-none" id="noProductsFound">
+      <h4 class="fw-bold" data-i18n="noProducts">لا توجد منتجات</h4>
+      <p class="text-muted" data-i18n="trySearch">جرّب كلمة بحث أخرى.</p>
+    </div>
+  </div>
+</section>

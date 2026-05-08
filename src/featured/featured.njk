@@ -1,0 +1,63 @@
+---
+pagination:
+  data: featuredCollections
+  size: 1
+  alias: collection
+permalink: "/featured/{{ collection.slug }}/"
+layout: layouts/base.njk
+title: "{{ collection.name_en }}"
+---
+
+<section class="container my-5">
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">
+      {{ collection.name_en }}
+    </h1>
+    <p class="text-muted">
+      {{ collection.description_en }}
+    </p>
+  </div>
+
+  {% set filteredProducts = [] %}
+
+  {% for product in products %}
+    {% if product.is_active %}
+      
+      {% if collection.slug == "real-deliveries" and product.category == "real-deliveries" %}
+        {% set filteredProducts = filteredProducts.concat([product]) %}
+      {% endif %}
+
+      {% if collection.slug == "ready-for-delivery" and product.is_ready %}
+        {% set filteredProducts = filteredProducts.concat([product]) %}
+      {% endif %}
+
+      {% if collection.slug == "trending-now" and product.is_featured %}
+        {% set filteredProducts = filteredProducts.concat([product]) %}
+      {% endif %}
+
+      {% if collection.slug == "small-space-solutions" 
+  and product.price < 10000
+  and product.category != "شمسيات"
+  and product.category != "مراجيح"
+%}
+  {% set filteredProducts = filteredProducts.concat([product]) %}
+{% endif %}
+
+    {% endif %}
+  {% endfor %}
+
+  {% if filteredProducts.length %}
+    <div class="row g-4">
+      {% for product in filteredProducts %}
+        <div class="col-lg-4 col-md-6">
+          {% include "components/product-card.njk" %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="text-center py-5">
+      <h4 class="fw-bold">No products found</h4>
+      <p class="text-muted">Products will appear here once added.</p>
+    </div>
+  {% endif %}
+</section>

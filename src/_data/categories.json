@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "حديد",
+    "name_ar": "حديد",
+    "name_en": "Metal",
+    "slug": "حديد",
+    "description": "",
+    "image": "/assets/images/categories/dd3b7534-6fbd-4dee-a288-3287d352ec97.jpg",
+    "is_active": true,
+    "show_on_home": false
+  },
+  {
+    "id": 3,
+    "name": "حديد بأضافة خشب",
+    "name_ar": "حديد بأضافة خشب",
+    "name_en": "Metal with Wood",
+    "slug": "حديد-بأضافة-خشب",
+    "description": "",
+    "image": "/assets/images/categories/15fb01ca-48e1-4280-bb20-95abf65d3d8d.webp",
+    "is_active": true,
+    "show_on_home": false
+  },
+  {
+    "id": 4,
+    "name": "شمسيات",
+    "name_ar": "شمسيات",
+    "name_en": "Umbrellas",
+    "slug": "شمسيات",
+    "description": "",
+    "image": "/assets/images/categories/b7a56f01-f725-4533-b1c0-68744957dfe3.jpg",
+    "is_active": true,
+    "show_on_home": false
+  },
+  {
+    "id": 5,
+    "name": "سفر",
+    "name_ar": "سفر",
+    "name_en": "Dining Sets",
+    "slug": "سفر",
+    "description": "",
+    "image": "/assets/images/categories/2a4df684-4864-4781-a427-330a885222b9.jpeg",
+    "is_active": true,
+    "show_on_home": false
+  },
+  {
+    "id": 6,
+    "name": "Swings ",
+    "name_ar": "مراجيح",
+    "name_en": "Swings",
+    "slug": "Swings",
+    "description": "",
+    "image": "/assets/images/categories/8734e670-d673-4849-8699-99b6a2e6cf16.jpg",
+    "is_active": true,
+    "show_on_home": false
+  },
+  {
+    "id": 7,
+    "name": "رتان",
+    "name_ar": "رتان",
+    "name_en": "Rattan",
+    "slug": "رتان",
+    "description": "",
+    "image": "/assets/images/categories/8d7fbd1f-76d8-4756-9453-6aa8dc7b5ba0.jpg",
+    "is_active": true,
+    "show_on_home": false
+  },
+  {
+    "id": 8,
+    "name": "دوبار",
+    "name_ar": "دوبار",
+    "name_en": "Dopar",
+    "slug": "دوبار",
+    "description": "",
+    "image": "/assets/images/categories/6add5e45-a62a-4995-976c-592d2dfdef06.jpg",
+    "is_active": true,
+    "show_on_home": false
+  },
+  {
+    "id": 10,
+    "name": "بين باج",
+    "name_ar": "بين باج",
+    "name_en": "Bean Bag",
+    "slug": "بين-باج",
+    "description": "",
+    "image": "/assets/images/categories/34ed6859-ef6e-43dc-ac19-bc46e9ee8fcb.jpg",
+    "is_active": true,
+    "show_on_home": false
+  },
+
+  {
+    "id": 11,
+    "name": "Garden",
+    "name_ar": "حديقة",
+    "name_en": "Garden",
+    "slug": "garden",
+    "description": "",
+    "image": "/assets/images/categories/77f0ff91-5044-4e40-9597-b00f428f7e5d.jpg",
+    "is_active": true,
+    "show_on_home": true
+  },
+  {
+    "id": 12,
+    "name": "cafe & restaurant",
+    "name_ar": "كافيه أو مطعم",
+    "name_en": "Cafe & Restaurant",
+    "slug": "cafe-and-restaurant",
+    "description": "",
+    "image": "/assets/images/categories/439476e4-a1cc-4895-a999-1000f073f8cb.jpg",
+    "is_active": true,
+    "show_on_home": true
+  },
+  {
+    "id": 13,
+    "name": "Terrace",
+    "name_ar": "تراس",
+    "name_en": "Terrace",
+    "slug": "terrace",
+    "description": "",
+    "image": "/assets/images/categories/df935c77-7a0e-40ab-84e0-f720fdffe837.jpg",
+    "is_active": true,
+    "show_on_home": true
+  },
+  {
+    "id": 14,
+    "name": "Balcony",
+    "name_ar": "بلكونة",
+    "name_en": "Balcony",
+    "slug": "balcony",
+    "description": "",
+    "image": "/assets/images/categories/003a118d-fa75-4ac7-bc4b-25c5945283b6.jpg",
+    "is_active": true,
+    "show_on_home": true
+  },
+  {
+    "id": 15,
+    "name": "Roof",
+    "name_ar": "سطح",
+    "name_en": "Roof",
+    "slug": "roof",
+    "description": "",
+    "image": "/assets/images/categories/56705220-0cb7-4431-816e-1e0889a6df78.jpg",
+    "is_active": true,
+    "show_on_home": true
+  }
+]

@@ -1,0 +1,42 @@
+<div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden" data-product-card data-name="{{ product.name | lower }}" data-category="{{ product.category or '' }}">
+  <a href="/products/{{ product.slug }}/" class="text-decoration-none text-reset">
+    <img src="{{ product.main_image or '/assets/images/products/default-product.jpeg' }}" class="card-img-top product-card-img" alt="{{ product.name }}" onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';">
+  </a>
+
+  <div class="card-body d-flex flex-column">
+    {% if product.category_name %}
+      <div class="text-muted small mb-2">{{ product.category_name }}</div>
+    {% endif %}
+
+    <h4 class="fw-bold mb-2 product-title">
+      <a href="/products/{{ product.slug }}/" class="text-decoration-none text-reset">{{ product.name }}</a>
+    </h4>
+
+   <div class="product-card-price mb-3">
+  {% if product.is_offer and product.old_price %}
+    
+    <!-- السعر بعد الخصم -->
+    <span class="new-price">
+      {{ product.price | egp }}
+    </span>
+
+    <!-- السعر القديم -->
+    <span class="old-price">
+      {{ product.old_price | egp }}
+    </span>
+
+  {% else %}
+    <span class="normal-price">
+      {{ product.price | egp }}
+    </span>
+  {% endif %}
+</div>
+    <div class="mt-auto d-flex gap-2 flex-wrap">
+      <a href="/products/{{ product.slug }}/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
+
+      <button class="btn btn-outline-dark rounded-pill px-3" onclick='addToCart({ id: "{{ product.id }}", name: "{{ product.name }}", price: {{ product.price or 0 }}, image: "{{ product.main_image }}", slug: "{{ product.slug }}" })'>
+        <i class="bi bi-bag-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>

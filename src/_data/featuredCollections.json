@@ -1,0 +1,27 @@
+[
+  
+  {
+    "id": 2,
+    "name_ar": "الأكثر طلبًا",
+    "name_en": "Trending Now",
+    "description_ar": "منتجات يطلبها عملاء نستيكا باستمرار للمساحات الخارجية.",
+    "description_en": "Frequently requested outdoor pieces from Nestica customers.",
+    "slug": "trending-now"
+  },
+  {
+    "id": 3,
+    "name_ar": "حلول للمساحات الصغيرة",
+    "name_en": "Small Space Solutions",
+    "description_ar": "اختيارات عملية للبلكونات والروف والتراس.",
+    "description_en": "Practical picks for balconies, rooftops, and terraces.",
+    "slug": "small-space-solutions"
+  },
+  {
+    "id": 4,
+  "slug": "real-deliveries",
+  "name_ar": "تسليمتنا على الطبيعة",
+  "name_en": "Real Deliveries",
+  "description_ar": "شوف شغل نستيكا على أرض الواقع مش مجرد صور.",
+  "description_en": "See real Nestica deliveries on-site, not just renders."
+}
+]

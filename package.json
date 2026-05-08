@@ -1,0 +1,13 @@
+{
+  "name": "nestica-11ty-full",
+  "version": "1.0.0",
+  "description": "Nestica storefront rebuilt with 11ty",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

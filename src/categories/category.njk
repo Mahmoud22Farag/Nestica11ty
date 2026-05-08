@@ -1,0 +1,52 @@
+---
+title: "{{ category.name }} Outdoor Furniture | Nestica"
+description: "Shop {{ category.name }} outdoor furniture in Egypt. High quality and weather resistant."
+---
+---
+pagination:
+  data: categories
+  size: 1
+  alias: category
+permalink: "/categories/{{ category.slug }}/"
+layout: layouts/base.njk
+---
+<section class="category-hero py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <h1 class="fw-bold">{{ category.name }}</h1>
+        {% if category.description %}<p class="text-muted">{{ category.description }}</p>{% endif %}
+        <a href="/products/" class="btn btn-dark rounded-pill px-4" data-i18n="allProducts">كل المنتجات</a>
+      </div>
+      <div class="col-lg-5">
+        <img class="category-hero-img" src="{{ category.image or '/assets/images/categories/default-category.jpeg' }}" alt="{{ category.name }}" onerror="this.onerror=null;this.src='/assets/images/categories/default-category.jpeg';">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+        <div class="input-group input-group-lg">
+          <input type="text" id="productSearchInput" class="form-control" placeholder="ابحث داخل الكاتيجوري..." data-i18n-placeholder="searchPlaceholder">
+          <button class="btn btn-dark px-4" type="button" onclick="filterProducts()" data-i18n="search">بحث</button>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4" id="productsGrid">
+      {% for product in products %}
+        {% if product.category_id == category.id and product.is_active != false %}
+        <div class="col-md-6 col-lg-4 product-list-item">
+          {% include "components/product-card.njk" %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="text-center py-5 d-none" id="noProductsFound">
+      <h4 class="fw-bold" data-i18n="noProducts">لا توجد منتجات</h4>
+      <p class="text-muted" data-i18n="trySearch">جرّب كلمة بحث أخرى.</p>
+    </div>
+  </div>
+</section>

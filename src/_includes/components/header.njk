@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-dark sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/">
+      
+      <img 
+        src="/assets/images/logo.png" 
+        alt="Nestica Logo" 
+        style="height: 42px; width: auto;"
+      >
+
+      <span>{{ settings.brand }}</span>
+
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="/" data-i18n="navHome">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="/products/" data-i18n="navShop">المنتجات</a></li>
+        <li class="nav-item"><a class="nav-link" href="/search/" data-i18n="navSearch">بحث</a></li>
+        <li class="nav-item"><a class="nav-link" href="/settings/" data-i18n="navSettings">الإعدادات</a></li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-2 flex-wrap">
+        <button class="btn btn-outline-light btn-sm" type="button" data-action="toggle-theme">
+          <i class="bi bi-moon-stars me-1"></i><span data-i18n="theme">الوضع</span>
+        </button>
+
+        <button class="btn btn-outline-light btn-sm" type="button" data-action="toggle-language">
+          AR / EN
+        </button>
+
+        <a class="btn btn-warning btn-sm fw-semibold" href="/cart/">
+          <i class="bi bi-bag me-1"></i>
+          <span data-i18n="cart">السلة</span>
+          <span class="badge text-bg-dark ms-1" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

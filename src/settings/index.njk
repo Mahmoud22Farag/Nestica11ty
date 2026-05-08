@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Settings
+---
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="fw-bold" data-i18n="settingsTitle">الإعدادات</h1>
+      <p class="text-muted" data-i18n="settingsSubtitle">تغيير اللغة أو الوضع، وتعديل بيانات الموقع من ملفات الداتا.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="card border-0 shadow-sm rounded-4 p-4">
+          <h4 class="fw-bold mb-3" data-i18n="displaySettings">إعدادات العرض</h4>
+          <div class="d-flex gap-2 flex-wrap mb-4">
+            <button class="btn btn-dark rounded-pill" data-action="toggle-language">AR / EN</button>
+            <button class="btn btn-outline-dark rounded-pill" data-action="toggle-theme" data-i18n="toggleTheme">تغيير الوضع</button>
+          </div>
+          <h4 class="fw-bold mb-3" data-i18n="dataFiles">ملفات الداتا</h4>
+          <ul class="mb-0">
+            <li><code>src/_data/products.json</code> — المنتجات</li>
+            <li><code>src/_data/categories.json</code> — الكاتيجوريز</li>
+            <li><code>src/_data/settings.json</code> — بيانات الموقع وواتساب</li>
+            <li><code>src/assets/images/products</code> — صور المنتجات</li>
+            <li><code>src/assets/images/categories</code> — صور الكاتيجوريز</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

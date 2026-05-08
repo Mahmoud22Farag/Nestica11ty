@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ product.name }} - Nestica</title>
+<meta name="description" content="Buy premium outdoor furniture in Egypt. Rattan, garden sets, balcony furniture, and custom outdoor solutions from Nestica.">  <link rel="icon" href="/assets/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-dark sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/">
+      
+      <img 
+        src="/assets/images/logo.png" 
+        alt="Nestica Logo" 
+        style="height: 42px; width: auto;"
+      >
+
+      <span>Nestica</span>
+
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="/" data-i18n="navHome">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="/products/" data-i18n="navShop">المنتجات</a></li>
+        <li class="nav-item"><a class="nav-link" href="/search/" data-i18n="navSearch">بحث</a></li>
+        <li class="nav-item"><a class="nav-link" href="/settings/" data-i18n="navSettings">الإعدادات</a></li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-2 flex-wrap">
+        <button class="btn btn-outline-light btn-sm" type="button" data-action="toggle-theme">
+          <i class="bi bi-moon-stars me-1"></i><span data-i18n="theme">الوضع</span>
+        </button>
+
+        <button class="btn btn-outline-light btn-sm" type="button" data-action="toggle-language">
+          AR / EN
+        </button>
+
+        <a class="btn btn-warning btn-sm fw-semibold" href="/cart/">
+          <i class="bi bi-bag me-1"></i>
+          <span data-i18n="cart">السلة</span>
+          <span class="badge text-bg-dark ms-1" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+  <main>
+    title: "طقم معدن 5 مقعد و 2 بف | Nestica"
+description: ""
+<section class="py-5 product-details-page">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-6">
+        <div class="rounded-4 overflow-hidden shadow-sm mb-3 product-main-wrap">
+          <img id="mainProductImage" src="/assets/images/products/eea03095-dc31-4477-b5cf-167082c61d9f.jpg" class="img-fluid w-100" alt="طقم معدن 5 مقعد و 2 بف" onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';">
+        </div>
+        
+        <div class="d-flex flex-wrap gap-2 product-thumbs">
+          
+          <img src="/assets/images/products/eea03095-dc31-4477-b5cf-167082c61d9f.jpg" class="border rounded-3" onclick="changeMainImage('/assets/images/products/eea03095-dc31-4477-b5cf-167082c61d9f.jpg')" alt="طقم معدن 5 مقعد و 2 بف" onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';">
+          
+          <img src="/assets/images/products/ee23f2ca-0194-4f9b-8714-59096c03e4cb.jpeg" class="border rounded-3" onclick="changeMainImage('/assets/images/products/ee23f2ca-0194-4f9b-8714-59096c03e4cb.jpeg')" alt="طقم معدن 5 مقعد و 2 بف" onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';">
+          
+        </div>
+        
+      </div>
+
+      <div class="col-lg-6">
+        <div class="text-muted mb-2">حديد بأضافة خشب</div>
+        <h1 class="fw-bold mb-3">طقم معدن 5 مقعد و 2 بف</h1>
+        <div class="fs-3 fw-bold mb-4">27,000 EGP</div>
+
+        <div class="mb-4">
+          <label class="form-label fw-semibold" data-i18n="quantity">الكمية</label>
+          <input type="number" id="quantity" value="1" min="1" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold" data-i18n="requestType">نوع الطلب</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="requestType" id="requestTypeSame" value="same" checked onchange="toggleNotes()">
+            <label class="form-check-label" for="requestTypeSame" data-i18n="sameAsProduct">نفس المنتج</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="requestType" id="requestTypeCustom" value="custom" onchange="toggleNotes()">
+            <label class="form-check-label" for="requestTypeCustom" data-i18n="customModification">تعديل خاص</label>
+          </div>
+        </div>
+
+        <div class="mb-3" id="notesBox" style="display:none;">
+          <label class="form-label fw-semibold" data-i18n="writeRequest">اكتب طلبك</label>
+          <textarea id="notes" class="form-control" rows="4" placeholder="اكتب اللون، المقاس، أو أي تعديل مطلوب"></textarea>
+        </div>
+
+        <button class="btn btn-dark rounded-pill px-4 w-100" onclick='addProductDetailsToCart({ id: "50", name: "طقم معدن 5 مقعد و 2 بف", price: 27000, image: "/assets/images/products/eea03095-dc31-4477-b5cf-167082c61d9f.jpg", slug: "طقم-معدن-5-مقعد-و-2-بف-50" })' data-i18n="addToCart">أضف للسلة</button>
+      </div>
+    </div>
+
+    <section class="product-description-section mt-5">
+      <div class="product-desc-card">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="desc-block">
+              <h3 class="desc-title" data-i18n="description">الوصف</h3>
+              <hr class="desc-divider">
+              <div class="desc-content formatted-description">طقم معدن مكون من كنبه  3 مقعد و 2 كرسي و  2 بف وطاولة <br><br><br>*الخامات*<br><br>» دوبار بيور معالج ضد العوامل الجوية<br>» حديد دهان اللكتروستاتيك ضد العوامل الجويه <br>»  قماش ووتر بروف صن بيتش مستورد<br> اصلي عالي الجودة  <br><br>»  سطح الطاولة خشب<br>**قابل للتغير ل زجاج او معدن او بديل رخام او رخام*<br><br><br>*الالوان*<br>»  القماش:  رمادي<br>» الخشب: بني فاتح<br>» دهان المعدن: رمادي غامق<br>*متاح التعديل في الالوان*<br><br>قطاع حديد: 4*6<br>قابل للزيادة<br><br><br>كثافه الاسفنج: 35<br>ارتفاع الاسفنج: 12 سم<br>*قابل للزيادة*</div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="specs-block">
+              <h3 class="desc-title" data-i18n="specifications">المواصفات</h3>
+              <hr class="desc-divider">
+              <div class="specs-table">
+                <div class="spec-row"><div class="spec-label" data-i18n="nameLabel">الاسم</div><div class="spec-value">طقم معدن 5 مقعد و 2 بف</div></div>
+                <div class="spec-row"><div class="spec-label" data-i18n="priceLabel">السعر</div><div class="spec-value">27,000 EGP</div></div>
+                <div class="spec-row"><div class="spec-label" data-i18n="categoryLabel">الكاتيجوري</div><div class="spec-value">حديد بأضافة خشب</div></div>
+                <div class="spec-row"><div class="spec-label" data-i18n="statusLabel">الحالة</div><div class="spec-value" data-i18n="available">متاح</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "طقم معدن 5 مقعد و 2 بف",
+  "image": "/assets/images/products/eea03095-dc31-4477-b5cf-167082c61d9f.jpg",
+  "description": "",
+  "brand": {
+    "@type": "Brand",
+    "name": "Nestica"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EGP",
+    "price": "27000",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+  </main>
+  <footer class="py-4 mt-5 border-top footer-section">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+  <div class="footer-social d-flex justify-content-center gap-3 mb-3">
+  <a href="https://www.facebook.com/share/14b1gbrBynq/" target="_blank" aria-label="Facebook">
+    <i class="bi bi-facebook"></i>
+  </a>
+
+  <a href="https://www.instagram.com/nestica9?igsh=cG1pZHowazh5MDFv" target="_blank" aria-label="Instagram">
+    <i class="bi bi-instagram"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@nestica.outdoor?_r=1&_t=ZS-965dpPWDsMn" target="_blank" aria-label="TikTok">
+    <i class="bi bi-tiktok"></i>
+  </a>
+
+  <a href="https://wa.me/201126364332?text=عاوز%20استفسر%20عن%20منتجات%20Nestica" target="_blank" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+</div>
+    <div class="text-muted small">© <span id="year"></span> Nestica. <span data-i18n="rights">كل الحقوق محفوظة.</span></div>
+    <div class="text-muted small d-flex gap-3">
+      <span>Furniture • Decor • Comfort</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

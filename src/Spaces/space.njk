@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: spaces
+  size: 1
+  alias: category
+permalink: "/spaces/{{ category.slug }}/"
+eleventyComputed:
+  title: "{{ category.name }}"
+---
+
+{% set spaceProducts = products | inSpace(category.slug) %}
+
+<nav aria-label="breadcrumb" class="container pt-4">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">الرئيسية</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
+  </ol>
+</nav>
+
+<section class="container mt-2 mb-4">
+  <div class="text-center mb-4">
+    <h1 class="fw-bold">{{ category.name }}</h1>
+    {% if category.description %}
+      <p class="text-muted">{{ category.description }}</p>
+    {% endif %}
+    <p class="text-muted">{{ spaceProducts.length }} منتج</p>
+  </div>
+
+  {% if spaceProducts.length == 0 %}
+    <div class="text-center py-5">
+      <p class="text-muted">لا توجد منتجات لهذه المساحة حالياً.</p>
+      <a href="/products/" class="btn btn-dark rounded-pill px-4 mt-2">تصفح كل المنتجات</a>
+    </div>
+  {% else %}
+    <div class="row g-4">
+      {% for product in spaceProducts %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          {% include "components/product-card.njk" %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
