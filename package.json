@@ -4,8 +4,8 @@
   "description": "Nestica storefront rebuilt with 11ty",
   "type": "module",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5"
