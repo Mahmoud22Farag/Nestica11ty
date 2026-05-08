@@ -39,10 +39,10 @@ title: Nestica
 
           <a href="/products/{{ product.slug }}/" class="premium-offer-image-link">
             <img
-              src="{{ product.main_image or '/assets/images/products/default-product.jpeg' }}"
+              src="{{ product.main_image or ('/assets/images/products/default-product.jpeg' | url) }}"
               alt="{{ product.name }}"
               loading="lazy"
-              onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';"
+              onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';"
             >
           </a>
 
@@ -106,11 +106,11 @@ title: Nestica
           <div class="category-home-box">
             <div class="category-home-img-wrap">
               <img
-                src="{{ category.image or '/assets/images/categories/default-category.jpeg' }}"
+                src="{{ category.image or ('/assets/images/categories/default-category.jpeg' | url) }}"
                 alt="{{ category.name_ar or category.name }}"
                 class="category-home-img"
                 loading="lazy"
-                onerror="this.onerror=null;this.src='/assets/images/categories/default-category.jpeg';"
+                onerror="this.onerror=null;this.src='{{ '/assets/images/categories/default-category.jpeg' | url }}';"
               >
             </div>
             <div class="category-home-content">
@@ -196,6 +196,54 @@ title: Nestica
     </div>
   </div>
 </section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل منتجات Nestica مناسبة للاستخدام الخارجي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، منتجات Nestica مصممة للاستخدام الخارجي بخامات مناسبة للعوامل الجوية مثل الشمس والرطوبة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكن تغيير المقاسات أو الألوان؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، متاح تعديل المقاسات والألوان حسب مساحة العميل واحتياجه."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يوجد أثاث مناسب للبلكونة أو المساحات الصغيرة؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، يوجد منتجات مناسبة للبلكونات والتراسات والمساحات الصغيرة، ويمكن تنفيذ حلول مخصصة حسب المساحة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكن طلب منتج بتعديل خاص؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، يمكنك اختيار المنتج وإضافة ملاحظات خاصة قبل إرسال الطلب على واتساب."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف أطلب من الموقع؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "اختر المنتج، أضفه إلى السلة، اكتب بياناتك، ثم أرسل الطلب مباشرة على واتساب."
+      }
+    }
+  ]
+}
+</script>
 <section class="why-section my-5">
   <div class="container">
     <div class="text-center mb-5">
