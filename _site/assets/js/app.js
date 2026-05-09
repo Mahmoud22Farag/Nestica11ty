@@ -34,49 +34,7 @@ const translations = {
     fastDelivery: "تنفيذ منظم",
     fastDeliveryDesc: "خطوات واضحة من الاختيار حتى التسليم.",
     support: "دعم ومتابعة",
-    supportDesc: "متابعة للطلبات وإمكانية إضافة ملاحظات خاصة.",
-
-    products: "المنتجات",
-    browseProducts: "تصفح منتجات نستيكا وابحث بالاسم أو الكاتيجوري.",
-    search: "بحث",
-    searchPlaceholder: "ابحث عن منتج...",
-    noProducts: "لا توجد منتجات",
-    trySearch: "جرّب كلمة بحث أخرى.",
-    allProducts: "كل المنتجات",
-
-    quantity: "الكمية",
-    requestType: "نوع الطلب",
-    sameAsProduct: "نفس المنتج",
-    customModification: "تعديل خاص",
-    writeRequest: "اكتب طلبك",
-    addToCart: "أضف للسلة",
-    description: "الوصف",
-    specifications: "المواصفات",
-    nameLabel: "الاسم",
-    priceLabel: "السعر",
-    categoryLabel: "الكاتيجوري",
-    statusLabel: "الحالة",
-    available: "متاح",
-
-    cartTitle: "سلة الطلبات",
-    cartSubtitle: "راجع المنتجات وأرسل الطلب على واتساب.",
-    emptyCart: "السلة فارغة",
-    orderData: "بيانات الطلب",
-    customerName: "الاسم",
-    customerPhone: "رقم الهاتف",
-    customerAddress: "العنوان",
-    total: "الإجمالي",
-    sendWhatsapp: "إرسال على واتساب",
-    clearCart: "تفريغ السلة",
-
-    searchPageTitle: "بحث المنتجات",
-    searchPageSubtitle: "ابحث بالاسم أو الوصف أو الكاتيجوري.",
-    settingsTitle: "الإعدادات",
-    settingsSubtitle: "تغيير اللغة أو الوضع، وتعديل بيانات الموقع من ملفات الداتا.",
-    displaySettings: "إعدادات العرض",
-    toggleTheme: "تغيير الوضع",
-    dataFiles: "ملفات الداتا",
-    rights: "كل الحقوق محفوظة."
+    supportDesc: "متابعة للطلبات وإمكانية إضافة ملاحظات خاصة."
   },
 
   en: {
@@ -100,9 +58,9 @@ const translations = {
     featuredCollections: "Featured Collections",
     featuredCollectionsDesc: "Organized selections to help customers reach the right product faster.",
 
-    shopBySpace: "Shop by Space",
+    shopBySpace: "Shop By Space",
     shopBySpaceDesc: "Choose your space and see suggested products.",
-    browseByCategory: "Browse by Category",
+    browseByCategory: "Browse By Category",
     browseByCategoryDesc: "All available Nestica product categories.",
 
     whyChooseUs: "Why Nestica?",
@@ -114,49 +72,7 @@ const translations = {
     fastDelivery: "Organized Execution",
     fastDeliveryDesc: "Clear steps from selection to delivery.",
     support: "Support & Follow-up",
-    supportDesc: "Order follow-up with room for special notes.",
-
-    products: "Products",
-    browseProducts: "Browse Nestica products and search by name or category.",
-    search: "Search",
-    searchPlaceholder: "Search for a product...",
-    noProducts: "No products found",
-    trySearch: "Try another search term.",
-    allProducts: "All Products",
-
-    quantity: "Quantity",
-    requestType: "Request Type",
-    sameAsProduct: "Same as product",
-    customModification: "Custom modification",
-    writeRequest: "Write your request",
-    addToCart: "Add to Cart",
-    description: "Description",
-    specifications: "Specifications",
-    nameLabel: "Name",
-    priceLabel: "Price",
-    categoryLabel: "Category",
-    statusLabel: "Status",
-    available: "Available",
-
-    cartTitle: "Cart",
-    cartSubtitle: "Review items and send the order via WhatsApp.",
-    emptyCart: "Your cart is empty",
-    orderData: "Order Data",
-    customerName: "Name",
-    customerPhone: "Phone",
-    customerAddress: "Address",
-    total: "Total",
-    sendWhatsapp: "Send on WhatsApp",
-    clearCart: "Clear Cart",
-
-    searchPageTitle: "Product Search",
-    searchPageSubtitle: "Search by name, description, or category.",
-    settingsTitle: "Settings",
-    settingsSubtitle: "Change language/theme and update site data from JSON files.",
-    displaySettings: "Display Settings",
-    toggleTheme: "Toggle Theme",
-    dataFiles: "Data Files",
-    rights: "All rights reserved."
+    supportDesc: "Order follow-up with room for special notes."
   }
 };
 
@@ -172,6 +88,7 @@ function setLang(lang) {
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
+
     if (translations[lang] && translations[lang][key]) {
       el.textContent = translations[lang][key];
     }
@@ -179,14 +96,20 @@ function setLang(lang) {
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.getAttribute("data-i18n-placeholder");
+
     if (translations[lang] && translations[lang][key]) {
       el.setAttribute("placeholder", translations[lang][key]);
     }
   });
 
   document.querySelectorAll("[data-ar][data-en]").forEach((el) => {
-    const value = el.getAttribute(lang === "ar" ? "data-ar" : "data-en");
-    if (value) el.textContent = value;
+    const value = el.getAttribute(
+      lang === "ar" ? "data-ar" : "data-en"
+    );
+
+    if (value) {
+      el.textContent = value;
+    }
   });
 }
 
@@ -208,7 +131,9 @@ function toggleTheme() {
 }
 
 document.addEventListener("click", (e) => {
-  const action = e.target.closest("[data-action]")?.getAttribute("data-action");
+  const action = e.target
+    .closest("[data-action]")
+    ?.getAttribute("data-action");
 
   if (action === "toggle-language") toggleLanguage();
   if (action === "toggle-theme") toggleTheme();
@@ -219,17 +144,29 @@ document.addEventListener("DOMContentLoaded", () => {
   setLang(getLang());
 
   const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
 
-  if (typeof updateCartCount === "function") updateCartCount();
-  if (typeof renderCart === "function") renderCart();
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+
+  if (typeof updateCartCount === "function") {
+    updateCartCount();
+  }
+
+  if (typeof renderCart === "function") {
+    renderCart();
+  }
 
   const input = document.getElementById("productSearchInput");
-  if (input) input.addEventListener("input", filterProducts);
+
+  if (input) {
+    input.addEventListener("input", filterProducts);
+  }
 });
 
 function scrollOffers(direction) {
   const slider = document.getElementById("offersSlider");
+
   if (!slider) return;
 
   slider.scrollBy({
@@ -240,32 +177,51 @@ function scrollOffers(direction) {
 
 function filterProducts() {
   const input = document.getElementById("productSearchInput");
-  const query = (input?.value || "").trim().toLowerCase();
+
+  const query = (input?.value || "")
+    .trim()
+    .toLowerCase();
+
   const items = document.querySelectorAll(".product-list-item");
 
   let visible = 0;
 
   items.forEach((item) => {
     const card = item.querySelector("[data-product-card]");
-    const haystack = `${card?.dataset.name || ""} ${card?.dataset.category || ""} ${item.textContent || ""}`.toLowerCase();
 
-    const show = !query || haystack.includes(query);
+    const haystack = `
+      ${card?.dataset.name || ""}
+      ${card?.dataset.category || ""}
+      ${item.textContent || ""}
+    `.toLowerCase();
+
+    const show =
+      !query || haystack.includes(query);
+
     item.classList.toggle("d-none", !show);
 
     if (show) visible += 1;
   });
 
-  document.getElementById("noProductsFound")?.classList.toggle("d-none", visible !== 0);
+  document
+    .getElementById("noProductsFound")
+    ?.classList.toggle("d-none", visible !== 0);
 }
 
 function changeMainImage(src) {
   const img = document.getElementById("mainProductImage");
-  if (img) img.src = src;
+
+  if (img) {
+    img.src = src;
+  }
 }
 
 function toggleNotes() {
   const custom = document.getElementById("requestTypeCustom")?.checked;
+
   const notesBox = document.getElementById("notesBox");
 
-  if (notesBox) notesBox.style.display = custom ? "block" : "none";
+  if (notesBox) {
+    notesBox.style.display = custom ? "block" : "none";
+  }
 }
