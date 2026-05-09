@@ -39,7 +39,7 @@ title: Nestica
 
           <a href="/products/{{ product.slug }}/" class="premium-offer-image-link">
             <img
-              src="{{ product.main_image or ('/assets/images/products/default-product.jpeg' | url) }}"
+              src="{{ (product.main_image or '/assets/images/products/default-product.jpeg') | url }}"
               alt="{{ product.name }}"
               loading="lazy"
               onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';"
@@ -106,7 +106,7 @@ title: Nestica
           <div class="category-home-box">
             <div class="category-home-img-wrap">
               <img
-                src="{{ category.image or ('/assets/images/categories/default-category.jpeg' | url) }}"
+                src="{{ (category.image or '/assets/images/categories/default-category.jpeg') | url }}"
                 alt="{{ category.name_ar or category.name }}"
                 class="category-home-img"
                 loading="lazy"
