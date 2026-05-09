@@ -9,11 +9,11 @@
   <div class="category-home-box">
     <div class="category-home-img-wrap">
       <img
-        src="{{ category.image or '/assets/images/categories/default-category.jpeg' }}"
+        src="{{ (category.image or '/assets/images/categories/default-category.jpeg') | url }}"
         alt="{{ category.name_ar or category.name }}"
         class="category-home-img"
         loading="lazy"
-        onerror="this.onerror=null;this.src='/assets/images/categories/default-category.jpeg';"
+        onerror="this.onerror=null;this.src='{{ '/assets/images/categories/default-category.jpeg' | url }}';"
       >
     </div>
 

@@ -8,12 +8,12 @@ description: "{{ product.description_ar }}"
     <div class="row g-5 align-items-start">
       <div class="col-lg-6">
         <div class="rounded-4 overflow-hidden shadow-sm mb-3 product-main-wrap">
-          <img id="mainProductImage" src="{{ product.main_image or '/assets/images/products/default-product.jpeg' }}" class="img-fluid w-100" alt="{{ product.name }}" onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';">
+          <img id="mainProductImage" src="{{ (product.main_image or '/assets/images/products/default-product.jpeg') | url }}" class="img-fluid w-100" alt="{{ product.name }}" onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';">
         </div>
         {% if product.gallery and product.gallery.length > 1 %}
         <div class="d-flex flex-wrap gap-2 product-thumbs">
           {% for img in product.gallery %}
-          <img src="{{ img }}" class="border rounded-3" onclick="changeMainImage('{{ img }}')" alt="{{ product.name }}" onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';">
+          <img src="{{ img }}" class="border rounded-3" onclick="changeMainImage('{{ img }}')" alt="{{ product.name }}" onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';">
           {% endfor %}
         </div>
         {% endif %}
