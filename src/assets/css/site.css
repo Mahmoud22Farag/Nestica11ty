@@ -569,3 +569,19 @@ premium-d
   line-height: 1.9;
   margin: 0;
 }
+/* Header buttons visibility in light mode */
+html[data-bs-theme="light"] .custom-navbar .btn-outline-light {
+  color: #111827 !important;
+  border-color: #111827 !important;
+  background: transparent !important;
+}
+
+html[data-bs-theme="light"] .custom-navbar .btn-outline-light:hover {
+  color: #ffffff !important;
+  background: #111827 !important;
+  border-color: #111827 !important;
+}
+
+html[data-bs-theme="light"] .custom-navbar .btn-warning {
+  color: #111827 !important;
+}
