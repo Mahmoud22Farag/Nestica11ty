@@ -6,12 +6,23 @@ title: Nestica
 <section class="hero-section text-center py-5">
   <div class="container">
     <h1 data-i18n="heroTitle">أثاث Outdoor مخصص لمساحتك</h1>
-    <p data-i18n="heroSubtitle">اختار من منتجات نستيكا أو اطلب تعديل يناسب الجاردن، الرووف، التراس أو البلكونة.</p>
-    <a href="/products/" class="btn btn-dark rounded-pill px-4 py-2 mt-3" data-i18n="shopNow">تسوق الآن</a>
+
+    <p data-i18n="heroSubtitle">
+      اختار من منتجات نستيكا أو اطلب تعديل يناسب الجاردن، الرووف، التراس أو البلكونة.
+    </p>
+
+    <a
+      href="{{ '/products/' | url }}"
+      class="btn btn-dark rounded-pill px-4 py-2 mt-3"
+      data-i18n="shopNow"
+    >
+      تسوق الآن
+    </a>
   </div>
 </section>
 
 {% set offerProducts = [] %}
+
 {% for product in products %}
   {% if product.is_active and product.is_offer and product.old_price and product.price %}
     {% set offerProducts = offerProducts.concat([product]) %}
@@ -19,283 +30,89 @@ title: Nestica
 {% endfor %}
 
 {% if offerProducts.length %}
+
 <section class="container mt-4 mb-5 offers-section">
+
   <div class="text-center mb-4">
     <h2 class="fw-bold text-warning" data-i18n="limitedOffers">العروض</h2>
-    <p class="text-muted" data-i18n="limitedOffersDesc">خصومات لفترة محدودة على منتجات مختارة من نستيكا.</p>
-  </div>
 
-  <div class="offers-slider-wrapper">
-    <button type="button" class="offers-nav" onclick="scrollOffers(-1)">‹</button>
-
-    <div class="offers-slider" id="offersSlider">
-      {% for product in offerProducts | limit(10) %}
-        {% set discount = ((product.old_price - product.price) / product.old_price * 100) | round %}
-
-        <article class="premium-offer-card">
-          <div class="premium-discount-badge" data-ar="خصم {{ discount }}%" data-en="{{ discount }}% OFF">
-            خصم {{ discount }}%
-          </div>
-
-          <a href="/products/{{ product.slug }}/" class="premium-offer-image-link">
-            <img
-              src="{{ (product.main_image or '/assets/images/products/default-product.jpeg') | url }}"
-              alt="{{ product.name }}"
-              loading="lazy"
-              onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';"
-            >
-          </a>
-
-          <div class="premium-offer-body">
-            <div class="premium-offer-label" data-ar="عرض خاص" data-en="Special Offer">عرض خاص</div>
-
-            <h3 class="premium-offer-title">{{ product.name }}</h3>
-
-            <div class="premium-offer-price">
-              <span class="premium-new-price">{{ product.price | egp }}</span>
-              <span class="premium-old-price">{{ product.old_price | egp }}</span>
-            </div>
-
-            <a href="/products/{{ product.slug }}/" class="premium-offer-btn" data-i18n="viewDetails">
-              التفاصيل
-            </a>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-
-    <button type="button" class="offers-nav" onclick="scrollOffers(1)">›</button>
-  </div>
-</section>
-{% endif %}
-
-{% if featuredCollections and featuredCollections.length %}
-<section class="container my-5">
-  <div class="text-center mb-4">
-    <h2 class="fw-bold" data-i18n="featuredCollections">Featured Collections</h2>
-    <p class="text-muted" data-i18n="featuredCollectionsDesc">اختيارات منظمة تساعد العميل يوصل للمنتج المناسب بسرعة.</p>
-  </div>
-
-  <div class="row g-4">
-    {% for item in featuredCollections %}
-    <div class="col-lg-4 col-md-6">
-      <a href="/featured/{{ item.slug }}/" class="text-decoration-none">
-        <div class="featured-box">
-          <h3 class="fs-5" data-ar="{{ item.name_ar }}" data-en="{{ item.name_en }}">{{ item.name_ar }}</h3>
-          <p data-ar="{{ item.description_ar }}" data-en="{{ item.description_en }}">{{ item.description_ar }}</p>
-        </div>
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
-<section class="container my-5">
-  <div class="text-center mb-4">
-    <h2 class="fw-bold" data-i18n="shopBySpace">تسوق حسب المساحة</h2>
-    <p class="text-muted" data-i18n="shopBySpaceDesc">اختار المساحة المناسبة وشوف المنتجات المقترحة ليها.</p>
-  </div>
-
-  <div class="row g-4">
-    {% for category in categories | active %}
-      {% if category.show_on_home %}
-      {% set spaceProducts = products | inSpace(category.slug) %}
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <a href="/spaces/{{ category.slug }}/" class="text-decoration-none">
-          <div class="category-home-box">
-            <div class="category-home-img-wrap">
-              <img
-                src="{{ (category.image or '/assets/images/categories/default-category.jpeg') | url }}"
-                alt="{{ category.name_ar or category.name }}"
-                class="category-home-img"
-                loading="lazy"
-                onerror="this.onerror=null;this.src='{{ '/assets/images/categories/default-category.jpeg' | url }}';"
-              >
-            </div>
-            <div class="category-home-content">
-              <h3 class="category-home-title fs-5">
-                <span data-ar="{{ category.name_ar or category.name }}" data-en="{{ category.name_en or category.name }}">
-                  {{ category.name_ar or category.name }}
-                </span>
-              </h3>
-              <p class="category-home-count" data-ar="{{ spaceProducts.length }} منتج" data-en="{{ spaceProducts.length }} products">{{ spaceProducts.length }} منتج</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
-
-<section class="container my-5">
-  <div class="text-center mb-4">
-    <h2 class="fw-bold" data-i18n="browseByCategory">تصفح حسب الكاتيجوري</h2>
-    <p class="text-muted" data-i18n="browseByCategoryDesc">كل أنواع المنتجات المتاحة في نستيكا.</p>
-  </div>
-
-  <div class="row g-4">
-    {% for category in categories | active %}
-      {% if not category.show_on_home %}
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        {% include "components/category-card.njk" %}
-      </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</section>
-<section class="container my-5 faq-section">
-  <div class="text-center mb-4">
-    <span
-      class="why-subtitle"
-      data-ar="FAQ"
-      data-en="FAQ"
-    >
-      FAQ
-    </span>
-
-    <h2
-      class="fw-bold"
-      data-ar="أسئلة شائعة عن أثاث Nestica Outdoor"
-      data-en="Frequently Asked Questions About Nestica Outdoor Furniture"
-    >
-      أسئلة شائعة عن أثاث Nestica Outdoor
-    </h2>
-
-    <p
-      class="text-muted"
-      data-ar="إجابات سريعة تساعدك تختار المنتج المناسب لمساحتك."
-      data-en="Quick answers to help you choose the right product for your space."
-    >
-      إجابات سريعة تساعدك تختار المنتج المناسب لمساحتك.
+    <p class="text-muted" data-i18n="limitedOffersDesc">
+      خصومات لفترة محدودة على منتجات مختارة من نستيكا.
     </p>
   </div>
 
-  <div class="row g-3">
+  <div class="offers-slider-wrapper">
 
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3
-          data-ar="هل منتجات Nestica مناسبة للاستخدام الخارجي؟"
-          data-en="Are Nestica products suitable for outdoor use?"
-        >
-          هل منتجات Nestica مناسبة للاستخدام الخارجي؟
-        </h3>
+    <button type="button" class="offers-nav" onclick="scrollOffers(-1)">‹</button>
 
-        <p
-          data-ar="نعم، منتجات Nestica مصممة للاستخدام الخارجي بخامات مناسبة للعوامل الجوية مثل الشمس والرطوبة."
-          data-en="Yes, Nestica products are designed for outdoor use with materials suitable for weather conditions like sun and humidity."
+    <div class="offers-slider" id="offersSlider">
+
+      {% for product in offerProducts | limit(10) %}
+
+      {% set discount = ((product.old_price - product.price) / product.old_price * 100) | round %}
+
+      <article class="premium-offer-card">
+
+        <div
+          class="premium-discount-badge"
+          data-ar="خصم {{ discount }}%"
+          data-en="{{ discount }}% OFF"
         >
-          نعم، منتجات Nestica مصممة للاستخدام الخارجي بخامات مناسبة للعوامل الجوية مثل الشمس والرطوبة.
-        </p>
-      </div>
+          خصم {{ discount }}%
+        </div>
+
+        <a
+          href="{{ ('/products/' + product.slug + '/') | url }}"
+          class="premium-offer-image-link"
+        >
+
+          <img
+            src="{{ (product.main_image or '/assets/images/products/default-product.jpeg') | url }}"
+            alt="{{ product.name }}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';"
+          >
+
+        </a>
+
+        <div class="premium-offer-body">
+
+          <div
+            class="premium-offer-label"
+            data-ar="عرض خاص"
+            data-en="Special Offer"
+          >
+            عرض خاص
+          </div>
+
+          <h3 class="premium-offer-title">{{ product.name }}</h3>
+
+          <div class="premium-offer-price">
+            <span class="premium-new-price">{{ product.price | egp }}</span>
+
+            <span class="premium-old-price">{{ product.old_price | egp }}</span>
+          </div>
+
+          <a
+            href="{{ ('/products/' + product.slug + '/') | url }}"
+            class="premium-offer-btn"
+            data-i18n="viewDetails"
+          >
+            التفاصيل
+          </a>
+
+        </div>
+
+      </article>
+
+      {% endfor %}
+
     </div>
 
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3
-          data-ar="هل يمكن تغيير المقاسات أو الألوان؟"
-          data-en="Can sizes and colors be customized?"
-        >
-          هل يمكن تغيير المقاسات أو الألوان؟
-        </h3>
-
-        <p
-          data-ar="نعم، متاح تعديل المقاسات والألوان حسب مساحة العميل واحتياجه."
-          data-en="Yes, sizes and colors can be customized based on the client's space and needs."
-        >
-          نعم، متاح تعديل المقاسات والألوان حسب مساحة العميل واحتياجه.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3
-          data-ar="هل يوجد أثاث مناسب للبلكونة أو المساحات الصغيرة؟"
-          data-en="Are there furniture options for balconies or small spaces?"
-        >
-          هل يوجد أثاث مناسب للبلكونة أو المساحات الصغيرة؟
-        </h3>
-
-        <p
-          data-ar="نعم، يوجد منتجات مناسبة للبلكونات والتراسات والمساحات الصغيرة، ويمكن تنفيذ حلول مخصصة حسب المساحة."
-          data-en="Yes, there are products suitable for balconies, terraces, and small spaces, with custom solutions available based on your space."
-        >
-          نعم، يوجد منتجات مناسبة للبلكونات والتراسات والمساحات الصغيرة، ويمكن تنفيذ حلول مخصصة حسب المساحة.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3
-          data-ar="هل يمكن طلب منتج بتعديل خاص؟"
-          data-en="Can I request custom modifications for a product?"
-        >
-          هل يمكن طلب منتج بتعديل خاص؟
-        </h3>
-
-        <p
-          data-ar="نعم، يمكنك اختيار المنتج وإضافة ملاحظات خاصة قبل إرسال الطلب على واتساب."
-          data-en="Yes, you can select a product and add custom notes before sending your order via WhatsApp."
-        >
-          نعم، يمكنك اختيار المنتج وإضافة ملاحظات خاصة قبل إرسال الطلب على واتساب.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3
-          data-ar="هل الأسعار تشمل التخصيص؟"
-          data-en="Do prices include customization?"
-        >
-          هل الأسعار تشمل التخصيص؟
-        </h3>
-
-        <p
-          data-ar="السعر الأساسي يظهر على المنتج، وأي تعديل في المقاس أو الخامات أو الألوان يتم تأكيده مع فريق Nestica قبل التنفيذ."
-          data-en="The base price is displayed on the product page, while any customization in size, materials, or colors is confirmed with the Nestica team before production."
-        >
-          السعر الأساسي يظهر على المنتج، وأي تعديل في المقاس أو الخامات أو الألوان يتم تأكيده مع فريق Nestica قبل التنفيذ.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3
-          data-ar="كيف أطلب من الموقع؟"
-          data-en="How can I order from the website?"
-        >
-          كيف أطلب من الموقع؟
-        </h3>
-
-        <p
-          data-ar="اختر المنتج، أضفه إلى السلة، اكتب بياناتك، ثم أرسل الطلب مباشرة على واتساب."
-          data-en="Choose a product, add it to the cart, enter your information, then send the order directly via WhatsApp."
-        >
-          اختر المنتج، أضفه إلى السلة، اكتب بياناتك، ثم أرسل الطلب مباشرة على واتساب.
-        </p>
-      </div>
-    </div>
+    <button type="button" class="offers-nav" onclick="scrollOffers(1)">›</button>
 
   </div>
-</section>
-<section class="why-section my-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="why-subtitle" data-i18n="whyChooseUs">ليه نستيكا؟</span>
-      <h2 class="why-title" data-i18n="whyTitle">حلول Outdoor مختلفة فعلًا</h2>
-    </div>
 
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-6"><div class="why-feature-card"><div class="why-number">01</div><h3 class="fs-5" data-i18n="durableMaterials">خامات قوية</h3><p data-i18n="durableMaterialsDesc">خامات مناسبة للاستخدام الخارجي والعوامل الجوية.</p></div></div>
-      <div class="col-lg-3 col-md-6"><div class="why-feature-card"><div class="why-number">02</div><h3 class="fs-5" data-i18n="customSolutions">تخصيص حسب المساحة</h3><p data-i18n="customSolutionsDesc">ألوان ومقاسات وتعديلات حسب احتياج العميل.</p></div></div>
-      <div class="col-lg-3 col-md-6"><div class="why-feature-card"><div class="why-number">03</div><h3 class="fs-5" data-i18n="fastDelivery">تنفيذ منظم</h3><p data-i18n="fastDeliveryDesc">خطوات واضحة من الاختيار حتى التسليم.</p></div></div>
-      <div class="col-lg-3 col-md-6"><div class="why-feature-card"><div class="why-number">04</div><h3 class="fs-5" data-i18n="support">دعم ومتابعة</h3><p data-i18n="supportDesc">متابعة للطلبات وإمكانية إضافة ملاحظات خاصة.</p></div></div>
-    </div>
-  </div>
 </section>
+
+{% endif %}

@@ -10,48 +10,90 @@
   <link rel="stylesheet" href="/Nestica11ty/assets/css/site.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-dark sticky-top">
+  <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
   <div class="container">
 
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/">
-      
-      <img 
-        src="/Nestica11ty/assets/images/logo.png" 
-        alt="Nestica Logo" 
-        style="height: 42px; width: auto;"
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/Nestica11ty/">
+      <img
+        src="/Nestica11ty/assets/images/logo.png"
+        alt="Nestica"
+        height="45"
       >
 
       <span>Nestica</span>
-
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav me-auto gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="/" data-i18n="navHome">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link" href="/products/" data-i18n="navShop">المنتجات</a></li>
-        <li class="nav-item"><a class="nav-link" href="/search/" data-i18n="navSearch">بحث</a></li>
-        <li class="nav-item"><a class="nav-link" href="/settings/" data-i18n="navSettings">الإعدادات</a></li>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Nestica11ty/" data-i18n="navHome">
+            الرئيسية
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Nestica11ty/products/" data-i18n="navShop">
+            المنتجات
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Nestica11ty/search/" data-i18n="navSearch">
+            بحث
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/Nestica11ty/settings/" data-i18n="navSettings">
+            الإعدادات
+          </a>
+        </li>
+
       </ul>
 
-      <div class="d-flex align-items-center gap-2 flex-wrap">
-        <button class="btn btn-outline-light btn-sm" type="button" data-action="toggle-theme">
-          <i class="bi bi-moon-stars me-1"></i><span data-i18n="theme">الوضع</span>
+      <div class="d-flex align-items-center gap-2">
+
+        <button
+          class="btn btn-outline-light btn-sm"
+          data-action="toggle-theme"
+        >
+          🌙 <span data-i18n="theme">الوضع</span>
         </button>
 
-        <button class="btn btn-outline-light btn-sm" type="button" data-action="toggle-language">
+        <button
+          class="btn btn-outline-light btn-sm"
+          data-action="toggle-language"
+        >
           AR / EN
         </button>
 
-        <a class="btn btn-warning btn-sm fw-semibold" href="/cart/">
-          <i class="bi bi-bag me-1"></i>
-          <span data-i18n="cart">السلة</span>
-          <span class="badge text-bg-dark ms-1" id="cartCount">0</span>
+        <a
+          class="btn btn-warning btn-sm fw-semibold"
+          href="/Nestica11ty/cart/"
+        >
+          🛒 <span data-i18n="cart">السلة</span>
+
+          <span
+            id="cartCount"
+            class="badge bg-dark text-warning ms-1"
+          >
+            0
+          </span>
         </a>
+
       </div>
+
     </div>
   </div>
 </nav>
@@ -78,7 +120,7 @@
       
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden" data-product-card data-name="طقم دوبار 4 مقعد" data-category="دوبار">
-  <a href="/products/طقم-دوبار-4-مقعد-54/" class="text-decoration-none text-reset">
+  <a href="/Nestica11ty/products/طقم-دوبار-4-مقعد-54/" class="text-decoration-none text-reset">
     <img src="/Nestica11ty/assets/images/products/307a0682-315e-4c6e-8f94-8d243928e679.png" class="card-img-top product-card-img" alt="طقم دوبار 4 مقعد" onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';">
   </a>
 
@@ -88,7 +130,7 @@
     
 
     <h4 class="fw-bold mb-2 product-title">
-      <a href="/products/طقم-دوبار-4-مقعد-54/" class="text-decoration-none text-reset">طقم دوبار 4 مقعد</a>
+      <a href="/Nestica11ty/products/طقم-دوبار-4-مقعد-54/" class="text-decoration-none text-reset">طقم دوبار 4 مقعد</a>
     </h4>
 
    <div class="product-card-price mb-3">
@@ -107,7 +149,7 @@
   
 </div>
     <div class="mt-auto d-flex gap-2 flex-wrap">
-      <a href="/products/طقم-دوبار-4-مقعد-54/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
+      <a href="/Nestica11ty/products/طقم-دوبار-4-مقعد-54/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
 
       <button class="btn btn-outline-dark rounded-pill px-3" onclick='addToCart({ id: "54", name: "طقم دوبار 4 مقعد", price: 8000, image: "/assets/images/products/307a0682-315e-4c6e-8f94-8d243928e679.png", slug: "طقم-دوبار-4-مقعد-54" })'>
         <i class="bi bi-bag-plus"></i>
@@ -119,7 +161,7 @@
       
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden" data-product-card data-name="طقم معدن 4 مقعد" data-category="حديد-بأضافة-خشب">
-  <a href="/products/طقم-معدن-4-مقعد-57/" class="text-decoration-none text-reset">
+  <a href="/Nestica11ty/products/طقم-معدن-4-مقعد-57/" class="text-decoration-none text-reset">
     <img src="/Nestica11ty/assets/images/products/05088212-2edf-46d9-84a2-e1facaa4c856.jpg" class="card-img-top product-card-img" alt="طقم معدن 4 مقعد" onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';">
   </a>
 
@@ -129,7 +171,7 @@
     
 
     <h4 class="fw-bold mb-2 product-title">
-      <a href="/products/طقم-معدن-4-مقعد-57/" class="text-decoration-none text-reset">طقم معدن 4 مقعد</a>
+      <a href="/Nestica11ty/products/طقم-معدن-4-مقعد-57/" class="text-decoration-none text-reset">طقم معدن 4 مقعد</a>
     </h4>
 
    <div class="product-card-price mb-3">
@@ -140,7 +182,7 @@
   
 </div>
     <div class="mt-auto d-flex gap-2 flex-wrap">
-      <a href="/products/طقم-معدن-4-مقعد-57/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
+      <a href="/Nestica11ty/products/طقم-معدن-4-مقعد-57/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
 
       <button class="btn btn-outline-dark rounded-pill px-3" onclick='addToCart({ id: "57", name: "طقم معدن 4 مقعد", price: 18000, image: "/assets/images/products/05088212-2edf-46d9-84a2-e1facaa4c856.jpg", slug: "طقم-معدن-4-مقعد-57" })'>
         <i class="bi bi-bag-plus"></i>
@@ -152,7 +194,7 @@
       
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden" data-product-card data-name="طقم دوبار 4 مقعد" data-category="real-deliveries">
-  <a href="/products/real-delivery-107/" class="text-decoration-none text-reset">
+  <a href="/Nestica11ty/products/real-delivery-107/" class="text-decoration-none text-reset">
     <img src="/Nestica11ty/assets/images/deliveries/outdoor-9.jpg" class="card-img-top product-card-img" alt="طقم دوبار 4 مقعد" onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';">
   </a>
 
@@ -160,7 +202,7 @@
     
 
     <h4 class="fw-bold mb-2 product-title">
-      <a href="/products/real-delivery-107/" class="text-decoration-none text-reset">طقم دوبار 4 مقعد</a>
+      <a href="/Nestica11ty/products/real-delivery-107/" class="text-decoration-none text-reset">طقم دوبار 4 مقعد</a>
     </h4>
 
    <div class="product-card-price mb-3">
@@ -171,7 +213,7 @@
   
 </div>
     <div class="mt-auto d-flex gap-2 flex-wrap">
-      <a href="/products/real-delivery-107/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
+      <a href="/Nestica11ty/products/real-delivery-107/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
 
       <button class="btn btn-outline-dark rounded-pill px-3" onclick='addToCart({ id: "109", name: "طقم دوبار 4 مقعد", price: 10000, image: "/assets/images/deliveries/outdoor-9.jpg", slug: "real-delivery-107" })'>
         <i class="bi bi-bag-plus"></i>
@@ -183,7 +225,7 @@
       
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden" data-product-card data-name="ركنة 4 مقعد مع طاولة وشمسية" data-category="real-deliveries">
-  <a href="/products/real-delivery-110/" class="text-decoration-none text-reset">
+  <a href="/Nestica11ty/products/real-delivery-110/" class="text-decoration-none text-reset">
     <img src="/Nestica11ty/assets/images/deliveries/outdoor-10.jpg" class="card-img-top product-card-img" alt="ركنة 4 مقعد مع طاولة وشمسية" onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';">
   </a>
 
@@ -191,7 +233,7 @@
     
 
     <h4 class="fw-bold mb-2 product-title">
-      <a href="/products/real-delivery-110/" class="text-decoration-none text-reset">ركنة 4 مقعد مع طاولة وشمسية</a>
+      <a href="/Nestica11ty/products/real-delivery-110/" class="text-decoration-none text-reset">ركنة 4 مقعد مع طاولة وشمسية</a>
     </h4>
 
    <div class="product-card-price mb-3">
@@ -202,7 +244,7 @@
   
 </div>
     <div class="mt-auto d-flex gap-2 flex-wrap">
-      <a href="/products/real-delivery-110/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
+      <a href="/Nestica11ty/products/real-delivery-110/" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
 
       <button class="btn btn-outline-dark rounded-pill px-3" onclick='addToCart({ id: "110", name: "ركنة 4 مقعد مع طاولة وشمسية", price: 20000, image: "/assets/images/deliveries/outdoor-10.jpg", slug: "real-delivery-110" })'>
         <i class="bi bi-bag-plus"></i>

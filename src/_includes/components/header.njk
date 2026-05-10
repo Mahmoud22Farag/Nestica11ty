@@ -1,45 +1,87 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-dark sticky-top">
+<nav class="navbar navbar-expand-lg sticky-top custom-navbar">
   <div class="container">
 
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/">
-      
-      <img 
-        src="{{ '/assets/images/logo.png' | url }}" 
-        alt="Nestica Logo" 
-        style="height: 42px; width: auto;"
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{{ '/' | url }}">
+      <img
+        src="{{ '/assets/images/logo.png' | url }}"
+        alt="Nestica"
+        height="45"
       >
 
-      <span>{{ settings.brand }}</span>
-
+      <span>Nestica</span>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav me-auto gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="/" data-i18n="navHome">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link" href="/products/" data-i18n="navShop">المنتجات</a></li>
-        <li class="nav-item"><a class="nav-link" href="/search/" data-i18n="navSearch">بحث</a></li>
-        <li class="nav-item"><a class="nav-link" href="/settings/" data-i18n="navSettings">الإعدادات</a></li>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/' | url }}" data-i18n="navHome">
+            الرئيسية
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/products/' | url }}" data-i18n="navShop">
+            المنتجات
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/search/' | url }}" data-i18n="navSearch">
+            بحث
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/settings/' | url }}" data-i18n="navSettings">
+            الإعدادات
+          </a>
+        </li>
+
       </ul>
 
-      <div class="d-flex align-items-center gap-2 flex-wrap">
-        <button class="btn btn-outline-light btn-sm" type="button" data-action="toggle-theme">
-          <i class="bi bi-moon-stars me-1"></i><span data-i18n="theme">الوضع</span>
+      <div class="d-flex align-items-center gap-2">
+
+        <button
+          class="btn btn-outline-light btn-sm"
+          data-action="toggle-theme"
+        >
+          🌙 <span data-i18n="theme">الوضع</span>
         </button>
 
-        <button class="btn btn-outline-light btn-sm" type="button" data-action="toggle-language">
+        <button
+          class="btn btn-outline-light btn-sm"
+          data-action="toggle-language"
+        >
           AR / EN
         </button>
 
-        <a class="btn btn-warning btn-sm fw-semibold" href="/cart/">
-          <i class="bi bi-bag me-1"></i>
-          <span data-i18n="cart">السلة</span>
-          <span class="badge text-bg-dark ms-1" id="cartCount">0</span>
+        <a
+          class="btn btn-warning btn-sm fw-semibold"
+          href="{{ '/cart/' | url }}"
+        >
+          🛒 <span data-i18n="cart">السلة</span>
+
+          <span
+            id="cartCount"
+            class="badge bg-dark text-warning ms-1"
+          >
+            0
+          </span>
         </a>
+
       </div>
+
     </div>
   </div>
 </nav>
