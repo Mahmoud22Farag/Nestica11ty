@@ -98,117 +98,142 @@
   </div>
 </nav>
   <main>
-    title: "ركنة 4 مقعد مع طاولة وشمسية | Nestica"
-description: "الخامات:
-• حديد دهان الكتروستاتيك
-• قماش ووتر بروف صن بيتش مستورد
+    
+<section class="container my-5">
+  <div class="row g-5 align-items-start">
+    <div class="col-lg-6">
+      <div class="product-main-wrap">
+        <img
+          id="mainProductImage"
+          src="/Nestica11ty/assets/images/deliveries/outdoor-10.jpg"
+          alt="ركنة 4 مقعد مع طاولة وشمسية"
+          class="img-fluid rounded-4 w-100 shadow-sm"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';"
+        >
+      </div>
 
-الألوان:
-• القماش: رصاصي فاتح
-• دهان المعدن: اسود
+      
+    </div>
 
-✔ متاح التعديل في الألوان
-✔ كثافة الاسفنج: 35
-✔ ارتفاع الاسفنج: 12 سم
-✔ قابل للزيادة"
-<section class="py-5 product-details-page">
-  <div class="container">
-    <div class="row g-5 align-items-start">
-      <div class="col-lg-6">
-        <div class="rounded-4 overflow-hidden shadow-sm mb-3 product-main-wrap">
-          <img id="mainProductImage" src="/Nestica11ty/assets/images/deliveries/outdoor-10.jpg" class="img-fluid w-100" alt="ركنة 4 مقعد مع طاولة وشمسية" onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';">
-        </div>
+    <div class="col-lg-6">
+      
+
+      <h1 class="fw-bold mb-3">ركنة 4 مقعد مع طاولة وشمسية</h1>
+
+      <div class="product-card-price mb-4">
+        <span class="main-price">20,000 EGP</span>
+
         
       </div>
 
-      <div class="col-lg-6">
-        
-        <h1 class="fw-bold mb-3">ركنة 4 مقعد مع طاولة وشمسية</h1>
-        <div class="fs-3 fw-bold mb-4">20,000 EGP</div>
+      <div class="mb-3">
+        <label class="form-label fw-bold" data-i18n="quantity">الكمية</label>
+        <input
+          id="quantity"
+          type="number"
+          min="1"
+          value="1"
+          class="form-control"
+        >
+      </div>
 
-        <div class="mb-4">
-          <label class="form-label fw-semibold" data-i18n="quantity">الكمية</label>
-          <input type="number" id="quantity" value="1" min="1" class="form-control">
+      <div class="mb-3">
+        <label class="form-label fw-bold" data-i18n="requestType">نوع الطلب</label>
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="requestType"
+            id="requestTypeSame"
+            value="same"
+            checked
+            onchange="toggleNotes()"
+          >
+          <label class="form-check-label" for="requestTypeSame" data-i18n="sameAsProduct">
+            نفس المنتج
+          </label>
         </div>
 
-        <div class="mb-3">
-          <label class="form-label fw-semibold" data-i18n="requestType">نوع الطلب</label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="requestType" id="requestTypeSame" value="same" checked onchange="toggleNotes()">
-            <label class="form-check-label" for="requestTypeSame" data-i18n="sameAsProduct">نفس المنتج</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="requestType" id="requestTypeCustom" value="custom" onchange="toggleNotes()">
-            <label class="form-check-label" for="requestTypeCustom" data-i18n="customModification">تعديل خاص</label>
-          </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="requestType"
+            id="requestTypeCustom"
+            value="custom"
+            onchange="toggleNotes()"
+          >
+          <label class="form-check-label" for="requestTypeCustom" data-i18n="customModification">
+            تعديل خاص
+          </label>
         </div>
+      </div>
 
-        <div class="mb-3" id="notesBox" style="display:none;">
-          <label class="form-label fw-semibold" data-i18n="writeRequest">اكتب طلبك</label>
-          <textarea id="notes" class="form-control" rows="4" placeholder="اكتب اللون، المقاس، أو أي تعديل مطلوب"></textarea>
+      <div id="notesBox" class="mb-4" style="display:none;">
+        <label class="form-label fw-bold" data-i18n="writeRequest">اكتب طلبك</label>
+        <textarea id="notes" class="form-control" rows="4"></textarea>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-warning rounded-pill px-5 py-2 fw-bold"
+        data-i18n="addToCart"
+        onclick='addProductDetailsToCart({
+          id: "110",
+          name: "ركنة 4 مقعد مع طاولة وشمسية",
+          price: 20000,
+          image: "/assets/images/deliveries/outdoor-10.jpg",
+          slug: "real-delivery-110"
+        })'
+      >
+        أضف للسلة
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5">
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <div class="product-desc-card">
+        <h3 class="desc-title" data-i18n="description">الوصف</h3>
+        <hr class="desc-divider">
+
+        <div class="desc-content">
+          الخامات:<br>• حديد دهان الكتروستاتيك<br>• قماش ووتر بروف صن بيتش مستورد<br><br>الألوان:<br>• القماش: رصاصي فاتح<br>• دهان المعدن: اسود<br><br>✔ متاح التعديل في الألوان<br>✔ كثافة الاسفنج: 35<br>✔ ارتفاع الاسفنج: 12 سم<br>✔ قابل للزيادة
         </div>
-
-        <button class="btn btn-dark rounded-pill px-4 w-100" onclick='addProductDetailsToCart({ id: "110", name: "ركنة 4 مقعد مع طاولة وشمسية", price: 20000, image: "/assets/images/deliveries/outdoor-10.jpg", slug: "real-delivery-110" })' data-i18n="addToCart">أضف للسلة</button>
       </div>
     </div>
 
-    <section class="product-description-section mt-5">
+    <div class="col-lg-5">
       <div class="product-desc-card">
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="desc-block">
-              <h3 class="desc-title" data-i18n="description">الوصف</h3>
-              <hr class="desc-divider">
-              <div class="desc-content formatted-description"></div>
-            </div>
+        <h3 class="desc-title" data-i18n="specifications">المواصفات</h3>
+        <hr class="desc-divider">
+
+        <div class="specs-table">
+          <div class="spec-row">
+            <div class="spec-label" data-i18n="nameLabel">الاسم</div>
+            <div class="spec-value">ركنة 4 مقعد مع طاولة وشمسية</div>
           </div>
-          <div class="col-lg-6">
-            <div class="specs-block">
-              <h3 class="desc-title" data-i18n="specifications">المواصفات</h3>
-              <hr class="desc-divider">
-              <div class="specs-table">
-                <div class="spec-row"><div class="spec-label" data-i18n="nameLabel">الاسم</div><div class="spec-value">ركنة 4 مقعد مع طاولة وشمسية</div></div>
-                <div class="spec-row"><div class="spec-label" data-i18n="priceLabel">السعر</div><div class="spec-value">20,000 EGP</div></div>
-                
-                <div class="spec-row"><div class="spec-label" data-i18n="statusLabel">الحالة</div><div class="spec-value" data-i18n="available">متاح</div></div>
-              </div>
-            </div>
+
+          <div class="spec-row">
+            <div class="spec-label" data-i18n="priceLabel">السعر</div>
+            <div class="spec-value">20,000 EGP</div>
+          </div>
+
+          
+
+          <div class="spec-row">
+            <div class="spec-label" data-i18n="statusLabel">الحالة</div>
+            <div class="spec-value" data-i18n="available">متاح</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </section>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "ركنة 4 مقعد مع طاولة وشمسية",
-  "image": "/assets/images/deliveries/outdoor-10.jpg",
-  "description": "الخامات:
-• حديد دهان الكتروستاتيك
-• قماش ووتر بروف صن بيتش مستورد
-
-الألوان:
-• القماش: رصاصي فاتح
-• دهان المعدن: اسود
-
-✔ متاح التعديل في الألوان
-✔ كثافة الاسفنج: 35
-✔ ارتفاع الاسفنج: 12 سم
-✔ قابل للزيادة",
-  "brand": {
-    "@type": "Brand",
-    "name": "Nestica"
-  },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "EGP",
-    "price": "20000",
-    "availability": "https://schema.org/InStock"
-  }
-}
-</script>
   </main>
   <footer class="py-4 mt-5 border-top footer-section">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">

@@ -98,103 +98,173 @@
   </div>
 </nav>
   <main>
-    title: "ركنه عدد 5 مقعد | Nestica"
-description: ""
-<section class="py-5 product-details-page">
-  <div class="container">
-    <div class="row g-5 align-items-start">
-      <div class="col-lg-6">
-        <div class="rounded-4 overflow-hidden shadow-sm mb-3 product-main-wrap">
-          <img id="mainProductImage" src="/Nestica11ty/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg" class="img-fluid w-100" alt="ركنه عدد 5 مقعد" onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';">
-        </div>
+    
+<section class="container my-5">
+  <div class="row g-5 align-items-start">
+    <div class="col-lg-6">
+      <div class="product-main-wrap">
+        <img
+          id="mainProductImage"
+          src="/Nestica11ty/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg"
+          alt="ركنه عدد 5 مقعد"
+          class="img-fluid rounded-4 w-100 shadow-sm"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';"
+        >
+      </div>
+
+      
+      <div class="product-thumbs d-flex gap-3 flex-wrap mt-3">
         
-        <div class="d-flex flex-wrap gap-2 product-thumbs">
-          
-          <img src="/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg" class="border rounded-3" onclick="changeMainImage('/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg')" alt="ركنه عدد 5 مقعد" onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';">
-          
-          <img src="/assets/images/products/06dad90d-4017-4886-92fc-2f8ae3197e9d.jpg" class="border rounded-3" onclick="changeMainImage('/assets/images/products/06dad90d-4017-4886-92fc-2f8ae3197e9d.jpg')" alt="ركنه عدد 5 مقعد" onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';">
-          
-        </div>
+          <img
+            src="/Nestica11ty/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg"
+            alt="ركنه عدد 5 مقعد"
+            class="rounded-3 border"
+            loading="lazy"
+            onclick="changeMainImage('/Nestica11ty/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg')"
+            onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';"
+          >
+        
+          <img
+            src="/Nestica11ty/assets/images/products/06dad90d-4017-4886-92fc-2f8ae3197e9d.jpg"
+            alt="ركنه عدد 5 مقعد"
+            class="rounded-3 border"
+            loading="lazy"
+            onclick="changeMainImage('/Nestica11ty/assets/images/products/06dad90d-4017-4886-92fc-2f8ae3197e9d.jpg')"
+            onerror="this.onerror=null;this.src='/Nestica11ty/assets/images/products/default-product.jpeg';"
+          >
+        
+      </div>
+      
+    </div>
+
+    <div class="col-lg-6">
+      
+      <span class="badge rounded-pill bg-warning text-dark mb-3">
+        حديد بأضافة خشب
+      </span>
+      
+
+      <h1 class="fw-bold mb-3">ركنه عدد 5 مقعد</h1>
+
+      <div class="product-card-price mb-4">
+        <span class="main-price">24,000 EGP</span>
+
         
       </div>
 
-      <div class="col-lg-6">
-        <div class="text-muted mb-2">حديد بأضافة خشب</div>
-        <h1 class="fw-bold mb-3">ركنه عدد 5 مقعد</h1>
-        <div class="fs-3 fw-bold mb-4">24,000 EGP</div>
+      <div class="mb-3">
+        <label class="form-label fw-bold" data-i18n="quantity">الكمية</label>
+        <input
+          id="quantity"
+          type="number"
+          min="1"
+          value="1"
+          class="form-control"
+        >
+      </div>
 
-        <div class="mb-4">
-          <label class="form-label fw-semibold" data-i18n="quantity">الكمية</label>
-          <input type="number" id="quantity" value="1" min="1" class="form-control">
+      <div class="mb-3">
+        <label class="form-label fw-bold" data-i18n="requestType">نوع الطلب</label>
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="requestType"
+            id="requestTypeSame"
+            value="same"
+            checked
+            onchange="toggleNotes()"
+          >
+          <label class="form-check-label" for="requestTypeSame" data-i18n="sameAsProduct">
+            نفس المنتج
+          </label>
         </div>
 
-        <div class="mb-3">
-          <label class="form-label fw-semibold" data-i18n="requestType">نوع الطلب</label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="requestType" id="requestTypeSame" value="same" checked onchange="toggleNotes()">
-            <label class="form-check-label" for="requestTypeSame" data-i18n="sameAsProduct">نفس المنتج</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="requestType" id="requestTypeCustom" value="custom" onchange="toggleNotes()">
-            <label class="form-check-label" for="requestTypeCustom" data-i18n="customModification">تعديل خاص</label>
-          </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="requestType"
+            id="requestTypeCustom"
+            value="custom"
+            onchange="toggleNotes()"
+          >
+          <label class="form-check-label" for="requestTypeCustom" data-i18n="customModification">
+            تعديل خاص
+          </label>
         </div>
+      </div>
 
-        <div class="mb-3" id="notesBox" style="display:none;">
-          <label class="form-label fw-semibold" data-i18n="writeRequest">اكتب طلبك</label>
-          <textarea id="notes" class="form-control" rows="4" placeholder="اكتب اللون، المقاس، أو أي تعديل مطلوب"></textarea>
+      <div id="notesBox" class="mb-4" style="display:none;">
+        <label class="form-label fw-bold" data-i18n="writeRequest">اكتب طلبك</label>
+        <textarea id="notes" class="form-control" rows="4"></textarea>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-warning rounded-pill px-5 py-2 fw-bold"
+        data-i18n="addToCart"
+        onclick='addProductDetailsToCart({
+          id: "38",
+          name: "ركنه عدد 5 مقعد",
+          price: 24000,
+          image: "/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg",
+          slug: "ركنه-عدد-5-مقعد-38"
+        })'
+      >
+        أضف للسلة
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5">
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <div class="product-desc-card">
+        <h3 class="desc-title" data-i18n="description">الوصف</h3>
+        <hr class="desc-divider">
+
+        <div class="desc-content">
+          طقم معدن مكون كنبه حرف L وطاوله<br><br>الخامات<br><br>» حديد دهان اللكتروستاتيك ضد العوامل الجويه <br>»  قماش ووتر بروف صن بيتش مستورد اصلي عالي الجودة  <br>« متاح التعديل في الخامات<br><br><br>الالوان<br>»  القماش:  رصاصي غامق<br>» دهان المعدن: رصاصي غامق<br>متاح التعديل في الالوان<br><br>قطاع حديد: 44<br>قابل للزيادة<br><br><br>كثافه الاسفنج: 35<br>ارتفاع الاسفنج: 12 سم<br>قابل للزيادة
         </div>
-
-        <button class="btn btn-dark rounded-pill px-4 w-100" onclick='addProductDetailsToCart({ id: "38", name: "ركنه عدد 5 مقعد", price: 24000, image: "/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg", slug: "ركنه-عدد-5-مقعد-38" })' data-i18n="addToCart">أضف للسلة</button>
       </div>
     </div>
 
-    <section class="product-description-section mt-5">
+    <div class="col-lg-5">
       <div class="product-desc-card">
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="desc-block">
-              <h3 class="desc-title" data-i18n="description">الوصف</h3>
-              <hr class="desc-divider">
-              <div class="desc-content formatted-description">طقم معدن مكون كنبه حرف L وطاوله<br><br>الخامات<br><br>» حديد دهان اللكتروستاتيك ضد العوامل الجويه <br>»  قماش ووتر بروف صن بيتش مستورد اصلي عالي الجودة  <br>« متاح التعديل في الخامات<br><br><br>الالوان<br>»  القماش:  رصاصي غامق<br>» دهان المعدن: رصاصي غامق<br>متاح التعديل في الالوان<br><br>قطاع حديد: 44<br>قابل للزيادة<br><br><br>كثافه الاسفنج: 35<br>ارتفاع الاسفنج: 12 سم<br>قابل للزيادة</div>
-            </div>
+        <h3 class="desc-title" data-i18n="specifications">المواصفات</h3>
+        <hr class="desc-divider">
+
+        <div class="specs-table">
+          <div class="spec-row">
+            <div class="spec-label" data-i18n="nameLabel">الاسم</div>
+            <div class="spec-value">ركنه عدد 5 مقعد</div>
           </div>
-          <div class="col-lg-6">
-            <div class="specs-block">
-              <h3 class="desc-title" data-i18n="specifications">المواصفات</h3>
-              <hr class="desc-divider">
-              <div class="specs-table">
-                <div class="spec-row"><div class="spec-label" data-i18n="nameLabel">الاسم</div><div class="spec-value">ركنه عدد 5 مقعد</div></div>
-                <div class="spec-row"><div class="spec-label" data-i18n="priceLabel">السعر</div><div class="spec-value">24,000 EGP</div></div>
-                <div class="spec-row"><div class="spec-label" data-i18n="categoryLabel">الكاتيجوري</div><div class="spec-value">حديد بأضافة خشب</div></div>
-                <div class="spec-row"><div class="spec-label" data-i18n="statusLabel">الحالة</div><div class="spec-value" data-i18n="available">متاح</div></div>
-              </div>
-            </div>
+
+          <div class="spec-row">
+            <div class="spec-label" data-i18n="priceLabel">السعر</div>
+            <div class="spec-value">24,000 EGP</div>
+          </div>
+
+          
+          <div class="spec-row">
+            <div class="spec-label" data-i18n="categoryLabel">الكاتيجوري</div>
+            <div class="spec-value">حديد بأضافة خشب</div>
+          </div>
+          
+
+          <div class="spec-row">
+            <div class="spec-label" data-i18n="statusLabel">الحالة</div>
+            <div class="spec-value" data-i18n="available">متاح</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </section>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "ركنه عدد 5 مقعد",
-  "image": "/assets/images/products/7cd0aa9d-53cc-4066-988f-f89ad0f54a5e.jpg",
-  "description": "",
-  "brand": {
-    "@type": "Brand",
-    "name": "Nestica"
-  },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "EGP",
-    "price": "24000",
-    "availability": "https://schema.org/InStock"
-  }
-}
-</script>
   </main>
   <footer class="py-4 mt-5 border-top footer-section">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
