@@ -100,7 +100,7 @@ export default function (eleventyConfig) {
   // ─── Config ─────────────────────────────────────────────────────────────────
 
   return {
-    pathPrefix: '/Nestica11ty/',
+    pathPrefix: '/',
     dir: {
       input: 'src',
       output: '_site',
