@@ -2,7 +2,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
 
   eleventyConfig.addPassthroughCopy('src/.nojekyll');
-
+  eleventyConfig.addPassthroughCopy('CNAME');
   // ─── Existing Filters ───────────────────────────────────────────────────────
 
   eleventyConfig.addFilter('egp', (value) => {
