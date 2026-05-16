@@ -161,3 +161,27 @@ layout: layouts/base.njk
     </div>
   </div>
 </section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.name | jsonLdSafe }}",
+  "description": "{{ (product.description_ar or product.description or product.name) | seoDesc(product.name) | jsonLdSafe }}",
+  "image": [
+    "{{ settings.siteUrl }}{{ product.main_image or '/assets/images/products/default-product.jpeg' }}"
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ settings.brand }}"
+  },
+  "category": "{{ product.category_name or product.category or 'Outdoor Furniture' }}",
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ settings.siteUrl }}/products/{{ product.slug }}/",
+    "priceCurrency": "EGP",
+    "price": "{{ product.price or 0 }}",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition"
+  }
+}
+</script>

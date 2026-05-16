@@ -6,5 +6,8 @@
   "address": "Egypt",
   "currency": "EGP",
   "defaultLanguage": "ar",
-  "defaultTheme": "light"
+  "defaultTheme": "light",
+  "siteUrl": "https://nestica-outdoor.com",
+  "defaultDescription": "Nestica offers premium outdoor furniture in Egypt for gardens, rooftops, terraces, balconies, cafés, restaurants and custom outdoor spaces.",
+  "ogImage": "/assets/images/new-hero.jpg"
 }
