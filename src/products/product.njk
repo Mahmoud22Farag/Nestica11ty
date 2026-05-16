@@ -5,5 +5,7 @@ pagination:
   alias: product
 permalink: "/products/{{ product.slug }}/"
 layout: layouts/product.njk
-title: "{{ product.name }}"
+eleventyComputed:
+  title: "{{ product.name }}"
+  description: "{{ product.description_ar or product.description or product.name }} from Nestica outdoor furniture."
 ---

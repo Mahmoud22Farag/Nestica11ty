@@ -1,14 +1,13 @@
 ---
-title: "{{ category.name }} Outdoor Furniture | Nestica"
-description: "Shop {{ category.name }} outdoor furniture in Egypt. High quality and weather resistant."
----
----
 pagination:
   data: categories
   size: 1
   alias: category
 permalink: "/categories/{{ category.slug }}/"
 layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ category.name }} Outdoor Furniture"
+  description: "Shop {{ category.name }} outdoor furniture in Egypt from Nestica."
 ---
 <section class="category-hero py-5">
   <div class="container">
@@ -19,7 +18,7 @@ layout: layouts/base.njk
         <a href="/products/" class="btn btn-dark rounded-pill px-4" data-i18n="allProducts">كل المنتجات</a>
       </div>
       <div class="col-lg-5">
-        <img class="category-hero-img" src="{{ (category.image or '/assets/images/categories/default-category.jpeg') | url }}" alt="{{ category.name }}" onerror="this.onerror=null;this.src='{{ '/assets/images/categories/default-category.jpeg' | url }}';">
+        <img class="category-hero-img" src="{{ (category.image or '/assets/images/categories/default-category.jpeg') | url }}" alt="{{ category.name }}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ '/assets/images/categories/default-category.jpeg' | url }}';">
       </div>
     </div>
   </div>

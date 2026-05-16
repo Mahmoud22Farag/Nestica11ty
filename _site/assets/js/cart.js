@@ -1,11 +1,11 @@
 const CART_KEY = "nesticaCart";
-const SITE_PREFIX = "/Nestica11ty";
+const SITE_PREFIX = "";
 
 function assetUrl(path) {
   if (!path) return `${SITE_PREFIX}/assets/images/products/default-product.jpeg`;
 
   if (path.startsWith("http")) return path;
-  if (path.startsWith(SITE_PREFIX)) return path;
+  if (SITE_PREFIX && path.startsWith(SITE_PREFIX)) return path;
 
   if (path.startsWith("/")) {
     return `${SITE_PREFIX}${path}`;

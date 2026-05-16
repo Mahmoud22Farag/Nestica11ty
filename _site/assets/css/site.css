@@ -46,7 +46,7 @@ a { color: inherit; }
   background:
     linear-gradient(120deg, rgba(6,18,37,.72), rgba(6,18,37,.25)),
     radial-gradient(circle at 20% 30%, rgba(202,164,106,.45), transparent 30%),
-    url('/Nestica11ty/assets/images/new-hero.jpg');
+    url('/assets/images/new-hero.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -584,4 +584,113 @@ html[data-bs-theme="light"] .custom-navbar .btn-outline-light:hover {
 
 html[data-bs-theme="light"] .custom-navbar .btn-warning {
   color: #111827 !important;
+}
+/* ===== HERO FIX FINAL ===== */
+.hero-section {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.38) 34%,
+      rgba(0,0,0,0.08) 65%
+    ),
+    url('/assets/images/new-hero.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.hero-section .container {
+  width: 100%;
+  max-width: 1140px;
+  padding-inline: 60px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  max-width: 900px;
+  margin-inline : auto;
+  font-size: clamp(2.4rem, 4.2vw, 4.6rem);
+  font-weight: 900;
+  line-height: 1.12;
+  color: #fff;
+  margin-bottom: 18px;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+.hero-section p {
+  max-width: 700px;
+  margin-inline: auto;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.94);
+  text-shadow: 0 3px 10px rgba(0,0,0,0.35);
+}
+.hero-section .btn {
+  margin-top: 24px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 460px;
+    background-position: center;
+  }
+
+  .hero-section .container {
+    padding-inline: 28px;
+  }
+
+  .hero-section h1 {
+    max-width: 360px;
+    font-size: 2.45rem;
+  }
+
+  .hero-section p {
+    max-width: 340px;
+    font-size: 1rem;
+  }
+}
+/* Floating WhatsApp CTA */
+.floating-whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 14px 35px rgba(0,0,0,.22);
+  z-index: 1050;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.floating-whatsapp:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0,0,0,.28);
+}
+@media (max-width: 575.98px) {
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+  }
 }

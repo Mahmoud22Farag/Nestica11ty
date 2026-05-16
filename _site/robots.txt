@@ -5,4 +5,4 @@ Disallow: /cart/
 Disallow: /settings/
 Disallow: /admin/
 
-Sitemap: /sitemap.xml
+Sitemap: https://nestica-outdoor.com/sitemap.xml

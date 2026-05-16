@@ -3,7 +3,6 @@ const translations = {
     navHome: "الرئيسية",
     navShop: "المنتجات",
     navSearch: "بحث",
-    navSettings: "الإعدادات",
     cart: "السلة",
     theme: "الوضع",
 
@@ -41,7 +40,6 @@ const translations = {
     navHome: "Home",
     navShop: "Shop",
     navSearch: "Search",
-    navSettings: "Settings",
     cart: "Cart",
     theme: "Theme",
 
@@ -157,6 +155,10 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCart();
   }
 
+  updateOfferControls();
+
+  document.getElementById("offersSlider")?.addEventListener("scroll", updateOfferControls);
+
   const input = document.getElementById("productSearchInput");
 
   if (input) {
@@ -169,13 +171,39 @@ function scrollOffers(direction) {
 
   if (!slider) return;
 
-  slider.scrollBy({
-    left: direction * 320,
+  const step = 320;
+  const maxScroll = Math.max(0, slider.scrollWidth - slider.clientWidth);
+  const nextPosition = Math.min(
+    maxScroll,
+    Math.max(0, slider.scrollLeft + direction * step)
+  );
+
+  slider.scrollTo({
+    left: nextPosition,
     behavior: "smooth"
   });
+
+  window.setTimeout(updateOfferControls, 250);
+}
+
+function updateOfferControls() {
+  const slider = document.getElementById("offersSlider");
+  const prev = document.getElementById("offersPrev");
+  const next = document.getElementById("offersNext");
+
+  if (!slider || !prev || !next) return;
+
+  const maxScroll = Math.max(0, slider.scrollWidth - slider.clientWidth);
+
+  prev.disabled = slider.scrollLeft <= 2;
+  next.disabled = slider.scrollLeft >= maxScroll - 2;
 }
 
 function filterProducts() {
+  updateOfferControls();
+
+  document.getElementById("offersSlider")?.addEventListener("scroll", updateOfferControls);
+
   const input = document.getElementById("productSearchInput");
 
   const query = (input?.value || "")
