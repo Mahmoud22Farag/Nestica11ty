@@ -1556,7 +1556,7 @@
   },
   {
     "id": 90,
-    "name": "سفره معدن بجوانب دوبار",
+    "name": "سفره معدن 6 مقعد ",
     "slug": "سفر-جاهزة-90",
     "description": "المكونات:6كراسي وطاولة\n\nالخامات\n\n» حديد مجلفن للحمايه من العوامل الجويه بشكل كامل\n\n» قماش ووتر بروف عالي الجودة \n\n\nدهان المعدن: رصاصي غامق\nالقماش: رصاصي غامق\n\n\nمتاح تغيير الالوان\n\nكثافه الاسفنج: 35\nارتفاع: 10سم\nقابل للزياده",
     "price": 17500,
@@ -1583,12 +1583,12 @@
     "description": "المكونات: 4 كراسي وطاولة\n\nالخامات\n\n» حديد مجلفن للحمايه من العوامل الجويه بشكل كامل\n\n\n» دوبار قوي متين ومعالج ضد العوامل الجويه \nدهان المعدن: رصاصي\nالدوبار: بيج\n\nمتاح تغيير الالوان",
     "price": 10000,
     "old_price": null,
-    "main_image": "/assets/images/products/safar-1.jpg",
+    "main_image": "/assets/images/products/safar-1.jpeg",
     "gallery": [
-      "/assets/images/products/safar-1.jpg"
+      "/assets/images/products/safar-1.jpeg"
     ],
     "old_image_urls": [
-      "/images/products/safar-1.jpg"
+      "/images/products/safar-1.jpeg"
     ],
     "category_id": 5,
     "category": "سفر",
@@ -1605,12 +1605,12 @@
     "description": "المكونات: 6 كراسي وطاولة\n\nالخامات\n\n» حديد مجلفن للحمايه من العوامل الجويه بشكل كامل\n\n» قماش ووتر بروف عالي الجودة \n\n» دوبار قوي متين ومعالج ضد العوامل الجويه \nدهان المعدن: اسود\nالقماش: اوف وايت\nالدوبار: اسود\nمتاح تغيير الالوان\n\nكثافه الاسفنج: 35\nارتفاع: 10سم\nقابل للزياده",
     "price": 15000,
     "old_price": null,
-    "main_image": "/assets/images/products/safar-2.jpg",
+    "main_image": "/assets/images/products/safar-2.jpeg",
     "gallery": [
-      "/assets/images/products/safar-2.jpg"
+      "/assets/images/products/safar-2.jpeg"
     ],
     "old_image_urls": [
-      "/images/products/safar-2.jpg"
+      "/images/products/safar-2.jpeg"
     ],
     "category_id": 5,
     "category": "سفر",
