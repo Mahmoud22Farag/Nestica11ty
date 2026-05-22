@@ -12,6 +12,7 @@ layout: layouts/base.njk
           alt="{{ product.name }}"
           class="img-fluid rounded-4 w-100 shadow-sm"
           loading="lazy"
+          decoding="async"
           onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';"
         >
       </div>
@@ -24,6 +25,7 @@ layout: layouts/base.njk
             alt="{{ product.name }}"
             class="rounded-3 border"
             loading="lazy"
+            decoding="async"
             onclick="changeMainImage('{{ img | url }}')"
             onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';"
           >
@@ -51,42 +53,21 @@ layout: layouts/base.njk
 
       <div class="mb-3">
         <label class="form-label fw-bold" data-i18n="quantity">الكمية</label>
-        <input
-          id="quantity"
-          type="number"
-          min="1"
-          value="1"
-          class="form-control"
-        >
+        <input id="quantity" type="number" min="1" value="1" class="form-control">
       </div>
 
       <div class="mb-3">
         <label class="form-label fw-bold" data-i18n="requestType">نوع الطلب</label>
 
         <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="requestType"
-            id="requestTypeSame"
-            value="same"
-            checked
-            onchange="toggleNotes()"
-          >
+          <input class="form-check-input" type="radio" name="requestType" id="requestTypeSame" value="same" checked onchange="toggleNotes()">
           <label class="form-check-label" for="requestTypeSame" data-i18n="sameAsProduct">
             نفس المنتج
           </label>
         </div>
 
         <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="requestType"
-            id="requestTypeCustom"
-            value="custom"
-            onchange="toggleNotes()"
-          >
+          <input class="form-check-input" type="radio" name="requestType" id="requestTypeCustom" value="custom" onchange="toggleNotes()">
           <label class="form-check-label" for="requestTypeCustom" data-i18n="customModification">
             تعديل خاص
           </label>
@@ -102,7 +83,7 @@ layout: layouts/base.njk
         type="button"
         class="btn btn-warning rounded-pill px-5 py-2 fw-bold"
         data-i18n="addToCart"
-        onclick='addProductDetailsToCart({
+        onclick='trackProductAddToCart(); addProductDetailsToCart({
           id: "{{ product.id }}",
           name: "{{ product.name | escape }}",
           price: {{ product.price or 0 }},
@@ -161,6 +142,7 @@ layout: layouts/base.njk
     </div>
   </div>
 </section>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -184,4 +166,37 @@ layout: layouts/base.njk
     "itemCondition": "https://schema.org/NewCondition"
   }
 }
+</script>
+
+<script>
+  window.nesticaProductMeta = {
+    id: "{{ product.id }}",
+    name: {{ product.name | json | safe }},
+    price: {{ product.price or 0 }},
+    category: {{ (product.category_name or product.category or 'Outdoor Furniture') | json | safe }}
+  };
+
+  function trackProductAddToCart() {
+    if (typeof fbq === "function") {
+      fbq("track", "AddToCart", {
+        content_ids: [window.nesticaProductMeta.id],
+        content_name: window.nesticaProductMeta.name,
+        content_category: window.nesticaProductMeta.category,
+        content_type: "product",
+        value: window.nesticaProductMeta.price,
+        currency: "EGP"
+      });
+    }
+  }
+
+  if (typeof fbq === "function") {
+    fbq("track", "ViewContent", {
+      content_ids: [window.nesticaProductMeta.id],
+      content_name: window.nesticaProductMeta.name,
+      content_category: window.nesticaProductMeta.category,
+      content_type: "product",
+      value: window.nesticaProductMeta.price,
+      currency: "EGP"
+    });
+  }
 </script>

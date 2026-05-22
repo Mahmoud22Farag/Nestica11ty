@@ -197,6 +197,7 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
           alt="طقم معدن 7 مقعد"
           class="img-fluid rounded-4 w-100 shadow-sm"
           loading="lazy"
+          decoding="async"
           onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';"
         >
       </div>
@@ -209,6 +210,7 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
             alt="طقم معدن 7 مقعد"
             class="rounded-3 border"
             loading="lazy"
+            decoding="async"
             onclick="changeMainImage('/assets/images/products/c973a1c0-87d3-42e3-a547-5af7b1ea2a2e.jpg')"
             onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';"
           >
@@ -218,6 +220,7 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
             alt="طقم معدن 7 مقعد"
             class="rounded-3 border"
             loading="lazy"
+            decoding="async"
             onclick="changeMainImage('/assets/images/products/5e282545-34bf-4d84-bfcf-a4d52f90501e.jpg')"
             onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';"
           >
@@ -227,6 +230,7 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
             alt="طقم معدن 7 مقعد"
             class="rounded-3 border"
             loading="lazy"
+            decoding="async"
             onclick="changeMainImage('/assets/images/products/ffbef05d-c0fc-4c77-8b2a-73986cd9a2ee.jpg')"
             onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';"
           >
@@ -236,6 +240,7 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
             alt="طقم معدن 7 مقعد"
             class="rounded-3 border"
             loading="lazy"
+            decoding="async"
             onclick="changeMainImage('/assets/images/products/684ff81b-0907-4afa-a79a-d9feafeef705.jpg')"
             onerror="this.onerror=null;this.src='/assets/images/products/default-product.jpeg';"
           >
@@ -261,42 +266,21 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
 
       <div class="mb-3">
         <label class="form-label fw-bold" data-i18n="quantity">الكمية</label>
-        <input
-          id="quantity"
-          type="number"
-          min="1"
-          value="1"
-          class="form-control"
-        >
+        <input id="quantity" type="number" min="1" value="1" class="form-control">
       </div>
 
       <div class="mb-3">
         <label class="form-label fw-bold" data-i18n="requestType">نوع الطلب</label>
 
         <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="requestType"
-            id="requestTypeSame"
-            value="same"
-            checked
-            onchange="toggleNotes()"
-          >
+          <input class="form-check-input" type="radio" name="requestType" id="requestTypeSame" value="same" checked onchange="toggleNotes()">
           <label class="form-check-label" for="requestTypeSame" data-i18n="sameAsProduct">
             نفس المنتج
           </label>
         </div>
 
         <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="requestType"
-            id="requestTypeCustom"
-            value="custom"
-            onchange="toggleNotes()"
-          >
+          <input class="form-check-input" type="radio" name="requestType" id="requestTypeCustom" value="custom" onchange="toggleNotes()">
           <label class="form-check-label" for="requestTypeCustom" data-i18n="customModification">
             تعديل خاص
           </label>
@@ -312,7 +296,7 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
         type="button"
         class="btn btn-warning rounded-pill px-5 py-2 fw-bold"
         data-i18n="addToCart"
-        onclick='addProductDetailsToCart({
+        onclick='trackProductAddToCart(); addProductDetailsToCart({
           id: "39",
           name: "طقم معدن 7 مقعد",
           price: 28000,
@@ -371,6 +355,7 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -396,6 +381,38 @@ src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
 }
 </script>
 
+<script>
+  window.nesticaProductMeta = {
+    id: "39",
+    name: "طقم معدن 7 مقعد",
+    price: 28000,
+    category: "حديد بأضافة خشب"
+  };
+
+  function trackProductAddToCart() {
+    if (typeof fbq === "function") {
+      fbq("track", "AddToCart", {
+        content_ids: [window.nesticaProductMeta.id],
+        content_name: window.nesticaProductMeta.name,
+        content_category: window.nesticaProductMeta.category,
+        content_type: "product",
+        value: window.nesticaProductMeta.price,
+        currency: "EGP"
+      });
+    }
+  }
+
+  if (typeof fbq === "function") {
+    fbq("track", "ViewContent", {
+      content_ids: [window.nesticaProductMeta.id],
+      content_name: window.nesticaProductMeta.name,
+      content_category: window.nesticaProductMeta.category,
+      content_type: "product",
+      value: window.nesticaProductMeta.price,
+      currency: "EGP"
+    });
+  }
+</script>
   </main>
   <footer class="py-4 mt-5 border-top footer-section">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
