@@ -2,21 +2,16 @@
 permalink: "/facebook-feed.xml"
 eleventyExcludeFromCollections: true
 ---
-
-<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
 <channel>
-
 <title>Nestica Outdoor Furniture</title>
 <link>https://nestica-outdoor.com</link>
 <description>Outdoor furniture products from Nestica</description>
 
 {% for product in products %}
-
 {% if product.is_active != false %}
 
 <item>
-
 <g:id>{{ product.id }}</g:id>
 
 <g:title><![CDATA[{{ product.name }}]]></g:title>
@@ -25,25 +20,14 @@ eleventyExcludeFromCollections: true
 {{ product.description_ar or product.description or product.name }}
 ]]></g:description>
 
-<g:link>
-https://nestica-outdoor.com/products/{{ product.slug }}/
-</g:link>
+<g:link>https://nestica-outdoor.com/products/{{ product.slug }}/</g:link>
 
-<g:image_link>
-https://nestica-outdoor.com{{ product.main_image }}
-</g:image_link>
+<g:image_link>https://nestica-outdoor.com{{ product.main_image }}</g:image_link>
 
 <g:availability>in stock</g:availability>
-
 <g:condition>new</g:condition>
-
 <g:price>{{ product.price }} EGP</g:price>
-
 <g:brand>Nestica</g:brand>
-
-<g:google_product_category>
-Home &amp; Garden &gt; Furniture
-</g:google_product_category>
 
 </item>
 
@@ -52,3 +36,4 @@ Home &amp; Garden &gt; Furniture
 
 </channel>
 </rss>
+{%- endraw -%}
