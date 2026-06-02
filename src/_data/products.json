@@ -1,10 +1,88 @@
 [
   {
-    "id": 6,
-    "name": "شمسية كلارو 3م",
+    "id": 3,
+     "name": "شمسية كلارو 4م",
+    "slug": "شمسية-كلارو-4م-9",
+    "description": "الموصفات \nخشب زان احمر \nمدهون لمعالجة الرطوبة \nعمود 6سم \nريش مصفحه \nقاعدة  حديد مدهون اليكتروستاتيك \nمتحركة \nالعجل مزود بفرامل للتثبيت\nمتاح جميع الالوان \nو متاح طباعة لوجوا\nقماش كلارو سعودي كثافة 650",
+    "price": 6400,
+    "is_offer": true,
+    "old_price": 7500,
+    "main_image": "/assets/images/categories/b7a56f01-f725-4533-b1c0-68744957dfe3.jpg",
+    "gallery": [
+      "/assets/images/categories/b7a56f01-f725-4533-b1c0-68744957dfe3.jpeg"
+    ],
+    "old_image_urls": [
+      "/images/categories/b7a56f01-f725-4533-b1c0-68744957dfe3.jpg"
+    ],
+    "category_id": 4,
+    "category": "شمسيات",
+    "category_name": "شمسيات",
+    "is_featured": false,
+    "is_active": true
+  },
+  {
+    "id": 5,
+    "name": "شمسية وتربروف ميكانزم 3م",
     "slug": "شمسية-كلارو-3م-6",
     "description": "الخامات والجودة:\n- خشب زان أحمر\n- مدهون لمعالجة الرطوبة\n- ريش مصفحة\n- قاعدة حديد مدهون إليكتروستاتيك\n\nالتصميم العملي:\n- عمود 6 سم\n- متحركة\n- العجل مزود بفرامل للتثبيت\n\nالقماش / التنجيد:\n- قماش كلارو سعودي\n- كثافة 650\n\nخيارات التخصيص:\n- متاح جميع الألوان\n- متاح طباعة لوجو",
+    "price": 9500,
+    "main_image": "/assets/images/products/u5.jpeg",
+    "gallery": [
+      "/assets/images/products/u5.jpeg"
+    ],
+    "old_image_urls": [
+      "/images/products/u5.jpeg"
+    ],
+    "category_id": 4,
+    "category": "شمسيات",
+    "category_name": "شمسيات",
+    "is_featured": false,
+    "is_active": true
+  },
+  {
+    "id": 4,
+    "name": "شمسية وتربروف 3م",
+    "slug": "شمسية-كلارو-6",
+    "description": "الخامات والجودة:\n- خشب زان أحمر\n- مدهون لمعالجة الرطوبة\n- ريش مصفحة\n- قاعدة حديد مدهون إليكتروستاتيك\n\nالتصميم العملي:\n- عمود 6 سم\n- متحركة\n- العجل مزود بفرامل للتثبيت\n\nالقماش / التنجيد:\n- قماش كلارو سعودي\n- كثافة 650\n\nخيارات التخصيص:\n- متاح جميع الألوان\n- متاح طباعة لوجو",
+    "price": 6200,
+    "main_image": "/assets/images/products/u6.jpeg",
+    "gallery": [
+      "/assets/images/products/u6.jpeg"
+    ],
+    "old_image_urls": [
+      "/images/products/u6.jpeg"
+    ],
+    "category_id": 4,
+    "category": "شمسيات",
+    "category_name": "شمسيات",
+    "is_featured": false,
+    "is_active": true
+  },
+  {
+    "id": 5,
+    "name": "شمسية دك 3م",
+    "slug": "شمسية-كلارو-3م-7",
+    "description": "الخامات والجودة:\n- خشب زان أحمر\n- مدهون لمعالجة الرطوبة\n- ريش مصفحة\n- قاعدة حديد مدهون إليكتروستاتيك\n\nالتصميم العملي:\n- عمود 6 سم\n- متحركة\n- العجل مزود بفرامل للتثبيت\n\nالقماش / التنجيد:\n- قماش كلارو سعودي\n- كثافة 650\n\nخيارات التخصيص:\n- متاح جميع الألوان\n- متاح طباعة لوجو",
     "price": 6000,
+    "main_image": "/assets/images/products/u7.jpeg",
+    "gallery": [
+      "/assets/images/products/u7.jpeg"
+    ],
+    "old_image_urls": [
+      "/images/products/u7.jpeg"
+    ],
+    "category_id": 4,
+    "category": "شمسيات",
+    "category_name": "شمسيات",
+    "is_featured": false,
+    "is_active": true
+  },
+  {
+    "id": 6,
+    "name": "شمسية كلارو 3م",
+    "slug": "شمسية-كلارو-3م-8",
+    "description": "الخامات والجودة:\n- خشب زان أحمر\n- مدهون لمعالجة الرطوبة\n- ريش مصفحة\n- قاعدة حديد مدهون إليكتروستاتيك\n\nالتصميم العملي:\n- عمود 6 سم\n- متحركة\n- العجل مزود بفرامل للتثبيت\n\nالقماش / التنجيد:\n- قماش كلارو سعودي\n- كثافة 650\n\nخيارات التخصيص:\n- متاح جميع الألوان\n- متاح طباعة لوجو",
+    "price": 5800,
     "main_image": "/assets/images/products/6115b5f6-c1b5-40be-94f8-c44f35f963f9.jpeg",
     "gallery": [
       "/assets/images/products/6115b5f6-c1b5-40be-94f8-c44f35f963f9.jpeg"
@@ -18,27 +96,7 @@
     "is_featured": false,
     "is_active": true
   },
-  {
-    "id": 7,
-    "name": "شمسية كلارو 4م",
-    "slug": "شمسية-كلارو-4م-7",
-    "description": "الموصفات \nخشب زان احمر \nمدهون لمعالجة الرطوبة \nعمود 6سم \nريش مصفحه \nقاعدة  حديد مدهون اليكتروستاتيك \nمتحركة \nالعجل مزود بفرامل للتثبيت\nمتاح جميع الالوان \nو متاح طباعة لوجوا\nقماش كلارو سعودي كثافة 650",
-    "price": 6400,
-    "is_offer": true,
-    "old_price": 7500,
-    "main_image": "/assets/images/products/c12364f8-afee-4f2c-8e83-4b18dc15e74a.jpeg",
-    "gallery": [
-      "/assets/images/products/c12364f8-afee-4f2c-8e83-4b18dc15e74a.jpeg"
-    ],
-    "old_image_urls": [
-      "/images/products/c12364f8-afee-4f2c-8e83-4b18dc15e74a.jpeg"
-    ],
-    "category_id": 4,
-    "category": "شمسيات",
-    "category_name": "شمسيات",
-    "is_featured": false,
-    "is_active": true
-  },
+  
   {
     "id": 8,
     "name": "مرجيحه راتان 1 فرد",
@@ -1506,7 +1564,7 @@
   },
   {
     "id": 79,
-    "name": "شمسية كانت ليفر 33",
+    "name": "شمسية كانت ليفر 3*3",
     "slug": "شمسية-كانت-ليفر-3-3-79",
     "description": "شمسية كانت ليفر أو شمسية جانبية \nمتاح مقاسات\n 33 \n3.53.5\n44\nخامات شاسية  وقاعدة 2مم \nريش 1مم \nقاعدة متحركة وجهة رخامية \nدهان اليكتروستاتيك \nقماش كلارو أو pvc\n\nمتاح إضافة سيستم اضائة\n\nمتاح جميع الالوان سواء في القماش أو الشاسية",
     "price": 25000,
@@ -1531,22 +1589,17 @@
   },
   {
     "id": 80,
-    "name": "شمسية كانت ليفر44",
+    "name": "شمسية كانت ليفر4*4",
     "slug": "شمسية-كانت-ليفر4-4-80",
     "description": "شمسية كانت ليفر أو شمسية جانبية \nمتاح مقاسات\n 33 \n3.53.5\n4*4 \nخامات شاسية  وقاعدة 2مم \nريش 1مم \nقاعدة متحركة وجهة رخامية \nدهان اليكتروستاتيك \nقماش كلارو أو pvc\n\nمتاح إضافة سيستم اضائة\n\nمتاح جميع الالوان سواء في القماش أو الشاسية",
-    "price": 34999,
-    "main_image": "/assets/images/products/fb681cec-8cb6-4d34-add3-a51af885d4f9.jpg",
+    "price": 35000,
+    "main_image": "/assets/images/products/u2.jpg",
     "gallery": [
-      "/assets/images/products/fb681cec-8cb6-4d34-add3-a51af885d4f9.jpg",
-      "/assets/images/products/3437e9b5-2624-416f-b709-8300ac10b8b5.jpg",
-      "/assets/images/products/6e50ced8-c11e-49d2-91d1-db17ab3519dd.jpg",
-      "/assets/images/products/3faea732-668a-4dd9-9446-bea636afefa8.jpg"
+      "/assets/images/products/u2.jpg"
+      
     ],
     "old_image_urls": [
-      "/images/products/fb681cec-8cb6-4d34-add3-a51af885d4f9.jpg",
-      "/images/products/3437e9b5-2624-416f-b709-8300ac10b8b5.jpg",
-      "/images/products/6e50ced8-c11e-49d2-91d1-db17ab3519dd.jpg",
-      "/images/products/3faea732-668a-4dd9-9446-bea636afefa8.jpg"
+      "/images/products/u2.jpg"
     ],
     "category_id": 4,
     "category": "شمسيات",
