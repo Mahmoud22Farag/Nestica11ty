@@ -8,11 +8,45 @@ title: Nestica
     <p data-i18n="heroSubtitle">
       اختار من منتجات نستيكا أو اطلب تعديل يناسب الجاردن، الرووف، التراس أو البلكونة.
     </p>
-    <a href="{{ '/products/' | url }}" class="btn btn-dark" data-i18n="shopNow">
-      تسوق الآن
-    </a>
+    <div class="hero-actions">
+      <a href="{{ '/offers/' | url }}" class="btn btn-warning" data-i18n="viewOffers">
+        شوف العروض
+      </a>
+      <a href="{{ '/real-deliveries/' | url }}" class="btn btn-outline-light" data-i18n="viewDeliveries">
+        تسليماتنا على الطبيعة
+      </a>
+    </div>
   </div>
 </section>
+
+<section class="trust-strip">
+  <div class="container">
+    <div class="row g-3 text-center">
+      <div class="col-md-3 col-6"><strong data-i18n="trustOutdoorTitle">Outdoor</strong><span data-i18n="trustOutdoorDesc">خامات مناسبة للشمس والجو الخارجي</span></div>
+      <div class="col-md-3 col-6"><strong data-i18n="trustCustomTitle">Custom</strong><span data-i18n="trustCustomDesc">ألوان ومقاسات حسب مساحتك</span></div>
+      <div class="col-md-3 col-6"><strong data-i18n="trustRealTitle">Real</strong><span data-i18n="trustRealDesc">صور تسليمات حقيقية قبل الطلب</span></div>
+      <div class="col-md-3 col-6"><strong data-i18n="trustWhatsappTitle">WhatsApp</strong><span data-i18n="trustWhatsappDesc">اطلب واستفسر بسرعة</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5 conversion-guide">
+  <div class="row g-4 align-items-center">
+    <div class="col-lg-5">
+      <span class="section-kicker" data-i18n="howToOrder">طريقة الطلب</span>
+      <h2 class="fw-bold" data-i18n="howToOrderTitle">اختار المنتج وسيب الباقي علينا</h2>
+      <p class="text-muted" data-i18n="howToOrderDesc">لو المنتج محتاج تعديل في المقاس أو اللون، اكتب ملاحظاتك وابعت الطلب على واتساب وهيتم التواصل معاك لتأكيد التفاصيل.</p>
+    </div>
+    <div class="col-lg-7">
+      <div class="row g-3">
+        <div class="col-md-4"><div class="step-card"><span>01</span><h3 data-i18n="orderStep1Title">اختار المنتج</h3><p data-i18n="orderStep1Desc">من العروض أو الكاتيجوري المناسب لمساحتك.</p></div></div>
+        <div class="col-md-4"><div class="step-card"><span>02</span><h3 data-i18n="orderStep2Title">ضيف ملاحظاتك</h3><p data-i18n="orderStep2Desc">مقاس، لون، أو أي تعديل محتاجه.</p></div></div>
+        <div class="col-md-4"><div class="step-card"><span>03</span><h3 data-i18n="orderStep3Title">ابعت واتساب</h3><p data-i18n="orderStep3Desc">التيم هيتواصل معاك لتأكيد الطلب.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% set offerProducts = [] %}
 
 {% for product in products %}
@@ -108,6 +142,28 @@ title: Nestica
 </section>
 
 {% endif %}
+
+
+<section class="container my-5 real-deliveries-preview">
+  <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+    <div>
+      <span class="section-kicker" data-i18n="realDeliveriesKicker">تسليمات حقيقية</span>
+      <h2 class="fw-bold mb-1" data-i18n="realDeliveriesTitle">تسليماتنا على الطبيعة</h2>
+      <p class="text-muted mb-0" data-i18n="realDeliveriesDesc">شوف شكل منتجات نستيكا في أماكن حقيقية قبل ما تختار.</p>
+    </div>
+    <a href="{{ '/real-deliveries/' | url }}" class="btn btn-outline-dark rounded-pill" data-i18n="viewAllDeliveries">شوف كل التسليمات</a>
+  </div>
+  <div class="row g-4">
+    {% for img in ['/assets/images/deliveries/outdoor-1.jpg','/assets/images/deliveries/outdoor-3.jpg','/assets/images/deliveries/outdoor-5.jpg'] %}
+    <div class="col-md-4">
+      <a href="{{ '/real-deliveries/' | url }}" class="delivery-preview-card">
+        <img src="{{ img | url }}" alt="Nestica real delivery" loading="lazy">
+        <span data-i18n="viewExecution">شوف التنفيذ</span>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
 
 {% if featuredCollections and featuredCollections.length %}
 <section class="container my-5">

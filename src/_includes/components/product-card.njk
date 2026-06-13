@@ -1,5 +1,8 @@
 <div class="product-card card h-100 border-0 shadow-sm rounded-4 overflow-hidden" data-product-card data-name="{{ product.name | lower }}" data-category="{{ product.category or '' }}">
-  <a href="{{ ('/products/' + product.slug + '/') | url }}" class="text-decoration-none text-reset">
+  <a href="{{ ('/products/' + product.slug + '/') | url }}" class="text-decoration-none text-reset product-image-link">
+    {% if product.is_offer and product.old_price %}
+      <span class="discount-badge">عرض</span>
+    {% endif %}
     <img src="{{ (product.main_image or '/assets/images/products/default-product.jpeg') | url }}" class="card-img-top product-card-img" alt="{{ product.name }}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';">
   </a>
 
@@ -8,29 +11,23 @@
       <div class="text-muted small mb-2">{{ product.category_name }}</div>
     {% endif %}
 
-    <h4 class="fw-bold mb-2 product-title">
+    <h4 class="fw-bold mb-1 product-title">
       <a href="{{ ('/products/' + product.slug + '/') | url }}" class="text-decoration-none text-reset">{{ product.name }}</a>
     </h4>
 
-   <div class="product-card-price mb-3">
-  {% if product.is_offer and product.old_price %}
-    
-    <!-- السعر بعد الخصم -->
-    <span class="new-price">
-      {{ product.price | egp }}
-    </span>
+    {% if product.card_description %}
+      <div class="product-short-desc mb-2">{{ product.card_description }}</div>
+    {% endif %}
 
-    <!-- السعر القديم -->
-    <span class="old-price">
-      {{ product.old_price | egp }}
-    </span>
+    <div class="product-card-price mb-3">
+      {% if product.is_offer and product.old_price %}
+        <span class="new-price">{{ product.price | egp }}</span>
+        <span class="old-price">{{ product.old_price | egp }}</span>
+      {% else %}
+        <span class="normal-price">{{ product.price | egp }}</span>
+      {% endif %}
+    </div>
 
-  {% else %}
-    <span class="normal-price">
-      {{ product.price | egp }}
-    </span>
-  {% endif %}
-</div>
     <div class="mt-auto d-flex gap-2 flex-wrap">
       <a href="{{ ('/products/' + product.slug + '/') | url }}" class="btn btn-dark rounded-pill px-4" data-i18n="viewDetails">التفاصيل</a>
 

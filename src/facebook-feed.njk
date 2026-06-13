@@ -6,12 +6,12 @@ eleventyExcludeFromCollections: true
 <channel>
 <title>Nestica Outdoor Furniture</title>
 <link>https://nestica-outdoor.com</link>
-<description>Outdoor furniture products from Nestica</description>
+<description>Outdoor furniture products, offers and prices from Nestica</description>
 {% for product in products %}
 {% if product.is_active != false %}
 <item>
 <g:id>{{ product.id }}</g:id>
-<g:title><![CDATA[{{ product.name }}]]></g:title>
+<g:title><![CDATA[{{ product.feed_title or product.catalog_title or product.name }}]]></g:title>
 <g:description><![CDATA[{{ product.description_ar or product.description or product.name }}]]></g:description>
 <g:link>https://nestica-outdoor.com/products/{{ product.slug }}/</g:link>
 <g:image_link>https://nestica-outdoor.com{{ product.main_image }}</g:image_link>

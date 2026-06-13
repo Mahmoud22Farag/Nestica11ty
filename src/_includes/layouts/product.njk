@@ -41,7 +41,11 @@ layout: layouts/base.njk
       </span>
       {% endif %}
 
-      <h1 class="fw-bold mb-3">{{ product.name }}</h1>
+      <h1 class="fw-bold mb-2">{{ product.name }}</h1>
+
+      {% if product.card_description %}
+      <p class="product-page-short-desc mb-3">{{ product.card_description }}</p>
+      {% endif %}
 
       <div class="product-card-price mb-4">
         <span class="main-price">{{ product.price | egp }}</span>
@@ -79,20 +83,38 @@ layout: layouts/base.njk
         <textarea id="notes" class="form-control" rows="4"></textarea>
       </div>
 
-      <button
-        type="button"
-        class="btn btn-warning rounded-pill px-5 py-2 fw-bold"
-        data-i18n="addToCart"
-        onclick='trackProductAddToCart(); addProductDetailsToCart({
-          id: "{{ product.id }}",
-          name: "{{ product.name | escape }}",
-          price: {{ product.price or 0 }},
-          image: "{{ product.main_image or '/assets/images/products/default-product.jpeg' }}",
-          slug: "{{ product.slug }}"
-        })'
-      >
-        أضف للسلة
-      </button>
+      <div class="product-action-row">
+        <button
+          type="button"
+          class="btn btn-warning rounded-pill px-5 py-2 fw-bold"
+          data-i18n="addToCart"
+          onclick='trackProductAddToCart(); addProductDetailsToCart({
+            id: "{{ product.id }}",
+            name: "{{ product.name | escape }}",
+            price: {{ product.price or 0 }},
+            image: "{{ product.main_image or '/assets/images/products/default-product.jpeg' }}",
+            slug: "{{ product.slug }}"
+          })'
+        >
+          أضف للسلة
+        </button>
+
+        <a
+          class="btn btn-success rounded-pill px-4 py-2 fw-bold"
+          href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('عاوز أستفسر عن ' + product.name + ' - السعر: ' + (product.price or 0) + ' EGP') | urlencode }}"
+          target="_blank"
+          rel="noopener"
+          onclick="trackWhatsappLead('product_direct_whatsapp')"
+        >
+          <i class="bi bi-whatsapp me-1"></i> <span data-i18n="orderOnWhatsapp">اطلب على واتساب</span>
+        </a>
+      </div>
+
+      <div class="product-trust-box mt-4">
+        <div><i class="bi bi-rulers"></i><span data-i18n="productTrustSizes">مقاسات وألوان حسب المساحة</span></div>
+        <div><i class="bi bi-image"></i><span data-i18n="productTrustPhoto">تقدر تبعتلنا صورة المكان</span></div>
+        <div><i class="bi bi-chat-dots"></i><span data-i18n="productTrustWhatsapp">تأكيد الطلب والمتابعة على واتساب</span></div>
+      </div>
     </div>
   </div>
 </section>

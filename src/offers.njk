@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: عروض نستيكا Outdoor Furniture
+description: عروض وخصومات نستيكا على أثاث الحدائق والروف والبلكونة والأماكن الخارجية في مصر.
+permalink: /offers/
+---
+
+{% set offerProducts = [] %}
+{% for product in products %}
+  {% if product.is_active != false and product.is_offer and product.price %}
+    {% set offerProducts = offerProducts.concat([product]) %}
+  {% endif %}
+{% endfor %}
+
+<section class="offers-landing-hero">
+  <div class="container">
+    <span class="section-kicker" data-i18n="offersKicker">عروض نستيكا</span>
+    <h1 data-i18n="offersHeroTitle">عروض أثاث Outdoor جاهزة لمساحتك</h1>
+    <p data-i18n="offersHeroDesc">اختار العرض المناسب للجاردن، الرووف، التراس أو البلكونة وابعته على واتساب بخطوة واحدة.</p>
+    <a href="#offersGrid" class="btn btn-warning rounded-pill px-4 py-2 fw-bold" data-i18n="viewAvailableOffers">شوف العروض المتاحة</a>
+  </div>
+</section>
+
+<section class="container my-5" id="offersGrid">
+  <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+    <div>
+      <span class="section-kicker" data-i18n="limitedTime">لفترة محدودة</span>
+      <h2 class="fw-bold mb-1" data-i18n="currentOffers">العروض الحالية</h2>
+      <p class="text-muted mb-0" data-i18n="currentOffersDesc">منتجات مختارة بأسعار أقل لفترة محدودة.</p>
+    </div>
+    <a class="btn btn-outline-dark rounded-pill" href="{{ '/products/' | url }}" data-i18n="allProducts">كل المنتجات</a>
+  </div>
+
+  {% if offerProducts.length %}
+  <div class="row g-4">
+    {% for product in offerProducts %}
+    <div class="col-lg-3 col-md-4 col-sm-6 product-list-item">
+      {% include "components/product-card.njk" %}
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state-card text-center py-5">
+    <h3 class="fw-bold" data-i18n="noOffersTitle">العروض هتظهر هنا قريبًا</h3>
+    <p class="text-muted" data-i18n="noOffersDesc">قدر تضيف أي منتج كعرض من بيانات المنتج وسيظهر تلقائيًا في الصفحة.</p>
+    <a class="btn btn-dark rounded-pill px-4" href="{{ '/products/' | url }}" data-i18n="browseProducts">تصفح المنتجات</a>
+  </div>
+  {% endif %}
+</section>

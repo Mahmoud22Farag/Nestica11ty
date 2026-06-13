@@ -1,14 +1,12 @@
 <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
   <div class="container">
 
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{{ '/' | url }}">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ '/' | url }}">
       <img
         src="{{ '/assets/images/logo.png' | url }}"
         alt="Nestica"
         height="45"
       >
-
-      <span>Nestica</span>
     </a>
 
     <button
@@ -33,6 +31,18 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ '/products/' | url }}" data-i18n="navShop">
             المنتجات
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/offers/' | url }}" data-i18n="navOffers">
+            العروض
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/real-deliveries/' | url }}" data-i18n="navDeliveries">
+            تسليماتنا
           </a>
         </li>
 

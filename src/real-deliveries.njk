@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: تسليمات نستيكا على الطبيعة
+description: شوف تسليمات نستيكا الحقيقية لأثاث outdoor في الجاردن والروف والتراس والبلكونة قبل ما تختار منتجك.
+permalink: /real-deliveries/
+---
+
+{% set deliveryImages = [
+  '/assets/images/deliveries/outdoor-1.jpg',
+  '/assets/images/deliveries/outdoor-2.jpg',
+  '/assets/images/deliveries/outdoor-3.jpg',
+  '/assets/images/deliveries/outdoor-4.jpg',
+  '/assets/images/deliveries/outdoor-5.jpg',
+  '/assets/images/deliveries/outdoor-6.jpg',
+  '/assets/images/deliveries/outdoor-7.jpg',
+  '/assets/images/deliveries/outdoor-8.jpg',
+  '/assets/images/deliveries/outdoor-9.jpg',
+  '/assets/images/deliveries/outdoor-10.jpg',
+  '/assets/images/deliveries/outdoor-11.jpg',
+  '/assets/images/deliveries/outdoor-12.jpg'
+] %}
+
+<section class="deliveries-hero">
+  <div class="container">
+    <span class="section-kicker" data-i18n="realDeliveriesKicker">تسليمات حقيقية</span>
+    <h1 data-i18n="realDeliveriesTitle">تسليمات نستيكا على الطبيعة</h1>
+    <p data-i18n="realDeliveriesDesc">صور حقيقية تساعدك تتخيل المنتج في مساحتك قبل الطلب.</p>
+    <a class="btn btn-warning rounded-pill px-4 py-2 fw-bold" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'عاوز أعمل Outdoor Setup زي تسليمات نستيكا' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_deliveries_hero')" data-i18n="similarExecution">عاوز تنفيذ مشابه</a>
+  </div>
+</section>
+
+<section class="container my-5">
+  <div class="row g-4">
+    {% for img in deliveryImages %}
+    <div class="col-lg-4 col-md-6">
+      <div class="delivery-card">
+        <img src="{{ img | url }}" alt="Nestica real outdoor furniture delivery {{ loop.index }}" loading="lazy" decoding="async">
+        <div class="delivery-card-body">
+          <h3 data-i18n="deliveryCardTitle">تسليمة Outdoor حقيقية</h3>
+          <p data-i18n="deliveryCardDesc">ابعتهالنا لو عاوز نفس الستايل أو تعديل يناسب مساحتك.</p>
+          <a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('عاوز أعمل تنفيذ قريب من تسليمة رقم ' + loop.index) | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_delivery_card')" data-i18n="askWhatsapp">استفسر على واتساب</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
