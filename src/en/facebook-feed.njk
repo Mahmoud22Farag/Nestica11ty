@@ -1,0 +1,24 @@
+---
+permalink: /en/facebook-feed.xml
+eleventyExcludeFromCollections: true
+---
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+<title>Nestica Outdoor Furniture — English</title>
+<link>{{ settings.siteUrl }}/en/</link>
+<description>Outdoor furniture products, offers and prices from Nestica</description>
+{% for product in products %}{% if product.is_active != false %}
+<item>
+<g:id>{{ product.id }}-EN</g:id>
+<g:title><![CDATA[{{ product.feed_title_en or product.catalog_title_en or product.name_en }}]]></g:title>
+<g:description><![CDATA[{{ product.description_en or product.name_en }}]]></g:description>
+<g:link>{{ settings.siteUrl }}/en/products/{{ product.slug_en }}/</g:link>
+<g:image_link>{{ settings.siteUrl }}{{ product.main_image }}</g:image_link>
+<g:availability>in stock</g:availability>
+<g:condition>new</g:condition>
+<g:price>{{ product.price }} EGP</g:price>
+<g:brand>Nestica</g:brand>
+</item>
+{% endif %}{% endfor %}
+</channel>
+</rss>

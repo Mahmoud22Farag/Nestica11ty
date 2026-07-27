@@ -1,0 +1,14 @@
+---
+permalink: /_headers
+eleventyExcludeFromCollections: true
+---
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/css/*
+  Cache-Control: public, max-age=604800
+/assets/js/*
+  Cache-Control: public, max-age=604800
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

@@ -1,41 +1,54 @@
+{% set currentLang = lang or 'ar' %}
+{% set tr = i18n[currentLang] %}
+{% set resolvedAlternateArPath = alternateArPath or (page.url | switchLocaleUrl('ar')) %}
+{% set resolvedAlternateEnPath = alternateEnPath or (page.url | switchLocaleUrl('en')) %}
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-bs-theme="light">
-
+<html lang="{{ currentLang }}" dir="{{ tr.dir }}" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#caa46a">
+  <meta name="theme-color" content="#102238">
   <meta name="format-detection" content="telephone=no">
 
-  {% set defaultDescription = settings.defaultDescription or 'Nestica offers premium outdoor furniture in Egypt for gardens, roofs, terraces, balconies, cafés and custom outdoor spaces.' %}
+  {% set defaultDescription = tr.baseDescription %}
   {% set metaDescription = description or defaultDescription %}
-  {% set metaTitle = title or settings.brand %}
-  {% set canonicalUrl = settings.siteUrl + page.url %}
-  {% set socialImage = settings.siteUrl + (settings.ogImage or '/assets/images/new-hero.jpg') %}
+  {% set metaTitle = title or ('Outdoor Furniture in Egypt' if currentLang == 'en' else 'أثاث خارجي وأثاث حدائق في مصر') %}
+  {% set canonicalUrl = canonical or (settings.siteUrl + page.url) %}
+  {% set socialImagePath = image or settings.ogImage or '/assets/images/new-hero.webp' %}
+  {% set socialImage = settings.siteUrl + socialImagePath %}
+  {% set robotsValue = robots or 'index, follow, max-image-preview:large' %}
+  {% set alternateArUrl = settings.siteUrl + resolvedAlternateArPath %}
+  {% set alternateEnUrl = settings.siteUrl + resolvedAlternateEnPath %}
 
-  <title>{% if metaTitle == settings.brand %}{{ settings.brand }}{% else %}{{ metaTitle }} | {{ settings.brand }}{% endif %}</title>
+  <title>{{ metaTitle }} | {{ settings.brand }}</title>
   <meta name="description" content="{{ metaDescription | seoDesc(defaultDescription) }}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="{{ robotsValue }}">
+  <meta name="googlebot" content="{{ robotsValue }}">
   <link rel="canonical" href="{{ canonicalUrl }}">
+  <link rel="alternate" hreflang="ar-EG" href="{{ alternateArUrl }}">
+  <link rel="alternate" hreflang="en-EG" href="{{ alternateEnUrl }}">
+  <link rel="alternate" hreflang="x-default" href="{{ alternateArUrl }}">
 
   <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32x32.png' | url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon-16x16.png' | url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | url }}">
-  <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
+  <link rel="manifest" href="{{ ('/en/site.webmanifest' if currentLang == 'en' else '/site.webmanifest') | url }}">
+  {% if preloadImage %}<link rel="preload" as="image" href="{{ preloadImage | url }}" fetchpriority="high">{% endif %}
 
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
   <meta property="og:site_name" content="{{ settings.brand }}">
-  <meta property="og:title" content="{% if metaTitle == settings.brand %}{{ settings.brand }}{% else %}{{ metaTitle }} | {{ settings.brand }}{% endif %}">
+  <meta property="og:title" content="{{ metaTitle }} | {{ settings.brand }}">
   <meta property="og:description" content="{{ metaDescription | seoDesc(defaultDescription) }}">
   <meta property="og:url" content="{{ canonicalUrl }}">
   <meta property="og:image" content="{{ socialImage }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="ar_EG">
+  <meta property="og:locale" content="{{ tr.locale }}">
+  <meta property="og:locale:alternate" content="{{ 'ar_EG' if currentLang == 'en' else 'en_US' }}">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if metaTitle == settings.brand %}{{ settings.brand }}{% else %}{{ metaTitle }} | {{ settings.brand }}{% endif %}">
+  <meta name="twitter:title" content="{{ metaTitle }} | {{ settings.brand }}">
   <meta name="twitter:description" content="{{ metaDescription | seoDesc(defaultDescription) }}">
   <meta name="twitter:image" content="{{ socialImage }}">
 
@@ -44,34 +57,34 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Store", "LocalBusiness"],
-        "@id": "{{ settings.siteUrl }}/#store",
+        "@type": "Organization",
+        "@id": "{{ settings.siteUrl }}/#organization",
         "name": "{{ settings.brand }}",
         "url": "{{ settings.siteUrl }}",
-        "image": "{{ socialImage }}",
         "logo": "{{ settings.siteUrl }}/assets/images/logo.png",
+        "image": "{{ socialImage }}",
+        "email": "{{ settings.email }}",
         "telephone": "{{ settings.phone }}",
-        "priceRange": "EGP",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "EG"
+        "areaServed": {"@type":"Country","name":"Egypt"},
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "{{ settings.phone }}",
+          "contactType": "sales",
+          "areaServed": "EG",
+          "availableLanguage": ["Arabic", "English"]
         },
-        "sameAs": [
-          "https://www.facebook.com/share/14b1gbrBynq/",
-          "https://www.instagram.com/nestica9",
-          "https://www.tiktok.com/@nestica.outdoor"
-        ]
+        "sameAs": ["{{ settings.facebook }}", "{{ settings.instagram }}", "{{ settings.tiktok }}"]
       },
       {
         "@type": "WebSite",
-        "@id": "{{ settings.siteUrl }}/#website",
-        "url": "{{ settings.siteUrl }}",
+        "@id": "{{ settings.siteUrl }}/#website-{{ currentLang }}",
+        "url": "{{ settings.siteUrl }}{{ '/' | localeUrl(currentLang) }}",
         "name": "{{ settings.brand }}",
-        "publisher": { "@id": "{{ settings.siteUrl }}/#store" },
-        "inLanguage": "ar-EG",
+        "publisher": {"@id": "{{ settings.siteUrl }}/#organization"},
+        "inLanguage": "{{ tr.inLanguage }}",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "{{ settings.siteUrl }}/search/?q={search_term_string}",
+          "target": "{{ settings.siteUrl }}{{ '/search/' | localeUrl(currentLang) }}?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       }
@@ -82,39 +95,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2557646278019134');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-</head>
 
-<body>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','2557646278019134');fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2557646278019134&ev=PageView&noscript=1"></noscript>
+
+  <script>
+  !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie','holdConsent','revokeConsent','grantConsent'];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var r='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};n=document.createElement('script');n.type='text/javascript';n.async=!0;n.src=r+'?sdkid='+e+'&lib='+t;e=document.getElementsByTagName('script')[0];e.parentNode.insertBefore(n,e)};ttq.load('D9358O3C77UDRLSQAF80');ttq.page()}(window,document,'ttq');
+  </script>
+</head>
+<body class="lang-{{ currentLang }}">
+  <a class="skip-link" href="#main-content">{{ tr.skip }}</a>
   {% include "components/header.njk" %}
-  <main>
-    {{ content | safe }}
-  </main>
+  <main id="main-content">{{ content | safe }}</main>
   {% include "components/footer.njk" %}
-  <a class="floating-whatsapp" href="https://wa.me/201126364332?text=عاوز%20استفسر%20عن%20منتجات%20Nestica" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" onclick="trackWhatsappLead('floating_whatsapp')">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="{{ '/assets/js/cart.js' | url }}"></script>
-  <script src="{{ '/assets/js/app.js' | url }}"></script>
+
+  <nav class="mobile-bottom-nav" aria-label="{{ 'Quick mobile links' if currentLang == 'en' else 'روابط سريعة للموبايل' }}">
+    <a href="{{ '/products/' | localeUrl(currentLang) | url }}"><i class="bi bi-grid"></i><span>{{ tr.mobileProducts }}</span></a>
+    <a href="{{ '/real-deliveries/' | localeUrl(currentLang) | url }}"><i class="bi bi-images"></i><span>{{ tr.mobileReal }}</span></a>
+    <a class="mobile-whatsapp" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('I would like to ask about Nestica products' if currentLang == 'en' else 'عاوز أستفسر عن منتجات نستيكا') | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('mobile_bottom_whatsapp')"><i class="bi bi-whatsapp"></i><span>{{ tr.mobileWhatsapp }}</span></a>
+    <a href="tel:{{ settings.phone }}"><i class="bi bi-telephone"></i><span>{{ tr.mobileCall }}</span></a>
+    <a href="{{ '/cart/' | localeUrl(currentLang) | url }}"><i class="bi bi-bag"></i><span>{{ tr.mobileCart }} <b id="mobileCartCount">0</b></span></a>
+  </nav>
+
+  <a class="floating-whatsapp" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('I would like to ask about Nestica products' if currentLang == 'en' else 'عاوز أستفسر عن منتجات نستيكا') | urlencode }}" target="_blank" rel="noopener" aria-label="{{ tr.floatingWhatsapp }}" onclick="trackWhatsappLead('floating_whatsapp')"><i class="bi bi-whatsapp"></i></a>
+  <script>window.NESTICA_LANG={{ currentLang | json | safe }};</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="{{ '/assets/js/cart.js' | url }}" defer></script>
+  <script src="{{ '/assets/js/app.js' | url }}" defer></script>
 </body>
 </html>

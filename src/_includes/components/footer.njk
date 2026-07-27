@@ -1,25 +1,10 @@
-<footer class="py-4 mt-5 border-top footer-section">
-  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-  <div class="footer-social d-flex justify-content-center gap-3 mb-3">
-  <a href="https://www.facebook.com/share/14b1gbrBynq/" target="_blank" aria-label="Facebook">
-    <i class="bi bi-facebook"></i>
-  </a>
-
-  <a href="https://www.instagram.com/nestica9?igsh=cG1pZHowazh5MDFv" target="_blank" aria-label="Instagram">
-    <i class="bi bi-instagram"></i>
-  </a>
-
-  <a href="https://www.tiktok.com/@nestica.outdoor?_r=1&_t=ZS-965dpPWDsMn" target="_blank" aria-label="TikTok">
-    <i class="bi bi-tiktok"></i>
-  </a>
-
-  <a href="https://wa.me/201126364332?text=عاوز%20استفسر%20عن%20منتجات%20Nestica" target="_blank" aria-label="WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-</div>
-    <div class="text-muted small">© <span id="year"></span> {{ settings.brand }}. <span data-i18n="rights">كل الحقوق محفوظة.</span></div>
-    <div class="text-muted small d-flex gap-3">
-      <span>Furniture • Decor • Comfort</span>
-    </div>
-  </div>
+{% set currentLang = lang or 'ar' %}{% set tr = i18n[currentLang] %}
+<footer class="footer-section mt-5">
+  <div class="container py-5"><div class="row g-4">
+    <div class="col-lg-4"><img class="footer-logo" src="{{ '/assets/images/logo.png' | url }}" alt="Nestica Outdoor Furniture" width="148" height="50"><p class="footer-about">{{ tr.footerAbout }}</p><div class="footer-social d-flex gap-2"><a href="{{ settings.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="{{ settings.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="{{ settings.tiktok }}" target="_blank" rel="noopener" aria-label="TikTok"><i class="bi bi-tiktok"></i></a><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a></div></div>
+    <div class="col-6 col-lg-2"><h2 class="footer-heading">{{ tr.shop }}</h2><ul class="footer-links"><li><a href="{{ '/products/' | localeUrl(currentLang) | url }}">{{ tr.allProducts }}</a></li><li><a href="{{ '/offers/' | localeUrl(currentLang) | url }}">{{ tr.offers }}</a></li><li><a href="{{ '/real-deliveries/' | localeUrl(currentLang) | url }}">{{ tr.realProducts }}</a></li><li><a href="{{ '/spaces/garden/' | localeUrl(currentLang) | url }}">{{ tr.gardenFurniture }}</a></li><li><a href="{{ '/spaces/roof/' | localeUrl(currentLang) | url }}">{{ tr.roofFurniture }}</a></li></ul></div>
+    <div class="col-6 col-lg-3"><h2 class="footer-heading">{{ tr.importantInfo }}</h2><ul class="footer-links"><li><a href="{{ '/about/' | localeUrl(currentLang) | url }}">{{ tr.about }}</a></li><li><a href="{{ '/materials/' | localeUrl(currentLang) | url }}">{{ tr.materials }}</a></li><li><a href="{{ '/shipping-delivery/' | localeUrl(currentLang) | url }}">{{ tr.shipping }}</a></li><li><a href="{{ '/warranty/' | localeUrl(currentLang) | url }}">{{ tr.warranty }}</a></li><li><a href="{{ '/returns/' | localeUrl(currentLang) | url }}">{{ tr.returns }}</a></li><li><a href="{{ '/guides/' | localeUrl(currentLang) | url }}">{{ tr.guides }}</a></li></ul></div>
+    <div class="col-lg-3"><h2 class="footer-heading">{{ tr.contactUs }}</h2><ul class="footer-contact"><li><i class="bi bi-telephone"></i><a href="tel:{{ settings.phone }}">{{ settings.phone }}</a></li><li><i class="bi bi-whatsapp"></i><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}" target="_blank" rel="noopener">{{ tr.whatsappNestica }}</a></li><li><i class="bi bi-envelope"></i><a href="mailto:{{ settings.email }}">{{ settings.email }}</a></li><li><i class="bi bi-geo-alt"></i><span>{{ tr.serveEgypt }}</span></li></ul></div>
+  </div></div>
+  <div class="footer-bottom"><div class="container d-flex flex-wrap justify-content-between gap-2 py-3"><span>© <span id="year"></span> {{ settings.brand }}. {{ tr.rights }}</span><span>{{ tr.footerTagline }}</span></div></div>
 </footer>

@@ -2,145 +2,489 @@
   {
     "id": 1,
     "name": "حديد",
-    "name_ar": "حديد",
-    "name_en": "Metal",
+    "name_ar": "أثاث Outdoor حديد",
+    "name_en": "Metal Outdoor Furniture",
     "slug": "حديد",
-    "description": "",
-    "image": "/assets/images/categories/dd3b7534-6fbd-4dee-a288-3287d352ec97.jpg",
+    "seo_title": "أثاث Outdoor حديد في مصر",
+    "meta_description": "تصفح أطقم أثاث Outdoor حديد للجاردن والروف والتراس من نستيكا، بخامات مناسبة للاستخدام الخارجي مع إمكانية تعديل المقاسات والألوان.",
+    "intro": "أطقم الحديد من نستيكا مناسبة للجاردن والروف والتراس، وبتجمع بين التصميم العملي وسهولة تخصيص المقاس واللون بما يناسب المساحة.",
+    "guide_title": "إزاي تختار أثاث Outdoor حديد مناسب؟",
+    "guide_paragraphs": [
+      "حدد عدد الأفراد ومساحة الحركة قبل اختيار مقاس الطقم.",
+      "اسأل عن معالجة المعدن ونوع الدهان المستخدم للحماية من عوامل الجو.",
+      "اختار ألوان القماش والتنجيد بما يناسب التعرض للشمس وطبيعة الاستخدام."
+    ],
+    "highlights": [
+      "مناسب للجاردن والروف",
+      "مقاسات وألوان قابلة للتعديل",
+      "تصميمات متعددة للمساحات الخارجية"
+    ],
+    "faqs": [
+      {
+        "q": "هل يمكن تغيير لون طقم الحديد؟",
+        "a": "نعم، يمكن مناقشة اللون والمقاس والتنجيد مع فريق نستيكا قبل تأكيد التنفيذ."
+      },
+      {
+        "q": "هل أثاث الحديد مناسب للاستخدام الخارجي؟",
+        "a": "المنتجات مصممة للاستخدام الخارجي، وتختلف تفاصيل المعالجة والخامات حسب كل موديل كما هو موضح في صفحة المنتج."
+      }
+    ],
+    "image": "/assets/images/categories/dd3b7534-6fbd-4dee-a288-3287d352ec97.webp",
     "is_active": true,
-    "show_on_home": false
+    "show_on_home": true,
+    "image_width": 735,
+    "image_height": 519,
+    "seo_title_en": "Metal Outdoor Furniture in Egypt",
+    "meta_description_en": "Shop metal outdoor furniture for gardens, rooftops and terraces in Egypt, with model-specific size, color and upholstery customization options.",
+    "intro_en": "Nestica metal outdoor sets combine practical structures with flexible design options for gardens, rooftops and terraces.",
+    "guide_title_en": "How to choose the right metal outdoor furniture",
+    "guide_paragraphs_en": [
+      "Measure the seating area and walking paths before choosing the set size.",
+      "Ask about the metal treatment and outdoor coating used for the selected model.",
+      "Choose fabric and upholstery colors based on sun exposure and everyday use."
+    ],
+    "highlights_en": [
+      "Suitable for gardens and rooftops",
+      "Model-specific size and color options",
+      "Multiple designs for outdoor spaces"
+    ],
+    "faqs_en": [
+      {
+        "q": "Can I change the color of a metal set?",
+        "a": "Color, dimensions and upholstery can be discussed with Nestica before confirming eligible models."
+      },
+      {
+        "q": "Is metal furniture suitable for outdoor use?",
+        "a": "The products are designed for outdoor use. Treatment and material details vary by model and are listed on each product page."
+      }
+    ],
+    "slug_en": "metal-outdoor-furniture"
   },
   {
     "id": 3,
-    "name": "حديد بأضافة خشب",
-    "name_ar": "حديد بأضافة خشب",
-    "name_en": "Metal with Wood",
+    "name": "حديد بإضافة خشب",
+    "name_ar": "أثاث حديد مع خشب",
+    "name_en": "Metal and Wood Outdoor Furniture",
     "slug": "حديد-بأضافة-خشب",
-    "description": "",
+    "seo_title": "أثاث Outdoor حديد مع خشب في مصر",
+    "meta_description": "اكتشف أطقم Outdoor من الحديد مع لمسات خشبية للجاردن والروف والتراس، مع خيارات مختلفة للمقاسات والألوان من نستيكا.",
+    "intro": "الحديد مع الخشب بيدي شكل دافئ وفخم للمساحات الخارجية، مع هيكل عملي مناسب للجلسات والسفر في الجاردن أو الروف.",
+    "guide_title": "مميزات الدمج بين الحديد والخشب",
+    "guide_paragraphs": [
+      "الحديد يوفر هيكل عملي وثابت، بينما تضيف التفاصيل الخشبية شكلًا طبيعيًا للمساحة.",
+      "اختيار المقاس يعتمد على الاستخدام: جلسة يومية، ضيافة، أو سفرة خارجية.",
+      "المحافظة الدورية على الأسطح تساعد في الحفاظ على شكل المنتج لفترة أطول."
+    ],
+    "highlights": [
+      "شكل طبيعي وفخم",
+      "مناسب للجلسات والسفر",
+      "تخصيص حسب المساحة"
+    ],
+    "faqs": [
+      {
+        "q": "هل الخشب مناسب للحدائق؟",
+        "a": "يعتمد ذلك على نوع الخشب والمعالجة وطريقة الاستخدام، لذلك راجع مواصفات كل موديل واسأل الفريق عن تعليمات العناية."
+      },
+      {
+        "q": "هل يمكن تنفيذ مقاس خاص؟",
+        "a": "تتوفر تعديلات في عدد من الموديلات حسب المساحة، ويتم تأكيدها قبل التنفيذ."
+      }
+    ],
     "image": "/assets/images/categories/15fb01ca-48e1-4280-bb20-95abf65d3d8d.webp",
     "is_active": true,
-    "show_on_home": false
+    "show_on_home": true,
+    "image_width": 400,
+    "image_height": 400,
+    "seo_title_en": "Metal and Wood Outdoor Furniture in Egypt",
+    "meta_description_en": "Explore outdoor furniture combining metal structures and wood details for gardens, rooftops and terraces in Egypt.",
+    "intro_en": "Metal and wood create a warm, premium look while keeping the structure practical for outdoor seating and dining.",
+    "guide_title_en": "Why combine metal and wood outdoors?",
+    "guide_paragraphs_en": [
+      "Metal provides a stable structure while wood adds a natural visual finish.",
+      "Choose the size based on daily seating, entertaining, or outdoor dining.",
+      "Regular surface care helps maintain the appearance of the product."
+    ],
+    "highlights_en": [
+      "Warm premium appearance",
+      "Suitable for seating and dining",
+      "Customization based on the space"
+    ],
+    "faqs_en": [
+      {
+        "q": "Is wood suitable for garden furniture?",
+        "a": "Performance depends on the wood type, treatment and use. Review the selected model specifications and care instructions."
+      },
+      {
+        "q": "Can you make a custom size?",
+        "a": "Custom dimensions are available for selected models and must be confirmed before production."
+      }
+    ],
+    "slug_en": "metal-and-wood-outdoor-furniture"
   },
   {
     "id": 4,
     "name": "شمسيات",
-    "name_ar": "شمسيات",
-    "name_en": "Umbrellas",
+    "name_ar": "شمسيات حدائق وOutdoor",
+    "name_en": "Outdoor Umbrellas",
     "slug": "شمسيات",
-    "description": "",
-    "image": "/assets/images/categories/b7a56f01-f725-4533-b1c0-68744957dfe3.jpg",
+    "seo_title": "شمسيات حدائق وشمسيات جانبية في مصر",
+    "meta_description": "تصفح شمسيات حدائق وOutdoor بمقاسات وتصميمات مختلفة، ومنها الشمسيات الجانبية، مع خيارات ألوان وقواعد مناسبة لمساحتك.",
+    "intro": "اختار شمسية Outdoor حسب مساحة التغطية ومكان العمود وطريقة الحركة. نستيكا بتوفر موديلات مناسبة للجاردن والروف والكافيهات.",
+    "guide_title": "قبل ما تختار الشمسية",
+    "guide_paragraphs": [
+      "قِس مساحة الظل المطلوبة وليس مساحة المكان بالكامل.",
+      "الشمسية الجانبية تترك مساحة الجلوس بدون عمود في المنتصف.",
+      "راجع نوع القماش والقاعدة وطريقة الفتح والحركة قبل الطلب."
+    ],
+    "highlights": [
+      "مقاسات متعددة",
+      "شمسيات وسطية وجانبية",
+      "خيارات ألوان وطباعة لوجو لبعض الموديلات"
+    ],
+    "faqs": [
+      {
+        "q": "إيه الفرق بين الشمسية الجانبية والوسطية؟",
+        "a": "الجانبية يكون العمود خارج مساحة الجلوس، بينما الوسطية يكون العمود غالبًا في المنتصف."
+      },
+      {
+        "q": "هل القاعدة ضمن سعر الشمسية؟",
+        "a": "يختلف ذلك حسب الموديل، لذلك راجع وصف المنتج أو تواصل مع فريق نستيكا لتأكيد التفاصيل."
+      }
+    ],
+    "image": "/assets/images/categories/b7a56f01-f725-4533-b1c0-68744957dfe3.webp",
     "is_active": true,
-    "show_on_home": false
+    "show_on_home": true,
+    "image_width": 480,
+    "image_height": 290,
+    "seo_title_en": "Garden and Cantilever Umbrellas in Egypt",
+    "meta_description_en": "Shop 3 m and 4 m outdoor umbrellas, side cantilever umbrellas and customizable commercial umbrellas in Egypt.",
+    "intro_en": "Choose from central-pole and side cantilever umbrellas for gardens, rooftops, terraces, cafes and restaurants.",
+    "guide_title_en": "How to choose an outdoor umbrella",
+    "guide_paragraphs_en": [
+      "Measure the shade area and surrounding walking space before choosing the size.",
+      "Choose a central or side pole based on furniture layout and usable space.",
+      "Confirm fabric, frame, base and wind-use recommendations for the selected model."
+    ],
+    "highlights_en": [
+      "3 m and 4 m options",
+      "Side cantilever designs",
+      "Color and logo printing options on selected models"
+    ],
+    "faqs_en": [
+      {
+        "q": "What is the difference between a central and side umbrella?",
+        "a": "A side cantilever umbrella keeps the pole away from the seating area and gives more usable space beneath the canopy."
+      },
+      {
+        "q": "Can I print a logo on the umbrella?",
+        "a": "Logo printing is available for selected models and is confirmed before ordering."
+      }
+    ],
+    "slug_en": "outdoor-umbrellas"
   },
   {
     "id": 5,
     "name": "سفر",
-    "name_ar": "سفر",
-    "name_en": "Dining Sets",
+    "name_ar": "سفر Outdoor",
+    "name_en": "Outdoor Dining Sets",
     "slug": "سفر",
-    "description": "",
-    "image": "/assets/images/categories/2a4df684-4864-4781-a427-330a885222b9.jpeg",
+    "seo_title": "سفر Outdoor وحدائق في مصر",
+    "meta_description": "تصفح سفر Outdoor للجاردن والروف والكافيهات بأحجام وخامات مختلفة، مع إمكانية اختيار المقاس واللون المناسب للمساحة.",
+    "intro": "سفر الـOutdoor مناسبة للأكل والضيافة في الجاردن والروف، والاختيار الصح يعتمد على عدد الكراسي ومساحة الحركة حول الترابيزة.",
+    "guide_title": "اختيار مقاس سفرة Outdoor",
+    "guide_paragraphs": [
+      "اترك مساحة مريحة خلف كل كرسي للحركة.",
+      "حدد عدد الاستخدام اليومي وعدد الضيوف قبل اختيار عدد المقاعد.",
+      "اختار الخامة والتصميم بما يناسب مكان مفتوح بالكامل أو مساحة مغطاة."
+    ],
+    "highlights": [
+      "خيارات لعدد مقاعد مختلف",
+      "مناسبة للجاردن والكافيهات",
+      "تصميمات بخامات متعددة"
+    ],
+    "faqs": [
+      {
+        "q": "إزاي أحدد مقاس السفرة؟",
+        "a": "قِس المساحة واترك ممرًا للحركة حول الترابيزة والكراسي، وابعت المقاسات لفريق نستيكا للمساعدة."
+      },
+      {
+        "q": "هل يمكن تغيير عدد الكراسي؟",
+        "a": "يعتمد ذلك على الموديل، ويمكن تأكيد الخيارات المتاحة قبل الطلب."
+      }
+    ],
+    "image": "/assets/images/categories/2a4df684-4864-4781-a427-330a885222b9.webp",
     "is_active": true,
-    "show_on_home": false
+    "show_on_home": true,
+    "image_width": 1080,
+    "image_height": 1080,
+    "seo_title_en": "Outdoor Dining Sets in Egypt",
+    "meta_description_en": "Shop outdoor dining sets for gardens, rooftops, terraces, cafes and restaurants, with multiple seating capacities and materials.",
+    "intro_en": "Outdoor dining sets are available in multiple sizes and materials for family spaces and commercial use.",
+    "guide_title_en": "Choosing an outdoor dining set",
+    "guide_paragraphs_en": [
+      "Allow enough space for chairs to move comfortably around the table.",
+      "Select the seating capacity based on everyday use, not only special occasions.",
+      "Compare tabletop, frame and upholstery materials before ordering."
+    ],
+    "highlights_en": [
+      "Multiple seating capacities",
+      "Residential and commercial options",
+      "Several material combinations"
+    ],
+    "faqs_en": [
+      {
+        "q": "How much space should I leave around the table?",
+        "a": "Leave a comfortable circulation area behind each chair and check the exact product dimensions before ordering."
+      },
+      {
+        "q": "Can dining set colors be changed?",
+        "a": "Color customization is available for selected models and must be confirmed with Nestica."
+      }
+    ],
+    "slug_en": "outdoor-dining-sets"
   },
   {
     "id": 6,
-    "name": "Swings ",
-    "name_ar": "مراجيح",
-    "name_en": "Swings",
+    "name": "مراجيح",
+    "name_ar": "مراجيح Outdoor",
+    "name_en": "Outdoor Swings",
     "slug": "Swings",
-    "description": "",
-    "image": "/assets/images/categories/8734e670-d673-4849-8699-99b6a2e6cf16.jpg",
+    "seo_title": "مراجيح حدائق وOutdoor في مصر",
+    "meta_description": "اكتشف مراجيح Outdoor للجاردن والروف بتصميمات ومقاسات مختلفة من نستيكا، مع خيارات ألوان وتنجيد تناسب مساحتك.",
+    "intro": "المراجيح بتضيف ركن مريح للجاردن أو الروف، والأهم اختيار المقاس والثبات ومكان الحركة حول المرجيحة.",
+    "guide_title": "اختيار مكان المرجيحة",
+    "guide_paragraphs": [
+      "اترك مساحة كافية للحركة أمام وخلف المرجيحة.",
+      "ضعها على أرضية مستقرة وبعيدة عن الممرات الضيقة.",
+      "راجع المقاس والحمولة والخامات في تفاصيل الموديل قبل الطلب."
+    ],
+    "highlights": [
+      "مناسبة للجاردن والروف",
+      "تصميمات فردية وعائلية",
+      "ألوان وتنجيد حسب الموديل"
+    ],
+    "faqs": [
+      {
+        "q": "هل المرجيحة مناسبة للروف؟",
+        "a": "يمكن أن تكون مناسبة إذا توفرت مساحة آمنة وأرضية مستقرة، مع مراعاة أبعاد الموديل."
+      },
+      {
+        "q": "هل يمكن تغيير لون التنجيد؟",
+        "a": "يتوفر التخصيص في عدد من الموديلات ويتم تأكيد الخيارات مع الفريق."
+      }
+    ],
+    "image": "/assets/images/categories/8734e670-d673-4849-8699-99b6a2e6cf16.webp",
     "is_active": true,
-    "show_on_home": false
+    "show_on_home": true,
+    "image_width": 885,
+    "image_height": 1500,
+    "seo_title_en": "Outdoor Swings in Egypt",
+    "meta_description_en": "Explore solo, two-person and pergola outdoor swings for gardens, rooftops and terraces in Egypt.",
+    "intro_en": "Nestica outdoor swings include solo, two-person and pergola models with different structures, materials and weight capacities.",
+    "guide_title_en": "How to choose an outdoor swing",
+    "guide_paragraphs_en": [
+      "Check the available floor area and safe movement clearance around the swing.",
+      "Review the stated weight capacity and frame specifications for the model.",
+      "Place the swing on a stable, level surface and follow care instructions."
+    ],
+    "highlights_en": [
+      "Solo and two-person models",
+      "Pergola swing options",
+      "Different materials and capacities"
+    ],
+    "faqs_en": [
+      {
+        "q": "Can swing colors be customized?",
+        "a": "Color and dimension customization may be available depending on the model."
+      },
+      {
+        "q": "Where should an outdoor swing be placed?",
+        "a": "Choose a stable, level area with enough clearance for movement and safe use."
+      }
+    ],
+    "slug_en": "outdoor-swings"
   },
   {
     "id": 7,
     "name": "رتان",
-    "name_ar": "رتان",
-    "name_en": "Rattan",
+    "name_ar": "أثاث Outdoor رتان",
+    "name_en": "Rattan Outdoor Furniture",
     "slug": "رتان",
-    "description": "",
-    "image": "/assets/images/categories/8d7fbd1f-76d8-4756-9453-6aa8dc7b5ba0.jpg",
+    "seo_title": "أثاث رتان Outdoor في مصر",
+    "meta_description": "تصفح أطقم رتان Outdoor للجاردن والتراس والبلكونة بتصميمات عملية ومريحة، مع خيارات تناسب المساحات المختلفة.",
+    "intro": "الرتان من الاختيارات الشائعة للمساحات الخارجية بسبب شكله الخفيف وتنوع تصميماته، وبيكون مناسب للجلسات والبلكونات والتراسات حسب الموديل.",
+    "guide_title": "إزاي تختار طقم رتان؟",
+    "guide_paragraphs": [
+      "اختار حجم الطقم بما يتناسب مع مساحة الحركة.",
+      "راجع نوع الهيكل والتنجيد وطريقة العناية بالموديل.",
+      "للمساحات الصغيرة، اختار قطعًا خفيفة بصريًا وعدد مقاعد مناسب."
+    ],
+    "highlights": [
+      "تصميمات مريحة",
+      "مناسب لمساحات مختلفة",
+      "خيارات للبلكونة والتراس والجاردن"
+    ],
+    "faqs": [
+      {
+        "q": "هل الرتان مناسب للبلكونة؟",
+        "a": "نعم، توجد موديلات صغيرة مناسبة للبلكونات، مع ضرورة مراجعة الأبعاد قبل الطلب."
+      },
+      {
+        "q": "كيف أحافظ على الرتان؟",
+        "a": "يفضل تنظيفه بلطف واتباع تعليمات العناية الخاصة بكل موديل وحمايته وقت الظروف الجوية القاسية."
+      }
+    ],
+    "image": "/assets/images/categories/8d7fbd1f-76d8-4756-9453-6aa8dc7b5ba0.webp",
     "is_active": true,
-    "show_on_home": false
+    "show_on_home": true,
+    "image_width": 955,
+    "image_height": 952,
+    "seo_title_en": "Rattan Outdoor Furniture in Egypt",
+    "meta_description_en": "Shop rattan outdoor furniture for gardens, rooftops and terraces in Egypt, with practical seating layouts and model-specific customization options.",
+    "intro_en": "Nestica rattan outdoor furniture offers woven designs and practical seating arrangements for gardens, rooftops and terraces.",
+    "guide_title_en": "Choosing rattan outdoor furniture",
+    "guide_paragraphs_en": [
+      "Review the inner frame, weaving quality and fabric specifications.",
+      "Choose a layout that leaves enough circulation space.",
+      "Follow the recommended cleaning and storage instructions."
+    ],
+    "highlights_en": [
+      "Modern lightweight appearance",
+      "Suitable for several outdoor spaces",
+      "Multiple layouts and colors"
+    ],
+    "faqs_en": [
+      {
+        "q": "Is all rattan furniture the same?",
+        "a": "No. The inner frame, rattan quality, weaving and upholstery can differ between models."
+      },
+      {
+        "q": "Can rattan colors be changed?",
+        "a": "Selected models support color customization, subject to confirmation."
+      }
+    ],
+    "slug_en": "rattan-outdoor-furniture"
   },
   {
     "id": 8,
     "name": "دوبار",
-    "name_ar": "دوبار",
-    "name_en": "Dopar",
+    "name_ar": "أثاث دوبار Outdoor",
+    "name_en": "Outdoor Rope Furniture",
     "slug": "دوبار",
-    "description": "",
-    "image": "/assets/images/categories/6add5e45-a62a-4995-976c-592d2dfdef06.jpg",
+    "seo_title": "أثاث دوبار Outdoor في مصر",
+    "meta_description": "تصفح أطقم دوبار Outdoor للجاردن والروف والتراس من نستيكا، بتصميمات حديثة وخيارات مقاسات وألوان مختلفة.",
+    "intro": "أطقم الدوبار بتقدم شكل حديث وخفيف للمساحات الخارجية، وتتوفر بتصميمات تناسب الجلسات اليومية والضيافة.",
+    "guide_title": "اختيار طقم دوبار مناسب",
+    "guide_paragraphs": [
+      "حدد عدد المقاعد المطلوب قبل اختيار شكل الطقم.",
+      "راجع خامة الهيكل والتنجيد ومقاسات القطع.",
+      "اختار ألوانًا متناسقة مع الأرضيات والنباتات والإضاءة الخارجية."
+    ],
+    "highlights": [
+      "شكل حديث",
+      "مناسب للجلسات الخارجية",
+      "خيارات ألوان ومقاسات"
+    ],
+    "faqs": [
+      {
+        "q": "إيه هو أثاث الدوبار؟",
+        "a": "هو نوع من الأثاث الخارجي بتصميمات تعتمد على الحبال أو النسج الخارجي مع هيكل داعم، وتختلف التفاصيل حسب الموديل."
+      },
+      {
+        "q": "هل يتوفر بألوان مختلفة؟",
+        "a": "تتوفر خيارات تخصيص في عدد من الموديلات ويتم تأكيدها مع فريق نستيكا."
+      }
+    ],
+    "image": "/assets/images/categories/6add5e45-a62a-4995-976c-592d2dfdef06.webp",
     "is_active": true,
-    "show_on_home": false
+    "show_on_home": true,
+    "image_width": 736,
+    "image_height": 736,
+    "seo_title_en": "Outdoor Rope Furniture in Egypt",
+    "meta_description_en": "Shop outdoor rope furniture for gardens, rooftops and terraces in Egypt, with modern woven designs and model-specific customization options.",
+    "intro_en": "Nestica outdoor rope furniture combines modern woven details with practical seating layouts for gardens, rooftops and terraces.",
+    "guide_title_en": "How to choose outdoor rope furniture",
+    "guide_paragraphs_en": [
+      "Check the frame, rope treatment and upholstery details.",
+      "Choose a color combination that works with flooring, plants and shade.",
+      "Confirm dimensions and daily-use requirements before ordering."
+    ],
+    "highlights_en": [
+      "Contemporary woven design",
+      "Residential and commercial options",
+      "Custom colors on selected models"
+    ],
+    "faqs_en": [
+      {
+        "q": "What is outdoor rope furniture?",
+        "a": "It uses treated woven rope over a supporting frame. Exact materials and construction vary by model."
+      },
+      {
+        "q": "Is it suitable for cafes and restaurants?",
+        "a": "Several models are suitable for commercial spaces, subject to dimensions and operating requirements."
+      }
+    ],
+    "slug_en": "outdoor-rope-furniture"
   },
   {
     "id": 10,
     "name": "بين باج",
-    "name_ar": "بين باج",
-    "name_en": "Bean Bag",
+    "name_ar": "بين باج Outdoor",
+    "name_en": "Outdoor Bean Bags",
     "slug": "بين-باج",
-    "description": "",
-    "image": "/assets/images/categories/34ed6859-ef6e-43dc-ac19-bc46e9ee8fcb.jpg",
+    "seo_title": "بين باج Outdoor في مصر",
+    "meta_description": "اكتشف بين باج Outdoor للجاردن والروف والبلكونة بأحجام وألوان مختلفة من نستيكا، للاسترخاء والجلسات غير الرسمية.",
+    "intro": "الـBean Bag حل مرن وخفيف للجلسات غير الرسمية في الروف والبلكونة والجاردن، وسهل نقله وتنسيقه مع باقي الأثاث.",
+    "guide_title": "اختيار الـBean Bag للمساحة الخارجية",
+    "guide_paragraphs": [
+      "اختار الحجم حسب طريقة الجلوس وعمر المستخدم.",
+      "راجع نوع القماش وتعليمات التنظيف والاستخدام الخارجي.",
+      "استخدم أكثر من لون لعمل ركن شبابي أو لون محايد لمساحة هادئة."
+    ],
+    "highlights": [
+      "سهل النقل",
+      "ألوان وأحجام مختلفة",
+      "مناسب للمساحات الشبابية"
+    ],
+    "faqs": [
+      {
+        "q": "هل الـBean Bag مناسب للاستخدام الخارجي؟",
+        "a": "راجع مواصفات كل موديل ونوع القماش، واحفظه وفق تعليمات العناية عند عدم الاستخدام."
+      },
+      {
+        "q": "هل يتوفر بألوان مختلفة؟",
+        "a": "تتوفر خيارات ألوان متعددة حسب الموديل والتوافر."
+      }
+    ],
+    "image": "/assets/images/categories/34ed6859-ef6e-43dc-ac19-bc46e9ee8fcb.webp",
     "is_active": true,
-    "show_on_home": false
-  },
-
-  {
-    "id": 11,
-    "name": "Garden",
-    "name_ar": "حديقة",
-    "name_en": "Garden",
-    "slug": "garden",
-    "description": "",
-    "image": "/assets/images/categories/77f0ff91-5044-4e40-9597-b00f428f7e5d.jpg",
-    "is_active": true,
-    "show_on_home": true
-  },
-  {
-    "id": 12,
-    "name": "cafe & restaurant",
-    "name_ar": "كافيه أو مطعم",
-    "name_en": "Cafe & Restaurant",
-    "slug": "cafe-and-restaurant",
-    "description": "",
-    "image": "/assets/images/categories/439476e4-a1cc-4895-a999-1000f073f8cb.jpg",
-    "is_active": true,
-    "show_on_home": true
-  },
-  {
-    "id": 13,
-    "name": "Terrace",
-    "name_ar": "تراس",
-    "name_en": "Terrace",
-    "slug": "terrace",
-    "description": "",
-    "image": "/assets/images/categories/df935c77-7a0e-40ab-84e0-f720fdffe837.jpg",
-    "is_active": true,
-    "show_on_home": true
-  },
-  {
-    "id": 14,
-    "name": "Balcony",
-    "name_ar": "بلكونة",
-    "name_en": "Balcony",
-    "slug": "balcony",
-    "description": "",
-    "image": "/assets/images/categories/003a118d-fa75-4ac7-bc4b-25c5945283b6.jpg",
-    "is_active": true,
-    "show_on_home": true
-  },
-  {
-    "id": 15,
-    "name": "Roof",
-    "name_ar": "سطح",
-    "name_en": "Roof",
-    "slug": "roof",
-    "description": "",
-    "image": "/assets/images/categories/56705220-0cb7-4431-816e-1e0889a6df78.jpg",
-    "is_active": true,
-    "show_on_home": true
+    "show_on_home": true,
+    "image_width": 1300,
+    "image_height": 1296,
+    "seo_title_en": "Outdoor Bean Bags in Egypt",
+    "meta_description_en": "Shop outdoor bean bags in multiple designs and sizes for balconies, rooftops, terraces and casual garden seating.",
+    "intro_en": "Bean bags offer flexible casual seating for small spaces, lounges and relaxed outdoor settings.",
+    "guide_title_en": "Choosing an outdoor bean bag",
+    "guide_paragraphs_en": [
+      "Choose the size based on the user and available floor area.",
+      "Review fabric, filling and care requirements for the selected model.",
+      "Keep enough space for comfortable sitting and movement."
+    ],
+    "highlights_en": [
+      "Flexible casual seating",
+      "Multiple sizes and designs",
+      "Suitable for compact spaces"
+    ],
+    "faqs_en": [
+      {
+        "q": "Are bean bags suitable for outdoor use?",
+        "a": "Suitability depends on the fabric and filling used in the selected model. Review the product specifications."
+      },
+      {
+        "q": "Are different sizes available?",
+        "a": "Multiple sizes are available depending on the model."
+      }
+    ],
+    "slug_en": "outdoor-bean-bags"
   }
 ]

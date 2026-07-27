@@ -1,0 +1,8 @@
+---
+layout: layouts/base.njk
+title: تواصل مع نستيكا
+description: تواصل مع نستيكا للاستفسار عن أثاث Outdoor والمقاسات والألوان والتوصيل، أو ابعت صورة مساحة الجاردن أو الروف أو البلكونة.
+permalink: /contact/
+---
+<section class="info-hero"><div class="container"><span class="section-kicker">Contact Nestica</span><h1>ابعت تفاصيل مساحتك</h1><p>حدد نوع المكان والمقاسات التقريبية والمنتجات التي تعجبك، وسنراجع معك الخيارات المتاحة.</p></div></section>
+<section class="container section-space contact-grid"><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'عاوز أستفسر عن أثاث Outdoor' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('contact_page')"><i class="bi bi-whatsapp"></i><h2>واتساب</h2><p>{{ settings.whatsapp }}</p></a><a href="tel:{{ settings.phone }}"><i class="bi bi-telephone"></i><h2>اتصال</h2><p>{{ settings.phone }}</p></a><a href="mailto:{{ settings.email }}"><i class="bi bi-envelope"></i><h2>البريد الإلكتروني</h2><p>{{ settings.email }}</p></a></section>

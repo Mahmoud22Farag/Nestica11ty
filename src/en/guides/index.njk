@@ -1,0 +1,8 @@
+---
+layout: layouts/base.njk
+lang: en
+title: Outdoor Furniture Buying Guides
+description: Practical Nestica guides for choosing outdoor furniture materials, sizes, umbrellas and layouts for gardens, rooftops and balconies.
+permalink: /en/guides/
+---
+<section class="guides-hero compact-hero"><div class="container text-center"><span class="section-kicker">Nestica Buying Guides</span><h1>Outdoor Furniture Buying Guides</h1><p>Practical information to compare materials, plan your space and choose the right product.</p></div></section><section class="container section-space"><div class="row g-4">{% for guide in guides %}<div class="col-lg-4 col-md-6"><a class="guide-card" href="{{ ('/guides/' + guide.slug + '/') | localeUrl('en') | url }}"><img src="{{ guide.hero_image | url }}" alt="{{ guide.title_en }}" width="{{ guide.image_width }}" height="{{ guide.image_height }}" loading="lazy" decoding="async"><div><span>Nestica Guide</span><h2>{{ guide.title_en }}</h2><p>{{ guide.summary_en }}</p><strong>Read the Guide <i class="bi bi-arrow-right"></i></strong></div></a></div>{% endfor %}</div></section>

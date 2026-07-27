@@ -1,13 +1,21 @@
 {
-  "name": "nestica-11ty-full",
-  "version": "1.0.0",
-  "description": "Nestica storefront rebuilt with 11ty",
+  "name": "nestica-outdoor",
+  "version": "2.2.1",
+  "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "check": "node scripts/preflight.mjs",
+    "prestart": "npm run check",
+    "start": "eleventy --config=eleventy.config.js --serve",
+    "dev": "eleventy --config=eleventy.config.js --serve",
+    "prebuild": "npm run check",
+    "build": "eleventy --config=eleventy.config.js",
+    "clean": "node scripts/clean.mjs"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.5"
+    "@11ty/eleventy": "3.1.6"
   }
 }

@@ -5,7 +5,10 @@ pagination:
   alias: product
 permalink: "/products/{{ product.slug }}/"
 layout: layouts/product.njk
+ogType: product
 eleventyComputed:
-  title: "{{ product.name }}"
-  description: "{{ product.description_ar or product.description or product.name }} from Nestica outdoor furniture."
+  title: "{{ product.seo_title or product.name }}"
+  description: "{{ product.seo_description or product.description_ar or product.name }}"
+  image: "{{ product.main_image }}"
+  alternateEnPath: "/en/products/{{ product.slug_en }}/"
 ---

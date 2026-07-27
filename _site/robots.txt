@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
-
 Disallow: /cart/
+Disallow: /search/
 Disallow: /settings/
+Disallow: /en/cart/
+Disallow: /en/search/
+Disallow: /en/settings/
 Disallow: /admin/
 
 Sitemap: https://nestica-outdoor.com/sitemap.xml

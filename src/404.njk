@@ -1,11 +1,8 @@
 ---
 layout: layouts/base.njk
-title: Page Not Found
+title: الصفحة غير موجودة
+description: الصفحة المطلوبة غير موجودة على موقع نستيكا.
 permalink: /404.html
+robots: noindex, follow
 ---
-<section class="container text-center py-5 my-5">
-  <h1 class="fw-bold mb-3">الصفحة غير موجودة</h1>
-  <p class="text-muted mb-4">الرابط الذي تحاول فتحه غير متاح أو تم تغييره.</p>
-  <a href="{{ '/' | url }}" class="btn btn-dark rounded-pill px-4">العودة للرئيسية</a>
-  <a href="{{ '/products/' | url }}" class="btn btn-warning rounded-pill px-4 ms-2">تصفح المنتجات</a>
-</section>
+<section class="container section-space"><div class="empty-products"><i class="bi bi-compass"></i><h1>الصفحة دي مش موجودة</h1><p>ممكن تكون اتنقلت أو الرابط غير صحيح. ارجع للرئيسية أو تصفح المنتجات.</p><div class="d-flex justify-content-center gap-2 flex-wrap"><a class="btn btn-dark rounded-pill" href="{{ '/' | url }}">الرئيسية</a><a class="btn btn-outline-dark rounded-pill" href="{{ '/products/' | url }}">كل المنتجات</a></div></div></section>

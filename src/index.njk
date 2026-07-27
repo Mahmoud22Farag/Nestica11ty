@@ -1,491 +1,180 @@
 ---
 layout: layouts/base.njk
-title: Nestica
+title: أثاث خارجي وأثاث حدائق في مصر
+description: "نستيكا للأثاث الخارجي في مصر: أطقم Outdoor وشمسيات ومراجيح وسفر للجاردن والروف والتراس والبلكونة، مع خيارات تخصيص وصور تسليمات حقيقية."
+preloadImage: /assets/images/new-hero.webp
+image: /assets/images/new-hero.webp
 ---
+{% set activeProducts = products | active %}
+{% set offerProducts = products | offers %}
+{% set featuredProducts = products | featured %}
+
 <section class="hero-section">
   <div class="container">
-    <h1 data-i18n="heroTitle">أثاث Outdoor مخصص لمساحتك</h1>
-    <p data-i18n="heroSubtitle">
-      اختار من منتجات نستيكا أو اطلب تعديل يناسب الجاردن، الرووف، التراس أو البلكونة.
-    </p>
-    <div class="hero-actions">
-      <a href="{{ '/offers/' | url }}" class="btn btn-warning" data-i18n="viewOffers">
-        شوف العروض
-      </a>
-      <a href="{{ '/real-deliveries/' | url }}" class="btn btn-outline-light" data-i18n="viewDeliveries">
-        تسليماتنا على الطبيعة
-      </a>
+    <div class="hero-content">
+      <span class="hero-kicker">نستيكا للأثاث الخارجي</span>
+      <h1>أثاث خارجي للحدائق والروف والبلكونات في مصر</h1>
+      <p>أطقم Outdoor وشمسيات ومراجيح وسفر بخيارات متعددة للمقاسات والألوان، مع صور تسليمات حقيقية تساعدك تختار بثقة.</p>
+      <div class="hero-actions">
+        <a href="{{ '/products/' | url }}" class="btn btn-warning btn-lg">تصفح أطقم الـOutdoor</a>
+        <a href="{{ '/real-deliveries/' | url }}" class="btn btn-outline-light btn-lg">شوف المنتجات على الطبيعة</a>
+        <a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'عاوز أبعت صورة مساحتي وأعرف أنسب أثاث Outdoor' | urlencode }}" target="_blank" rel="noopener" class="btn btn-light btn-lg" onclick="trackWhatsappLead('home_hero_space')"><i class="bi bi-whatsapp"></i> ابعت صورة مساحتك</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="trust-strip">
+<section class="trust-strip" aria-label="مميزات نستيكا">
   <div class="container">
     <div class="row g-3 text-center">
-      <div class="col-md-3 col-6"><strong data-i18n="trustOutdoorTitle">Outdoor</strong><span data-i18n="trustOutdoorDesc">خامات مناسبة للشمس والجو الخارجي</span></div>
-      <div class="col-md-3 col-6"><strong data-i18n="trustCustomTitle">Custom</strong><span data-i18n="trustCustomDesc">ألوان ومقاسات حسب مساحتك</span></div>
-      <div class="col-md-3 col-6"><strong data-i18n="trustRealTitle">Real</strong><span data-i18n="trustRealDesc">صور تسليمات حقيقية قبل الطلب</span></div>
-      <div class="col-md-3 col-6"><strong data-i18n="trustWhatsappTitle">WhatsApp</strong><span data-i18n="trustWhatsappDesc">اطلب واستفسر بسرعة</span></div>
+      <div class="col-md-3 col-6"><i class="bi bi-sun"></i><strong>Outdoor</strong><span>خامات وتصميمات للمساحات الخارجية</span></div>
+      <div class="col-md-3 col-6"><i class="bi bi-rulers"></i><strong>Custom</strong><span>مناقشة المقاسات والألوان حسب الموديل</span></div>
+      <div class="col-md-3 col-6"><i class="bi bi-camera"></i><strong>Real</strong><span>صور تسليمات حقيقية على الطبيعة</span></div>
+      <div class="col-md-3 col-6"><i class="bi bi-whatsapp"></i><strong>Support</strong><span>استفسار ومتابعة الطلب على واتساب</span></div>
     </div>
   </div>
 </section>
 
-<section class="container my-5 conversion-guide">
-  <div class="row g-4 align-items-center">
-    <div class="col-lg-5">
-      <span class="section-kicker" data-i18n="howToOrder">طريقة الطلب</span>
-      <h2 class="fw-bold" data-i18n="howToOrderTitle">اختار المنتج وسيب الباقي علينا</h2>
-      <p class="text-muted" data-i18n="howToOrderDesc">لو المنتج محتاج تعديل في المقاس أو اللون، اكتب ملاحظاتك وابعت الطلب على واتساب وهيتم التواصل معاك لتأكيد التفاصيل.</p>
-    </div>
-    <div class="col-lg-7">
-      <div class="row g-3">
-        <div class="col-md-4"><div class="step-card"><span>01</span><h3 data-i18n="orderStep1Title">اختار المنتج</h3><p data-i18n="orderStep1Desc">من العروض أو الكاتيجوري المناسب لمساحتك.</p></div></div>
-        <div class="col-md-4"><div class="step-card"><span>02</span><h3 data-i18n="orderStep2Title">ضيف ملاحظاتك</h3><p data-i18n="orderStep2Desc">مقاس، لون، أو أي تعديل محتاجه.</p></div></div>
-        <div class="col-md-4"><div class="step-card"><span>03</span><h3 data-i18n="orderStep3Title">ابعت واتساب</h3><p data-i18n="orderStep3Desc">التيم هيتواصل معاك لتأكيد الطلب.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{% set offerProducts = [] %}
-
-{% for product in products %}
-  {% if product.is_active and product.is_offer and product.old_price and product.price %}
-    {% set offerProducts = offerProducts.concat([product]) %}
-  {% endif %}
-{% endfor %}
-
-{% if offerProducts.length %}
-
-<section class="container mt-4 mb-5 offers-section">
-
-  <div class="text-center mb-4">
-    <h2 class="fw-bold text-warning" data-i18n="limitedOffers">العروض</h2>
-
-    <p class="text-muted" data-i18n="limitedOffersDesc">
-      خصومات لفترة محدودة على منتجات مختارة من نستيكا.
-    </p>
-  </div>
-
-  <div class="offers-slider-wrapper">
-
-    <button type="button" class="offers-nav" id="offersPrev" onclick="scrollOffers(-1)" aria-label="Previous offers">‹</button>
-
-    <div class="offers-slider" id="offersSlider">
-
-      {% for product in offerProducts | limit(10) %}
-
-      {% set discount = ((product.old_price - product.price) / product.old_price * 100) | round %}
-
-      <article class="premium-offer-card">
-
-        <div
-          class="premium-discount-badge"
-          data-ar="خصم {{ discount }}%"
-          data-en="{{ discount }}% OFF"
-        >
-          خصم {{ discount }}%
-        </div>
-
-        <a
-          href="{{ ('/products/' + product.slug + '/') | url }}"
-          class="premium-offer-image-link"
-        >
-
-          <img
-            src="{{ (product.main_image or '/assets/images/products/default-product.jpeg') | url }}"
-            alt="{{ product.name }}"
-            loading="lazy"
-            onerror="this.onerror=null;this.src='{{ '/assets/images/products/default-product.jpeg' | url }}';"
-          >
-
-        </a>
-
-        <div class="premium-offer-body">
-
-          <div
-            class="premium-offer-label"
-            data-ar="عرض خاص"
-            data-en="Special Offer"
-          >
-            عرض خاص
-          </div>
-
-          <h3 class="premium-offer-title">{{ product.name }}</h3>
-
-          <div class="premium-offer-price">
-            <span class="premium-new-price">{{ product.price | egp }}</span>
-
-            <span class="premium-old-price">{{ product.old_price | egp }}</span>
-          </div>
-
-          <a
-            href="{{ ('/products/' + product.slug + '/') | url }}"
-            class="premium-offer-btn"
-            data-i18n="viewDetails"
-          >
-            التفاصيل
-          </a>
-
-        </div>
-
-      </article>
-
-      {% endfor %}
-
-    </div>
-
-    <button type="button" class="offers-nav" id="offersNext" onclick="scrollOffers(1)" aria-label="Next offers">›</button>
-
-  </div>
-
-</section>
-
-{% endif %}
-
-
-<section class="container my-5 real-deliveries-preview">
-  <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+<section class="container section-space real-deliveries-preview">
+  <div class="section-heading d-flex flex-wrap justify-content-between align-items-end gap-3">
     <div>
-      <span class="section-kicker" data-i18n="realDeliveriesKicker">تسليمات حقيقية</span>
-      <h2 class="fw-bold mb-1" data-i18n="realDeliveriesTitle">تسليماتنا على الطبيعة</h2>
-      <p class="text-muted mb-0" data-i18n="realDeliveriesDesc">شوف شكل منتجات نستيكا في أماكن حقيقية قبل ما تختار.</p>
+      <span class="section-kicker">شغل حقيقي</span>
+      <h2>منتجات نستيكا على الطبيعة</h2>
+      <p>شوف الجلسات والسفر والشمسيات بعد التنفيذ داخل مساحات حقيقية.</p>
     </div>
-    <a href="{{ '/real-deliveries/' | url }}" class="btn btn-outline-dark rounded-pill" data-i18n="viewAllDeliveries">شوف كل التسليمات</a>
+    <a href="{{ '/real-deliveries/' | url }}" class="btn btn-outline-dark rounded-pill">كل التسليمات <i class="bi bi-arrow-left"></i></a>
   </div>
   <div class="row g-4">
-    {% for img in ['/assets/images/deliveries/outdoor-1.jpg','/assets/images/deliveries/outdoor-3.jpg','/assets/images/deliveries/outdoor-5.jpg'] %}
-    <div class="col-md-4">
-      <a href="{{ '/real-deliveries/' | url }}" class="delivery-preview-card">
-        <img src="{{ img | url }}" alt="Nestica real delivery" loading="lazy">
-        <span data-i18n="viewExecution">شوف التنفيذ</span>
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-{% if featuredCollections and featuredCollections.length %}
-<section class="container my-5">
-  <div class="text-center mb-4">
-    <h2 class="fw-bold" data-i18n="featuredCollections">
-      Featured Collections
-    </h2>
-
-    <p class="text-muted" data-i18n="featuredCollectionsDesc">
-      اختيارات منظمة تساعد العميل يوصل للمنتج المناسب بسرعة.
-    </p>
-  </div>
-
-  <div class="row g-4">
-
-    {% for item in featuredCollections %}
-
+    {% for delivery in deliveries %}{% if delivery.is_featured and loop.index <= 6 %}
     <div class="col-lg-4 col-md-6">
-
-      <a
-        href="{{ ('/featured/' + item.slug + '/') | url }}"
-        class="text-decoration-none"
-      >
-
-        <div class="featured-box">
-
-          <h3
-            class="fs-5"
-            data-ar="{{ item.name_ar }}"
-            data-en="{{ item.name_en }}"
-          >
-            {{ item.name_ar }}
-          </h3>
-
-          <p
-            data-ar="{{ item.description_ar }}"
-            data-en="{{ item.description_en }}"
-          >
-            {{ item.description_ar }}
-          </p>
-
-        </div>
-
+      <a href="{{ '/real-deliveries/' | url }}#delivery-{{ delivery.id }}" class="delivery-preview-card">
+        <img src="{{ delivery.image | url }}" alt="{{ delivery.alt_ar }}" width="{{ delivery.image_width }}" height="{{ delivery.image_height }}" loading="lazy" decoding="async">
+        <div class="delivery-preview-overlay"><span>{{ delivery.space_name }}</span><h3>{{ delivery.title_ar }}</h3>{% if delivery.price %}<small>{% if delivery.price_is_estimate %}تقريبًا {% endif %}{{ delivery.price | egp }}</small>{% endif %}</div>
       </a>
-
     </div>
-
-    {% endfor %}
-
-  </div>
-</section>
-{% endif %}
-
-<section class="container my-5">
-
-  <div class="text-center mb-4">
-    <h2 class="fw-bold" data-i18n="shopBySpace">
-      تسوق حسب المساحة
-    </h2>
-
-    <p class="text-muted" data-i18n="shopBySpaceDesc">
-      اختار المساحة المناسبة وشوف المنتجات المقترحة ليها.
-    </p>
-  </div>
-
-  <div class="row g-4">
-
-    {% for category in categories | active %}
-
-      {% if category.show_on_home %}
-
-      {% set spaceProducts = products | inSpace(category.slug) %}
-
-      <div class="col-lg-3 col-md-4 col-sm-6">
-
-        <a
-          href="{{ ('/spaces/' + category.slug + '/') | url }}"
-          class="text-decoration-none"
-        >
-
-          <div class="category-home-box">
-
-            <div class="category-home-img-wrap">
-
-              <img
-                src="{{ (category.image or '/assets/images/categories/default-category.jpeg') | url }}"
-                alt="{{ category.name_ar or category.name }}"
-                class="category-home-img"
-                loading="lazy"
-                onerror="this.onerror=null;this.src='{{ '/assets/images/categories/default-category.jpeg' | url }}';"
-              >
-
-            </div>
-
-            <div class="category-home-content">
-
-              <h3 class="category-home-title fs-5">
-
-                <span
-                  data-ar="{{ category.name_ar or category.name }}"
-                  data-en="{{ category.name_en or category.name }}"
-                >
-                  {{ category.name_ar or category.name }}
-                </span>
-
-              </h3>
-
-              <p
-                class="category-home-count"
-                data-ar="{{ spaceProducts.length }} منتج"
-                data-en="{{ spaceProducts.length }} products"
-              >
-                {{ spaceProducts.length }} منتج
-              </p>
-
-            </div>
-
-          </div>
-
-        </a>
-
-      </div>
-
-      {% endif %}
-
-    {% endfor %}
-
+    {% endif %}{% endfor %}
   </div>
 </section>
 
-<section class="container my-5">
-
-  <div class="text-center mb-4">
-    <h2 class="fw-bold" data-i18n="browseByCategory">
-      تصفح حسب الكاتيجوري
-    </h2>
-
-    <p class="text-muted" data-i18n="browseByCategoryDesc">
-      كل أنواع المنتجات المتاحة في نستيكا.
-    </p>
-  </div>
-
-  <div class="row g-4">
-
-    {% for category in categories | active %}
-
-      {% if not category.show_on_home %}
-
-      <div class="col-lg-3 col-md-4 col-sm-6">
+<section class="category-showcase section-space">
+  <div class="container">
+    <div class="section-heading text-center">
+      <span class="section-kicker">اختار النوع</span>
+      <h2>كل احتياجات الـOutdoor في مكان واحد</h2>
+      <p>تصفح حسب الخامة أو نوع المنتج، وقارن التصميمات والأسعار بسهولة.</p>
+    </div>
+    <div class="row g-4">
+      {% for category in categories %}{% if category.is_active != false %}
+      <div class="col-lg-3 col-md-4 col-6">
         {% include "components/category-card.njk" %}
       </div>
-
-      {% endif %}
-
-    {% endfor %}
-
-  </div>
-
-</section>
-
-<section class="container my-5 faq-section">
-  <div class="text-center mb-4">
-    <span class="why-subtitle" data-ar="FAQ" data-en="FAQ">FAQ</span>
-
-    <h2
-      class="fw-bold"
-      data-ar="أسئلة شائعة عن أثاث Nestica Outdoor"
-      data-en="Frequently Asked Questions About Nestica Outdoor Furniture"
-    >
-      أسئلة شائعة عن أثاث Nestica Outdoor
-    </h2>
-
-    <p
-      class="text-muted"
-      data-ar="إجابات سريعة تساعدك تختار المنتج المناسب لمساحتك."
-      data-en="Quick answers to help you choose the right product for your space."
-    >
-      إجابات سريعة تساعدك تختار المنتج المناسب لمساحتك.
-    </p>
-  </div>
-
-  <div class="row g-3">
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3 data-ar="هل منتجات Nestica مناسبة للاستخدام الخارجي؟" data-en="Are Nestica products suitable for outdoor use?">
-          هل منتجات Nestica مناسبة للاستخدام الخارجي؟
-        </h3>
-        <p data-ar="نعم، منتجات Nestica مصممة للاستخدام الخارجي بخامات مناسبة للعوامل الجوية مثل الشمس والرطوبة." data-en="Yes, Nestica products are designed for outdoor use with materials suitable for weather conditions like sun and humidity.">
-          نعم، منتجات Nestica مصممة للاستخدام الخارجي بخامات مناسبة للعوامل الجوية مثل الشمس والرطوبة.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3 data-ar="هل يمكن تغيير المقاسات أو الألوان؟" data-en="Can sizes and colors be customized?">
-          هل يمكن تغيير المقاسات أو الألوان؟
-        </h3>
-        <p data-ar="نعم، متاح تعديل المقاسات والألوان حسب مساحة العميل واحتياجه." data-en="Yes, sizes and colors can be customized based on the client's space and needs.">
-          نعم، متاح تعديل المقاسات والألوان حسب مساحة العميل واحتياجه.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3 data-ar="هل يوجد أثاث مناسب للبلكونة أو المساحات الصغيرة؟" data-en="Are there furniture options for balconies or small spaces?">
-          هل يوجد أثاث مناسب للبلكونة أو المساحات الصغيرة؟
-        </h3>
-        <p data-ar="نعم، يوجد منتجات مناسبة للبلكونات والتراسات والمساحات الصغيرة، ويمكن تنفيذ حلول مخصصة حسب المساحة." data-en="Yes, there are products suitable for balconies, terraces, and small spaces, with custom solutions available based on your space.">
-          نعم، يوجد منتجات مناسبة للبلكونات والتراسات والمساحات الصغيرة، ويمكن تنفيذ حلول مخصصة حسب المساحة.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3 data-ar="هل يمكن طلب منتج بتعديل خاص؟" data-en="Can I request custom modifications for a product?">
-          هل يمكن طلب منتج بتعديل خاص؟
-        </h3>
-        <p data-ar="نعم، يمكنك اختيار المنتج وإضافة ملاحظات خاصة قبل إرسال الطلب على واتساب." data-en="Yes, you can select a product and add custom notes before sending your order via WhatsApp.">
-          نعم، يمكنك اختيار المنتج وإضافة ملاحظات خاصة قبل إرسال الطلب على واتساب.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3 data-ar="هل الأسعار تشمل التخصيص؟" data-en="Do prices include customization?">
-          هل الأسعار تشمل التخصيص؟
-        </h3>
-        <p data-ar="السعر الأساسي يظهر على المنتج، وأي تعديل في المقاس أو الخامات أو الألوان يتم تأكيده مع فريق Nestica قبل التنفيذ." data-en="The base price is displayed on the product page, while any customization in size, materials, or colors is confirmed with the Nestica team before production.">
-          السعر الأساسي يظهر على المنتج، وأي تعديل في المقاس أو الخامات أو الألوان يتم تأكيده مع فريق Nestica قبل التنفيذ.
-        </p>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="faq-card">
-        <h3 data-ar="كيف أطلب من الموقع؟" data-en="How can I order from the website?">
-          كيف أطلب من الموقع؟
-        </h3>
-        <p data-ar="اختر المنتج، أضفه إلى السلة، اكتب بياناتك، ثم أرسل الطلب مباشرة على واتساب." data-en="Choose a product, add it to the cart, enter your information, then send the order directly via WhatsApp.">
-          اختر المنتج، أضفه إلى السلة، اكتب بياناتك، ثم أرسل الطلب مباشرة على واتساب.
-        </p>
-      </div>
+      {% endif %}{% endfor %}
     </div>
   </div>
 </section>
 
-<section class="why-section my-5">
+{% if featuredProducts.length %}
+<section class="container section-space">
+  <div class="section-heading d-flex flex-wrap justify-content-between align-items-end gap-3">
+    <div><span class="section-kicker">اختيارات نستيكا</span><h2>منتجات تستحق تشوفها</h2><p>مجموعة مختارة من التصميمات والعروض الحالية.</p></div>
+    <a class="btn btn-outline-dark rounded-pill" href="{{ '/products/' | url }}">كل المنتجات</a>
+  </div>
+  <div class="row g-4">
+    {% for product in featuredProducts | limit(8) %}<div class="col-xl-3 col-md-6">{% include "components/product-card.njk" %}</div>{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if offerProducts.length %}
+<section class="offers-home section-space">
   <div class="container">
-    <div class="text-center mb-5">
-      <span class="why-subtitle" data-i18n="whyChooseUs">ليه نستيكا؟</span>
-      <h2 class="why-title" data-i18n="whyTitle">حلول Outdoor مختلفة فعلًا</h2>
+    <div class="section-heading d-flex flex-wrap justify-content-between align-items-end gap-3">
+      <div><span class="section-kicker">لفترة محدودة</span><h2>عروض نستيكا الحالية</h2><p>خصومات على منتجات مختارة، راجع تفاصيل كل عرض قبل الطلب.</p></div>
+      <a class="btn btn-warning rounded-pill fw-bold" href="{{ '/offers/' | url }}">شوف كل العروض</a>
     </div>
+    <div class="offers-slider-wrapper">
+      <button type="button" class="offers-nav" id="offersPrev" onclick="scrollOffers(-1)" aria-label="العرض السابق">›</button>
+      <div class="offers-slider" id="offersSlider">
+        {% for product in offerProducts | limit(10) %}
+        <div class="home-offer-item">{% include "components/product-card.njk" %}</div>
+        {% endfor %}
+      </div>
+      <button type="button" class="offers-nav" id="offersNext" onclick="scrollOffers(1)" aria-label="العرض التالي">‹</button>
+    </div>
+  </div>
+</section>
+{% endif %}
 
+<section class="container section-space">
+  <div class="section-heading text-center"><span class="section-kicker">حسب المكان</span><h2>اختار أثاث مناسب لمساحتك</h2><p>صفحات مخصصة تساعدك تبدأ من طبيعة المكان قبل اختيار الموديل.</p></div>
+  <div class="row g-4">
+    {% for space in spaces %}
+    {% set spaceProducts = products | inSpace(space.slug) %}
+    <div class="col-lg col-md-4 col-6">
+      <a href="{{ ('/spaces/' + space.slug + '/') | url }}" class="space-card-box">
+        <div class="space-card-img-wrap"><img src="{{ space.image | url }}" alt="{{ space.name_ar }} من نستيكا" width="{{ space.image_width }}" height="{{ space.image_height }}" loading="lazy"></div>
+        <div class="space-card-content"><h3>{{ space.name_ar }}</h3><span>{{ spaceProducts.length }} منتج</span></div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="why-section section-space">
+  <div class="container">
+    <div class="section-heading text-center"><span class="section-kicker">ليه نستيكا؟</span><h2>اختيار أوضح قبل التنفيذ</h2><p>بدل ما تختار من صورة فقط، قارن المواصفات وشوف التنفيذات الحقيقية وابعت تفاصيل مساحتك.</p></div>
     <div class="row g-4">
-      <div class="col-lg-3 col-md-6">
-        <div class="why-feature-card">
-          <div class="why-number">01</div>
-          <h3 class="fs-5" data-i18n="durableMaterials">خامات قوية</h3>
-          <p data-i18n="durableMaterialsDesc">خامات مناسبة للاستخدام الخارجي والعوامل الجوية.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="why-feature-card">
-          <div class="why-number">02</div>
-          <h3 class="fs-5" data-i18n="customSolutions">تخصيص حسب المساحة</h3>
-          <p data-i18n="customSolutionsDesc">ألوان ومقاسات وتعديلات حسب احتياج العميل.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="why-feature-card">
-          <div class="why-number">03</div>
-          <h3 class="fs-5" data-i18n="fastDelivery">تنفيذ منظم</h3>
-          <p data-i18n="fastDeliveryDesc">خطوات واضحة من الاختيار حتى التسليم.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <div class="why-feature-card">
-          <div class="why-number">04</div>
-          <h3 class="fs-5" data-i18n="support">دعم ومتابعة</h3>
-          <p data-i18n="supportDesc">متابعة للطلبات وإمكانية إضافة ملاحظات خاصة.</p>
-        </div>
-      </div>
+      <div class="col-lg-3 col-md-6"><div class="why-feature-card"><i class="bi bi-images"></i><h3>صور على الطبيعة</h3><p>تنفيذات حقيقية توضح شكل الأثاث داخل مساحات مختلفة.</p></div></div>
+      <div class="col-lg-3 col-md-6"><div class="why-feature-card"><i class="bi bi-grid-1x2"></i><h3>اختيارات متنوعة</h3><p>حديد وخشب ورتان ودوبار وسفر وشمسيات ومراجيح.</p></div></div>
+      <div class="col-lg-3 col-md-6"><div class="why-feature-card"><i class="bi bi-pencil-square"></i><h3>ملاحظات خاصة</h3><p>أضف المقاس أو اللون المطلوب ليتم تأكيد إمكانية التعديل.</p></div></div>
+      <div class="col-lg-3 col-md-6"><div class="why-feature-card"><i class="bi bi-chat-square-text"></i><h3>تواصل مباشر</h3><p>استفسر عن المنتج والتفاصيل المتاحة مباشرة على واتساب.</p></div></div>
     </div>
+  </div>
+</section>
+
+<section class="container section-space guides-preview">
+  <div class="section-heading d-flex flex-wrap justify-content-between align-items-end gap-3">
+    <div><span class="section-kicker">قبل ما تشتري</span><h2>دليل اختيار أثاث Outdoor</h2><p>إجابات عملية عن الخامات والمقاسات والشمسيات وتجهيز المساحة.</p></div>
+    <a href="{{ '/guides/' | url }}" class="btn btn-outline-dark rounded-pill">كل الأدلة</a>
+  </div>
+  <div class="row g-4">
+    {% for guide in guides | limit(3) %}
+    <div class="col-lg-4"><a class="guide-card" href="{{ ('/guides/' + guide.slug + '/') | url }}"><img src="{{ guide.hero_image | url }}" alt="{{ guide.title }}" width="{{ guide.image_width }}" height="{{ guide.image_height }}" loading="lazy"><div><span>دليل نستيكا</span><h3>{{ guide.title }}</h3><p>{{ guide.summary }}</p></div></a></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container section-space conversion-guide">
+  <div class="row g-4 align-items-center">
+    <div class="col-lg-5"><span class="section-kicker">طريقة الطلب</span><h2>من اختيار المنتج لتأكيد التفاصيل</h2><p>اختار المنتج، أضف ملاحظاتك، وابعت الطلب على واتساب. فريق نستيكا هيراجع التوفر والتخصيص والتوصيل معاك قبل التأكيد.</p></div>
+    <div class="col-lg-7"><div class="row g-3">
+      <div class="col-md-4"><div class="step-card"><span>01</span><h3>اختار المنتج</h3><p>من الكاتيجوري أو حسب المساحة.</p></div></div>
+      <div class="col-md-4"><div class="step-card"><span>02</span><h3>اكتب ملاحظاتك</h3><p>المقاس واللون وصورة المكان.</p></div></div>
+      <div class="col-md-4"><div class="step-card"><span>03</span><h3>أكد على واتساب</h3><p>راجع التفاصيل والتوصيل قبل التنفيذ.</p></div></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="container section-space faq-section">
+  <div class="section-heading text-center"><span class="section-kicker">FAQ</span><h2>أسئلة شائعة عن أثاث نستيكا Outdoor</h2><p>إجابات مباشرة تساعدك تبدأ اختيارك.</p></div>
+  <div class="accordion faq-accordion" id="homeFaq">
+    {% set homeFaqs = [
+      {'q':'هل منتجات نستيكا مناسبة للاستخدام الخارجي؟','a':'المنتجات معروضة للاستخدام في المساحات الخارجية، وتختلف الخامات والمعالجة وتعليمات العناية حسب كل موديل. راجع وصف المنتج واسأل الفريق عن التفاصيل.'},
+      {'q':'هل يمكن تغيير المقاسات أو الألوان؟','a':'تتوفر خيارات تخصيص في عدد من الموديلات. ابعت المقاس أو صورة المساحة ليتم تأكيد إمكانية التعديل والسعر قبل التنفيذ.'},
+      {'q':'إزاي أعرف المنتج مناسب لمساحتي؟','a':'قِس المساحة وممرات الحركة، ثم استخدم تصنيف حسب المساحة أو ابعت صورة ومقاسات تقريبية لفريق نستيكا.'},
+      {'q':'هل الأسعار تشمل التوصيل والتخصيص؟','a':'السعر الظاهر هو سعر المنتج الأساسي حسب البيانات الحالية. يتم تأكيد أي تعديل أو توصيل مع فريق نستيكا قبل الطلب.'},
+      {'q':'كيف أطلب من الموقع؟','a':'افتح صفحة المنتج واضغط واتساب مباشرة، أو أضفه للسلة مع ملاحظاتك ثم أرسل الطلب كاملًا على واتساب.'}
+    ] %}
+    {% for faq in homeFaqs %}
+    <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button {% if not loop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#faq-{{ loop.index }}">{{ faq.q }}</button></h3><div id="faq-{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}" data-bs-parent="#homeFaq"><div class="accordion-body">{{ faq.a }}</div></div></div>
+    {% endfor %}
   </div>
 </section>
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "هل منتجات Nestica مناسبة للاستخدام الخارجي؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نعم، منتجات Nestica مصممة للاستخدام الخارجي بخامات مناسبة للعوامل الجوية مثل الشمس والرطوبة."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "هل يمكن تغيير المقاسات أو الألوان؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "نعم، متاح تعديل المقاسات والألوان حسب مساحة العميل واحتياجه."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "كيف أطلب من الموقع؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "اختر المنتج، أضفه إلى السلة، اكتب بياناتك، ثم أرسل الطلب مباشرة على واتساب."
-      }
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"هل منتجات نستيكا مناسبة للاستخدام الخارجي؟","acceptedAnswer":{"@type":"Answer","text":"المنتجات معروضة للاستخدام في المساحات الخارجية، وتختلف الخامات والمعالجة وتعليمات العناية حسب كل موديل."}},
+{"@type":"Question","name":"هل يمكن تغيير المقاسات أو الألوان؟","acceptedAnswer":{"@type":"Answer","text":"تتوفر خيارات تخصيص في عدد من الموديلات ويتم تأكيدها مع فريق نستيكا قبل التنفيذ."}},
+{"@type":"Question","name":"كيف أطلب من الموقع؟","acceptedAnswer":{"@type":"Answer","text":"يمكن الاستفسار مباشرة من صفحة المنتج أو إضافة المنتجات للسلة وإرسال الطلب على واتساب."}}
+]}
 </script>

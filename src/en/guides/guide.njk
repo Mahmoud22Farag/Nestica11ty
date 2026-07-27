@@ -1,0 +1,16 @@
+---
+pagination:
+  data: guides
+  size: 1
+  alias: guide
+permalink: "/en/guides/{{ guide.slug }}/"
+layout: layouts/base.njk
+lang: en
+eleventyComputed:
+  title: "{{ guide.seo_title_en }}"
+  description: "{{ guide.meta_description_en }}"
+  image: "{{ guide.hero_image }}"
+---
+<nav aria-label="Breadcrumb" class="container breadcrumb-wrap"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="{{ '/en/' | url }}">Home</a></li><li class="breadcrumb-item"><a href="{{ '/en/guides/' | url }}">Buying Guides</a></li><li class="breadcrumb-item active" aria-current="page">{{ guide.title_en }}</li></ol></nav>
+<article class="guide-article"><header class="guide-article-header"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-7"><span class="section-kicker">Nestica Guide</span><h1>{{ guide.title_en }}</h1><p class="guide-answer">{{ guide.summary_en }}</p><div class="article-meta"><span><i class="bi bi-clock"></i> 4-minute read</span><span><i class="bi bi-check-circle"></i> Practical review before buying</span></div></div><div class="col-lg-5"><img src="{{ guide.hero_image | url }}" alt="{{ guide.title_en }}" width="{{ guide.image_width }}" height="{{ guide.image_height }}" loading="eager" fetchpriority="high"></div></div></div></header><div class="container guide-article-body"><div class="row g-5"><div class="col-lg-8"><div class="article-content">{% for section in guide.sections_en %}<section><h2>{{ section.heading }}</h2>{% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}</section>{% endfor %}</div>{% if guide.faqs_en.length %}<section class="article-faq"><h2>Frequently Asked Questions</h2>{% for faq in guide.faqs_en %}<div><h3>{{ faq.q }}</h3><p>{{ faq.a }}</p></div>{% endfor %}</section>{% endif %}</div><aside class="col-lg-4"><div class="article-sidebar"><h2>Turn Information into a Real Choice</h2><p>Browse products related to this guide or send a space photo to Nestica.</p><a class="btn btn-dark rounded-pill" href="{{ ('/categories/' + guide.category_slug + '/') | localeUrl('en') | url }}">View Products</a><a class="btn btn-outline-success rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('I read the guide ' + guide.title_en + ' and need help choosing') | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('guide_whatsapp_en')"><i class="bi bi-whatsapp"></i> Ask on WhatsApp</a></div></aside></div></div></article>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"{{ guide.title_en | jsonLdSafe }}","description":"{{ guide.meta_description_en | jsonLdSafe }}","image":"{{ settings.siteUrl }}{{ guide.hero_image }}","author":{"@type":"Organization","name":"{{ settings.brand }}"},"publisher":{"@id":"{{ settings.siteUrl }}/#organization"},"mainEntityOfPage":"{{ settings.siteUrl }}/en/guides/{{ guide.slug }}/","inLanguage":"en-EG"}</script>{% if guide.faqs_en.length %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for faq in guide.faqs_en %}{"@type":"Question","name":"{{ faq.q | jsonLdSafe }}","acceptedAnswer":{"@type":"Answer","text":"{{ faq.a | jsonLdSafe }}"}}{% if not loop.last %},{% endif %}{% endfor %}]}</script>{% endif %}

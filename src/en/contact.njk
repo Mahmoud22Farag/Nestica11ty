@@ -1,0 +1,8 @@
+---
+layout: layouts/base.njk
+lang: en
+title: Contact Nestica
+description: Contact Nestica about outdoor furniture, sizes, colors and delivery, or send a photo of your garden, rooftop, terrace or balcony.
+permalink: /en/contact/
+---
+<section class="info-hero"><div class="container"><span class="section-kicker">Contact Nestica</span><h1>Send Your Space Details</h1><p>Share the space type, approximate dimensions and products you like, and the team will review the available options.</p></div></section><section class="container section-space contact-grid"><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'I would like to ask about outdoor furniture' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('contact_page_en')"><i class="bi bi-whatsapp"></i><h2>WhatsApp</h2><p>{{ settings.whatsapp }}</p></a><a href="tel:{{ settings.phone }}"><i class="bi bi-telephone"></i><h2>Phone</h2><p>{{ settings.phone }}</p></a><a href="mailto:{{ settings.email }}"><i class="bi bi-envelope"></i><h2>Email</h2><p>{{ settings.email }}</p></a></section>

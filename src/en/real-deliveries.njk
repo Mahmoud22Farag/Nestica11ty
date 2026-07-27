@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+lang: en
+title: Real Outdoor Furniture Deliveries
+permalink: /en/real-deliveries/
+description: See real Nestica outdoor furniture deliveries and prices in Heliopolis and the North Coast, including home and hospitality products.
+image: /assets/images/deliveries/delivery-224-grand-hospitality-package.webp
+---
+<section class="deliveries-hero">
+  <div class="container">
+    <span class="section-kicker">Real Nestica Deliveries</span>
+    <h1>Outdoor Furniture in Real Spaces</h1>
+    <p>Real products and pictured prices from Heliopolis and the North Coast, including lounge sets, dining sets, umbrellas, cafes and restaurants.</p>
+    <div class="hero-actions">
+      <a class="btn btn-warning rounded-pill fw-bold" href="#deliveries-grid">View Deliveries</a>
+      <a class="btn btn-outline-light rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'I would like an outdoor setup similar to a Nestica real delivery' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_deliveries_hero_en')"><i class="bi bi-whatsapp"></i> Request a Similar Setup</a>
+    </div>
+  </div>
+</section>
+
+<section class="container section-space">
+  <div class="delivery-intro">
+    <div><span class="section-kicker">More Than Catalog Photos</span><h2>See the Product and Price in a Real Space</h2></div>
+    <p>Each image comes from a real delivery. Prices marked “Approx.” are estimates for the pictured configuration and can be edited in the data file after confirming materials and dimensions.</p>
+  </div>
+
+  <div class="delivery-filters" aria-label="Filter deliveries">
+    <button class="active" type="button" data-delivery-filter="all">All Deliveries</button>
+    <button type="button" data-delivery-filter="location:heliopolis"><i class="bi bi-geo-alt"></i> Heliopolis</button>
+    <button type="button" data-delivery-filter="location:north-coast"><i class="bi bi-geo-alt"></i> North Coast</button>
+    {% for space in spaces %}<button type="button" data-delivery-filter="space:{{ space.slug }}">{{ space.name_en }}</button>{% endfor %}
+  </div>
+
+  <div class="row g-4" id="deliveries-grid">
+    {% for delivery in deliveries %}
+    <div class="col-lg-4 col-md-6 delivery-list-item" id="delivery-{{ delivery.id }}" data-space="{{ delivery.space_slug }}" data-category="{{ delivery.category_id }}" data-location="{{ delivery.location_slug }}">
+      <article class="delivery-card">
+        <a href="{{ delivery.image | url }}" class="delivery-image-wrap" target="_blank" aria-label="Open {{ delivery.title_en }} image">
+          <img src="{{ delivery.image | url }}" alt="{{ delivery.alt_en }}" width="{{ delivery.image_width }}" height="{{ delivery.image_height }}" loading="lazy" decoding="async">
+          <span><i class="bi bi-arrows-fullscreen"></i></span>
+        </a>
+        <div class="delivery-card-body">
+          <div class="delivery-tags">
+            {% if delivery.location_en %}<span><i class="bi bi-geo-alt"></i> {{ delivery.location_en }}</span>{% endif %}
+            <span>{{ delivery.space_name_en }}</span>
+            <a href="{{ ('/categories/' + delivery.category_slug + '/') | localeUrl('en') | url }}">{{ delivery.category_name_en }}</a>
+            {% if delivery.price %}<span class="delivery-price-tag{% if delivery.price_is_estimate %} is-estimate{% endif %}">{% if delivery.price_is_estimate %}Approx. {% endif %}{{ delivery.price | egp }}</span>{% endif %}
+          </div>
+          <h2>{{ delivery.title_en }}</h2>
+          <p>{{ delivery.description_en }}</p>
+          <div class="delivery-actions">
+            {% if delivery.product_slug_en %}
+              <a class="btn btn-dark rounded-pill" href="{{ ('/products/' + delivery.product_slug_en + '/') | localeUrl('en') | url }}">View Product</a>
+            {% else %}
+              <a class="btn btn-dark rounded-pill" href="{{ ('/categories/' + delivery.category_slug + '/') | localeUrl('en') | url }}">Browse This Category</a>
+            {% endif %}
+            <a class="btn btn-outline-success rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('I would like a setup similar to Nestica delivery #' ~ delivery.id ~ (' - ' ~ delivery.product_name_en if delivery.product_name_en else '') ~ ' - ' ~ settings.siteUrl ~ '/en/real-deliveries/#delivery-' ~ delivery.id) | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_delivery_card_en')"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="delivery-bottom-cta">
+  <div class="container">
+    <div><span class="section-kicker">Home or Commercial Project</span><h2>Send a Photo and Approximate Dimensions</h2><p>Tell us whether you need seating, dining or shade, plus the user count or required quantity for your cafe or restaurant.</p></div>
+    <a class="btn btn-warning btn-lg rounded-pill fw-bold" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'I would like to send a space photo and get an outdoor furniture recommendation' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_deliveries_bottom_en')">Send on WhatsApp</a>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Real Nestica Outdoor Furniture Deliveries","numberOfItems":{{ deliveries.length }},"itemListElement":[{% for delivery in deliveries %}{"@type":"ListItem","position":{{ loop.index }},"name":"{{ delivery.title_en | jsonLdSafe }}","url":"{{ settings.siteUrl }}/en/real-deliveries/#delivery-{{ delivery.id }}","image":"{{ settings.siteUrl }}{{ delivery.image }}"}{% if not loop.last %},{% endif %}{% endfor %}]}
+</script>

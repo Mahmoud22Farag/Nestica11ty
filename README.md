@@ -1,31 +1,39 @@
-# Nestica 11ty Storefront
+# Nestica Outdoor — Bilingual 2.2.1
 
-This is the Nestica website rebuilt as a static 11ty storefront.
+نسخة كاملة ثنائية اللغة جاهزة للتشغيل في Visual Studio Code ثم الرفع على GitHub.
 
-## Run locally
+## التشغيل
+
+افتح Terminal داخل فولدر المشروع ثم شغّل:
 
 ```bash
 npm install
-npm run start
+npm start
 ```
 
-Open:
+- Arabic: http://localhost:8080/
+- English: http://localhost:8080/en/
 
-```txt
-http://localhost:8080
+## قبل الرفع
+
+```bash
+npm run build
+git add .
+git commit -m "Update Nestica bilingual website"
+git push
 ```
 
-## Main editable files
+## ملفات إعداد Eleventy
 
-- `src/_data/products.json` — product data
-- `src/_data/categories.json` — category data
-- `src/_data/settings.json` — brand, WhatsApp, email, currency
-- `src/assets/images/products/` — product images
-- `src/assets/images/categories/` — category images
-- `src/assets/css/site.css` — design/theme
-- `src/assets/js/cart.js` — localStorage cart and WhatsApp order flow
-- `src/assets/js/app.js` — language/theme/search scripts
+- `eleventy.config.js`: ملف الإعداد الرئيسي.
+- `.eleventy.js`: ملف توافق بسيط يعيد استخدام نفس الإعداد الرئيسي، حتى لا يحدث تعارض مع المشاريع القديمة أو أوامر Eleventy الافتراضية.
 
-## Important
+لا تحذف أيًا منهما في هذه النسخة.
 
-This is a static site. There is no .NET Admin Panel or SQL database. To add products, edit `products.json` or later connect a CMS like Decap CMS, Sanity, Strapi, or Headless WordPress.
+
+## تحديث الخط العربي 2.2.1
+النسخة العربية تستخدم IBM Plex Sans Arabic مع هيدر مضغوط وHero أكثر اتزانًا، بينما تظل النسخة الإنجليزية على Manrope.
+
+## أسعار التسليمات
+
+راجع `DELIVERY_PRICES_EDIT_GUIDE_AR.md` لتعديل الأسعار التقريبية بسهولة.

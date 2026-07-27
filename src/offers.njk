@@ -1,16 +1,11 @@
 ---
 layout: layouts/base.njk
-title: عروض نستيكا Outdoor Furniture
-description: عروض وخصومات نستيكا على أثاث الحدائق والروف والبلكونة والأماكن الخارجية في مصر.
 permalink: /offers/
+title: عروض أثاث Outdoor من نستيكا
+description: اكتشف عروض نستيكا الحالية على أطقم Outdoor والشمسيات والمراجيح والسفر، وراجع السعر والتفاصيل قبل الطلب.
 ---
 
-{% set offerProducts = [] %}
-{% for product in products %}
-  {% if product.is_active != false and product.is_offer and product.price %}
-    {% set offerProducts = offerProducts.concat([product]) %}
-  {% endif %}
-{% endfor %}
+{% set offerProducts = products | offers %}
 
 <section class="offers-landing-hero">
   <div class="container">

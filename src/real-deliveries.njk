@@ -1,47 +1,74 @@
 ---
 layout: layouts/base.njk
-title: تسليمات نستيكا على الطبيعة
-description: شوف تسليمات نستيكا الحقيقية لأثاث outdoor في الجاردن والروف والتراس والبلكونة قبل ما تختار منتجك.
+title: منتجات أثاث Outdoor على الطبيعة
+description: شاهد تسليمات نستيكا الحقيقية لأثاث الحدائق والروف والتراس والبلكونة والمطاعم والكافيهات في مصر الجديدة والساحل الشمالي.
 permalink: /real-deliveries/
+image: /assets/images/deliveries/delivery-224-grand-hospitality-package.webp
 ---
-
-{% set deliveryImages = [
-  '/assets/images/deliveries/outdoor-1.jpg',
-  '/assets/images/deliveries/outdoor-2.jpg',
-  '/assets/images/deliveries/outdoor-3.jpg',
-  '/assets/images/deliveries/outdoor-4.jpg',
-  '/assets/images/deliveries/outdoor-5.jpg',
-  '/assets/images/deliveries/outdoor-6.jpg',
-  '/assets/images/deliveries/outdoor-7.jpg',
-  '/assets/images/deliveries/outdoor-8.jpg',
-  '/assets/images/deliveries/outdoor-9.jpg',
-  '/assets/images/deliveries/outdoor-10.jpg',
-  '/assets/images/deliveries/outdoor-11.jpg',
-  '/assets/images/deliveries/outdoor-12.jpg'
-] %}
-
 <section class="deliveries-hero">
   <div class="container">
-    <span class="section-kicker" data-i18n="realDeliveriesKicker">تسليمات حقيقية</span>
-    <h1 data-i18n="realDeliveriesTitle">تسليمات نستيكا على الطبيعة</h1>
-    <p data-i18n="realDeliveriesDesc">صور حقيقية تساعدك تتخيل المنتج في مساحتك قبل الطلب.</p>
-    <a class="btn btn-warning rounded-pill px-4 py-2 fw-bold" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'عاوز أعمل Outdoor Setup زي تسليمات نستيكا' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_deliveries_hero')" data-i18n="similarExecution">عاوز تنفيذ مشابه</a>
+    <span class="section-kicker">Real Nestica Deliveries</span>
+    <h1>أثاث Outdoor على الطبيعة</h1>
+    <p>منتجات وأسعار من تنفيذات حقيقية في مصر الجديدة والساحل الشمالي، تشمل الجلسات والسفر والشمسيات وتجهيزات المطاعم والكافيهات.</p>
+    <div class="hero-actions">
+      <a class="btn btn-warning rounded-pill fw-bold" href="#deliveries-grid">شوف التنفيذات</a>
+      <a class="btn btn-outline-light rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'عاوز أعمل Outdoor Setup قريب من تسليمات نستيكا' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_deliveries_hero')"><i class="bi bi-whatsapp"></i> عاوز تنفيذ مشابه</a>
+    </div>
   </div>
 </section>
 
-<section class="container my-5">
-  <div class="row g-4">
-    {% for img in deliveryImages %}
-    <div class="col-lg-4 col-md-6">
-      <div class="delivery-card">
-        <img src="{{ img | url }}" alt="Nestica real outdoor furniture delivery {{ loop.index }}" loading="lazy" decoding="async">
+<section class="container section-space">
+  <div class="delivery-intro">
+    <div><span class="section-kicker">مش مجرد صور كتالوج</span><h2>شوف المنتج وسعره داخل مساحة حقيقية</h2></div>
+    <p>كل صورة هنا من تسليم فعلي. الأسعار المعلّمة بكلمة «تقريبي» هي تقدير للتكوين المصور ويمكن تعديلها بسهولة من ملف البيانات بعد تأكيد المقاسات والخامات.</p>
+  </div>
+
+  <div class="delivery-filters" aria-label="فلترة التسليمات">
+    <button class="active" type="button" data-delivery-filter="all">كل التسليمات</button>
+    <button type="button" data-delivery-filter="location:heliopolis"><i class="bi bi-geo-alt"></i> مصر الجديدة</button>
+    <button type="button" data-delivery-filter="location:north-coast"><i class="bi bi-geo-alt"></i> الساحل الشمالي</button>
+    {% for space in spaces %}<button type="button" data-delivery-filter="space:{{ space.slug }}">{{ space.name_ar }}</button>{% endfor %}
+  </div>
+
+  <div class="row g-4" id="deliveries-grid">
+    {% for delivery in deliveries %}
+    <div class="col-lg-4 col-md-6 delivery-list-item" id="delivery-{{ delivery.id }}" data-space="{{ delivery.space_slug }}" data-category="{{ delivery.category_id }}" data-location="{{ delivery.location_slug }}">
+      <article class="delivery-card">
+        <a href="{{ delivery.image | url }}" class="delivery-image-wrap" target="_blank" aria-label="فتح صورة {{ delivery.title_ar }}">
+          <img src="{{ delivery.image | url }}" alt="{{ delivery.alt_ar }}" width="{{ delivery.image_width }}" height="{{ delivery.image_height }}" loading="lazy" decoding="async">
+          <span><i class="bi bi-arrows-fullscreen"></i></span>
+        </a>
         <div class="delivery-card-body">
-          <h3 data-i18n="deliveryCardTitle">تسليمة Outdoor حقيقية</h3>
-          <p data-i18n="deliveryCardDesc">ابعتهالنا لو عاوز نفس الستايل أو تعديل يناسب مساحتك.</p>
-          <a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('عاوز أعمل تنفيذ قريب من تسليمة رقم ' + loop.index) | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_delivery_card')" data-i18n="askWhatsapp">استفسر على واتساب</a>
+          <div class="delivery-tags">
+            {% if delivery.location_ar %}<span><i class="bi bi-geo-alt"></i> {{ delivery.location_ar }}</span>{% endif %}
+            <span>{{ delivery.space_name }}</span>
+            <a href="{{ ('/categories/' + delivery.category_slug + '/') | url }}">{{ delivery.category_name }}</a>
+            {% if delivery.price %}<span class="delivery-price-tag{% if delivery.price_is_estimate %} is-estimate{% endif %}">{% if delivery.price_is_estimate %}تقريبًا {% endif %}{{ delivery.price | egp }}</span>{% endif %}
+          </div>
+          <h2>{{ delivery.title_ar }}</h2>
+          <p>{{ delivery.description_ar }}</p>
+          <div class="delivery-actions">
+            {% if delivery.product_slug %}
+              <a class="btn btn-dark rounded-pill" href="{{ ('/products/' + delivery.product_slug + '/') | url }}">شوف المنتج</a>
+            {% else %}
+              <a class="btn btn-dark rounded-pill" href="{{ ('/categories/' + delivery.category_slug + '/') | url }}">تصفح نفس الفئة</a>
+            {% endif %}
+            <a class="btn btn-outline-success rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('عاوز تنفيذ قريب من تسليمة نستيكا رقم ' ~ delivery.id ~ (' - ' ~ delivery.product_name_ar if delivery.product_name_ar else '') ~ ' - ' ~ settings.siteUrl ~ '/real-deliveries/#delivery-' ~ delivery.id) | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_delivery_card')"><i class="bi bi-whatsapp"></i></a>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
     {% endfor %}
   </div>
 </section>
+
+<section class="delivery-bottom-cta">
+  <div class="container">
+    <div><span class="section-kicker">للبيت أو مشروع تجاري</span><h2>ابعت صورة المكان والمقاسات التقريبية</h2><p>قولنا محتاج جلسة ولا سفرة ولا شمسية، وعدد الأفراد أو الكمية المطلوبة للمطعم والكافيه.</p></div>
+    <a class="btn btn-warning btn-lg rounded-pill fw-bold" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'عاوز أبعت صورة المساحة وأطلب ترشيح Outdoor مناسب' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_deliveries_bottom')">ابعت على واتساب</a>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"تسليمات نستيكا لأثاث Outdoor على الطبيعة","numberOfItems":{{ deliveries.length }},"itemListElement":[{% for delivery in deliveries %}{"@type":"ListItem","position":{{ loop.index }},"name":"{{ delivery.title_ar | jsonLdSafe }}","url":"{{ settings.siteUrl }}/real-deliveries/#delivery-{{ delivery.id }}","image":"{{ settings.siteUrl }}{{ delivery.image }}"}{% if not loop.last %},{% endif %}{% endfor %}]}
+</script>

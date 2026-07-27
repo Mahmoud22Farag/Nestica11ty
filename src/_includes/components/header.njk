@@ -1,90 +1,37 @@
-<nav class="navbar navbar-expand-lg sticky-top custom-navbar">
-  <div class="container">
-
-    <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ '/' | url }}">
-      <img
-        src="{{ '/assets/images/logo.png' | url }}"
-        alt="Nestica"
-        height="45"
-      >
-    </a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mainNavbar"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNavbar">
-
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-
-        <li class="nav-item">
-          <a class="nav-link" href="{{ '/' | url }}" data-i18n="navHome">
-            الرئيسية
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="{{ '/products/' | url }}" data-i18n="navShop">
-            المنتجات
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="{{ '/offers/' | url }}" data-i18n="navOffers">
-            العروض
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="{{ '/real-deliveries/' | url }}" data-i18n="navDeliveries">
-            تسليماتنا
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="{{ '/search/' | url }}" data-i18n="navSearch">
-            بحث
-          </a>
-        </li>
-</ul>
-
-      <div class="d-flex align-items-center gap-2">
-
-        <button
-          class="btn btn-outline-light btn-sm"
-          data-action="toggle-theme"
-        >
-          🌙 <span data-i18n="theme">الوضع</span>
-        </button>
-
-        <button
-          class="btn btn-outline-light btn-sm"
-          data-action="toggle-language"
-        >
-          AR / EN
-        </button>
-
-        <a
-          class="btn btn-warning btn-sm fw-semibold"
-          href="{{ '/cart/' | url }}"
-        >
-          🛒 <span data-i18n="cart">السلة</span>
-
-          <span
-            id="cartCount"
-            class="badge bg-dark text-warning ms-1"
-          >
-            0
-          </span>
-        </a>
-
+{% set currentLang = lang or 'ar' %}{% set tr = i18n[currentLang] %}
+<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-xl custom-navbar" aria-label="{{ 'Main navigation' if currentLang == 'en' else 'القائمة الرئيسية' }}">
+    <div class="container">
+      <a class="navbar-brand" href="{{ '/' | localeUrl(currentLang) | url }}" aria-label="Nestica - {{ tr.home }}">
+        <img src="{{ '/assets/images/logo.png' | url }}" alt="Nestica Outdoor Furniture" width="133" height="45">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="{{ 'Open navigation' if currentLang == 'en' else 'فتح القائمة' }}"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mx-auto align-items-xl-center">
+          <li class="nav-item"><a class="nav-link" href="{{ '/' | localeUrl(currentLang) | url }}">{{ tr.home }}</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{{ '/products/' | localeUrl(currentLang) | url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ tr.products }}</a>
+            <ul class="dropdown-menu {% if currentLang == 'ar' %}dropdown-menu-end{% endif %}">
+              <li><a class="dropdown-item fw-bold" href="{{ '/products/' | localeUrl(currentLang) | url }}">{{ tr.allProducts }}</a></li><li><hr class="dropdown-divider"></li>
+              {% for navCategory in categories %}{% if navCategory.is_active != false %}<li><a class="dropdown-item" href="{{ ('/categories/' + (navCategory.slug_en if currentLang == 'en' else navCategory.slug) + '/') | localeUrl(currentLang) | url }}">{{ navCategory.name_en if currentLang == 'en' else navCategory.name_ar }}</a></li>{% endif %}{% endfor %}
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ tr.shopBySpace }}</a>
+            <ul class="dropdown-menu {% if currentLang == 'ar' %}dropdown-menu-end{% endif %}">{% for navSpace in spaces %}<li><a class="dropdown-item" href="{{ ('/spaces/' + navSpace.slug + '/') | localeUrl(currentLang) | url }}">{{ navSpace.name_en if currentLang == 'en' else navSpace.name_ar }}</a></li>{% endfor %}</ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{{ '/real-deliveries/' | localeUrl(currentLang) | url }}">{{ tr.realDeliveries }}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ '/offers/' | localeUrl(currentLang) | url }}">{{ tr.offers }}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ '/guides/' | localeUrl(currentLang) | url }}">{{ tr.guides }}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ '/about/' | localeUrl(currentLang) | url }}">{{ tr.about }}</a></li>
+        </ul>
+        <div class="header-actions">
+          <a class="language-switch" href="{{ (resolvedAlternateArPath if currentLang == 'en' else resolvedAlternateEnPath) | url }}" aria-label="{{ tr.languageLabel }}"><i class="bi bi-globe2"></i> {{ tr.languageCode }}</a>
+          <a class="header-search" href="{{ '/search/' | localeUrl(currentLang) | url }}" aria-label="{{ tr.search }}"><i class="bi bi-search"></i></a>
+          <a class="btn btn-outline-dark rounded-pill" href="{{ '/cart/' | localeUrl(currentLang) | url }}"><i class="bi bi-bag"></i> {{ tr.cart }} <span id="cartCount" class="badge text-bg-dark">0</span></a>
+          <a class="btn btn-warning rounded-pill fw-bold" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('I would like to ask about outdoor furniture' if currentLang == 'en' else 'عاوز أستفسر عن أثاث Outdoor') | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('header_whatsapp')"><i class="bi bi-whatsapp"></i> {{ tr.whatsappAsk }}</a>
+        </div>
       </div>
-
     </div>
-  </div>
-</nav>
+  </nav>
+</header>

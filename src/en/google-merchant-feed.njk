@@ -1,0 +1,27 @@
+---
+permalink: /en/google-merchant-feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+<title>{{ settings.brand }} English Product Feed</title>
+<link>{{ settings.siteUrl }}/en/</link>
+<description>Outdoor furniture products from Nestica in English</description>
+{% for product in products %}{% if product.is_active != false %}
+<item>
+<g:id>{{ product.sku }}-EN</g:id>
+<g:title><![CDATA[{{ product.feed_title_en or product.name_en }}]]></g:title>
+<g:description><![CDATA[{{ product.seo_description_en or product.description_en }}]]></g:description>
+<g:link>{{ settings.siteUrl }}/en/products/{{ product.slug_en }}/</g:link>
+<g:image_link>{{ settings.siteUrl }}{{ product.main_image }}</g:image_link>
+<g:availability>in_stock</g:availability>
+<g:price>{{ product.price }} EGP</g:price>
+<g:brand>{{ settings.brand }}</g:brand>
+<g:condition>new</g:condition>
+<g:product_type><![CDATA[Outdoor Furniture > {{ product.category_name_en }}]]></g:product_type>
+<g:identifier_exists>no</g:identifier_exists>
+</item>
+{% endif %}{% endfor %}
+</channel>
+</rss>

@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+lang: en
+pagination:
+  data: spaces
+  size: 1
+  alias: space
+permalink: "/en/spaces/{{ space.slug }}/"
+eleventyComputed:
+  title: "{{ space.seo_title_en }}"
+  description: "{{ space.meta_description_en }}"
+  image: "{{ space.image }}"
+---
+{% set spaceProducts = products | inSpace(space.slug) %}
+<nav aria-label="Breadcrumb" class="container breadcrumb-wrap"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="{{ '/en/' | url }}">Home</a></li><li class="breadcrumb-item active" aria-current="page">{{ space.name_en }}</li></ol></nav>
+<section class="space-hero"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-7"><span class="section-kicker">Shop by Space</span><h1>{{ space.name_en }}</h1><p>{{ space.description_en }}</p><div class="category-hero-actions"><a href="#space-products" class="btn btn-dark rounded-pill">View {{ spaceProducts.length }} Products</a><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('I would like to send a photo of my ' + space.name_en + ' and get a recommendation') | urlencode }}" target="_blank" rel="noopener" class="btn btn-outline-success rounded-pill" onclick="trackWhatsappLead('space_help_en')"><i class="bi bi-whatsapp"></i> Send a Space Photo</a></div></div><div class="col-lg-5"><img src="{{ space.image | url }}" alt="{{ space.name_en }} by Nestica" width="{{ space.image_width }}" height="{{ space.image_height }}" loading="eager" fetchpriority="high"></div></div></div></section>
+<section class="container section-space" id="space-products"><div class="section-heading"><span class="section-kicker">Space Recommendations</span><h2>Products for {{ space.name_en }}</h2><p>Final suitability depends on the space dimensions and product measurements. Review details before ordering.</p></div>{% if spaceProducts.length %}<div class="row g-4">{% for product in spaceProducts %}<div class="col-xl-3 col-lg-4 col-md-6">{% include "components/product-card.njk" %}</div>{% endfor %}</div>{% else %}<div class="empty-products"><h2>No Products Added Yet</h2><a href="{{ '/en/products/' | url }}" class="btn btn-dark rounded-pill">Browse All Products</a></div>{% endif %}</section>
+<section class="space-cta"><div class="container text-center"><h2>Not Sure About the Right Size?</h2><p>Send a photo and approximate dimensions, plus the number of users and intended use.</p><a class="btn btn-warning rounded-pill fw-bold" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('I need help planning ' + space.name_en) | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('space_bottom_cta_en')">Contact Us on WhatsApp</a></div></section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{ settings.siteUrl }}/en/"},{"@type":"ListItem","position":2,"name":"{{ space.name_en | jsonLdSafe }}","item":"{{ settings.siteUrl }}/en/spaces/{{ space.slug }}/"}]}</script>

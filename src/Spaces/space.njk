@@ -3,42 +3,16 @@ layout: layouts/base.njk
 pagination:
   data: spaces
   size: 1
-  alias: category
-permalink: "/spaces/{{ category.slug }}/"
+  alias: space
+permalink: "/spaces/{{ space.slug }}/"
 eleventyComputed:
-  title: "{{ category.name }}"
+  title: "{{ space.seo_title }}"
+  description: "{{ space.meta_description }}"
+  image: "{{ space.image }}"
 ---
-
-{% set spaceProducts = products | inSpace(category.slug) %}
-
-<nav aria-label="breadcrumb" class="container pt-4">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">الرئيسية</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
-  </ol>
-</nav>
-
-<section class="container mt-2 mb-4">
-  <div class="text-center mb-4">
-    <h1 class="fw-bold">{{ category.name }}</h1>
-    {% if category.description %}
-      <p class="text-muted">{{ category.description }}</p>
-    {% endif %}
-    <p class="text-muted">{{ spaceProducts.length }} منتج</p>
-  </div>
-
-  {% if spaceProducts.length == 0 %}
-    <div class="text-center py-5">
-      <p class="text-muted">لا توجد منتجات لهذه المساحة حالياً.</p>
-      <a href="/products/" class="btn btn-dark rounded-pill px-4 mt-2">تصفح كل المنتجات</a>
-    </div>
-  {% else %}
-    <div class="row g-4">
-      {% for product in spaceProducts %}
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          {% include "components/product-card.njk" %}
-        </div>
-      {% endfor %}
-    </div>
-  {% endif %}
-</section>
+{% set spaceProducts = products | inSpace(space.slug) %}
+<nav aria-label="مسار الصفحة" class="container breadcrumb-wrap"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="{{ '/' | url }}">الرئيسية</a></li><li class="breadcrumb-item active" aria-current="page">{{ space.name_ar }}</li></ol></nav>
+<section class="space-hero"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-7"><span class="section-kicker">Shop by Space</span><h1>{{ space.name_ar }}</h1><p>{{ space.description }}</p><div class="category-hero-actions"><a href="#space-products" class="btn btn-dark rounded-pill">شوف {{ spaceProducts.length }} منتج</a><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('عاوز أبعت صورة ' + space.name_ar + ' وأعرف الأنسب') | urlencode }}" target="_blank" rel="noopener" class="btn btn-outline-success rounded-pill" onclick="trackWhatsappLead('space_help')"><i class="bi bi-whatsapp"></i> ابعت صورة المساحة</a></div></div><div class="col-lg-5"><img src="{{ space.image | url }}" alt="{{ space.name_ar }} من نستيكا" width="{{ space.image_width }}" height="{{ space.image_height }}" loading="eager" fetchpriority="high"></div></div></div></section>
+<section class="container section-space" id="space-products"><div class="section-heading"><span class="section-kicker">اختيارات للمساحة</span><h2>منتجات مناسبة لـ{{ space.name_ar }}</h2><p>الملاءمة النهائية تعتمد على أبعاد المكان ومقاسات المنتج؛ راجع التفاصيل قبل الطلب.</p></div>{% if spaceProducts.length %}<div class="row g-4">{% for product in spaceProducts %}<div class="col-xl-3 col-lg-4 col-md-6">{% include "components/product-card.njk" %}</div>{% endfor %}</div>{% else %}<div class="empty-products"><h2>لا توجد منتجات مضافة حاليًا</h2><a href="{{ '/products/' | url }}" class="btn btn-dark rounded-pill">تصفح كل المنتجات</a></div>{% endif %}</section>
+<section class="space-cta"><div class="container text-center"><h2>مش متأكد من المقاس المناسب؟</h2><p>ابعت صورة ومقاسات تقريبية للمساحة، وحدد عدد الأفراد وطريقة الاستخدام.</p><a class="btn btn-warning rounded-pill fw-bold" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('عاوز مساعدة في تجهيز ' + space.name_ar) | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('space_bottom_cta')">تواصل على واتساب</a></div></section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"الرئيسية","item":"{{ settings.siteUrl }}/"},{"@type":"ListItem","position":2,"name":"{{ space.name_ar | jsonLdSafe }}","item":"{{ settings.siteUrl }}/spaces/{{ space.slug }}/"}]}</script>

@@ -1,0 +1,19 @@
+---
+pagination:
+  data: guides
+  size: 1
+  alias: guide
+permalink: "/guides/{{ guide.slug }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ guide.seo_title }}"
+  description: "{{ guide.meta_description }}"
+  image: "{{ guide.hero_image }}"
+---
+<nav aria-label="مسار الصفحة" class="container breadcrumb-wrap"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="{{ '/' | url }}">الرئيسية</a></li><li class="breadcrumb-item"><a href="{{ '/guides/' | url }}">دليل الاختيار</a></li><li class="breadcrumb-item active" aria-current="page">{{ guide.title }}</li></ol></nav>
+<article class="guide-article">
+  <header class="guide-article-header"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-7"><span class="section-kicker">دليل نستيكا</span><h1>{{ guide.title }}</h1><p class="guide-answer">{{ guide.summary }}</p><div class="article-meta"><span><i class="bi bi-clock"></i> قراءة 4 دقائق</span><span><i class="bi bi-check-circle"></i> مراجعة عملية قبل الشراء</span></div></div><div class="col-lg-5"><img src="{{ guide.hero_image | url }}" alt="{{ guide.title }}" width="{{ guide.image_width }}" height="{{ guide.image_height }}" loading="eager" fetchpriority="high"></div></div></div></header>
+  <div class="container guide-article-body"><div class="row g-5"><div class="col-lg-8"><div class="article-content">{% for section in guide.sections %}<section><h2>{{ section.heading }}</h2>{% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}</section>{% endfor %}</div>{% if guide.faqs.length %}<section class="article-faq"><h2>أسئلة شائعة</h2>{% for faq in guide.faqs %}<div><h3>{{ faq.q }}</h3><p>{{ faq.a }}</p></div>{% endfor %}</section>{% endif %}</div><aside class="col-lg-4"><div class="article-sidebar"><h2>حوّل المعلومات لاختيار فعلي</h2><p>تصفح المنتجات المرتبطة بالدليل أو ابعت صورة المساحة لفريق نستيكا.</p><a class="btn btn-dark rounded-pill" href="{{ ('/categories/' + guide.category_slug + '/') | url }}">شوف المنتجات</a><a class="btn btn-outline-success rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('قرأت دليل ' + guide.title + ' وعاوز مساعدة في الاختيار') | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('guide_whatsapp')"><i class="bi bi-whatsapp"></i> اسأل على واتساب</a></div></aside></div></div>
+</article>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"{{ guide.title | jsonLdSafe }}","description":"{{ guide.meta_description | jsonLdSafe }}","image":"{{ settings.siteUrl }}{{ guide.hero_image }}","author":{"@type":"Organization","name":"{{ settings.brand }}"},"publisher":{"@id":"{{ settings.siteUrl }}/#organization"},"mainEntityOfPage":"{{ settings.siteUrl }}/guides/{{ guide.slug }}/","inLanguage":"ar-EG"}</script>
+{% if guide.faqs.length %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for faq in guide.faqs %}{"@type":"Question","name":"{{ faq.q | jsonLdSafe }}","acceptedAnswer":{"@type":"Answer","text":"{{ faq.a | jsonLdSafe }}"}}{% if not loop.last %},{% endif %}{% endfor %}]}</script>{% endif %}

@@ -1,41 +1,30 @@
 ---
 layout: layouts/base.njk
-title: Products
+title: أثاث Outdoor في مصر - كل المنتجات
+description: تصفح منتجات نستيكا من أطقم Outdoor والشمسيات والمراجيح والسفر والرتان والدوبار، واستخدم الفلاتر للوصول للمنتج المناسب لمساحتك.
+permalink: /products/
 ---
+<section class="catalog-hero compact-hero">
+  <div class="container text-center"><span class="section-kicker">Nestica Collection</span><h1>كل منتجات أثاث الـOutdoor</h1><p>فلتر حسب النوع أو المساحة أو السعر، وقارن بين التصميمات قبل الاستفسار.</p></div>
+</section>
 
-<section class="container my-5">
-  <div class="text-center mb-4">
-    <h1 class="fw-bold" data-i18n="products">المنتجات</h1>
-    <p class="text-muted" data-i18n="browseProducts">تصفح منتجات نستيكا وابحث بالاسم أو الكاتيجوري.</p>
+<section class="container catalog-section">
+  <div class="catalog-toolbar">
+    <div class="catalog-search"><i class="bi bi-search"></i><input type="search" id="productSearchInput" class="form-control" placeholder="ابحث باسم المنتج أو الخامة..." aria-label="بحث المنتجات"></div>
+    <select id="categoryFilter" class="form-select" aria-label="فلتر الكاتيجوري"><option value="">كل الأنواع</option>{% for category in categories %}<option value="{{ category.id }}">{{ category.name_ar }}</option>{% endfor %}</select>
+    <select id="spaceFilter" class="form-select" aria-label="فلتر المساحة"><option value="">كل المساحات</option>{% for space in spaces %}<option value="{{ space.slug }}">{{ space.name_ar }}</option>{% endfor %}</select>
+    <select id="priceFilter" class="form-select" aria-label="فلتر السعر"><option value="">كل الأسعار</option><option value="0-10000">أقل من 10,000 EGP</option><option value="10000-20000">10,000 - 20,000 EGP</option><option value="20000-40000">20,000 - 40,000 EGP</option><option value="40000+">أكثر من 40,000 EGP</option></select>
+    <select id="sortProducts" class="form-select" aria-label="ترتيب المنتجات"><option value="default">الترتيب الافتراضي</option><option value="price-asc">السعر: الأقل أولًا</option><option value="price-desc">السعر: الأعلى أولًا</option><option value="name">الاسم</option></select>
+    <button id="resetFilters" class="btn btn-outline-dark" type="button"><i class="bi bi-arrow-counterclockwise"></i> مسح</button>
   </div>
 
-  <div class="row justify-content-center mb-5">
-    <div class="col-lg-8">
-      <div class="input-group input-group-lg">
-        <input 
-          type="text" 
-          id="productSearchInput" 
-          class="form-control rounded-start-pill px-4" 
-          placeholder="ابحث عن منتج..." 
-          data-i18n-placeholder="searchPlaceholder"
-        >
-        <button class="btn btn-dark px-4 rounded-end-pill" type="button" onclick="filterProducts()" data-i18n="search">بحث</button>
-      </div>
-    </div>
-  </div>
+  <div class="catalog-results-bar"><p><strong id="visibleProductsCount">0</strong> منتج مطابق</p><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'مش لاقي المنتج المناسب وعاوز مساعدة' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('catalog_help')"><i class="bi bi-whatsapp"></i> محتاج مساعدة في الاختيار؟</a></div>
 
   <div class="row g-4" id="productsGrid">
-    {% for product in products %}
-      {% if product.is_active != false %}
-      <div class="col-lg-3 col-md-4 col-sm-6 product-list-item">
-        {% include "components/product-card.njk" %}
-      </div>
-      {% endif %}
-    {% endfor %}
+    {% for product in products %}{% if product.is_active != false %}
+    <div class="col-xl-3 col-lg-4 col-md-6 product-list-item" data-original-order="{{ loop.index }}">{% include "components/product-card.njk" %}</div>
+    {% endif %}{% endfor %}
   </div>
-
-  <div class="text-center py-5 d-none" id="noProductsFound">
-    <h4 class="fw-bold" data-i18n="noProducts">لا توجد منتجات</h4>
-    <p class="text-muted" data-i18n="trySearch">جرّب كلمة بحث أخرى.</p>
-  </div>
+  <div class="text-center mt-5"><button id="loadMoreProducts" class="btn btn-dark rounded-pill px-5" type="button">عرض منتجات أكثر</button></div>
+  <div class="empty-products d-none" id="noProductsFound"><i class="bi bi-search"></i><h2>مفيش منتجات مطابقة</h2><p>جرّب تغيير الفلاتر أو ابعتلنا تفاصيل المساحة على واتساب.</p></div>
 </section>

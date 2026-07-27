@@ -1,0 +1,22 @@
+NESTICA OUTDOOR 2.0.2
+
+هذه النسخة معمولة لتستبدل ملفات مشروع Nestica-11ty الحالي.
+
+1) اقفل السيرفر باستخدام Ctrl + C.
+2) فك محتويات الـ ZIP داخل فولدر Nestica-11ty نفسه واختر Replace All.
+3) افتح فولدر Nestica-11ty في Visual Studio Code.
+4) شغّل:
+
+npm install
+npm start
+
+يجب أن يظهر في بداية التشغيل:
+> eleventy --config=eleventy.config.js --serve
+
+لو ظهر فقط:
+> eleventy --serve
+
+فهذا يعني أنك تشغّل package.json قديم أو فتحت فولدر مختلف.
+
+لعمل Build قبل GitHub:
+npm run build

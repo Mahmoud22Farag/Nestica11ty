@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+lang: en
+permalink: /en/offers/
+title: Nestica Outdoor Furniture Offers
+description: Discover current Nestica offers on outdoor seating, umbrellas, swings and dining sets in Egypt.
+---
+{% set offerProducts = products | offers %}
+<section class="offers-landing-hero"><div class="container"><span class="section-kicker">Nestica Offers</span><h1>Outdoor Furniture Offers for Your Space</h1><p>Choose an offer for your garden, rooftop, terrace or balcony and send it on WhatsApp.</p><a href="#offersGrid" class="btn btn-warning rounded-pill px-4 py-2 fw-bold">View Available Offers</a></div></section>
+<section class="container my-5" id="offersGrid"><div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4"><div><span class="section-kicker">Limited Time</span><h2 class="fw-bold mb-1">Current Offers</h2><p class="text-muted mb-0">Selected products at reduced prices for a limited period.</p></div><a class="btn btn-outline-dark rounded-pill" href="{{ '/en/products/' | url }}">All Products</a></div>{% if offerProducts.length %}<div class="row g-4">{% for product in offerProducts %}<div class="col-lg-3 col-md-4 col-sm-6 product-list-item">{% include "components/product-card.njk" %}</div>{% endfor %}</div>{% else %}<div class="empty-state-card text-center py-5"><h3 class="fw-bold">Offers Will Appear Here Soon</h3><p class="text-muted">Products marked as offers in the product data will appear automatically.</p><a class="btn btn-dark rounded-pill px-4" href="{{ '/en/products/' | url }}">Browse Products</a></div>{% endif %}</section>

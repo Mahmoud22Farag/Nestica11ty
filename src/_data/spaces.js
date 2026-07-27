@@ -1,14 +1,89 @@
-import { readFileSync } from "fs";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
 export default function () {
-  const categories = JSON.parse(
-    readFileSync(join(__dirname, "categories.json"), "utf-8")
-  );
-  return categories.filter(
-    (cat) => cat.is_active !== false && cat.show_on_home === true
-  );
+  return [
+  {
+    "id": 1,
+    "slug": "garden",
+    "name": "أثاث حدائق",
+    "name_ar": "أثاث حدائق",
+    "name_en": "Garden Furniture",
+    "seo_title": "أثاث حدائق وOutdoor في مصر",
+    "meta_description": "اختيارات أثاث Outdoor للجاردن من أطقم جلسات وسفر وشمسيات ومراجيح، مع إمكانية تخصيص المقاسات والألوان.",
+    "image": "/assets/images/categories/77f0ff91-5044-4e40-9597-b00f428f7e5d.webp",
+    "image_width": 736,
+    "image_height": 552,
+    "description": "اختار قطع تتحمل طبيعة الاستخدام الخارجي، واترك مساحات للحركة، وحدد مناطق الجلوس والأكل والظل قبل الطلب.",
+    "seo_title_en": "Garden & Outdoor Furniture in Egypt",
+    "meta_description_en": "Outdoor furniture for gardens, including seating sets, dining sets, umbrellas and swings, with model-specific customization options.",
+    "description_en": "Choose furniture designed for outdoor use, leave comfortable walking paths, and define seating, dining and shade zones before ordering.",
+    "is_active": true
+  },
+  {
+    "id": 2,
+    "slug": "cafe-and-restaurant",
+    "name": "أثاث Outdoor للكافيهات والمطاعم",
+    "name_ar": "أثاث Outdoor للكافيهات والمطاعم",
+    "name_en": "Cafe & Restaurant Outdoor Furniture",
+    "seo_title": "أثاث Outdoor للكافيهات والمطاعم في مصر",
+    "meta_description": "حلول أثاث Outdoor للكافيهات والمطاعم تشمل السفر والجلسات والشمسيات، مع إمكانية مناقشة المقاسات والألوان المناسبة للهوية والمساحة.",
+    "image": "/assets/images/deliveries/delivery-224-grand-hospitality-package.webp",
+    "image_width": 1200,
+    "image_height": 900,
+    "description": "ركز على سهولة الحركة وعدد المقاعد وطبيعة التشغيل اليومي، وابعت مخطط أو صورة المكان علشان نساعدك في الاختيار.",
+    "seo_title_en": "Cafe & Restaurant Outdoor Furniture in Egypt",
+    "meta_description_en": "Outdoor furniture solutions for cafes and restaurants, including dining sets, seating and umbrellas with model-specific sizes and colors.",
+    "description_en": "Focus on circulation, seating capacity and daily operation. Send a photo or plan of the venue to help the team recommend suitable options.",
+    "is_active": true
+  },
+  {
+    "id": 3,
+    "slug": "terrace",
+    "name": "أثاث تراس",
+    "name_ar": "أثاث تراس",
+    "name_en": "Terrace Furniture",
+    "seo_title": "أثاث تراس Outdoor في مصر",
+    "meta_description": "اختيارات أثاث Outdoor للتراس تشمل جلسات وسفر وشمسيات وقطع عملية تناسب المساحات المتوسطة والكبيرة.",
+    "image": "/assets/images/categories/df935c77-7a0e-40ab-84e0-f720fdffe837.webp",
+    "image_width": 1440,
+    "image_height": 1079,
+    "description": "قِس التراس وحدد اتجاه الشمس ومسارات الحركة قبل اختيار حجم الطقم أو الشمسية.",
+    "seo_title_en": "Outdoor Terrace Furniture in Egypt",
+    "meta_description_en": "Outdoor furniture for terraces, including seating, dining sets, umbrellas and practical pieces for medium and large spaces.",
+    "description_en": "Measure the terrace, identify sun direction and keep circulation paths clear before choosing the set or umbrella size.",
+    "is_active": true
+  },
+  {
+    "id": 4,
+    "slug": "balcony",
+    "name": "أثاث بلكونة",
+    "name_ar": "أثاث بلكونة",
+    "name_en": "Balcony Furniture",
+    "seo_title": "أثاث بلكونة Outdoor في مصر",
+    "meta_description": "اكتشف أثاث Outdoor مناسب للبلكونات والمساحات الصغيرة، من جلسات خفيفة وبين باج وقطع يمكن تخصيصها حسب المقاس.",
+    "image": "/assets/images/categories/003a118d-fa75-4ac7-bc4b-25c5945283b6.webp",
+    "image_width": 689,
+    "image_height": 1280,
+    "description": "في البلكونة، اختار عدد قطع أقل ومقاسات دقيقة، وحافظ على ممر واضح للباب والحركة.",
+    "seo_title_en": "Outdoor Balcony Furniture in Egypt",
+    "meta_description_en": "Outdoor furniture for balconies and compact spaces, including light seating, bean bags and customizable pieces.",
+    "description_en": "For balconies, choose fewer pieces with accurate dimensions and keep a clear path to doors and circulation areas.",
+    "is_active": true
+  },
+  {
+    "id": 5,
+    "slug": "roof",
+    "name": "أثاث روف",
+    "name_ar": "أثاث روف",
+    "name_en": "Roof Furniture",
+    "seo_title": "أثاث روف Outdoor في مصر",
+    "meta_description": "تصفح أثاث Outdoor للروف من جلسات وسفر وشمسيات ومراجيح، مع خيارات متعددة للمقاسات والألوان.",
+    "image": "/assets/images/categories/56705220-0cb7-4431-816e-1e0889a6df78.webp",
+    "image_width": 720,
+    "image_height": 720,
+    "description": "قسم الروف لمناطق جلوس وظل وحركة، وراجع مكان الشمس والهواء قبل اختيار الأثاث والشمسيات.",
+    "seo_title_en": "Outdoor Rooftop Furniture in Egypt",
+    "meta_description_en": "Outdoor rooftop furniture, including seating sets, dining sets, umbrellas and swings with multiple size and color options.",
+    "description_en": "Divide the rooftop into seating, shade and circulation zones, and review sun and wind exposure before choosing furniture and umbrellas.",
+    "is_active": true
+  }
+];
 }

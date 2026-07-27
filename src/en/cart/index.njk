@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+lang: en
+permalink: /en/cart/
+title: Nestica Order Cart
+description: Review selected products and send your inquiry order on WhatsApp.
+robots: noindex, follow
+---
+<section class="container my-5 cart-page"><div class="text-center mb-5"><h1 class="fw-bold">Order Cart</h1><p class="text-muted">Review products and send the request on WhatsApp.</p></div><div class="row g-4 align-items-start"><div class="col-lg-8"><div id="emptyCart" class="text-center py-5 d-none"><h4 class="fw-bold">Your Cart Is Empty</h4><p class="text-muted">Browse products and add the options that suit your space.</p><a href="/en/products/" class="btn btn-dark rounded-pill px-4">Shop Now</a></div><div id="cartItems"></div></div><div class="col-lg-4"><div class="cart-summary card border-0 shadow-sm rounded-4 p-4 sticky-lg-top" style="top:90px;"><h4 class="fw-bold mb-3">Order Information</h4><div class="mb-3"><label class="form-label fw-semibold">Name <span class="text-danger">*</span></label><input id="customerName" class="form-control" type="text" placeholder="Enter your name" required></div><div class="mb-3"><label class="form-label fw-semibold">Phone Number <span class="text-danger">*</span></label><input id="customerPhone" class="form-control" type="tel" placeholder="Enter your phone number" required></div><div class="mb-3"><label class="form-label fw-semibold">Address <span class="text-danger">*</span></label><textarea id="customerAddress" class="form-control" rows="3" placeholder="Enter your address or area" required></textarea></div><hr><div class="d-flex justify-content-between align-items-center mb-3"><span class="fw-semibold">Total</span><strong id="cartTotal">0 EGP</strong></div><button class="btn btn-success w-100 rounded-pill py-2 fw-bold" onclick="sendCartToWhatsApp('{{ settings.whatsapp }}')"><i class="bi bi-whatsapp me-1"></i> Send on WhatsApp</button><button class="btn btn-outline-danger w-100 rounded-pill mt-2" onclick="clearCart()">Clear Cart</button></div></div></div></section>
+<script>document.addEventListener('DOMContentLoaded',function(){renderCart();updateCartCount();});</script>

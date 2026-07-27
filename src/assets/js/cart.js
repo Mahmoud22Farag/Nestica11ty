@@ -2,7 +2,7 @@ const CART_KEY = "nesticaCart";
 const SITE_PREFIX = "";
 
 function assetUrl(path) {
-  if (!path) return `${SITE_PREFIX}/assets/images/products/default-product.jpeg`;
+  if (!path) return `${SITE_PREFIX}/assets/images/products/default-product.webp`;
   if (path.startsWith("http")) return path;
   if (SITE_PREFIX && path.startsWith(SITE_PREFIX)) return path;
   if (path.startsWith("/")) return `${SITE_PREFIX}${path}`;
@@ -42,7 +42,7 @@ function showCartPopup() {
       <h3>${isEnglish ? "Added to cart" : "تمت الإضافة للسلة"}</h3>
       <p>${isEnglish ? "Continue your order or send it directly on WhatsApp." : "كمل طلبك أو ابعته مباشرة على واتساب."}</p>
       <div class="cart-added-actions">
-        <a class="btn btn-dark rounded-pill px-4" href="/cart/">${isEnglish ? "View Cart" : "شوف السلة"}</a>
+        <a class="btn btn-dark rounded-pill px-4" href="${isEnglish ? "/en/cart/" : "/cart/"}">${isEnglish ? "View Cart" : "شوف السلة"}</a>
         <button class="btn btn-outline-dark rounded-pill px-4" type="button" onclick="document.getElementById('cartAddedModal')?.remove()">${isEnglish ? "Continue shopping" : "كمل تصفح"}</button>
       </div>
     </div>`;
@@ -98,6 +98,7 @@ function clearCart() {
 }
 
 function renderCart() {
+  const isEnglish = document.documentElement.lang === "en";
   const holder = document.getElementById("cartItems");
   if (!holder) return;
   const empty = document.getElementById("emptyCart");
@@ -116,16 +117,18 @@ function renderCart() {
     total += lineTotal;
     const div = document.createElement("div");
     div.className = "cart-item card border-0 shadow-sm rounded-4 p-3 mb-3";
+    const removeLabel = isEnglish ? "Remove" : "حذف";
+    const displayName = isEnglish ? (item.name_en || item.name) : (item.name_ar || item.name);
     div.innerHTML = `
       <div class="d-flex gap-3 align-items-center">
-        <img src="${assetUrl(item.image || item.main_image || "/assets/images/products/default-product.jpeg")}" alt="${item.name || ""}" class="cart-item-img rounded-3" onerror="this.onerror=null;this.src='${assetUrl("/assets/images/products/default-product.jpeg")}';">
+        <img src="${assetUrl(item.image || item.main_image || "/assets/images/products/default-product.webp")}" alt="${displayName || ""}" class="cart-item-img rounded-3" onerror="this.onerror=null;this.src='${assetUrl("/assets/images/products/default-product.webp")}';">
         <div class="flex-grow-1">
-          <h4 class="fw-bold mb-1">${item.name || ""}</h4>
+          <h4 class="fw-bold mb-1">${displayName || ""}</h4>
           <p class="mb-2">${Number(item.price || 0).toLocaleString("en-US")} EGP</p>
           ${item.notes ? `<p class="small text-muted mb-2">${item.notes}</p>` : ""}
           <div class="d-flex align-items-center gap-2">
             <input type="number" min="1" value="${item.quantity || 1}" class="form-control form-control-sm" style="width:90px" onchange="updateQty(${index}, this.value)">
-            <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeCartItem(${index})">🗑</button>
+            <button type="button" class="btn btn-sm btn-outline-danger" aria-label="${removeLabel}" onclick="removeCartItem(${index})">🗑</button>
           </div>
         </div>
         <strong>${lineTotal.toLocaleString("en-US")} EGP</strong>
@@ -152,14 +155,24 @@ function sendCartToWhatsApp(phone) {
   }
   const digitsOnly = customerPhone.replace(/\D/g, "");
   if (digitsOnly.length < 8) { alert(isEnglish ? "Please enter a valid phone number." : "من فضلك اكتب رقم هاتف صحيح."); phoneInput?.focus(); return; }
-  let message = `New Nestica Order\nName: ${name}\nPhone: ${customerPhone}\nAddress: ${address}\n\n`;
+  let message = isEnglish
+    ? `New Nestica Order\nName: ${name}\nPhone: ${customerPhone}\nAddress: ${address}\n\n`
+    : `طلب جديد من نستيكا\nالاسم: ${name}\nرقم الهاتف: ${customerPhone}\nالعنوان: ${address}\n\n`;
   let total = 0;
   cart.forEach((item, i) => {
     const line = Number(item.price || 0) * Number(item.quantity || 1);
     total += line;
-    message += `${i + 1}) ${item.name}\nQty: ${item.quantity}\nPrice: ${Number(item.price || 0).toLocaleString("en-US")} EGP\nRequest: ${item.requestType || "same"}\nNotes: ${item.notes || "-"}\n\n`;
+    const displayName = isEnglish ? (item.name_en || item.name) : (item.name_ar || item.name);
+    const requestLabel = item.requestType === "custom"
+      ? (isEnglish ? "Custom request" : "تعديل خاص")
+      : (isEnglish ? "Same product" : "نفس المنتج");
+    message += isEnglish
+      ? `${i + 1}) ${displayName}\nQty: ${item.quantity}\nPrice: ${Number(item.price || 0).toLocaleString("en-US")} EGP\nRequest: ${requestLabel}\nNotes: ${item.notes || "-"}\n\n`
+      : `${i + 1}) ${displayName}\nالكمية: ${item.quantity}\nالسعر: ${Number(item.price || 0).toLocaleString("en-US")} جنيه\nنوع الطلب: ${requestLabel}\nالملاحظات: ${item.notes || "-"}\n\n`;
   });
-  message += `Total: ${total.toLocaleString("en-US")} EGP`;
+  message += isEnglish
+    ? `Total: ${total.toLocaleString("en-US")} EGP`
+    : `الإجمالي: ${total.toLocaleString("en-US")} جنيه`;
   fbTrack("Lead", { content_name: "cart_whatsapp_order", value: total, currency: "EGP" });
   fbTrack("InitiateCheckout", { value: total, currency: "EGP", num_items: cart.length });
   window.open(`https://wa.me/${String(phone).replace("+", "")}?text=${encodeURIComponent(message)}`, "_blank");

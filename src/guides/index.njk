@@ -1,0 +1,8 @@
+---
+layout: layouts/base.njk
+title: دليل اختيار أثاث Outdoor
+description: أدلة عملية من نستيكا لاختيار خامات ومقاسات أثاث Outdoor والشمسيات وتجهيز الجاردن والروف والبلكونة والعناية بالأثاث الخارجي.
+permalink: /guides/
+---
+<section class="guides-hero compact-hero"><div class="container text-center"><span class="section-kicker">Nestica Buying Guides</span><h1>دليل اختيار أثاث Outdoor</h1><p>معلومات عملية تساعدك تقارن الخامات وتخطط المساحة وتختار المنتج المناسب قبل الطلب.</p></div></section>
+<section class="container section-space"><div class="row g-4">{% for guide in guides %}<div class="col-lg-4 col-md-6"><a class="guide-card" href="{{ ('/guides/' + guide.slug + '/') | url }}"><img src="{{ guide.hero_image | url }}" alt="{{ guide.title }}" width="{{ guide.image_width }}" height="{{ guide.image_height }}" loading="lazy" decoding="async"><div><span>دليل نستيكا</span><h2>{{ guide.title }}</h2><p>{{ guide.summary }}</p><strong>اقرأ الدليل <i class="bi bi-arrow-left"></i></strong></div></a></div>{% endfor %}</div></section>

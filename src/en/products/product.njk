@@ -1,0 +1,15 @@
+---
+pagination:
+  data: products
+  size: 1
+  alias: product
+permalink: "/en/products/{{ product.slug_en }}/"
+layout: layouts/product.njk
+lang: en
+ogType: product
+eleventyComputed:
+  title: "{{ product.seo_title_en or product.name_en }}"
+  description: "{{ product.seo_description_en or product.description_en or product.name_en }}"
+  image: "{{ product.main_image }}"
+  alternateArPath: "/products/{{ product.slug }}/"
+---
