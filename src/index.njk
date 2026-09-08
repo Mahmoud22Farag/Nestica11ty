@@ -35,6 +35,18 @@ image: /assets/images/new-hero.webp
   </div>
 </section>
 
+<section class="video-bg-section">
+  <div class="video-bg-media">
+    <video src="{{ '/assets/videos/hero-real-delivery-landscape.mp4' | url }}" poster="{{ '/assets/images/deliveries/hero-real-delivery-landscape-poster.webp' | url }}" autoplay muted loop playsinline preload="metadata" aria-label="فيديو حقيقي لجلسة سفر ودوبار  Outdoor من نستيكا داخل حديقة عند الغروب"></video>
+  </div>
+  <div class="container video-bg-content">
+    <span class="hero-kicker">شغل حقيقي على الطبيعة</span>
+    <h2>مش صورة استوديو، ده تسليم فعلي عندك</h2>
+    <p>جلسة سفر ودوبار Outdoor بعد التنفيذ في حديقة حقيقية وقت الغروب — بنفس الشكل ده هتوصلك.</p>
+    <a href="{{ '/real-deliveries/' | url }}" class="btn btn-warning rounded-pill">شوف كل التسليمات</a>
+  </div>
+</section>
+
 <section class="container section-space real-deliveries-preview">
   <div class="section-heading d-flex flex-wrap justify-content-between align-items-end gap-3">
     <div>
@@ -173,8 +185,6 @@ image: /assets/images/new-hero.webp
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"هل منتجات نستيكا مناسبة للاستخدام الخارجي؟","acceptedAnswer":{"@type":"Answer","text":"المنتجات معروضة للاستخدام في المساحات الخارجية، وتختلف الخامات والمعالجة وتعليمات العناية حسب كل موديل."}},
-{"@type":"Question","name":"هل يمكن تغيير المقاسات أو الألوان؟","acceptedAnswer":{"@type":"Answer","text":"تتوفر خيارات تخصيص في عدد من الموديلات ويتم تأكيدها مع فريق نستيكا قبل التنفيذ."}},
-{"@type":"Question","name":"كيف أطلب من الموقع؟","acceptedAnswer":{"@type":"Answer","text":"يمكن الاستفسار مباشرة من صفحة المنتج أو إضافة المنتجات للسلة وإرسال الطلب على واتساب."}}
-]}
+{% for faq in homeFaqs %}{"@type":"Question","name":"{{ faq.q | jsonLdSafe }}","acceptedAnswer":{"@type":"Answer","text":"{{ faq.a | jsonLdSafe }}"}}{% if not loop.last %},{% endif %}
+{% endfor %}]}
 </script>

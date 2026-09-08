@@ -37,6 +37,7 @@ eleventyComputed:
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"الرئيسية","item":"{{ settings.siteUrl }}/"},{"@type":"ListItem","position":2,"name":"المنتجات","item":"{{ settings.siteUrl }}/products/"},{"@type":"ListItem","position":3,"name":"{{ category.name_ar | jsonLdSafe }}","item":"{{ settings.siteUrl }}/categories/{{ category.slug }}/"}]},
-{"@type":"ItemList","name":"{{ category.name_ar | jsonLdSafe }}","numberOfItems":{{ categoryProducts.length }},"itemListElement":[{% for product in categoryProducts %}{"@type":"ListItem","position":{{ loop.index }},"url":"{{ settings.siteUrl }}/products/{{ product.slug }}/","name":"{{ product.name | jsonLdSafe }}"}{% if not loop.last %},{% endif %}{% endfor %}]}
+{"@type":"ItemList","name":"{{ category.name_ar | jsonLdSafe }}","numberOfItems":{{ categoryProducts.length }},"itemListElement":[{% for product in categoryProducts %}{"@type":"ListItem","position":{{ loop.index }},"url":"{{ settings.siteUrl }}/products/{{ product.slug }}/","name":"{{ product.name | jsonLdSafe }}"}{% if not loop.last %},{% endif %}{% endfor %}]}{% if category.faqs.length %},
+{"@type":"FAQPage","mainEntity":[{% for faq in category.faqs %}{"@type":"Question","name":"{{ faq.q | jsonLdSafe }}","acceptedAnswer":{"@type":"Answer","text":"{{ faq.a | jsonLdSafe }}"}}{% if not loop.last %},{% endif %}{% endfor %}]}{% endif %}
 ]}
 </script>

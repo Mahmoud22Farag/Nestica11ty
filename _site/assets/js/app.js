@@ -197,4 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initDeliveryFilters();
   updateOfferControls();
   document.getElementById('offersSlider')?.addEventListener('scroll', updateOfferControls, { passive: true });
+
+  // Respect prefers-reduced-motion: stop autoplaying background/card videos, keep poster image only.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.video-bg-media video').forEach((video) => {
+      video.removeAttribute('autoplay');
+      video.pause();
+    });
+  }
 });

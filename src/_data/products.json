@@ -256,7 +256,6 @@
     "spaces": [
       "garden",
       "roof",
-      "terrace",
       "cafe-and-restaurant"
     ],
     "sku": "NST-0079",
@@ -302,7 +301,6 @@
     "spaces": [
       "garden",
       "roof",
-      "terrace",
       "cafe-and-restaurant"
     ],
     "sku": "NST-0080",
@@ -350,7 +348,8 @@
     "spaces": [
       "garden",
       "roof",
-      "terrace"
+      "terrace",
+      "balcony"
     ],
     "sku": "NST-0008",
     "is_featured": true,
@@ -728,7 +727,6 @@
     "material": "حديد",
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "sku": "NST-0021",
@@ -774,7 +772,6 @@
     "material": "حديد",
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "sku": "NST-0022",
@@ -821,7 +818,6 @@
     "material": "حديد",
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "sku": "NST-0023",
@@ -854,7 +850,6 @@
     "is_active": true,
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "slug": "product-24-طقم-روف-كينج-7-مقعد-2-بف-أزرق،-قطاع-26",
@@ -902,7 +897,6 @@
     "is_active": true,
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "slug": "product-25-طقم-روف-كينج-بلاس-7-مقعد-2-بف-رصاصي،-قطاع-28",
@@ -962,7 +956,8 @@
     "spaces": [
       "garden",
       "terrace",
-      "roof"
+      "roof",
+      "balcony"
     ],
     "sku": "NST-0026",
     "is_featured": false,
@@ -1053,7 +1048,6 @@
     "material": "حديد",
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "sku": "NST-0028",
@@ -1086,8 +1080,7 @@
     "is_active": true,
     "spaces": [
       "roof",
-      "garden",
-      "terrace"
+      "garden"
     ],
     "slug": "product-29-طقم-نيتشر-7-مقعد-حديد-دوبار-رماديأسود",
     "main_image": "/assets/images/products/86b90e2e-e811-4b91-af7f-9fee3f1f4a10.webp",
@@ -1471,7 +1464,6 @@
     "material": "حديد وخشب",
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "sku": "NST-0037",
@@ -1565,7 +1557,6 @@
     "material": "حديد وخشب",
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "sku": "NST-0039",
@@ -1598,8 +1589,7 @@
     "is_active": true,
     "spaces": [
       "roof",
-      "garden",
-      "terrace"
+      "garden"
     ],
     "slug": "product-40-طقم-إمباير-8-مقعد-حديد-خشب-أبيضأسود",
     "main_image": "/assets/images/products/8ab3bc7d-1753-49aa-a307-ffab109b29a9.webp",
@@ -1646,8 +1636,7 @@
     "is_active": true,
     "spaces": [
       "roof",
-      "garden",
-      "terrace"
+      "garden"
     ],
     "slug": "product-41-طقم-كراون-7-مقعد-حديد-خشب-رصاصي-فاتح،-قطاع-28",
     "main_image": "/assets/images/products/797dd018-3486-486f-829e-4ba3c89b389d.webp",
@@ -1698,7 +1687,7 @@
     "catalog_title": "بين باج إسفنجي كلاسيك | EGP 2,000",
     "card_description": "أحجام متعددة",
     "feed_title": "بين باج إسفنجي كلاسيك | EGP 2,000",
-    "description": "بين باج اسفنجي",
+    "description": "بين باج إسفنجي بتصميم كلاسيك، حشوة إسفنج مرنة تاخد شكل الجسم وتساعد على الاسترخاء في الروف أو التراس أو الجاردن. مناسب كقطعة جلوس إضافية بجانب الطقم الأساسي أو كركن استرخاء منفصل، وخفيف يتنقل بسهولة بين أماكن الجلوس. متاح بأكثر من حجم؛ ابعت المساحة المتاحة لفريق نستيكا لتأكيد المقاس واللون الأنسب.",
     "category_name": "بين باج Outdoor",
     "category_slug": "بين-باج",
     "material": "قماش وحشو حسب الموديل",
@@ -1712,18 +1701,18 @@
     "is_featured": false,
     "is_ready": false,
     "has_real_delivery": false,
-    "description_ar": "بين باج اسفنجي",
+    "description_ar": "بين باج إسفنجي بتصميم كلاسيك، حشوة إسفنج مرنة تاخد شكل الجسم وتساعد على الاسترخاء في الروف أو التراس أو الجاردن. مناسب كقطعة جلوس إضافية بجانب الطقم الأساسي أو كركن استرخاء منفصل، وخفيف يتنقل بسهولة بين أماكن الجلوس. متاح بأكثر من حجم؛ ابعت المساحة المتاحة لفريق نستيكا لتأكيد المقاس واللون الأنسب.",
     "seo_title": "بين باج إسفنجي كلاسيك | أثاث Outdoor في مصر",
-    "seo_description": "تعرف على بين باج إسفنجي كلاسيك من نستيكا: بين باج اسفنجي",
+    "seo_description": "بين باج إسفنجي كلاسيك من نستيكا: حشوة إسفنج مريحة وتصميم خفيف الحركة، مناسب للروف والتراس والجاردن، بأحجام وألوان قابلة للتأكيد قبل الطلب.",
     "main_image_width": 1200,
     "main_image_height": 1200,
     "name_en": "Bean Bag Foam Classic",
     "card_description_en": "multiple sizes",
     "material_en": "Fabric and filling, depending on the model",
     "category_name_en": "Outdoor Bean Bags",
-    "description_en": "Customization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "description_en": "A classic-style foam bean bag that molds to the body for relaxed outdoor seating on a rooftop, terrace or garden. Works well as an extra seat next to a main set or as a standalone lounge corner, and is light enough to move around easily. Available in more than one size — send your available space to confirm the best size and color.",
     "seo_title_en": "Bean Bag Foam Classic | Outdoor Furniture in Egypt",
-    "seo_description_en": "Explore Bean Bag Foam Classic from Nestica. View the base price, materials, specifications, customization options and suitable outdoor spaces in Egypt.",
+    "seo_description_en": "Bean Bag Foam Classic from Nestica: a comfortable foam-filled, lightweight bean bag for rooftops, terraces and gardens, available in multiple sizes and colors.",
     "catalog_title_en": "Bean Bag Foam Classic | EGP 2,000",
     "feed_title_en": "Bean Bag Foam Classic | EGP 2,000",
     "category_slug_en": "outdoor-bean-bags",
@@ -1744,7 +1733,7 @@
     "catalog_title": "بين باج إسفنجي B | EGP 2,000",
     "card_description": "تصميم مختلف",
     "feed_title": "بين باج إسفنجي B | EGP 2,000",
-    "description": "بين باج اسفنجي",
+    "description": "نفس فكرة البين باج الإسفنجي المريح لكن بتصميم وخامة قماش مختلفة عن الموديل الكلاسيك، بيدي شكل مختلف شوية للركن أو الروف. حشوة إسفنجية طرية ومناسب كجلسة إضافية أو ركن استرخاء منفرد.",
     "category_name": "بين باج Outdoor",
     "category_slug": "بين-باج",
     "material": "قماش وحشو حسب الموديل",
@@ -1758,18 +1747,18 @@
     "is_featured": false,
     "is_ready": false,
     "has_real_delivery": false,
-    "description_ar": "بين باج اسفنجي",
+    "description_ar": "نفس فكرة البين باج الإسفنجي المريح لكن بتصميم وخامة قماش مختلفة عن الموديل الكلاسيك، بيدي شكل مختلف شوية للركن أو الروف. حشوة إسفنجية طرية ومناسب كجلسة إضافية أو ركن استرخاء منفرد.",
     "seo_title": "بين باج إسفنجي B | أثاث Outdoor في مصر",
-    "seo_description": "تعرف على بين باج إسفنجي B من نستيكا: بين باج اسفنجي",
+    "seo_description": "بين باج إسفنجي B من نستيكا: تصميم مختلف عن الموديل الكلاسيك بنفس راحة الحشوة الإسفنجية، مناسب للروف والتراس والجاردن.",
     "main_image_width": 894,
     "main_image_height": 894,
     "name_en": "Bean Bag Foam B",
     "card_description_en": "design variant",
     "material_en": "Fabric and filling, depending on the model",
     "category_name_en": "Outdoor Bean Bags",
-    "description_en": "Customization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "description_en": "The same comfortable foam-filled bean bag concept in a different fabric and finish from the Classic model, for a slightly different look in a corner or rooftop setup. Soft foam filling, suitable as an extra seat or standalone lounge piece.",
     "seo_title_en": "Bean Bag Foam B | Outdoor Furniture in Egypt",
-    "seo_description_en": "Explore Bean Bag Foam B from Nestica. View the base price, materials, specifications, customization options and suitable outdoor spaces in Egypt.",
+    "seo_description_en": "Bean Bag Foam B from Nestica: a different design from the Classic model with the same comfortable foam filling, suited to rooftops, terraces and gardens.",
     "catalog_title_en": "Bean Bag Foam B | EGP 2,000",
     "feed_title_en": "Bean Bag Foam B | EGP 2,000",
     "category_slug_en": "outdoor-bean-bags",
@@ -1790,7 +1779,7 @@
     "catalog_title": "بين باج إسفنجي C | EGP 2,000",
     "card_description": "تصميم مختلف",
     "feed_title": "بين باج إسفنجي C | EGP 2,000",
-    "description": "بين باج اسفنجي",
+    "description": "موديل تالت من مجموعة البين باج الإسفنجي بتصميم وخامة قماش مختلفة، لمن يحب يعمل تنويع بالألوان أو الشكل بين قطع الجلوس. حشوة إسفنجية طرية وسهل نقله بين أماكن الجلوس المختلفة.",
     "category_name": "بين باج Outdoor",
     "category_slug": "بين-باج",
     "material": "قماش وحشو حسب الموديل",
@@ -1804,18 +1793,18 @@
     "is_featured": false,
     "is_ready": false,
     "has_real_delivery": false,
-    "description_ar": "بين باج اسفنجي",
+    "description_ar": "موديل تالت من مجموعة البين باج الإسفنجي بتصميم وخامة قماش مختلفة، لمن يحب يعمل تنويع بالألوان أو الشكل بين قطع الجلوس. حشوة إسفنجية طرية وسهل نقله بين أماكن الجلوس المختلفة.",
     "seo_title": "بين باج إسفنجي C | أثاث Outdoor في مصر",
-    "seo_description": "تعرف على بين باج إسفنجي C من نستيكا: بين باج اسفنجي",
+    "seo_description": "بين باج إسفنجي C من نستيكا: تصميم مميز ضمن مجموعة البين باج الإسفنجي، حشوة مريحة ومناسب للمساحات الخارجية المختلفة.",
     "main_image_width": 1500,
     "main_image_height": 1500,
     "name_en": "Bean Bag Foam C",
     "card_description_en": "design variant",
     "material_en": "Fabric and filling, depending on the model",
     "category_name_en": "Outdoor Bean Bags",
-    "description_en": "Customization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "description_en": "A third option in the foam bean bag range with a different fabric and design, useful for mixing colors or shapes between seating pieces. Soft foam filling and easy to move between seating areas.",
     "seo_title_en": "Bean Bag Foam C | Outdoor Furniture in Egypt",
-    "seo_description_en": "Explore Bean Bag Foam C from Nestica. View the base price, materials, specifications, customization options and suitable outdoor spaces in Egypt.",
+    "seo_description_en": "Bean Bag Foam C from Nestica: a distinct design within the foam bean bag range, comfortable filling suited to different outdoor spaces.",
     "catalog_title_en": "Bean Bag Foam C | EGP 2,000",
     "feed_title_en": "Bean Bag Foam C | EGP 2,000",
     "category_slug_en": "outdoor-bean-bags",
@@ -1836,7 +1825,7 @@
     "catalog_title": "بين باج إسفنجي D | EGP 1,999",
     "card_description": "1,999 جنيه",
     "feed_title": "بين باج إسفنجي D | EGP 1,999",
-    "description": "بين باج اسفنجي",
+    "description": "موديل اقتصادي من البين باج الإسفنجي بسعر مخفض، مناسب لمن عايز يزود عدد أماكن الجلوس بميزانية محدودة من غير ما يقلل من الراحة. حشوة إسفنجية طرية وخفيف الحركة.",
     "category_name": "بين باج Outdoor",
     "category_slug": "بين-باج",
     "material": "قماش وحشو حسب الموديل",
@@ -1850,18 +1839,18 @@
     "is_featured": false,
     "is_ready": false,
     "has_real_delivery": false,
-    "description_ar": "بين باج اسفنجي",
+    "description_ar": "موديل اقتصادي من البين باج الإسفنجي بسعر مخفض، مناسب لمن عايز يزود عدد أماكن الجلوس بميزانية محدودة من غير ما يقلل من الراحة. حشوة إسفنجية طرية وخفيف الحركة.",
     "seo_title": "بين باج إسفنجي D | أثاث Outdoor في مصر",
-    "seo_description": "تعرف على بين باج إسفنجي D من نستيكا: بين باج اسفنجي",
+    "seo_description": "بين باج إسفنجي D من نستيكا: خيار اقتصادي بسعر 1,999 جنيه ضمن مجموعة البين باج الإسفنجي، مناسب لزيادة أماكن الجلوس في المساحات الخارجية.",
     "main_image_width": 1300,
     "main_image_height": 1296,
     "name_en": "Bean Bag Foam D",
     "card_description_en": "Outdoor furniture model with customizable options",
     "material_en": "Fabric and filling, depending on the model",
     "category_name_en": "Outdoor Bean Bags",
-    "description_en": "Customization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "description_en": "A value-priced option in the foam bean bag range, ideal for adding extra seating on a tighter budget without sacrificing comfort. Soft foam filling and easy to move.",
     "seo_title_en": "Bean Bag Foam D | Outdoor Furniture in Egypt",
-    "seo_description_en": "Explore Bean Bag Foam D from Nestica. View the base price, materials, specifications, customization options and suitable outdoor spaces in Egypt.",
+    "seo_description_en": "Bean Bag Foam D from Nestica: a value-priced option in the foam bean bag range at EGP 1,999, ideal for adding extra outdoor seating.",
     "catalog_title_en": "Bean Bag Foam D | EGP 1,999",
     "feed_title_en": "Bean Bag Foam D | EGP 1,999",
     "category_slug_en": "outdoor-bean-bags",
@@ -1882,7 +1871,7 @@
     "catalog_title": "بين باج كرة قدم | EGP 1,700",
     "card_description": "للأطفال",
     "feed_title": "بين باج كرة قدم | EGP 1,700",
-    "description": "بين باج كرة قدم",
+    "description": "بين باج بتصميم كرة القدم، اختيار مرح لغرفة الأطفال أو ركن اللعب في الروف أو الجاردن. حشوة طرية وحجم مناسب للأطفال، وسهل التنظيف والنقل بين الأماكن.",
     "category_name": "بين باج Outdoor",
     "category_slug": "بين-باج",
     "material": "قماش وحشو حسب الموديل",
@@ -1896,18 +1885,18 @@
     "is_featured": false,
     "is_ready": false,
     "has_real_delivery": false,
-    "description_ar": "بين باج كرة قدم",
+    "description_ar": "بين باج بتصميم كرة القدم، اختيار مرح لغرفة الأطفال أو ركن اللعب في الروف أو الجاردن. حشوة طرية وحجم مناسب للأطفال، وسهل التنظيف والنقل بين الأماكن.",
     "seo_title": "بين باج كرة قدم | أثاث Outdoor في مصر",
-    "seo_description": "تعرف على بين باج كرة قدم من نستيكا: بين باج كرة قدم",
+    "seo_description": "بين باج كرة قدم من نستيكا: تصميم مرح للأطفال بحشوة طرية ومقاس مناسب، اختيار مميز لركن اللعب في الجاردن أو الروف.",
     "main_image_width": 700,
     "main_image_height": 700,
     "name_en": "Bean Bag Football",
     "card_description_en": "for kids",
     "material_en": "Fabric and filling, depending on the model",
     "category_name_en": "Outdoor Bean Bags",
-    "description_en": "Customization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "description_en": "A football-shaped bean bag, a fun pick for a kids' corner in the garden or on the rooftop. Soft filling in a kid-friendly size, easy to clean and move around.",
     "seo_title_en": "Bean Bag Football | Outdoor Furniture in Egypt",
-    "seo_description_en": "Explore Bean Bag Football from Nestica. View the base price, materials, specifications, customization options and suitable outdoor spaces in Egypt.",
+    "seo_description_en": "Bean Bag Football from Nestica: a fun, kid-friendly design with soft filling, a great pick for a play corner in the garden or on the rooftop.",
     "catalog_title_en": "Bean Bag Football | EGP 1,700",
     "feed_title_en": "Bean Bag Football | EGP 1,700",
     "category_slug_en": "outdoor-bean-bags",
@@ -1928,7 +1917,7 @@
     "catalog_title": "بين باج مع طاولة جانبية | EGP 2,300",
     "card_description": "سيت كامل",
     "feed_title": "بين باج مع طاولة جانبية | EGP 2,300",
-    "description": "بين باج مع طاوله صغيرة",
+    "description": "سيت بين باج مع طاولة جانبية صغيرة، مناسب كركن كامل الفكرة يجمع الجلوس والاستخدام العملي في نفس المكان (مشروب أو كتاب أو تليفون) من غير ما تحتاج تضيف طاولة منفصلة. عملي في الروف والتراس والبلكونة.",
     "category_name": "بين باج Outdoor",
     "category_slug": "بين-باج",
     "material": "قماش وحشو حسب الموديل",
@@ -1942,18 +1931,18 @@
     "is_featured": false,
     "is_ready": false,
     "has_real_delivery": false,
-    "description_ar": "بين باج مع طاوله صغيرة",
+    "description_ar": "سيت بين باج مع طاولة جانبية صغيرة، مناسب كركن كامل الفكرة يجمع الجلوس والاستخدام العملي في نفس المكان (مشروب أو كتاب أو تليفون) من غير ما تحتاج تضيف طاولة منفصلة. عملي في الروف والتراس والبلكونة.",
     "seo_title": "بين باج مع طاولة جانبية | أثاث Outdoor في مصر",
-    "seo_description": "تعرف على بين باج مع طاولة جانبية من نستيكا: بين باج مع طاوله صغيرة",
+    "seo_description": "بين باج مع طاولة جانبية من نستيكا: سيت كامل يجمع الجلوس المريح مع طاولة صغيرة عملية، مناسب للروف والتراس والبلكونة.",
     "main_image_width": 500,
     "main_image_height": 500,
     "name_en": "Bean Bag with Side Table",
     "card_description_en": "complete set",
     "material_en": "Fabric and filling, depending on the model",
     "category_name_en": "Outdoor Bean Bags",
-    "description_en": "Customization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "description_en": "A bean bag paired with a small side table, giving you a complete, ready-to-use corner for a drink, a book or your phone without adding a separate table. Practical for rooftops, terraces and balconies.",
     "seo_title_en": "Bean Bag with Side Table | Outdoor Furniture in Egypt",
-    "seo_description_en": "Explore Bean Bag with Side Table from Nestica. View the base price, materials, specifications, customization options and suitable outdoor spaces in Egypt.",
+    "seo_description_en": "Bean Bag with Side Table from Nestica: a complete set pairing comfortable seating with a practical small table, suited to rooftops, terraces and balconies.",
     "catalog_title_en": "Bean Bag with Side Table | EGP 2,300",
     "feed_title_en": "Bean Bag with Side Table | EGP 2,300",
     "category_slug_en": "outdoor-bean-bags",
@@ -1974,7 +1963,7 @@
     "catalog_title": "بين باج سريري | EGP 2,700",
     "card_description": "مريح للنوم",
     "feed_title": "بين باج سريري | EGP 2,700",
-    "description": "بين باج سريري",
+    "description": "بين باج بتصميم سريري ممدود، مناسب لمن يحب يستلقي بدل ما يقعد قاعد، وده بيخليه اختيار كويس لركن الاسترخاء أو النوم القصير في الروف أو الجاردن. حشوة طرية ومساحة استلقاء مريحة.",
     "category_name": "بين باج Outdoor",
     "category_slug": "بين-باج",
     "material": "قماش وحشو حسب الموديل",
@@ -1988,18 +1977,18 @@
     "is_featured": false,
     "is_ready": false,
     "has_real_delivery": false,
-    "description_ar": "بين باج سريري",
+    "description_ar": "بين باج بتصميم سريري ممدود، مناسب لمن يحب يستلقي بدل ما يقعد قاعد، وده بيخليه اختيار كويس لركن الاسترخاء أو النوم القصير في الروف أو الجاردن. حشوة طرية ومساحة استلقاء مريحة.",
     "seo_title": "بين باج سريري | أثاث Outdoor في مصر",
-    "seo_description": "تعرف على بين باج سريري من نستيكا: بين باج سريري",
+    "seo_description": "بين باج سريري من نستيكا: تصميم ممدود مريح للاستلقاء، اختيار مثالي لركن الاسترخاء في الروف أو الجاردن.",
     "main_image_width": 558,
     "main_image_height": 558,
     "name_en": "Bean Bag Bed-Style",
     "card_description_en": "comfortable for lounging",
     "material_en": "Fabric and filling, depending on the model",
     "category_name_en": "Outdoor Bean Bags",
-    "description_en": "Customization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "description_en": "An elongated, bed-style bean bag for lying down rather than sitting upright, making it a good pick for a relaxation or nap corner on the rooftop or garden. Soft filling and a comfortable lounging surface.",
     "seo_title_en": "Bean Bag Bed-Style | Outdoor Furniture in Egypt",
-    "seo_description_en": "Explore Bean Bag Bed-Style from Nestica. View the base price, materials, specifications, customization options and suitable outdoor spaces in Egypt.",
+    "seo_description_en": "Bean Bag Bed from Nestica: an elongated, comfortable design for lounging, ideal for a relaxation corner on the rooftop or in the garden.",
     "catalog_title_en": "Bean Bag Bed-Style | EGP 2,700",
     "feed_title_en": "Bean Bag Bed-Style | EGP 2,700",
     "category_slug_en": "outdoor-bean-bags",
@@ -2020,7 +2009,7 @@
     "catalog_title": "بين باج جلد بريميوم | EGP 3,000",
     "card_description": "إسفنجي فاخر",
     "feed_title": "بين باج جلد بريميوم | EGP 3,000",
-    "description": "بين باج اسفنجي جلد",
+    "description": "موديل بريميوم من البين باج بخامة تحاكي شكل الجلد لمظهر أرقى، مع نفس راحة الحشوة الإسفنجية الطرية. اختيار مناسب لمن يدور على شكل أفخم ضمن نفس فكرة البين باج العملية.",
     "category_name": "بين باج Outdoor",
     "category_slug": "بين-باج",
     "material": "قماش وحشو حسب الموديل",
@@ -2034,18 +2023,18 @@
     "is_featured": false,
     "is_ready": false,
     "has_real_delivery": false,
-    "description_ar": "بين باج اسفنجي جلد",
+    "description_ar": "موديل بريميوم من البين باج بخامة تحاكي شكل الجلد لمظهر أرقى، مع نفس راحة الحشوة الإسفنجية الطرية. اختيار مناسب لمن يدور على شكل أفخم ضمن نفس فكرة البين باج العملية.",
     "seo_title": "بين باج جلد بريميوم | أثاث Outdoor في مصر",
-    "seo_description": "تعرف على بين باج جلد بريميوم من نستيكا: بين باج اسفنجي جلد",
+    "seo_description": "بين باج جلد بريميوم من نستيكا: خامة تحاكي الجلد لمظهر أرقى مع راحة الحشوة الإسفنجية، اختيار مميز ضمن مجموعة البين باج.",
     "main_image_width": 1000,
     "main_image_height": 1000,
     "name_en": "Bean Bag Leather Premium",
     "card_description_en": "premium foam",
     "material_en": "Fabric and filling, depending on the model",
     "category_name_en": "Outdoor Bean Bags",
-    "description_en": "Customization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "description_en": "A premium bean bag with a leather-look finish for an upscale appearance, while keeping the same soft, comfortable foam filling. A good option for anyone who wants a more refined look within the same practical bean bag concept.",
     "seo_title_en": "Bean Bag Leather Premium | Outdoor Furniture in Egypt",
-    "seo_description_en": "Explore Bean Bag Leather Premium from Nestica. View the base price, materials, specifications, customization options and suitable outdoor spaces in Egypt.",
+    "seo_description_en": "Bean Bag Leather Premium from Nestica: a leather-look finish for an upscale appearance with the same comfortable foam filling, a standout pick in the bean bag range.",
     "catalog_title_en": "Bean Bag Leather Premium | EGP 3,000",
     "feed_title_en": "Bean Bag Leather Premium | EGP 3,000",
     "category_slug_en": "outdoor-bean-bags",
@@ -2073,7 +2062,6 @@
     "material": "حديد وخشب",
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "sku": "NST-0050",
@@ -2119,7 +2107,6 @@
     "material": "حديد وخشب",
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "sku": "NST-0051",
@@ -2432,7 +2419,6 @@
     "is_active": true,
     "spaces": [
       "garden",
-      "terrace",
       "roof"
     ],
     "slug": "product-58-طقم-دوبار-جراند-8-مقعد-حديقة",
@@ -2763,7 +2749,8 @@
       "cafe-and-restaurant",
       "garden",
       "terrace",
-      "roof"
+      "roof",
+      "balcony"
     ],
     "slug": "product-65-طقم-2-كرسي-دوبار-outdoor-بيج",
     "main_image": "/assets/images/products/be74daef-98a6-46b6-ac38-bf78f06e0bbd.webp",
@@ -2915,7 +2902,8 @@
     "spaces": [
       "garden",
       "roof",
-      "terrace"
+      "terrace",
+      "balcony"
     ],
     "sku": "NST-0068",
     "is_featured": false,
@@ -2960,7 +2948,8 @@
     "spaces": [
       "garden",
       "roof",
-      "terrace"
+      "terrace",
+      "balcony"
     ],
     "sku": "NST-0069",
     "is_featured": false,
@@ -3052,7 +3041,8 @@
     "spaces": [
       "garden",
       "roof",
-      "terrace"
+      "terrace",
+      "balcony"
     ],
     "sku": "NST-0071",
     "is_featured": false,
@@ -3098,7 +3088,8 @@
     "spaces": [
       "garden",
       "roof",
-      "terrace"
+      "terrace",
+      "balcony"
     ],
     "sku": "NST-0072",
     "is_featured": false,
@@ -3783,7 +3774,6 @@
     "spaces": [
       "garden",
       "roof",
-      "terrace",
       "cafe-and-restaurant"
     ],
     "sku": "NST-0098",
@@ -4581,7 +4571,6 @@
     "spaces": [
       "cafe-and-restaurant",
       "garden",
-      "terrace",
       "roof",
       "balcony"
     ],
@@ -5090,5 +5079,91 @@
     "feed_title_en": "Nova Compact Rope Set | EGP 8,600",
     "category_slug_en": "outdoor-rope-furniture",
     "slug_en": "p227-nova-compact-rope-set"
+  },
+  {
+    "id": 228,
+    "name": "شمسية سنتر ميكانيزم 3م",
+    "price": 9500,
+    "is_offer": false,
+    "old_price": null,
+    "category": "شمسيات",
+    "category_id": 4,
+    "is_active": true,
+    "slug": "mechanical-center-umbrella-3m",
+    "main_image": "/assets/images/products/mechanism-3m.webp",
+    "gallery": [
+      "/assets/images/products/mechanism-3m.webp"
+    ],
+    "catalog_title": "شمسية سنتر ميكانيزم 3م | EGP 9,500",
+    "card_description": "هيكل حديد وفتح ميكانيزم",
+    "feed_title": "شمسية سنتر ميكانيزم 3م | EGP 9,500",
+    "description_ar": "شمسية سنتر ميكانيزم\n\nالمواصفات:\n- هيكل كامل من الحديد\n- عمود حديد قطر 2 بوصة سمك 1.5 ملي\n- ريش حديد سمك 1 ملي\n- قاعدة حديد متحركة مدهونة إلكتروستاتيك\n- عجل لسهولة الحركة\n- طقم تجميع بلاستيك فك وتركيب\n- كل ريشة منفصلة ويمكن تغييرها بدون فك الشمسية بالكامل\n\nالقماش:\n- دك\n- Water Proof\n- كلارو\n\nالفتح والقفل: ميكانيزم يدوي باستخدام اليد",
+    "category_name": "شمسيات حدائق وOutdoor",
+    "category_slug": "شمسيات",
+    "material": "حديد وقماش",
+    "spaces": [
+      "garden",
+      "roof",
+      "terrace",
+      "cafe-and-restaurant"
+    ],
+    "sku": "NST-0228",
+    "is_featured": true,
+    "is_ready": false,
+    "has_real_delivery": false,
+    "description_en": "Mechanical center outdoor umbrella with iron structure and replaceable ribs.",
+    "seo_title": "شمسية سنتر ميكانيزم 3 متر | Outdoor Umbrella Egypt",
+    "seo_description": "شمسية سنتر ميكانيزم 3 متر من نستيكا بهيكل حديد وقاعدة متحركة وقماش مقاوم للمياه للمساحات الخارجية.",
+    "name_en": "Mechanical Center Umbrella 3m",
+    "category_name_en": "Outdoor Umbrellas",
+    "material_en": "Iron and fabric",
+    "slug_en": "mechanical-center-outdoor-umbrella-3m",
+    "category_slug_en": "outdoor-umbrellas",
+    "card_description_en": "Premium 3 meter mechanical center outdoor umbrella with durable iron structure and easy manual opening system.",
+    "seo_title_en": "3m Mechanical Center Outdoor Umbrella | Nestica Egypt",
+    "seo_description_en": "Premium 3 meter mechanical center outdoor umbrella with iron structure, waterproof fabric options and mobile base for gardens, villas and outdoor spaces."
+  },
+  {
+    "id": 229,
+    "name": "شمسية سنتر ميكانيزم 4م",
+    "price": 10500,
+    "is_offer": false,
+    "old_price": null,
+    "category": "شمسيات",
+    "category_id": 4,
+    "is_active": true,
+    "slug": "mechanical-center-umbrella-4m",
+    "main_image": "/assets/images/products/mechanism-4m.webp",
+    "gallery": [
+      "/assets/images/products/mechanism-4m.webp"
+    ],
+    "catalog_title": "شمسية سنتر ميكانيزم 4م | EGP 10,500",
+    "card_description": "هيكل حديد وفتح ميكانيزم",
+    "feed_title": "شمسية سنتر ميكانيزم 4م | EGP 10,500",
+    "description_ar": "شمسية سنتر ميكانيزم 4 متر\n\nالمواصفات:\n- هيكل كامل من الحديد\n- عمود حديد قطر 2 بوصة سمك 1.5 ملي\n- ريش حديد سمك 1 ملي\n- قاعدة حديد متحركة مدهونة إلكتروستاتيك\n- عجل لسهولة الحركة\n- ريش منفصلة للصيانة السريعة\n\nالقماش:\n- دك\n- Water Proof\n- كلارو\n\nفتح وقفل يدوي بالميكانيزم",
+    "category_name": "شمسيات حدائق وOutdoor",
+    "category_slug": "شمسيات",
+    "material": "حديد وقماش",
+    "spaces": [
+      "garden",
+      "roof",
+      "terrace",
+      "cafe-and-restaurant"
+    ],
+    "sku": "NST-0229",
+    "is_featured": true,
+    "is_ready": false,
+    "has_real_delivery": false,
+    "description_en": "Mechanical center outdoor umbrella 4m.",
+    "seo_title": "شمسية سنتر ميكانيزم 4 متر | Outdoor Umbrella Egypt",
+    "seo_description": "شمسية سنتر ميكانيزم 4 متر من نستيكا بتصميم متين للمناطق الخارجية.",
+    "name_en": "Mechanical Center Umbrella 4m",
+    "category_name_en": "Outdoor Umbrellas",
+    "material_en": "Iron and fabric",
+    "slug_en": "mechanical-center-outdoor-umbrella-4m",
+    "category_slug_en": "outdoor-umbrellas",
+    "card_description_en": "Premium 4 meter mechanical center outdoor umbrella with durable iron structure and easy manual opening system.",
+    "seo_title_en": "4m Mechanical Center Outdoor Umbrella | Nestica Egypt",
+    "seo_description_en": "Premium 4 meter mechanical center outdoor umbrella with iron structure, waterproof fabric options and mobile base for gardens, villas and outdoor spaces."
   }
 ]

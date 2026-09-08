@@ -76,6 +76,15 @@
         "sameAs": ["{{ settings.facebook }}", "{{ settings.instagram }}", "{{ settings.tiktok }}"]
       },
       {
+        "@type": "LocalBusiness",
+        "@id": "{{ settings.siteUrl }}/#localbusiness",
+        "name": "{{ settings.brand }}",
+        "url": "{{ settings.siteUrl }}",
+        "telephone": "{{ settings.phone }}",
+        "priceRange": "$$",
+        "areaServed": "Egypt"
+      },
+      {
         "@type": "WebSite",
         "@id": "{{ settings.siteUrl }}/#website-{{ currentLang }}",
         "url": "{{ settings.siteUrl }}{{ '/' | localeUrl(currentLang) }}",
