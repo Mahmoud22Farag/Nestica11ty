@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
 <g:description><![CDATA[{{ product.description_en or product.name_en }}]]></g:description>
 <g:link>{{ settings.siteUrl }}/en/products/{{ product.slug_en }}/</g:link>
 <g:image_link>{{ settings.siteUrl }}{{ product.main_image }}</g:image_link>
-<g:availability>in stock</g:availability>
+<g:availability>{{ product.feed_availability or 'in stock' }}</g:availability>
 <g:condition>new</g:condition>
 <g:price>{{ product.price }} EGP</g:price>
 <g:brand>Nestica</g:brand>

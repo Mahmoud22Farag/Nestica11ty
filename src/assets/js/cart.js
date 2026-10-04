@@ -1,3 +1,4 @@
+function escapeCartHtml(value) { return String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char])); }
 const CART_KEY = "nesticaCart";
 const SITE_PREFIX = "";
 
@@ -10,7 +11,15 @@ function assetUrl(path) {
 }
 
 function getCart() {
-  try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { return []; }
+  try {
+    const stored = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    if (!Array.isArray(stored)) return [];
+    const catalog = window.NESTICA_CATALOG;
+    return stored.filter(item => item && (!catalog || catalog[String(item.id)]))
+      .map(item => { const current = catalog?.[String(item.id)];
+        return {...item, ...(current || {}), name: current ? (document.documentElement.lang === "en" ? current.name_en : current.name_ar) : item.name,
+          quantity: Math.max(1, Math.floor(Number(item.quantity) || 1))}; });
+  } catch { return []; }
 }
 
 function saveCart(cart) {
@@ -24,7 +33,9 @@ function fbTrack(eventName, payload = {}) {
 }
 
 function trackWhatsappLead(source = "whatsapp_click") {
-  fbTrack("Lead", { content_name: source, source: source, currency: "EGP" });
+  if (typeof fbq === "function") fbq("trackCustom", "WhatsAppClick", {source});
+  if (window.ttq && typeof window.ttq.track === "function") window.ttq.track("Contact", {description: source});
+  nesticaTrack("whatsapp_click", {source});
 }
 
 function showCartPopup() {
@@ -55,20 +66,18 @@ function addToCart(product) {
   if (existing) existing.quantity += 1;
   else cart.push({ ...product, quantity: 1, requestType: "same", notes: "" });
   saveCart(cart);
-  fbTrack("AddToCart", {
-    content_ids: [product.id], content_name: product.name, content_type: "product",
-    value: Number(product.price || 0), currency: "EGP"
-  });
+  nesticaProductEvent("AddToCart", product, 1);
   showCartPopup();
 }
 
 function addProductDetailsToCart(product) {
-  const quantity = Math.max(1, Number(document.getElementById("quantity")?.value || 1));
+  const quantity = Math.max(1, Math.floor(Number(document.getElementById("quantity")?.value) || 1));
   const requestType = document.querySelector('input[name="requestType"]:checked')?.value || "same";
   const notes = document.getElementById("notes")?.value || "";
   const cart = getCart();
   cart.push({ ...product, quantity, requestType, notes });
   saveCart(cart);
+  nesticaProductEvent("AddToCart", product, quantity);
   showCartPopup();
 }
 
@@ -81,7 +90,7 @@ function updateCartCount() {
 function updateQty(index, qty) {
   const cart = getCart();
   if (!cart[index]) return;
-  cart[index].quantity = Math.max(1, Number(qty || 1));
+  cart[index].quantity = Math.max(1, Math.floor(Number(qty) || 1));
   saveCart(cart);
 }
 
@@ -121,11 +130,11 @@ function renderCart() {
     const displayName = isEnglish ? (item.name_en || item.name) : (item.name_ar || item.name);
     div.innerHTML = `
       <div class="d-flex gap-3 align-items-center">
-        <img src="${assetUrl(item.image || item.main_image || "/assets/images/products/default-product.webp")}" alt="${displayName || ""}" class="cart-item-img rounded-3" onerror="this.onerror=null;this.src='${assetUrl("/assets/images/products/default-product.webp")}';">
+        <img src="${escapeCartHtml(assetUrl(item.image || item.main_image || "/assets/images/products/default-product.webp"))}" alt="${escapeCartHtml(displayName || "")}" class="cart-item-img rounded-3" onerror="this.onerror=null;this.src='${assetUrl("/assets/images/products/default-product.webp")}';">
         <div class="flex-grow-1">
-          <h4 class="fw-bold mb-1">${displayName || ""}</h4>
+          <h4 class="fw-bold mb-1">${escapeCartHtml(displayName || "")}</h4>
           <p class="mb-2">${Number(item.price || 0).toLocaleString("en-US")} EGP</p>
-          ${item.notes ? `<p class="small text-muted mb-2">${item.notes}</p>` : ""}
+          ${item.notes ? `<p class="small text-muted mb-2">${escapeCartHtml(item.notes)}</p>` : ""}
           <div class="d-flex align-items-center gap-2">
             <input type="number" min="1" value="${item.quantity || 1}" class="form-control form-control-sm" style="width:90px" onchange="updateQty(${index}, this.value)">
             <button type="button" class="btn btn-sm btn-outline-danger" aria-label="${removeLabel}" onclick="removeCartItem(${index})">🗑</button>
@@ -173,7 +182,10 @@ function sendCartToWhatsApp(phone) {
   message += isEnglish
     ? `Total: ${total.toLocaleString("en-US")} EGP`
     : `الإجمالي: ${total.toLocaleString("en-US")} جنيه`;
-  fbTrack("Lead", { content_name: "cart_whatsapp_order", value: total, currency: "EGP" });
-  fbTrack("InitiateCheckout", { value: total, currency: "EGP", num_items: cart.length });
+  nesticaTrack("whatsapp_order_handoff", {value: total, currency: "EGP", num_items: cart.length});
+  const itemCount = cart.reduce((count, item) => count + Number(item.quantity || 1), 0);
+  fbTrack("InitiateCheckout", { value: total, currency: "EGP", num_items: itemCount });
+  if (window.ttq && typeof window.ttq.track === "function") window.ttq.track("InitiateCheckout", {value: total, currency: "EGP", contents: cart.map(item => ({content_id: String(item.id), content_type: "product", quantity: item.quantity, price: item.price}))});
+  nesticaTrack("begin_checkout", {ecommerce: {currency: "EGP", value: total, items: cart.map(item => ({item_id: String(item.id), item_name: item.name, price: item.price, quantity: item.quantity}))}});
   window.open(`https://wa.me/${String(phone).replace("+", "")}?text=${encodeURIComponent(message)}`, "_blank");
 }

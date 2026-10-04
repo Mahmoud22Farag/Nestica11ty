@@ -143,6 +143,8 @@ function updateOfferControls() {
 function changeMainImage(src, button) {
   const image = document.getElementById('mainProductImage');
   if (!image) return;
+  image.removeAttribute("srcset");
+  image.removeAttribute("sizes");
   image.src = src;
   document.querySelectorAll('.product-thumb-btn').forEach((item) => item.classList.remove('active'));
   button?.classList.add('active');
@@ -206,3 +208,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+function initLazyVideos() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.connection?.saveData) return;
+  const videos = document.querySelectorAll('video[data-src]');
+  const start = video => { if (!video.src) video.src = video.dataset.src; video.play().catch(() => {}); };
+  if (!('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) start(entry.target); else entry.target.pause();
+  }), {rootMargin: '100px'});
+  videos.forEach(video => observer.observe(video));
+}
+document.addEventListener('DOMContentLoaded', initLazyVideos);
