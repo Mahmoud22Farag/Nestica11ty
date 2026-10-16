@@ -32,10 +32,11 @@ function fbTrack(eventName, payload = {}) {
   if (typeof fbq === "function") fbq("track", eventName, payload);
 }
 
-function trackWhatsappLead(source = "whatsapp_click") {
+function trackWhatsappLead(source = "whatsapp_click", product = window.nesticaProductMeta) {
   if (typeof fbq === "function") fbq("trackCustom", "WhatsAppClick", {source});
   if (window.ttq && typeof window.ttq.track === "function") window.ttq.track("Contact", {description: source});
-  nesticaTrack("whatsapp_click", {source});
+  nesticaTrack("whatsapp_click", {source, page_path: location.pathname,
+    ...(product ? {item_id: String(product.id), item_name: product.name, value: Number(product.price) || 0, currency: "EGP"} : {})});
 }
 
 function showCartPopup() {
@@ -162,8 +163,9 @@ function sendCartToWhatsApp(phone) {
     if (!name) nameInput?.focus(); else if (!customerPhone) phoneInput?.focus(); else addressInput?.focus();
     return;
   }
-  const digitsOnly = customerPhone.replace(/\D/g, "");
-  if (digitsOnly.length < 8) { alert(isEnglish ? "Please enter a valid phone number." : "من فضلك اكتب رقم هاتف صحيح."); phoneInput?.focus(); return; }
+  const normalizedPhone = customerPhone.replace(/[٠-٩۰-۹]/g, char => String('٠١٢٣٤٥٦٧٨٩'.includes(char) ? '٠١٢٣٤٥٦٧٨٩'.indexOf(char) : '۰۱۲۳۴۵۶۷۸۹'.indexOf(char)));
+  const digitsOnly = normalizedPhone.replace(/\D/g, "");
+  if (digitsOnly.length < 8 || digitsOnly.length > 15) { alert(isEnglish ? "Please enter a valid phone number." : "من فضلك اكتب رقم هاتف صحيح."); phoneInput?.focus(); return; }
   let message = isEnglish
     ? `New Nestica Order\nName: ${name}\nPhone: ${customerPhone}\nAddress: ${address}\n\n`
     : `طلب جديد من نستيكا\nالاسم: ${name}\nرقم الهاتف: ${customerPhone}\nالعنوان: ${address}\n\n`;
@@ -182,6 +184,7 @@ function sendCartToWhatsApp(phone) {
   message += isEnglish
     ? `Total: ${total.toLocaleString("en-US")} EGP`
     : `الإجمالي: ${total.toLocaleString("en-US")} جنيه`;
+  message += isEnglish ? "\nDelivery, customization, payment and final total to be confirmed." : "\nالتوصيل والتخصيص وطريقة الدفع والإجمالي النهائي يتم تأكيدهم مع الفريق.";
   nesticaTrack("whatsapp_order_handoff", {value: total, currency: "EGP", num_items: cart.length});
   const itemCount = cart.reduce((count, item) => count + Number(item.quantity || 1), 0);
   fbTrack("InitiateCheckout", { value: total, currency: "EGP", num_items: itemCount });

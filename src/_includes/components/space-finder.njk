@@ -1,0 +1,11 @@
+{% set en = lang == 'en' %}
+<section class="container section-space">
+  <div class="space-finder">
+    <div class="space-finder-intro"><span class="section-kicker">{{ 'YOUR SPACE, YOUR WAY' if en else 'مساحتك.. على ذوقك' }}</span><h2>{{ 'A little space. A whole new feeling.' if en else 'مساحة صغيرة، فرق كبير.' }}</h2><p>{{ 'Start with your space and budget. Find the pieces that bring it to life.' if en else 'ابدأ بمساحتك وميزانيتك، ووصل للقطع المناسبة من غير لف كتير.' }}</p><a href="{{ '/real-deliveries/' | localeUrl(lang or 'ar') | url }}">{{ 'See real spaces →' if en else 'شوف أفكار من تسليماتنا ←' }}</a></div>
+    <form class="space-finder-form" action="{{ '/products/' | localeUrl(lang or 'ar') | url }}" method="get">
+      <label for="finderSpace">{{ '01 — Choose your space' if en else '01 — بتجهز أنهي مساحة؟' }}</label><select id="finderSpace" name="space" class="form-select"><option value="">{{ 'All spaces' if en else 'كل المساحات' }}</option>{% for space in spaces %}<option value="{{ space.slug }}">{{ space.name_en if en else space.name_ar }}</option>{% endfor %}</select>
+      <label for="finderBudget">{{ '02 — Set your budget' if en else '02 — ميزانيتك في حدود كام؟' }}</label><select id="finderBudget" name="price" class="form-select"><option value="">{{ 'All budgets' if en else 'كل الميزانيات' }}</option><option value="0-10000">{{ 'Under' if en else 'أقل من' }} 10,000 EGP</option><option value="10000-20000">10,000 – 20,000 EGP</option><option value="20000-40000">20,000 – 40,000 EGP</option><option value="40000+">40,000+ EGP</option></select>
+      <button class="btn btn-dark rounded-pill" type="submit">{{ 'Find my pieces' if en else 'ورّيني الاختيارات' }} <i class="bi bi-arrow-{{ 'right' if en else 'left' }}"></i></button>
+    </form>
+  </div>
+</section>

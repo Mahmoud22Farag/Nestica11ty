@@ -2,7 +2,11 @@
 window.dataLayer = window.dataLayer || [];
 function nesticaTrack(event, payload = {}) {
   // No names, phone numbers, addresses or free-text notes are sent to analytics.
+  if (payload.ecommerce) window.dataLayer.push({ecommerce: null});
   window.dataLayer.push({ event, ...payload });
+  if (window.NESTICA_GA4_DIRECT && typeof window.gtag === 'function') {
+    window.gtag('event', event, payload.ecommerce || payload);
+  }
 }
 function nesticaProductEvent(event, product, quantity = 1) {
   const qty = Math.max(1, Math.floor(Number(quantity) || 1));
@@ -19,4 +23,15 @@ function nesticaProductEvent(event, product, quantity = 1) {
 }
 document.addEventListener('DOMContentLoaded', () => {
   if (window.nesticaProductMeta) nesticaProductEvent('ViewContent', window.nesticaProductMeta);
+});
+
+document.addEventListener('click', event => {
+  const link = event.target.closest?.('a[href]');
+  if (!link || link.hasAttribute('onclick')) return;
+  try {
+    const url = new URL(link.href);
+    if (['wa.me', 'api.whatsapp.com', 'web.whatsapp.com'].includes(url.hostname)) {
+      trackWhatsappLead('site_link');
+    }
+  } catch (_) {}
 });

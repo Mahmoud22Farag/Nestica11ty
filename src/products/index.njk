@@ -18,7 +18,7 @@ permalink: /products/
     <button id="resetFilters" class="btn btn-outline-dark" type="button"><i class="bi bi-arrow-counterclockwise"></i> مسح</button>
   </div>
 
-  <div class="catalog-results-bar"><p><strong id="visibleProductsCount">0</strong> منتج مطابق</p><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'مش لاقي المنتج المناسب وعاوز مساعدة' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('catalog_help')"><i class="bi bi-whatsapp"></i> محتاج مساعدة في الاختيار؟</a></div>
+  <div class="catalog-results-bar"><p><strong id="visibleProductsCount" aria-live="polite">{{ (products | active) | length }}</strong> منتج مطابق</p><a href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'مش لاقي المنتج المناسب وعاوز مساعدة' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('catalog_help')"><i class="bi bi-whatsapp"></i> محتاج مساعدة في الاختيار؟</a></div>
 
   <div class="row g-4" id="productsGrid">
     {% for product in products %}{% if product.is_active != false %}

@@ -28,28 +28,25 @@ robots: noindex, follow
         <h4 class="fw-bold mb-3" data-i18n="orderData">بيانات الطلب</h4>
 
         <div class="mb-3">
-          <label class="form-label fw-semibold"><span data-i18n="customerName">الاسم</span> <span class="text-danger">*</span></label>
-          <input id="customerName" class="form-control" type="text" placeholder="اكتب اسمك" required>
+          <label class="form-label fw-semibold" for="customerName"><span data-i18n="customerName">الاسم</span> <span class="text-danger">*</span></label><input id="customerName" autocomplete="name" class="form-control" type="text" placeholder="اكتب اسمك" required>
         </div>
 
         <div class="mb-3">
-          <label class="form-label fw-semibold"><span data-i18n="customerPhone">رقم الهاتف</span> <span class="text-danger">*</span></label>
-          <input id="customerPhone" class="form-control" type="tel" placeholder="01xxxxxxxxx" required>
+          <label class="form-label fw-semibold" for="customerPhone"><span data-i18n="customerPhone">رقم الهاتف</span> <span class="text-danger">*</span></label><input id="customerPhone" autocomplete="tel" class="form-control" type="tel" placeholder="01xxxxxxxxx" required>
         </div>
 
         <div class="mb-3">
-          <label class="form-label fw-semibold"><span data-i18n="customerAddress">العنوان</span> <span class="text-danger">*</span></label>
-          <textarea id="customerAddress" class="form-control" rows="3" placeholder="اكتب العنوان أو المنطقة" required></textarea>
+          <label class="form-label fw-semibold" for="customerAddress"><span data-i18n="customerAddress">العنوان</span> <span class="text-danger">*</span></label><textarea id="customerAddress" autocomplete="street-address" class="form-control" rows="3" placeholder="اكتب العنوان أو المنطقة" required></textarea>
         </div>
 
         <hr>
 
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <span class="fw-semibold" data-i18n="total">الإجمالي</span>
+          <span class="fw-semibold" data-i18n="total">إجمالي المنتجات</span>
           <strong id="cartTotal">0 EGP</strong>
         </div>
 
-        <button class="btn btn-success w-100 rounded-pill py-2 fw-bold" onclick="sendCartToWhatsApp('{{ settings.whatsapp }}')">
+        <p class="order-clarity">ده إجمالي المنتجات. تكلفة التوصيل وأي تخصيص بتتحدد قبل التأكيد. الإرسال على واتساب طلب مبدئي؛ فريقنا بيأكد التوفر والإجمالي النهائي وطريقة الدفع وميعاد التسليم.</p><button class="btn btn-success w-100 rounded-pill py-2 fw-bold" onclick="sendCartToWhatsApp('{{ settings.whatsapp }}')">
           <i class="bi bi-whatsapp me-1"></i>
           <span data-i18n="sendWhatsapp">إرسال على واتساب</span>
         </button>

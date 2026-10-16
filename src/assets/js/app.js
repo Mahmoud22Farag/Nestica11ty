@@ -73,7 +73,7 @@ function sortProductItems(items, sortValue) {
 function filterProducts() {
   const controls = getCatalogControls();
   const allItems = Array.from(document.querySelectorAll('.product-list-item'));
-  if (!allItems.length) return;
+  if (!controls.grid) return;
 
   const matches = sortProductItems(getMatchingProductItems(), controls.sort?.value || 'default');
   const isMainCatalog = Boolean(controls.loadMore);
@@ -107,6 +107,10 @@ function initCatalog() {
 
   const params = new URLSearchParams(window.location.search);
   if (controls.input && params.get('q')) controls.input.value = params.get('q');
+  for (const key of ['space', 'price', 'category']) {
+    const control = controls[key];
+    if (control && Array.from(control.options).some(option => option.value === params.get(key))) control.value = params.get(key);
+  }
 
   [controls.input, controls.category, controls.space, controls.price, controls.sort].forEach((control) => {
     if (!control) return;
