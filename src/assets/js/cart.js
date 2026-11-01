@@ -115,6 +115,7 @@ function renderCart() {
   const totalEl = document.getElementById("cartTotal");
   const cart = getCart();
   holder.innerHTML = "";
+  document.body.classList.toggle("cart-is-empty", !cart.length);
   if (!cart.length) {
     empty?.classList.remove("d-none");
     if (totalEl) totalEl.textContent = "0 EGP";

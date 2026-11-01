@@ -43,7 +43,7 @@ image: /assets/images/deliveries/delivery-224-grand-hospitality-package.webp
           <div class="delivery-tags">
             {% if delivery.location_en %}<span><i class="bi bi-geo-alt"></i> {{ delivery.location_en }}</span>{% endif %}
             <span>{{ delivery.space_name_en }}</span>
-            <a href="{{ ('/categories/' + delivery.category_slug + '/') | localeUrl('en') | url }}">{{ delivery.category_name_en }}</a>
+            <a href="{{ ('/categories/' + (delivery.category_slug | categorySlugFor('en')) + '/') | localeUrl('en') | url }}">{{ delivery.category_name_en }}</a>
             {% if delivery.price %}<span class="delivery-price-tag{% if delivery.price_is_estimate %} is-estimate{% endif %}">{% if delivery.price_is_estimate %}Approx. {% endif %}{{ delivery.price | egp }}</span>{% endif %}
           </div>
           <h2>{{ delivery.title_en }}</h2>
@@ -52,7 +52,7 @@ image: /assets/images/deliveries/delivery-224-grand-hospitality-package.webp
             {% if delivery.product_slug_en %}
               <a class="btn btn-dark rounded-pill" href="{{ ('/products/' + delivery.product_slug_en + '/') | localeUrl('en') | url }}">View Product</a>
             {% else %}
-              <a class="btn btn-dark rounded-pill" href="{{ ('/categories/' + delivery.category_slug + '/') | localeUrl('en') | url }}">Browse This Category</a>
+              <a class="btn btn-dark rounded-pill" href="{{ ('/categories/' + (delivery.category_slug | categorySlugFor('en')) + '/') | localeUrl('en') | url }}">Browse This Category</a>
             {% endif %}
             <a class="btn btn-outline-success rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ ('I would like a setup similar to Nestica delivery #' ~ delivery.id ~ (' - ' ~ delivery.product_name_en if delivery.product_name_en else '') ~ ' - ' ~ settings.siteUrl ~ '/en/real-deliveries/#delivery-' ~ delivery.id) | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('real_delivery_card_en')"><i class="bi bi-whatsapp"></i></a>
           </div>

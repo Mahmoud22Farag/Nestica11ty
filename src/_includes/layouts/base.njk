@@ -15,12 +15,14 @@
   {% set metaTitle = title or ('Outdoor Furniture in Egypt' if currentLang == 'en' else 'أثاث خارجي وأثاث حدائق في مصر') %}
   {% set canonicalUrl = canonical or (settings.siteUrl + page.url) %}
   {% set socialImagePath = image or settings.ogImage or '/assets/images/new-hero.webp' %}
+  {% set socialImagePath = socialImagePath | ogImage %}
   {% set socialImage = settings.siteUrl + socialImagePath %}
+  {% set fullTitle = metaTitle | seoTitle(settings.brand) %}
   {% set robotsValue = robots or 'index, follow, max-image-preview:large' %}
   {% set alternateArUrl = settings.siteUrl + resolvedAlternateArPath %}
   {% set alternateEnUrl = settings.siteUrl + resolvedAlternateEnPath %}
 
-  <title>{{ metaTitle | replace(' | Nestica Egypt','') | replace(' | Nestica','') | replace(' | نستيكا','') }} | {{ settings.brand }}</title>
+  <title>{{ fullTitle }}</title>
   <meta name="description" content="{{ metaDescription | seoDesc(defaultDescription) }}">
   <meta name="robots" content="{{ robotsValue }}">
   <meta name="googlebot" content="{{ robotsValue }}">
@@ -38,17 +40,19 @@
 
   <meta property="og:type" content="{{ ogType or 'website' }}">
   <meta property="og:site_name" content="{{ settings.brand }}">
-  <meta property="og:title" content="{{ metaTitle | replace(' | Nestica Egypt','') | replace(' | Nestica','') | replace(' | نستيكا','') }} | {{ settings.brand }}">
+  <meta property="og:title" content="{{ fullTitle }}">
   <meta property="og:description" content="{{ metaDescription | seoDesc(defaultDescription) }}">
   <meta property="og:url" content="{{ canonicalUrl }}">
   <meta property="og:image" content="{{ socialImage }}">
-  <meta property="og:image:width" content="1200">
+  {% if socialImagePath | isOgJpg %}<meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">{% endif %}
+  <meta property="og:image:alt" content="{{ metaTitle | seoTitle(settings.brand) }}">
   <meta property="og:locale" content="{{ tr.locale }}">
   <meta property="og:locale:alternate" content="{{ 'ar_EG' if currentLang == 'en' else 'en_US' }}">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ metaTitle | replace(' | Nestica Egypt','') | replace(' | Nestica','') | replace(' | نستيكا','') }} | {{ settings.brand }}">
+  <meta name="twitter:title" content="{{ fullTitle }}">
   <meta name="twitter:description" content="{{ metaDescription | seoDesc(defaultDescription) }}">
   <meta name="twitter:image" content="{{ socialImage }}">
 

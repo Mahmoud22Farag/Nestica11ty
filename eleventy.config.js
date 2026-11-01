@@ -1,10 +1,57 @@
+import { existsSync, readFileSync } from "node:fs";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  // Facebook domain-verification file: copy as-is only (do not also render it
+  // as a template, which produced a second copy at /yffd.../index.html).
   eleventyConfig.addPassthroughCopy({
     "src/yffd39d9g7szeziw2mfpmga9q1231t.html": "yffd39d9g7szeziw2mfpmga9q1231t.html"
   });
+  eleventyConfig.ignores.add("src/yffd39d9g7szeziw2mfpmga9q1231t.html");
+
+  // Server-rendered year for the footer (JS still updates it if needed).
+  eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
   const asArray = (items) => Array.isArray(items) ? items : [];
+
+  // Map an Arabic category slug to the matching English slug so English pages
+  // never link to /en/categories/<arabic-slug>/ (those URLs do not exist).
+  const categories = JSON.parse(readFileSync("src/_data/categories.json", "utf8"));
+  const categoryList = Array.isArray(categories) ? categories : [];
+  eleventyConfig.addFilter("categorySlugFor", (slug = "", lang = "ar") => {
+    const match = categoryList.find((c) => c.slug === slug || c.slug_en === slug);
+    if (!match) return slug;
+    return lang === "en" ? (match.slug_en || match.slug) : match.slug;
+  });
+
+  // Keep <title> within ~60 characters: drop the brand suffix when the page
+  // title is already long, instead of letting Google truncate it.
+  eleventyConfig.addFilter("seoTitle", (value = "", brand = "Nestica") => {
+    const clean = String(value || "")
+      .replace(/ \| Nestica Egypt/g, "")
+      .replace(/ \| Nestica/g, "")
+      .replace(/ \| نستيكا/g, "")
+      .trim();
+    const full = `${clean} | ${brand}`;
+    return full.length > 60 ? clean : full;
+  });
+
+  // Social preview image: WhatsApp does not reliably show .webp previews.
+  // `npm run og` pre-generates 1200x630 JPG copies under /assets/images/og/;
+  // use that copy when it exists, otherwise keep the original image.
+  const ogPathFor = (value = "") =>
+    String(value || "")
+      .replace(/^\/assets\/images\//, "/assets/images/og/")
+      .replace(/\.(webp|png|jpe?g)$/i, ".jpg");
+  eleventyConfig.addFilter("ogImage", (value = "") => {
+    const src = String(value || "");
+    if (!src.startsWith("/assets/images/") || src.startsWith("/assets/images/og/")) return src;
+    const jpg = ogPathFor(src);
+    return existsSync(`src${jpg}`) ? jpg : src;
+  });
+  eleventyConfig.addFilter("isOgJpg", (value = "") =>
+    String(value || "").startsWith("/assets/images/og/")
+  );
 
   eleventyConfig.addFilter("active", (items = []) =>
     asArray(items).filter((item) => item?.is_active !== false)
