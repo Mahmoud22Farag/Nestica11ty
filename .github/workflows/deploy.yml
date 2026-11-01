@@ -4,6 +4,12 @@ on:
     push:
         branches:
             - main
+    # Weekly rebuild (Sunday 04:17 Cairo) so the "made to order" ready date
+    # in Google data and the Merchant feed never falls in the past.
+    schedule:
+        - cron: "17 2 * * 0"
+    # Allows a manual rebuild from the Actions tab.
+    workflow_dispatch:
 
 permissions:
     contents: read

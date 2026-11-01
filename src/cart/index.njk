@@ -12,7 +12,7 @@ robots: noindex, follow
     <p class="text-muted" data-i18n="cartSubtitle">راجع المنتجات وأرسل الطلب على واتساب.</p>
   </div>
 
-  <div class="row g-4 align-items-start">
+  <div class="row g-4 align-items-start cart-layout">
     <div class="col-lg-8">
       <div id="emptyCart" class="text-center py-5 d-none">
         <h4 class="fw-bold" data-i18n="emptyCart">السلة فارغة</h4>
@@ -35,7 +35,8 @@ robots: noindex, follow
           <label class="form-label fw-semibold" for="customerPhone"><span data-i18n="customerPhone">رقم الهاتف</span> <span class="text-danger">*</span></label><input id="customerPhone" autocomplete="tel" class="form-control" type="tel" placeholder="01xxxxxxxxx" required>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3"><label class="form-label fw-semibold" for="deliveryArea">منطقة التوصيل <span class="text-danger">*</span></label><select id="deliveryArea" class="form-select" required onchange="renderCart()"><option value="" selected>اختار المنطقة</option><option value="cairo-giza" data-fee="{{ settings.delivery.cairoGiza }}">القاهرة والجيزة — {{ settings.delivery.cairoGiza | egp }} للطقم</option><option value="other" data-fee="{{ settings.delivery.otherGovernorates }}">باقي المحافظات — {{ settings.delivery.otherGovernorates | egp }} للطقم</option></select></div>
+<div class="mb-3">
           <label class="form-label fw-semibold" for="customerAddress"><span data-i18n="customerAddress">العنوان</span> <span class="text-danger">*</span></label><textarea id="customerAddress" autocomplete="street-address" class="form-control" rows="3" placeholder="اكتب العنوان أو المنطقة" required></textarea>
         </div>
 
@@ -45,8 +46,9 @@ robots: noindex, follow
           <span class="fw-semibold" data-i18n="total">إجمالي المنتجات</span>
           <strong id="cartTotal">0 EGP</strong>
         </div>
+        <div class="d-flex justify-content-between align-items-center mb-2"><span class="fw-semibold">التوصيل</span><span id="cartDelivery" class="text-muted">اختار المنطقة</span></div><div class="d-flex justify-content-between align-items-center mb-3 cart-grand-total"><span class="fw-bold">الإجمالي</span><strong id="cartGrandTotal">0 EGP</strong></div>
 
-        <p class="order-clarity">ده إجمالي المنتجات. تكلفة التوصيل وأي تخصيص بتتحدد قبل التأكيد. الإرسال على واتساب طلب مبدئي؛ فريقنا بيأكد التوفر والإجمالي النهائي وطريقة الدفع وميعاد التسليم.</p><button class="btn btn-success w-100 rounded-pill py-2 fw-bold" onclick="sendCartToWhatsApp('{{ settings.whatsapp }}')">
+        <p class="order-clarity">مدة التنفيذ {{ settings.leadTimeMinDays }}–{{ settings.leadTimeMaxDays }} أيام من تأكيد الطلب. أي تخصيص بيتسعّر لوحده. الإرسال على واتساب طلب مبدئي؛ فريقنا بيأكد الإجمالي النهائي وطريقة الدفع وميعاد التسليم.</p><button class="btn btn-success w-100 rounded-pill py-2 fw-bold" onclick="sendCartToWhatsApp('{{ settings.whatsapp }}')">
           <i class="bi bi-whatsapp me-1"></i>
           <span data-i18n="sendWhatsapp">إرسال على واتساب</span>
         </button>

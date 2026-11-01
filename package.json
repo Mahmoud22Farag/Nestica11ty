@@ -1,6 +1,6 @@
 {
   "name": "nestica-outdoor",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -13,9 +13,11 @@
     "dev": "eleventy --config=eleventy.config.js --serve",
     "prebuild": "npm run check",
     "build": "eleventy --config=eleventy.config.js",
-    "clean": "node scripts/clean.mjs"
+    "clean": "node scripts/clean.mjs",
+    "og": "npm run build && node scripts/og-images.mjs"
   },
   "devDependencies": {
-    "@11ty/eleventy": "3.1.6"
+    "@11ty/eleventy": "3.1.6",
+    "sharp": "^0.34.5"
   }
 }

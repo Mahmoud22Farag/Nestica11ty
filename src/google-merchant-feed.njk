@@ -15,7 +15,8 @@ eleventyExcludeFromCollections: true
 <g:description><![CDATA[{{ product.seo_description or product.description_ar }}]]></g:description>
 <g:link>{{ settings.siteUrl }}/products/{{ product.slug }}/</g:link>
 <g:image_link>{{ settings.siteUrl }}{{ product.main_image }}</g:image_link>
-<g:availability>{{ product.feed_availability or 'in_stock' }}</g:availability>
+<g:availability>{% if product.feed_availability %}{{ product.feed_availability }}{% elif product.is_ready %}in_stock{% else %}backorder{% endif %}</g:availability>{% if not product.feed_availability and not product.is_ready %}
+<g:availability_date>{{ settings.leadTimeMaxDays | daysFromNow('feed') }}</g:availability_date>{% endif %}
 <g:price>{{ product.price }} EGP</g:price>
 <g:brand>{{ settings.brand }}</g:brand>
 <g:condition>new</g:condition>

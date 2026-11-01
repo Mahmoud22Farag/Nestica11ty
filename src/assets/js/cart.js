@@ -107,6 +107,40 @@ function clearCart() {
   renderCart();
 }
 
+function getDeliveryChoice() {
+  const select = document.getElementById("deliveryArea");
+  const option = select?.selectedOptions?.[0];
+  if (!select || !option || !select.value) return null;
+  return { value: select.value, fee: Number(option.dataset.fee || 0), label: option.textContent.split(" — ")[0].trim() };
+}
+
+function cartSetCount(cart = getCart()) {
+  return cart.reduce((count, item) => count + Math.max(1, Number(item.quantity || 1)), 0);
+}
+
+// Delivery is priced per set: fee x number of sets in the cart.
+function deliveryTotal(delivery, sets) {
+  return delivery ? delivery.fee * sets : 0;
+}
+
+function updateCartTotals(subtotal) {
+  const isEnglish = document.documentElement.lang === "en";
+  const delivery = getDeliveryChoice();
+  const sets = cartSetCount();
+  const fee = deliveryTotal(delivery, sets);
+  const deliveryEl = document.getElementById("cartDelivery");
+  const grandEl = document.getElementById("cartGrandTotal");
+  if (deliveryEl) {
+    deliveryEl.textContent = !delivery
+      ? (isEnglish ? "Choose area" : "اختار المنطقة")
+      : sets > 1
+        ? `${delivery.fee.toLocaleString("en-US")} × ${sets} = ${fee.toLocaleString("en-US")} EGP`
+        : `${fee.toLocaleString("en-US")} EGP`;
+    deliveryEl.classList.toggle("text-muted", !delivery);
+  }
+  if (grandEl) grandEl.textContent = `${(subtotal + fee).toLocaleString("en-US")} EGP`;
+}
+
 function renderCart() {
   const isEnglish = document.documentElement.lang === "en";
   const holder = document.getElementById("cartItems");
@@ -115,9 +149,11 @@ function renderCart() {
   const totalEl = document.getElementById("cartTotal");
   const cart = getCart();
   holder.innerHTML = "";
+  document.body.classList.toggle("cart-is-empty", !cart.length);
   if (!cart.length) {
     empty?.classList.remove("d-none");
     if (totalEl) totalEl.textContent = "0 EGP";
+    updateCartTotals(0);
     return;
   }
   empty?.classList.add("d-none");
@@ -146,6 +182,7 @@ function renderCart() {
     holder.appendChild(div);
   });
   if (totalEl) totalEl.textContent = `${total.toLocaleString("en-US")} EGP`;
+  updateCartTotals(total);
 }
 
 function sendCartToWhatsApp(phone) {
@@ -163,12 +200,18 @@ function sendCartToWhatsApp(phone) {
     if (!name) nameInput?.focus(); else if (!customerPhone) phoneInput?.focus(); else addressInput?.focus();
     return;
   }
+  const delivery = getDeliveryChoice();
+  if (!delivery) {
+    alert(isEnglish ? "Please choose your delivery area." : "من فضلك اختار منطقة التوصيل.");
+    document.getElementById("deliveryArea")?.focus();
+    return;
+  }
   const normalizedPhone = customerPhone.replace(/[٠-٩۰-۹]/g, char => String('٠١٢٣٤٥٦٧٨٩'.includes(char) ? '٠١٢٣٤٥٦٧٨٩'.indexOf(char) : '۰۱۲۳۴۵۶۷۸۹'.indexOf(char)));
   const digitsOnly = normalizedPhone.replace(/\D/g, "");
   if (digitsOnly.length < 8 || digitsOnly.length > 15) { alert(isEnglish ? "Please enter a valid phone number." : "من فضلك اكتب رقم هاتف صحيح."); phoneInput?.focus(); return; }
   let message = isEnglish
-    ? `New Nestica Order\nName: ${name}\nPhone: ${customerPhone}\nAddress: ${address}\n\n`
-    : `طلب جديد من نستيكا\nالاسم: ${name}\nرقم الهاتف: ${customerPhone}\nالعنوان: ${address}\n\n`;
+    ? `New Nestica Order\nName: ${name}\nPhone: ${customerPhone}\nDelivery area: ${delivery.label}\nAddress: ${address}\n\n`
+    : `طلب جديد من نستيكا\nالاسم: ${name}\nرقم الهاتف: ${customerPhone}\nمنطقة التوصيل: ${delivery.label}\nالعنوان: ${address}\n\n`;
   let total = 0;
   cart.forEach((item, i) => {
     const line = Number(item.price || 0) * Number(item.quantity || 1);
@@ -181,10 +224,16 @@ function sendCartToWhatsApp(phone) {
       ? `${i + 1}) ${displayName}\nQty: ${item.quantity}\nPrice: ${Number(item.price || 0).toLocaleString("en-US")} EGP\nRequest: ${requestLabel}\nNotes: ${item.notes || "-"}\n\n`
       : `${i + 1}) ${displayName}\nالكمية: ${item.quantity}\nالسعر: ${Number(item.price || 0).toLocaleString("en-US")} جنيه\nنوع الطلب: ${requestLabel}\nالملاحظات: ${item.notes || "-"}\n\n`;
   });
+  const sets = cartSetCount(cart);
+  const deliveryFee = deliveryTotal(delivery, sets);
+  const grandTotal = total + deliveryFee;
+  const deliveryLine = sets > 1
+    ? `${delivery.fee.toLocaleString("en-US")} × ${sets} = ${deliveryFee.toLocaleString("en-US")}`
+    : deliveryFee.toLocaleString("en-US");
   message += isEnglish
-    ? `Total: ${total.toLocaleString("en-US")} EGP`
-    : `الإجمالي: ${total.toLocaleString("en-US")} جنيه`;
-  message += isEnglish ? "\nDelivery, customization, payment and final total to be confirmed." : "\nالتوصيل والتخصيص وطريقة الدفع والإجمالي النهائي يتم تأكيدهم مع الفريق.";
+    ? `Products: ${total.toLocaleString("en-US")} EGP\nDelivery: ${deliveryLine} EGP\nTotal: ${grandTotal.toLocaleString("en-US")} EGP`
+    : `المنتجات: ${total.toLocaleString("en-US")} جنيه\nالتوصيل: ${deliveryLine} جنيه\nالإجمالي: ${grandTotal.toLocaleString("en-US")} جنيه`;
+  message += isEnglish ? "\nAny customization and the payment method to be confirmed." : "\nأي تخصيص وطريقة الدفع يتم تأكيدهم مع الفريق.";
   nesticaTrack("whatsapp_order_handoff", {value: total, currency: "EGP", num_items: cart.length});
   const itemCount = cart.reduce((count, item) => count + Number(item.quantity || 1), 0);
   fbTrack("InitiateCheckout", { value: total, currency: "EGP", num_items: itemCount });

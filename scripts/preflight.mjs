@@ -75,6 +75,8 @@ try {
   } else {
     const mockConfig = {
       addPassthroughCopy() {},
+      addGlobalData() {},
+      ignores: { add() {} },
       addFilter(name, callback) { filters.set(name, callback); }
     };
     const result = configModule.default(mockConfig);
