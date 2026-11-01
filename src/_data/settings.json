@@ -13,5 +13,11 @@
   "facebook": "https://www.facebook.com/share/14b1gbrBynq/",
   "instagram": "https://www.instagram.com/nestica9",
   "tiktok": "https://www.tiktok.com/@nestica.outdoor",
-  "ga4MeasurementId": ""
+  "ga4MeasurementId": "",
+  "leadTimeMinDays": 5,
+  "leadTimeMaxDays": 10,
+  "delivery": {
+    "cairoGiza": 1000,
+    "otherGovernorates": 2000
+  }
 }

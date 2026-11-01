@@ -9,6 +9,15 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.ignores.add("src/yffd39d9g7szeziw2mfpmga9q1231t.html");
 
+  // Date N days after the build (Cairo time), used for the "made to order"
+  // ready date in Google data. format "date" → 2026-11-11,
+  // "feed" → 2026-11-11T00:00+02:00 (Merchant Center availability_date).
+  eleventyConfig.addFilter("daysFromNow", (days = 0, format = "date") => {
+    const d = new Date(Date.now() + Number(days || 0) * 86400000);
+    const ymd = d.toLocaleDateString("en-CA", { timeZone: "Africa/Cairo" });
+    return format === "feed" ? `${ymd}T00:00+02:00` : ymd;
+  });
+
   // Server-rendered year for the footer (JS still updates it if needed).
   eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
 
