@@ -114,16 +114,31 @@ function getDeliveryChoice() {
   return { value: select.value, fee: Number(option.dataset.fee || 0), label: option.textContent.split(" — ")[0].trim() };
 }
 
+function cartSetCount(cart = getCart()) {
+  return cart.reduce((count, item) => count + Math.max(1, Number(item.quantity || 1)), 0);
+}
+
+// Delivery is priced per set: fee x number of sets in the cart.
+function deliveryTotal(delivery, sets) {
+  return delivery ? delivery.fee * sets : 0;
+}
+
 function updateCartTotals(subtotal) {
   const isEnglish = document.documentElement.lang === "en";
   const delivery = getDeliveryChoice();
+  const sets = cartSetCount();
+  const fee = deliveryTotal(delivery, sets);
   const deliveryEl = document.getElementById("cartDelivery");
   const grandEl = document.getElementById("cartGrandTotal");
   if (deliveryEl) {
-    deliveryEl.textContent = delivery ? `${delivery.fee.toLocaleString("en-US")} EGP` : (isEnglish ? "Choose area" : "اختار المنطقة");
+    deliveryEl.textContent = !delivery
+      ? (isEnglish ? "Choose area" : "اختار المنطقة")
+      : sets > 1
+        ? `${delivery.fee.toLocaleString("en-US")} × ${sets} = ${fee.toLocaleString("en-US")} EGP`
+        : `${fee.toLocaleString("en-US")} EGP`;
     deliveryEl.classList.toggle("text-muted", !delivery);
   }
-  if (grandEl) grandEl.textContent = `${(subtotal + (delivery ? delivery.fee : 0)).toLocaleString("en-US")} EGP`;
+  if (grandEl) grandEl.textContent = `${(subtotal + fee).toLocaleString("en-US")} EGP`;
 }
 
 function renderCart() {
@@ -209,10 +224,15 @@ function sendCartToWhatsApp(phone) {
       ? `${i + 1}) ${displayName}\nQty: ${item.quantity}\nPrice: ${Number(item.price || 0).toLocaleString("en-US")} EGP\nRequest: ${requestLabel}\nNotes: ${item.notes || "-"}\n\n`
       : `${i + 1}) ${displayName}\nالكمية: ${item.quantity}\nالسعر: ${Number(item.price || 0).toLocaleString("en-US")} جنيه\nنوع الطلب: ${requestLabel}\nالملاحظات: ${item.notes || "-"}\n\n`;
   });
-  const grandTotal = total + delivery.fee;
+  const sets = cartSetCount(cart);
+  const deliveryFee = deliveryTotal(delivery, sets);
+  const grandTotal = total + deliveryFee;
+  const deliveryLine = sets > 1
+    ? `${delivery.fee.toLocaleString("en-US")} × ${sets} = ${deliveryFee.toLocaleString("en-US")}`
+    : deliveryFee.toLocaleString("en-US");
   message += isEnglish
-    ? `Products: ${total.toLocaleString("en-US")} EGP\nDelivery: ${delivery.fee.toLocaleString("en-US")} EGP\nTotal: ${grandTotal.toLocaleString("en-US")} EGP`
-    : `المنتجات: ${total.toLocaleString("en-US")} جنيه\nالتوصيل: ${delivery.fee.toLocaleString("en-US")} جنيه\nالإجمالي: ${grandTotal.toLocaleString("en-US")} جنيه`;
+    ? `Products: ${total.toLocaleString("en-US")} EGP\nDelivery: ${deliveryLine} EGP\nTotal: ${grandTotal.toLocaleString("en-US")} EGP`
+    : `المنتجات: ${total.toLocaleString("en-US")} جنيه\nالتوصيل: ${deliveryLine} جنيه\nالإجمالي: ${grandTotal.toLocaleString("en-US")} جنيه`;
   message += isEnglish ? "\nAny customization and the payment method to be confirmed." : "\nأي تخصيص وطريقة الدفع يتم تأكيدهم مع الفريق.";
   nesticaTrack("whatsapp_order_handoff", {value: total, currency: "EGP", num_items: cart.length});
   const itemCount = cart.reduce((count, item) => count + Number(item.quantity || 1), 0);
