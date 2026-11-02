@@ -58,7 +58,9 @@
         "src": "/assets/images/optimized/5eba75dcd805.webp",
         "width": 1254
       }
-    ]
+    ],
+    "dimensions": "المقاس: 3 متر",
+    "dimensions_en": "Size: 3 m"
   },
   {
     "id": 6,
@@ -119,7 +121,9 @@
         "src": "/assets/images/optimized/4fd5533611e8.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "المقاس: 4 متر",
+    "dimensions_en": "Size: 4 m"
   },
   {
     "id": 79,
@@ -182,7 +186,9 @@
         "src": "/assets/images/optimized/9f1ebb47acc7.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "المقاس: 3 × 3 متر",
+    "dimensions_en": "Size: 3 × 3 m"
   },
   {
     "id": 80,
@@ -238,7 +244,9 @@
         "src": "/assets/images/optimized/7f5acecd4638.webp",
         "width": 810
       }
-    ]
+    ],
+    "dimensions": "المقاس: 4 × 4 متر",
+    "dimensions_en": "Size: 4 × 4 m"
   },
   {
     "id": 8,
@@ -296,7 +304,9 @@
         "src": "/assets/images/optimized/ffab99e56320.webp",
         "width": 736
       }
-    ]
+    ],
+    "dimensions": "العرض 105 × العمق 100 × الارتفاع 210 سم",
+    "dimensions_en": "W 105 × D 100 × H 210 cm"
   },
   {
     "id": 9,
@@ -356,7 +366,9 @@
         "src": "/assets/images/optimized/27e0c9454b5f.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: 200 × 70 سم · الكرسي: 70 × 70 سم · الترابيزة: 60 × 90 سم",
+    "dimensions_en": "3-seat sofa: 200 × 70 cm · Chair: 70 × 70 cm · Table: 60 × 90 cm"
   },
   {
     "id": 10,
@@ -2763,7 +2775,9 @@
         "src": "/assets/images/optimized/a04268e3e45a.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الضلع 2 مقعد: 120 سم · الضلع 3 مقعد: 180 سم · الترابيزة: 60 × 90 سم",
+    "dimensions_en": "2-seat side: 120 cm · 3-seat side: 180 cm · Table: 60 × 90 cm"
   },
   {
     "id": 58,
@@ -3816,7 +3830,9 @@
         "src": "/assets/images/optimized/795edad3726c.webp",
         "width": 1280
       }
-    ]
+    ],
+    "dimensions": "الكنبة 160 سم · العرض الخارجي 200 سم · العمق 70 سم",
+    "dimensions_en": "Seat 160 cm · Overall width 200 cm · Depth 70 cm"
   },
   {
     "id": 231,
@@ -3876,7 +3892,9 @@
         "src": "/assets/images/optimized/8a59c889a31b.webp",
         "width": 1364
       }
-    ]
+    ],
+    "dimensions": "الكنبة 160 سم · العرض الخارجي 200 سم · العمق 70 سم",
+    "dimensions_en": "Seat 160 cm · Overall width 200 cm · Depth 70 cm"
   },
   {
     "id": 232,
@@ -3936,7 +3954,9 @@
         "src": "/assets/images/optimized/5acbec8117ec.webp",
         "width": 1364
       }
-    ]
+    ],
+    "dimensions": "الكنبة 160 سم · العرض الخارجي 200 سم · العمق 70 سم",
+    "dimensions_en": "Seat 160 cm · Overall width 200 cm · Depth 70 cm"
   },
   {
     "id": 90,
@@ -6142,7 +6162,9 @@
         "src": "/assets/images/optimized/fbfad08ab7cb.webp",
         "width": 1086
       }
-    ]
+    ],
+    "dimensions": "المقاس: 3 متر",
+    "dimensions_en": "Size: 3 m"
   },
   {
     "id": 229,
@@ -6199,7 +6221,9 @@
         "src": "/assets/images/optimized/57fa06f8009b.webp",
         "width": 720
       }
-    ]
+    ],
+    "dimensions": "المقاس: 4 متر",
+    "dimensions_en": "Size: 4 m"
   },
   {
     "id": 233,
@@ -6255,7 +6279,9 @@
         "src": "/assets/images/optimized/c59594bf8bb9.webp",
         "width": 896
       }
-    ]
+    ],
+    "dimensions": "المقاس: 3 متر · القاعدة 100 × 100 سم",
+    "dimensions_en": "Size: 3 m · Base 100 × 100 cm"
   },
   {
     "id": 234,
@@ -6311,6 +6337,8 @@
         "src": "/assets/images/optimized/cbcaa6690ddb.webp",
         "width": 896
       }
-    ]
+    ],
+    "dimensions": "المقاس: 4 متر · القاعدة 100 × 100 سم",
+    "dimensions_en": "Size: 4 m · Base 100 × 100 cm"
   }
 ]
