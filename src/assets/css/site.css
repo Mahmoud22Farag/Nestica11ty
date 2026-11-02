@@ -1626,3 +1626,16 @@ textarea:focus-visible,
 .delivery-fact small { color: #6b7280; font-weight: 600; }
 .delivery-fact strong { font-size: 1.6rem; color: var(--navy, #102238); line-height: 1.25; }
 .delivery-fact span { color: #6b7280; font-size: .9rem; }
+
+/* Customer testimonials */
+.testimonials-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.testimonial-card { margin: 0; display: flex; flex-direction: column; gap: 12px; background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: 0 8px 24px rgba(16,34,56,.05); }
+.testimonial-card > .bi-quote { color: var(--gold); font-size: 30px; line-height: 1; }
+.testimonial-card blockquote { margin: 0; flex: 1; font-size: 1rem; font-weight: 700; line-height: 1.75; color: var(--navy); }
+.testimonial-card figcaption { color: var(--muted); font-size: .8rem; font-weight: 600; }
+.testimonial-card figcaption .bi-whatsapp { color: #25d366; }
+@media (max-width: 991px) { .testimonials-track { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 575px) {
+  .testimonials-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin-inline: -12px; padding-inline: 12px; }
+  .testimonial-card { flex: 0 0 82%; scroll-snap-align: start; }
+}
