@@ -139,6 +139,17 @@ function updateCartTotals(subtotal) {
     deliveryEl.classList.toggle("text-muted", !delivery);
   }
   if (grandEl) grandEl.textContent = `${(subtotal + fee).toLocaleString("en-US")} EGP`;
+  const depositEl = document.getElementById("cartDeposit");
+  if (depositEl) depositEl.textContent = `${depositAmount(subtotal).toLocaleString("en-US")} EGP`;
+}
+
+// Deposit is a percentage of the products subtotal (delivery is paid on receipt).
+function depositPercent() {
+  const raw = Number(document.getElementById("cartDeposit")?.dataset.percent);
+  return Number.isFinite(raw) && raw > 0 ? raw : 25;
+}
+function depositAmount(subtotal) {
+  return Math.round((Number(subtotal) || 0) * depositPercent() / 100);
 }
 
 function renderCart() {
@@ -233,7 +244,10 @@ function sendCartToWhatsApp(phone) {
   message += isEnglish
     ? `Products: ${total.toLocaleString("en-US")} EGP\nDelivery: ${deliveryLine} EGP\nTotal: ${grandTotal.toLocaleString("en-US")} EGP`
     : `المنتجات: ${total.toLocaleString("en-US")} جنيه\nالتوصيل: ${deliveryLine} جنيه\nالإجمالي: ${grandTotal.toLocaleString("en-US")} جنيه`;
-  message += isEnglish ? "\nAny customization and the payment method to be confirmed." : "\nأي تخصيص وطريقة الدفع يتم تأكيدهم مع الفريق.";
+  const deposit = depositAmount(total);
+  message += isEnglish
+    ? `\nDeposit (${depositPercent()}%): ${deposit.toLocaleString("en-US")} EGP\nBalance on delivery after inspection: ${(grandTotal - deposit).toLocaleString("en-US")} EGP\nAny customization to be confirmed with the team.`
+    : `\nالعربون (${depositPercent()}%): ${deposit.toLocaleString("en-US")} جنيه\nالباقي عند الاستلام بعد المعاينة: ${(grandTotal - deposit).toLocaleString("en-US")} جنيه\nأي تخصيص يتم تأكيده مع الفريق.`;
   nesticaTrack("whatsapp_order_handoff", {value: total, currency: "EGP", num_items: cart.length});
   const itemCount = cart.reduce((count, item) => count + Number(item.quantity || 1), 0);
   fbTrack("InitiateCheckout", { value: total, currency: "EGP", num_items: itemCount });

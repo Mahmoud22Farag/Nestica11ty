@@ -1639,3 +1639,9 @@ textarea:focus-visible,
   .testimonials-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin-inline: -12px; padding-inline: 12px; }
   .testimonial-card { flex: 0 0 82%; scroll-snap-align: start; }
 }
+
+/* Payment terms */
+.info-alert.payment-terms { margin: 28px auto 0; }
+.cart-deposit { background: var(--cream); border: 1px solid rgba(202,164,106,.35); border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; }
+.cart-deposit strong { color: var(--gold-dark); }
+.cart-deposit small { display: block; margin-top: 4px; color: var(--muted); font-size: .78rem; line-height: 1.6; }
