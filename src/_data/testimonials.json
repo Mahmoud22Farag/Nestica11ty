@@ -3,49 +3,73 @@
     "quote_ar": "الشغل بتاعكم رائع ومتقن.",
     "quote_en": "Your work is excellent and well made.",
     "context_ar": "طقم فيلا · بني سويف",
-    "context_en": "Villa set · Beni Suef"
+    "context_en": "Villa set · Beni Suef",
+    "image": "/assets/images/reviews/review-1.webp",
+    "image_width": 760,
+    "image_height": 324
   },
   {
-    "quote_ar": "Thank you for delivering the beautiful outdoor furniture. It is surely an upgrade to our garden. A few of our neighbors came to ask about the supplier.",
-    "quote_en": "Thank you for delivering the beautiful outdoor furniture. It is surely an upgrade to our garden. A few of our neighbors came to ask about the supplier.",
+    "quote_ar": "Thank you for delivering the beautiful outdoor furniture. It is surely an upgrade to our garden. A few of our neighbors came to ask about the supplier. We are very satisfied. Whenever we need something, we will contact you first!",
+    "quote_en": "Thank you for delivering the beautiful outdoor furniture. It is surely an upgrade to our garden. A few of our neighbors came to ask about the supplier. We are very satisfied. Whenever we need something, we will contact you first!",
     "context_ar": "أثاث حديقة",
     "context_en": "Garden furniture",
-    "lang": "en"
+    "lang": "en",
+    "image": "/assets/images/reviews/review-2.webp",
+    "image_width": 612,
+    "image_height": 522
   },
   {
     "quote_ar": "الطقم بتاع البلكونة جميل ما شاء الله.",
     "quote_en": "The balcony set is beautiful.",
     "context_ar": "طقم بلكونة",
-    "context_en": "Balcony set"
+    "context_en": "Balcony set",
+    "image": "/assets/images/reviews/review-3.webp",
+    "image_width": 760,
+    "image_height": 102
   },
   {
     "quote_ar": "عجبني جدًا بجد.. الحاجة بجد خطيرة!",
     "quote_en": "I really loved it — it's seriously amazing!",
     "context_ar": "طقم Outdoor",
-    "context_en": "Outdoor set"
+    "context_en": "Outdoor set",
+    "image": "/assets/images/reviews/review-4.webp",
+    "image_width": 620,
+    "image_height": 192
   },
   {
     "quote_ar": "حلو أوي ولونه حلو.",
     "quote_en": "Really nice, and the color is lovely.",
     "context_ar": "طقم Outdoor",
-    "context_en": "Outdoor set"
+    "context_en": "Outdoor set",
+    "image": "/assets/images/reviews/review-5.webp",
+    "image_width": 530,
+    "image_height": 300
   },
   {
     "quote_ar": "الطقم جميل، تسلم إيدكم.",
     "quote_en": "The set is beautiful — great craftsmanship.",
     "context_ar": "طقم Outdoor",
-    "context_en": "Outdoor set"
+    "context_en": "Outdoor set",
+    "image": "/assets/images/reviews/review-6.webp",
+    "image_width": 720,
+    "image_height": 102
   },
   {
     "quote_ar": "جميل أوي.. ميرسي ليكو خالص يا جماعة.",
     "quote_en": "Really beautiful — thank you so much, everyone.",
     "context_ar": "طقم Outdoor",
-    "context_en": "Outdoor set"
+    "context_en": "Outdoor set",
+    "image": "/assets/images/reviews/review-7.webp",
+    "image_width": 545,
+    "image_height": 217
   },
   {
     "quote_ar": "حاجة محترمة.",
     "quote_en": "Really solid, quality work.",
     "context_ar": "طقم Outdoor",
-    "context_en": "Outdoor set"
+    "context_en": "Outdoor set",
+    "image": "/assets/images/reviews/review-8.webp",
+    "image_width": 405,
+    "image_height": 122
   }
 ]

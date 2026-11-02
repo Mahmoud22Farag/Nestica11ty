@@ -1655,3 +1655,8 @@ textarea:focus-visible,
 .reviews-cta h2 { font-weight: 900; font-size: 1.4rem; }
 .reviews-cta p { margin: 0; color: var(--muted); }
 .reviews-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Review screenshots */
+.testimonial-shot { background: #efe7dd; border-radius: 14px; padding: 10px; display: flex; align-items: center; justify-content: center; flex: 1; }
+.testimonial-shot img { display: block; max-width: 100%; height: auto; border-radius: 10px; }
+.testimonial-card blockquote.testimonial-translation { flex: 0; font-size: .85rem; font-weight: 600; color: var(--muted); }
