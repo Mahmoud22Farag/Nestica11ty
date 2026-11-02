@@ -241,6 +241,7 @@ button, input, select, textarea { font: inherit; }
 .product-facts i { color: var(--gold-dark); font-size: 20px; }
 .product-facts span { font-weight: 800; font-size: .86rem; }
 .product-facts small { display: block; color: var(--muted); font-size: .7rem; font-weight: 600; }
+.product-facts > div:nth-child(4) { grid-column: 1 / -1; }
 .space-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 16px 0; }
 .space-tags strong { margin-left: 4px; }
 .space-tags a { padding: 5px 10px; border-radius: 999px; background: #fff; border: 1px solid var(--border); font-size: .78rem; text-decoration: none; }
