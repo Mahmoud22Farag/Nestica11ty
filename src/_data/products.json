@@ -58,7 +58,9 @@
         "src": "/assets/images/optimized/5eba75dcd805.webp",
         "width": 1254
       }
-    ]
+    ],
+    "dimensions": "المقاس: 3 متر",
+    "dimensions_en": "Size: 3 m"
   },
   {
     "id": 6,
@@ -119,7 +121,9 @@
         "src": "/assets/images/optimized/4fd5533611e8.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "المقاس: 4 متر",
+    "dimensions_en": "Size: 4 m"
   },
   {
     "id": 79,
@@ -182,7 +186,9 @@
         "src": "/assets/images/optimized/9f1ebb47acc7.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "المقاس: 3 × 3 متر",
+    "dimensions_en": "Size: 3 × 3 m"
   },
   {
     "id": 80,
@@ -238,7 +244,9 @@
         "src": "/assets/images/optimized/7f5acecd4638.webp",
         "width": 810
       }
-    ]
+    ],
+    "dimensions": "المقاس: 4 × 4 متر",
+    "dimensions_en": "Size: 4 × 4 m"
   },
   {
     "id": 8,
@@ -296,7 +304,9 @@
         "src": "/assets/images/optimized/ffab99e56320.webp",
         "width": 736
       }
-    ]
+    ],
+    "dimensions": "العرض 105 × العمق 100 × الارتفاع 210 سم",
+    "dimensions_en": "W 105 × D 100 × H 210 cm"
   },
   {
     "id": 9,
@@ -356,7 +366,9 @@
         "src": "/assets/images/optimized/27e0c9454b5f.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: 200 × 70 سم · الكرسي: 70 × 70 سم · الترابيزة: 60 × 90 سم",
+    "dimensions_en": "3-seat sofa: 200 × 70 cm · Chair: 70 × 70 cm · Table: 60 × 90 cm"
   },
   {
     "id": 10,
@@ -414,7 +426,9 @@
         "src": "/assets/images/optimized/5899fe6132ea.webp",
         "width": 960
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 220 × عمق 65 × ارتفاع 90 سم\nالكرسي: عرض 100 × عمق 85 × ارتفاع 90 سم\nالترابيزة: عرض 160 × ارتفاع 45 سم",
+    "dimensions_en": "Sofa: W 220 × D 65 × H 90 cm\nChair: W 100 × D 85 × H 90 cm\nTable: W 160 × H 45 cm"
   },
   {
     "id": 11,
@@ -475,7 +489,9 @@
         "src": "/assets/images/optimized/359219431ab1.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 160 × ارتفاع 85 سم\nالكرسي: عرض 85 × عمق 85 سم\nالترابيزة: عرض 160 × ارتفاع 45 سم",
+    "dimensions_en": "Sofa: W 160 × H 85 cm\nChair: W 85 × D 85 cm\nTable: W 160 × H 45 cm"
   },
   {
     "id": 12,
@@ -533,7 +549,9 @@
         "src": "/assets/images/optimized/46a47ff58979.webp",
         "width": 735
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 130 × عمق 70 × ارتفاع 70 سم\nالكرسي: عرض 70 × عمق 70 × ارتفاع 70 سم\nالترابيزة: عرض 90 × عمق 60 سم",
+    "dimensions_en": "Sofa: W 130 × D 70 × H 70 cm\nChair: W 70 × D 70 × H 70 cm\nTable: W 90 × D 60 cm"
   },
   {
     "id": 15,
@@ -594,7 +612,9 @@
         "src": "/assets/images/optimized/d294c22dcd5f.webp",
         "width": 1400
       }
-    ]
+    ],
+    "dimensions": "الركنة: 180 + 180 سم · عمق 70 · ارتفاع 70 سم\nالترابيزة: عرض 70 × عمق 70 سم",
+    "dimensions_en": "Corner: 180 + 180 cm · D 70 · H 70 cm\nTable: W 70 × D 70 cm"
   },
   {
     "id": 17,
@@ -651,7 +671,9 @@
         "src": "/assets/images/optimized/e449e611a9de.webp",
         "width": 768
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 180 × ارتفاع 70 سم\nالبف: عرض 50 × عمق 50 × ارتفاع 40 سم\nالترابيزة: عرض 90 × عمق 60 × ارتفاع 40 سم",
+    "dimensions_en": "Sofa: W 180 × H 70 cm\nPouf: W 50 × D 50 × H 40 cm\nTable: W 90 × D 60 × H 40 cm"
   },
   {
     "id": 18,
@@ -711,7 +733,9 @@
         "src": "/assets/images/optimized/8f04923bad4b.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الترابيزة: عرض 160 × عمق 85 × ارتفاع 93 سم\nالكرسي (×4): عرض 57 × عمق 50 × ارتفاع 94.6 سم",
+    "dimensions_en": "Table: W 160 × D 85 × H 93 cm\nChair (×4): W 57 × D 50 × H 94.6 cm"
   },
   {
     "id": 21,
@@ -771,7 +795,9 @@
         "src": "/assets/images/optimized/844f2b83dfab.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الركنة: عرض 310 × عمق 73 × ارتفاع 76 سم\nالكرسي: عرض 72 × عمق 73 × ارتفاع 76 سم\nترابيزة السفرة: عرض 180 × عمق 80 × ارتفاع 66.5 سم",
+    "dimensions_en": "Corner sofa: W 310 × D 73 × H 76 cm\nArmchair: W 72 × D 73 × H 76 cm\nDining table: W 180 × D 80 × H 66.5 cm"
   },
   {
     "id": 22,
@@ -831,7 +857,9 @@
         "src": "/assets/images/optimized/efd380584a39.webp",
         "width": 1440
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 193 × عمق 66 × ارتفاع 81 سم\nالكنبة 2 مقعد: عرض 135 × عمق 66 × ارتفاع 81 سم\nالكرسي: عرض 74 × عمق 66 × ارتفاع 81 سم\nالترابيزة: عرض 109 × عمق 64 × ارتفاع 41 سم",
+    "dimensions_en": "3-seat sofa: W 193 × D 66 × H 81 cm\n2-seat sofa: W 135 × D 66 × H 81 cm\nChair: W 74 × D 66 × H 81 cm\nTable: W 109 × D 64 × H 41 cm"
   },
   {
     "id": 23,
@@ -892,7 +920,9 @@
         "src": "/assets/images/optimized/2e8256988565.webp",
         "width": 990
       }
-    ]
+    ],
+    "dimensions": "الركنة: عرض 310 × عمق 73 × ارتفاع 76 سم\nالكرسي: عرض 72 × عمق 73 × ارتفاع 76 سم\nترابيزة السفرة: عرض 180 × عمق 80 × ارتفاع 66.5 سم",
+    "dimensions_en": "Corner sofa: W 310 × D 73 × H 76 cm\nArmchair: W 72 × D 73 × H 76 cm\nDining table: W 180 × D 80 × H 66.5 cm"
   },
   {
     "id": 24,
@@ -948,7 +978,9 @@
         "src": "/assets/images/optimized/6809d594a173.webp",
         "width": 600
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 193 × عمق 66 × ارتفاع 81 سم\nالكرسي (×4): عرض 74 × عمق 66 × ارتفاع 81 سم\nالترابيزة: عرض 109 × عمق 64 × ارتفاع 41 سم\nالبف: عرض 50 × عمق 50 × ارتفاع 40 سم",
+    "dimensions_en": "3-seat sofa: W 193 × D 66 × H 81 cm\nChair (×4): W 74 × D 66 × H 81 cm\nTable: W 109 × D 64 × H 41 cm\nPouf: W 50 × D 50 × H 40 cm"
   },
   {
     "id": 25,
@@ -1008,7 +1040,9 @@
         "src": "/assets/images/optimized/18d1b3aba32d.webp",
         "width": 1000
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 193 × عمق 66 × ارتفاع 81 سم\nالكرسي (×4): عرض 74 × عمق 66 × ارتفاع 81 سم\nالترابيزة: عرض 109 × عمق 64 × ارتفاع 41 سم\nالبف: عرض 50 × عمق 50 × ارتفاع 40 سم",
+    "dimensions_en": "3-seat sofa: W 193 × D 66 × H 81 cm\nChair (×4): W 74 × D 66 × H 81 cm\nTable: W 109 × D 64 × H 41 cm\nPouf: W 50 × D 50 × H 40 cm"
   },
   {
     "id": 26,
@@ -1070,7 +1104,9 @@
         "src": "/assets/images/optimized/f52b742f87f8.webp",
         "width": 990
       }
-    ]
+    ],
+    "dimensions": "الكرسي: عرض 96 × عمق 87.5 × ارتفاع 67 سم\nالترابيزة: عرض 60 × عمق 60 × ارتفاع 45 سم",
+    "dimensions_en": "Chair: W 96 × D 87.5 × H 67 cm\nTable: W 60 × D 60 × H 45 cm"
   },
   {
     "id": 27,
@@ -1127,7 +1163,9 @@
         "src": "/assets/images/optimized/80f2fcfd5f26.webp",
         "width": 736
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 206 × عمق 71 × ارتفاع 69 سم\nالكرسي: عرض 79 × عمق 71 × ارتفاع 69 سم\nالترابيزة: عرض 119 × عمق 66 × ارتفاع 43 سم",
+    "dimensions_en": "3-seat sofa: W 206 × D 71 × H 69 cm\nChair: W 79 × D 71 × H 69 cm\nTable: W 119 × D 66 × H 43 cm"
   },
   {
     "id": 28,
@@ -1187,7 +1225,9 @@
         "src": "/assets/images/optimized/836bb068244d.webp",
         "width": 990
       }
-    ]
+    ],
+    "dimensions": "الركنة: 180 + 180 سم · عمق 70 · ارتفاع 80 سم\nترابيزة السفرة: عرض 140 × ارتفاع 75 سم",
+    "dimensions_en": "Corner: 180 + 180 cm · D 70 · H 80 cm\nDining table: W 140 × H 75 cm"
   },
   {
     "id": 31,
@@ -1245,7 +1285,9 @@
         "src": "/assets/images/optimized/24d2388f68ae.webp",
         "width": 736
       }
-    ]
+    ],
+    "dimensions": "الكرسي: عرض 69.9 × عمق 64.8 × ارتفاع 66 سم\nالترابيزة: عرض 106.7 × ارتفاع 76.2 سم",
+    "dimensions_en": "Chair: W 69.9 × D 64.8 × H 66 cm\nTable: W 106.7 × H 76.2 cm"
   },
   {
     "id": 32,
@@ -1257,8 +1299,7 @@
     "slug": "product-32-طقم-نيتشر-كومباكت-4-مقعد-حديد-خشب-أسود",
     "main_image": "/assets/images/optimized/c09a8b377bbd.webp",
     "gallery": [
-      "/assets/images/optimized/c09a8b377bbd.webp",
-      "/assets/images/optimized/6ae2984ecd6f.webp"
+      "/assets/images/optimized/c09a8b377bbd.webp"
     ],
     "catalog_title": "طقم نيتشر كومباكت | EGP 14,000",
     "card_description": "4 مقعد حديد + خشب (أسود)",
@@ -1302,7 +1343,9 @@
         "src": "/assets/images/optimized/c09a8b377bbd.webp",
         "width": 894
       }
-    ]
+    ],
+    "dimensions": "الكنبة 2 مقعد: عرض 139 × عمق 67 × ارتفاع 69.5 سم\nالكرسي: عرض 73 × عمق 67 × ارتفاع 69.5 سم\nالترابيزة: عرض 100 × عمق 55 × ارتفاع 40.5 سم",
+    "dimensions_en": "2-seat sofa: W 139 × D 67 × H 69.5 cm\nChair: W 73 × D 67 × H 69.5 cm\nTable: W 100 × D 55 × H 40.5 cm"
   },
   {
     "id": 33,
@@ -1361,7 +1404,9 @@
         "src": "/assets/images/optimized/f5cab045eea8.webp",
         "width": 800
       }
-    ]
+    ],
+    "dimensions": "الكنبة 2 مقعد: عرض 130 × عمق 75 × ارتفاع 90 سم\nالكرسي: عرض 74 × عمق 70 × ارتفاع 90 سم\nالترابيزة: عرض 90 × عمق 60 × ارتفاع 40 سم",
+    "dimensions_en": "2-seat sofa: W 130 × D 75 × H 90 cm\nChair: W 74 × D 70 × H 90 cm\nTable: W 90 × D 60 × H 40 cm"
   },
   {
     "id": 34,
@@ -1422,7 +1467,9 @@
         "src": "/assets/images/optimized/bd7f7c7df9d3.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 200 × عمق 70 × ارتفاع 70 سم\nالكرسي: عرض 70 × عمق 70 × ارتفاع 70 سم\nالترابيزة: عرض 110 × عمق 60 سم",
+    "dimensions_en": "3-seat sofa: W 200 × D 70 × H 70 cm\nChair: W 70 × D 70 × H 70 cm\nTable: W 110 × D 60 cm"
   },
   {
     "id": 35,
@@ -1483,7 +1530,9 @@
         "src": "/assets/images/optimized/8ddad6fb7b78.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 200 × عمق 70 × ارتفاع 70 سم\nالكرسي: عرض 70 × عمق 70 × ارتفاع 70 سم\nالترابيزة: عرض 90 × عمق 60 سم",
+    "dimensions_en": "3-seat sofa: W 200 × D 70 × H 70 cm\nChair: W 70 × D 70 × H 70 cm\nTable: W 90 × D 60 cm"
   },
   {
     "id": 36,
@@ -1501,8 +1550,7 @@
     "slug": "product-36-طقم-نوار-4-مقعد-حديد-دوبار-ذهبي-كافيه",
     "main_image": "/assets/images/optimized/8dff0fe979b4.webp",
     "gallery": [
-      "/assets/images/optimized/8dff0fe979b4.webp",
-      "/assets/images/optimized/c5bb55a5ebf9.webp"
+      "/assets/images/optimized/8dff0fe979b4.webp"
     ],
     "catalog_title": "طقم نوار | EGP 16,500",
     "card_description": "4 مقعد حديد + دوبار ذهبي (كافيه)",
@@ -1544,7 +1592,9 @@
         "src": "/assets/images/optimized/8dff0fe979b4.webp",
         "width": 1200
       }
-    ]
+    ],
+    "dimensions": "الكنبة 2 مقعد: عرض 120 × عمق 65 × ارتفاع 75 سم\nالكرسي: عرض 64 × عمق 65 × ارتفاع 75 سم\nالترابيزة: عرض 89 × عمق 56 × ارتفاع 42 سم",
+    "dimensions_en": "2-seat sofa: W 120 × D 65 × H 75 cm\nChair: W 64 × D 65 × H 75 cm\nTable: W 89 × D 56 × H 42 cm"
   },
   {
     "id": 37,
@@ -1604,7 +1654,9 @@
         "src": "/assets/images/optimized/374878178692.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 193 × عمق 66 × ارتفاع 81 سم\nالكنبة 2 مقعد: عرض 135 × عمق 66 × ارتفاع 81 سم\nالكرسي: عرض 74 × عمق 66 × ارتفاع 81 سم\nالترابيزة: عرض 109 × عمق 64 × ارتفاع 41 سم",
+    "dimensions_en": "3-seat sofa: W 193 × D 66 × H 81 cm\n2-seat sofa: W 135 × D 66 × H 81 cm\nChair: W 74 × D 66 × H 81 cm\nTable: W 109 × D 64 × H 41 cm"
   },
   {
     "id": 38,
@@ -1664,7 +1716,9 @@
         "src": "/assets/images/optimized/6138447b8bfd.webp",
         "width": 1200
       }
-    ]
+    ],
+    "dimensions": "الركنة: 220 + 220 سم · عمق 67 · ارتفاع 70 سم",
+    "dimensions_en": "Corner: 220 + 220 cm · D 67 · H 70 cm"
   },
   {
     "id": 39,
@@ -1721,7 +1775,9 @@
         "src": "/assets/images/optimized/36a97aa72374.webp",
         "width": 739
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 190 × عمق 75 × ارتفاع 90 سم\nالكنبة 2 مقعد: عرض 130 × عمق 75 × ارتفاع 90 سم\nالكرسي: عرض 74 × عمق 70 × ارتفاع 90 سم",
+    "dimensions_en": "3-seat sofa: W 190 × D 75 × H 90 cm\n2-seat sofa: W 130 × D 75 × H 90 cm\nChair: W 74 × D 70 × H 90 cm"
   },
   {
     "id": 40,
@@ -1778,7 +1834,9 @@
         "src": "/assets/images/optimized/7ffa0fa9b94f.webp",
         "width": 720
       }
-    ]
+    ],
+    "dimensions": "الركنة: 280 + 350 سم · عمق 80 سم\nالكرسي: عرض 75 × عمق 68 × ارتفاع 70 سم\nالترابيزة: عرض 140 × عمق 70 × ارتفاع 40 سم",
+    "dimensions_en": "Corner: 280 + 350 cm · D 80 cm\nChair: W 75 × D 68 × H 70 cm\nTable: W 140 × D 70 × H 40 cm"
   },
   {
     "id": 41,
@@ -1794,8 +1852,7 @@
     "slug": "product-41-طقم-كراون-7-مقعد-حديد-خشب-رصاصي-فاتح،-قطاع-28",
     "main_image": "/assets/images/optimized/dee776a71992.webp",
     "gallery": [
-      "/assets/images/optimized/dee776a71992.webp",
-      "/assets/images/optimized/ae52540a1643.webp"
+      "/assets/images/optimized/dee776a71992.webp"
     ],
     "catalog_title": "طقم كراون | EGP 33,000",
     "card_description": "7 مقعد حديد + خشب (رصاصي فاتح، قطاع 28)",
@@ -1829,7 +1886,9 @@
         "src": "/assets/images/optimized/dee776a71992.webp",
         "width": 400
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 185 × عمق 66 × ارتفاع 64 سم\nالكنبة 2 مقعد: عرض 127 × عمق 66 × ارتفاع 64 سم\nالكرسي: عرض 71 × عمق 66 × ارتفاع 64 سم\nالترابيزة: عرض 112 × عمق 72 × ارتفاع 66 سم",
+    "dimensions_en": "3-seat sofa: W 185 × D 66 × H 64 cm\n2-seat sofa: W 127 × D 66 × H 64 cm\nChair: W 71 × D 66 × H 64 cm\nTable: W 112 × D 72 × H 66 cm"
   },
   {
     "id": 42,
@@ -2352,7 +2411,9 @@
         "src": "/assets/images/optimized/e6766a2f6bb8.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 200 × عمق 70 سم\nالكرسي: عرض 70 × عمق 70 سم\nالترابيزة: عرض 130 × عمق 80 سم\nالبف: عرض 40 × عمق 40 سم",
+    "dimensions_en": "Sofa: W 200 × D 70 cm\nChair: W 70 × D 70 cm\nTable: W 130 × D 80 cm\nPouf: W 40 × D 40 cm"
   },
   {
     "id": 51,
@@ -2407,7 +2468,9 @@
         "src": "/assets/images/optimized/0f79fa7b0392.webp",
         "width": 739
       }
-    ]
+    ],
+    "dimensions": "الكنبة 3 مقعد: عرض 204 × ارتفاع 62.5 سم\nالكنبة 2 مقعد: عرض 142 × ارتفاع 62.5 سم\nالكرسي: عرض 80 × عمق 70 × ارتفاع 67.6 سم\nالترابيزة: عرض 100 × عمق 60 × ارتفاع 39.9 سم",
+    "dimensions_en": "3-seat sofa: W 204 × H 62.5 cm\n2-seat sofa: W 142 × H 62.5 cm\nChair: W 80 × D 70 × H 67.6 cm\nTable: W 100 × D 60 × H 39.9 cm"
   },
   {
     "id": 52,
@@ -2467,7 +2530,9 @@
         "src": "/assets/images/optimized/f29091748ca4.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الركنة: 180 + 140 سم · عمق 70 سم\nالترابيزة: عرض 70 × عمق 40 سم",
+    "dimensions_en": "Corner: 180 + 140 cm · D 70 cm\nTable: W 70 × D 40 cm"
   },
   {
     "id": 53,
@@ -2523,7 +2588,9 @@
         "src": "/assets/images/optimized/8e2ac1de368e.webp",
         "width": 600
       }
-    ]
+    ],
+    "dimensions": "الركنة: الجنب الطويل 400 سم + الجنب التاني 160 سم · عمق 80 سم\nالترابيزة: عرض 160 × عمق 80 سم",
+    "dimensions_en": "Corner: long side 400 cm + short side 160 cm · D 80 cm\nTable: W 160 × D 80 cm"
   },
   {
     "id": 54,
@@ -2582,7 +2649,9 @@
         "src": "/assets/images/optimized/679db51ee112.webp",
         "width": 896
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 130 سم\nالكرسي: عرض 65 سم\nالترابيزة: عرض 90 × عمق 60 سم",
+    "dimensions_en": "Sofa: W 130 cm\nChair: W 65 cm\nTable: W 90 × D 60 cm"
   },
   {
     "id": 55,
@@ -2642,7 +2711,9 @@
         "src": "/assets/images/optimized/ae7462ee67bf.webp",
         "width": 1024
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 130 سم\nالكرسي: عرض 65 × عمق 60 سم\nالترابيزة: عرض 90 × عمق 60 سم",
+    "dimensions_en": "Sofa: W 130 cm\nChair: W 65 × D 60 cm\nTable: W 90 × D 60 cm"
   },
   {
     "id": 56,
@@ -2702,7 +2773,9 @@
         "src": "/assets/images/optimized/ecc2e6b25b20.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة (×2): عرض 200 سم\nالكرسي: عرض 70 سم\nالترابيزة: عرض 90 × عمق 60 سم",
+    "dimensions_en": "Sofa (×2): W 200 cm\nChair: W 70 cm\nTable: W 90 × D 60 cm"
   },
   {
     "id": 57,
@@ -2763,7 +2836,9 @@
         "src": "/assets/images/optimized/a04268e3e45a.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الضلع 2 مقعد: 120 سم · الضلع 3 مقعد: 180 سم · الترابيزة: 60 × 90 سم",
+    "dimensions_en": "2-seat side: 120 cm · 3-seat side: 180 cm · Table: 60 × 90 cm"
   },
   {
     "id": 58,
@@ -2819,7 +2894,9 @@
         "src": "/assets/images/optimized/5a4bef6f46c2.webp",
         "width": 720
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 180 × عمق 70 سم\nالكرسي: عرض 70 × عمق 70 سم",
+    "dimensions_en": "Sofa: W 180 × D 70 cm\nChair: W 70 × D 70 cm"
   },
   {
     "id": 59,
@@ -2878,7 +2955,9 @@
         "src": "/assets/images/optimized/240b97646c0c.webp",
         "width": 736
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 120 × عمق 60 × ارتفاع 85 سم\nالكرسي: عرض 55 × عمق 55 × ارتفاع 70 سم\nالترابيزة: عرض 80 × عمق 50 × ارتفاع 40 سم",
+    "dimensions_en": "Sofa: W 120 × D 60 × H 85 cm\nChair: W 55 × D 55 × H 70 cm\nTable: W 80 × D 50 × H 40 cm"
   },
   {
     "id": 60,
@@ -2938,7 +3017,9 @@
         "src": "/assets/images/optimized/db57806bf353.webp",
         "width": 894
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 120 × عمق 60 × ارتفاع 85 سم\nالكرسي: عرض 55 × عمق 55 × ارتفاع 70 سم\nالترابيزة: عرض 80 × عمق 50 × ارتفاع 40 سم",
+    "dimensions_en": "Sofa: W 120 × D 60 × H 85 cm\nChair: W 55 × D 55 × H 70 cm\nTable: W 80 × D 50 × H 40 cm"
   },
   {
     "id": 61,
@@ -2999,7 +3080,9 @@
         "src": "/assets/images/optimized/6381d7c481aa.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 180 × عمق 65 × ارتفاع 65 سم\nالكرسي: عرض 65 × عمق 65 × ارتفاع 65 سم",
+    "dimensions_en": "Sofa: W 180 × D 65 × H 65 cm\nChair: W 65 × D 65 × H 65 cm"
   },
   {
     "id": 62,
@@ -3061,7 +3144,9 @@
         "src": "/assets/images/optimized/b04806d234ed.webp",
         "width": 1000
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 180 × عمق 55 × ارتفاع 70 سم\nالكرسي: عرض 55 × عمق 55 × ارتفاع 70 سم\nالترابيزة: عرض 80 × عمق 50 × ارتفاع 40 سم",
+    "dimensions_en": "Sofa: W 180 × D 55 × H 70 cm\nChair: W 55 × D 55 × H 70 cm\nTable: W 80 × D 50 × H 40 cm"
   },
   {
     "id": 63,
@@ -3121,7 +3206,9 @@
         "src": "/assets/images/optimized/bc79dd636e5e.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 180 × عمق 65 × ارتفاع 65 سم\nالكرسي: عرض 65 × عمق 65 سم",
+    "dimensions_en": "Sofa: W 180 × D 65 × H 65 cm\nChair: W 65 × D 65 cm"
   },
   {
     "id": 64,
@@ -3133,8 +3220,7 @@
     "slug": "product-64-كرسي-دوبار-زيتوني-فردي-outdoor",
     "main_image": "/assets/images/optimized/9a25ff412fe9.webp",
     "gallery": [
-      "/assets/images/optimized/9a25ff412fe9.webp",
-      "/assets/images/optimized/029b4981e702.webp"
+      "/assets/images/optimized/9a25ff412fe9.webp"
     ],
     "catalog_title": "كرسي دوبار زيتوني | EGP 2,400",
     "card_description": "فردي outdoor",
@@ -3182,7 +3268,9 @@
         "src": "/assets/images/optimized/9a25ff412fe9.webp",
         "width": 1400
       }
-    ]
+    ],
+    "dimensions": "الكرسي: عرض 67 × عمق 55 × ارتفاع 73 سم",
+    "dimensions_en": "Chair: W 67 × D 55 × H 73 cm"
   },
   {
     "id": 65,
@@ -3241,7 +3329,9 @@
         "src": "/assets/images/optimized/15b1f2b07718.webp",
         "width": 600
       }
-    ]
+    ],
+    "dimensions": "الكرسي: عرض 55 × عمق 55 × ارتفاع 70 سم",
+    "dimensions_en": "Chair: W 55 × D 55 × H 70 cm"
   },
   {
     "id": 66,
@@ -3300,7 +3390,9 @@
         "src": "/assets/images/optimized/0529c3a0e2b8.webp",
         "width": 887
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 160 سم\nالكرسي: عرض 70 × عمق 60 × ارتفاع 70 سم\nالترابيزة: عرض 100 × عمق 60 سم",
+    "dimensions_en": "Sofa: W 160 cm\nChair: W 70 × D 60 × H 70 cm\nTable: W 100 × D 60 cm"
   },
   {
     "id": 67,
@@ -3360,7 +3452,9 @@
         "src": "/assets/images/optimized/70a33a2e82ec.webp",
         "width": 1080
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 120 × عمق 60 سم\nالكرسي: عرض 60 × عمق 60 سم\nالترابيزة: عرض 60 × عمق 40 سم",
+    "dimensions_en": "Sofa: W 120 × D 60 cm\nChair: W 60 × D 60 cm\nTable: W 60 × D 40 cm"
   },
   {
     "id": 68,
@@ -3816,7 +3910,9 @@
         "src": "/assets/images/optimized/795edad3726c.webp",
         "width": 1280
       }
-    ]
+    ],
+    "dimensions": "الكنبة 160 سم · العرض الخارجي 200 سم · العمق 70 سم",
+    "dimensions_en": "Seat 160 cm · Overall width 200 cm · Depth 70 cm"
   },
   {
     "id": 231,
@@ -3876,7 +3972,9 @@
         "src": "/assets/images/optimized/8a59c889a31b.webp",
         "width": 1364
       }
-    ]
+    ],
+    "dimensions": "الكنبة 160 سم · العرض الخارجي 200 سم · العمق 70 سم",
+    "dimensions_en": "Seat 160 cm · Overall width 200 cm · Depth 70 cm"
   },
   {
     "id": 232,
@@ -3936,7 +4034,9 @@
         "src": "/assets/images/optimized/5acbec8117ec.webp",
         "width": 1364
       }
-    ]
+    ],
+    "dimensions": "الكنبة 160 سم · العرض الخارجي 200 سم · العمق 70 سم",
+    "dimensions_en": "Seat 160 cm · Overall width 200 cm · Depth 70 cm"
   },
   {
     "id": 90,
@@ -4626,7 +4726,9 @@
         "src": "/assets/images/optimized/49321e920384.webp",
         "width": 1024
       }
-    ]
+    ],
+    "dimensions": "الكرسي: عرض 72 × عمق 65 × ارتفاع 65 سم\nالترابيزة: عرض 65 × عمق 65 × ارتفاع 37 سم\nالبف: عرض 65 × عمق 65 × ارتفاع 65 سم",
+    "dimensions_en": "Chair: W 72 × D 65 × H 65 cm\nTable: W 65 × D 65 × H 37 cm\nPouf: W 65 × D 65 × H 65 cm"
   },
   {
     "id": 203,
@@ -4687,7 +4789,9 @@
         "src": "/assets/images/optimized/b31c40bbf9db.webp",
         "width": 1400
       }
-    ]
+    ],
+    "dimensions": "الكرسي: عرض 51 × عمق 60 × ارتفاع 83 سم",
+    "dimensions_en": "Chair: W 51 × D 60 × H 83 cm"
   },
   {
     "id": 204,
@@ -4748,7 +4852,9 @@
         "src": "/assets/images/optimized/923972ba967c.webp",
         "width": 1000
       }
-    ]
+    ],
+    "dimensions": "الركنة U: عرض 330 × عمق 267 × ارتفاع 74 سم\nالبف: ارتفاع 45 سم",
+    "dimensions_en": "U corner: W 330 × D 267 × H 74 cm\nPouf: H 45 cm"
   },
   {
     "id": 205,
@@ -4876,9 +4982,7 @@
     "slug": "product-207-طقم-راتان-غراي-ميكس-2-كنبة-كرسي-2-طاولة",
     "main_image": "/assets/images/optimized/26e3b2fdab83.webp",
     "gallery": [
-      "/assets/images/optimized/26e3b2fdab83.webp",
-      "/assets/images/optimized/8301a44999b2.webp",
-      "/assets/images/optimized/25e286cd7384.webp"
+      "/assets/images/optimized/26e3b2fdab83.webp"
     ],
     "catalog_title": "طقم راتان غراي ميكس | EGP 10,000",
     "card_description": "2 كنبة + كرسي + 2 طاولة",
@@ -4926,7 +5030,9 @@
         "src": "/assets/images/optimized/26e3b2fdab83.webp",
         "width": 990
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 140 × عمق 75 × ارتفاع 70 سم\nالترابيزة: عرض 80 × عمق 60 × ارتفاع 45 سم",
+    "dimensions_en": "Sofa: W 140 × D 75 × H 70 cm\nTable: W 80 × D 60 × H 45 cm"
   },
   {
     "id": 208,
@@ -4987,7 +5093,9 @@
         "src": "/assets/images/optimized/416ac1d29b58.webp",
         "width": 1242
       }
-    ]
+    ],
+    "dimensions": "الكنبة: عرض 200 × عمق 70 × ارتفاع 70 سم\nالكرسي: عرض 70 × عمق 70 × ارتفاع 70 سم\nالترابيزة: عرض 90 × عمق 60 × ارتفاع 60 سم",
+    "dimensions_en": "Sofa: W 200 × D 70 × H 70 cm\nChair: W 70 × D 70 × H 70 cm\nTable: W 90 × D 60 × H 60 cm"
   },
   {
     "id": 209,
@@ -6142,7 +6250,9 @@
         "src": "/assets/images/optimized/fbfad08ab7cb.webp",
         "width": 1086
       }
-    ]
+    ],
+    "dimensions": "المقاس: 3 متر",
+    "dimensions_en": "Size: 3 m"
   },
   {
     "id": 229,
@@ -6199,7 +6309,9 @@
         "src": "/assets/images/optimized/57fa06f8009b.webp",
         "width": 720
       }
-    ]
+    ],
+    "dimensions": "المقاس: 4 متر",
+    "dimensions_en": "Size: 4 m"
   },
   {
     "id": 233,
@@ -6255,7 +6367,9 @@
         "src": "/assets/images/optimized/c59594bf8bb9.webp",
         "width": 896
       }
-    ]
+    ],
+    "dimensions": "المقاس: 3 متر · القاعدة 100 × 100 سم",
+    "dimensions_en": "Size: 3 m · Base 100 × 100 cm"
   },
   {
     "id": 234,
@@ -6311,6 +6425,8 @@
         "src": "/assets/images/optimized/cbcaa6690ddb.webp",
         "width": 896
       }
-    ]
+    ],
+    "dimensions": "المقاس: 4 متر · القاعدة 100 × 100 سم",
+    "dimensions_en": "Size: 4 m · Base 100 × 100 cm"
   }
 ]
