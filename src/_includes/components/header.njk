@@ -21,6 +21,7 @@
             <ul class="dropdown-menu {% if currentLang == 'ar' %}dropdown-menu-end{% endif %}">{% for navSpace in spaces %}<li><a class="dropdown-item" href="{{ ('/spaces/' + navSpace.slug + '/') | localeUrl(currentLang) | url }}">{{ navSpace.name_en if currentLang == 'en' else navSpace.name_ar }}</a></li>{% endfor %}</ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="{{ '/real-deliveries/' | localeUrl(currentLang) | url }}">{{ tr.realDeliveries }}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ '/reviews/' | localeUrl(currentLang) | url }}">{{ 'Reviews' if currentLang == 'en' else 'آراء العملاء' }}</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ '/offers/' | localeUrl(currentLang) | url }}">{{ tr.offers }}</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ '/guides/' | localeUrl(currentLang) | url }}">{{ tr.guides }}</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ '/about/' | localeUrl(currentLang) | url }}">{{ tr.about }}</a></li>

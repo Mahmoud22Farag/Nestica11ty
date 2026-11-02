@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: آراء عملاء نستيكا
+description: رسائل حقيقية من عملاء نستيكا بعد استلام أثاث الـOutdoor للحدائق والروف والبلكونات في مصر.
+permalink: /reviews/
+---
+{% set testimonialsOnPage = true %}
+<section class="deliveries-hero reviews-hero">
+  <div class="container">
+    <span class="section-kicker">Nestica Reviews</span>
+    <h1>آراء عملائنا</h1>
+    <p>رسائل حقيقية بعتها لنا عملاء نستيكا على واتساب بعد ما الطقم وصلهم. شيلنا الأسماء والأرقام حفاظًا على خصوصيتهم.</p>
+  </div>
+</section>
+
+{% include "components/testimonials.njk" %}
+
+<section class="container section-space reviews-cta">
+  <div>
+    <h2>عاوز تشوف الشغل بنفسك؟</h2>
+    <p>شوف صور التسليمات الحقيقية، أو ابعتلنا صورة مساحتك ونرشحلك الطقم المناسب.</p>
+  </div>
+  <div class="reviews-cta-actions">
+    <a class="btn btn-dark rounded-pill" href="{{ '/real-deliveries/' | url }}"><i class="bi bi-images"></i> المنتجات على الطبيعة</a>
+    <a class="btn btn-success rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'عاوز أبعت صورة مساحتي وأعرف أنسب أثاث Outdoor' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('reviews_page_whatsapp')"><i class="bi bi-whatsapp"></i> ابعت صورة مساحتك</a>
+  </div>
+</section>
