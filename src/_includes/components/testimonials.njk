@@ -8,8 +8,8 @@
   <div class="testimonials-track{% if testimonialsOnPage %} testimonials-page-grid{% endif %}">
     {% for item in testimonials %}
     <figure class="testimonial-card">
-      <i class="bi bi-quote" aria-hidden="true"></i>
-      <blockquote{% if item.lang == 'en' %} lang="en" dir="ltr"{% endif %}>{{ item.quote_en if currentLang == 'en' else item.quote_ar }}</blockquote>
+      {% if item.image %}<div class="testimonial-shot"><img src="{{ item.image | url }}" alt="{{ 'WhatsApp message from a Nestica customer' if currentLang == 'en' else 'رسالة واتساب من عميل نستيكا' }}" width="{{ item.image_width }}" height="{{ item.image_height }}" loading="lazy" decoding="async"></div>{% else %}<i class="bi bi-quote" aria-hidden="true"></i>{% endif %}
+      <blockquote class="{% if item.image and (currentLang != 'en' or item.lang == 'en') %}visually-hidden{% elif item.image %}testimonial-translation{% endif %}"{% if item.lang == 'en' %} lang="en" dir="ltr"{% endif %}>{{ item.quote_en if currentLang == 'en' else item.quote_ar }}</blockquote>
       <figcaption><i class="bi bi-whatsapp" aria-hidden="true"></i> {{ 'Nestica customer' if currentLang == 'en' else 'عميل نستيكا' }} · {{ item.context_en if currentLang == 'en' else item.context_ar }}</figcaption>
     </figure>
     {% endfor %}
