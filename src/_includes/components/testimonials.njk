@@ -1,0 +1,18 @@
+{% set currentLang = lang or 'ar' %}{% if testimonials and testimonials.length %}
+<section class="container section-space testimonials-section" aria-labelledby="testimonialsTitle">
+  <div class="section-heading text-center">
+    <span class="section-kicker">{{ 'Customer Reviews' if currentLang == 'en' else 'آراء عملائنا' }}</span>
+    <h2 id="testimonialsTitle">{{ 'What our customers told us after delivery' if currentLang == 'en' else 'قالوا إيه بعد ما الطقم وصلهم' }}</h2>
+    <p>{{ 'Real messages our customers sent us on WhatsApp after receiving their order.' if currentLang == 'en' else 'رسائل حقيقية بعتها لنا عملاء نستيكا على واتساب بعد الاستلام.' }}</p>
+  </div>
+  <div class="testimonials-track">
+    {% for item in testimonials %}
+    <figure class="testimonial-card">
+      <i class="bi bi-quote" aria-hidden="true"></i>
+      <blockquote{% if item.lang == 'en' %} lang="en" dir="ltr"{% endif %}>{{ item.quote_en if currentLang == 'en' else item.quote_ar }}</blockquote>
+      <figcaption><i class="bi bi-whatsapp" aria-hidden="true"></i> {{ 'Nestica customer' if currentLang == 'en' else 'عميل نستيكا' }} · {{ item.context_en if currentLang == 'en' else item.context_ar }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
