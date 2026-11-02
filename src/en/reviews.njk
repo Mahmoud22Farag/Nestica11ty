@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+lang: en
+title: Nestica Customer Reviews
+description: Real messages from Nestica customers after receiving their outdoor furniture for gardens, rooftops and balconies in Egypt.
+permalink: /en/reviews/
+---
+{% set testimonialsOnPage = true %}
+<section class="deliveries-hero reviews-hero">
+  <div class="container">
+    <span class="section-kicker">Nestica Reviews</span>
+    <h1>Customer Reviews</h1>
+    <p>Real messages our customers sent us on WhatsApp after receiving their order. Names and numbers are removed to protect their privacy.</p>
+  </div>
+</section>
+
+{% include "components/testimonials.njk" %}
+
+<section class="container section-space reviews-cta">
+  <div>
+    <h2>Want to see the work yourself?</h2>
+    <p>Browse real delivery photos, or send us a photo of your space and we will suggest the right set.</p>
+  </div>
+  <div class="reviews-cta-actions">
+    <a class="btn btn-dark rounded-pill" href="{{ '/real-deliveries/' | localeUrl('en') | url }}"><i class="bi bi-images"></i> Real Deliveries</a>
+    <a class="btn btn-success rounded-pill" href="https://wa.me/{{ settings.whatsapp | replace('+','') }}?text={{ 'I would like to send a photo of my space and get an outdoor furniture recommendation' | urlencode }}" target="_blank" rel="noopener" onclick="trackWhatsappLead('reviews_page_whatsapp_en')"><i class="bi bi-whatsapp"></i> Send Your Space Photo</a>
+  </div>
+</section>

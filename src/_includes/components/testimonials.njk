@@ -1,11 +1,11 @@
 {% set currentLang = lang or 'ar' %}{% if testimonials and testimonials.length %}
-<section class="container section-space testimonials-section" aria-labelledby="testimonialsTitle">
-  <div class="section-heading text-center">
+<section class="container section-space testimonials-section"{% if not testimonialsOnPage %} aria-labelledby="testimonialsTitle"{% endif %}>
+  {% if not testimonialsOnPage %}<div class="section-heading text-center">
     <span class="section-kicker">{{ 'Customer Reviews' if currentLang == 'en' else 'آراء عملائنا' }}</span>
     <h2 id="testimonialsTitle">{{ 'What our customers told us after delivery' if currentLang == 'en' else 'قالوا إيه بعد ما الطقم وصلهم' }}</h2>
     <p>{{ 'Real messages our customers sent us on WhatsApp after receiving their order.' if currentLang == 'en' else 'رسائل حقيقية بعتها لنا عملاء نستيكا على واتساب بعد الاستلام.' }}</p>
-  </div>
-  <div class="testimonials-track">
+  </div>{% endif %}
+  <div class="testimonials-track{% if testimonialsOnPage %} testimonials-page-grid{% endif %}">
     {% for item in testimonials %}
     <figure class="testimonial-card">
       <i class="bi bi-quote" aria-hidden="true"></i>
@@ -14,5 +14,6 @@
     </figure>
     {% endfor %}
   </div>
+  {% if not testimonialsOnPage %}<div class="text-center mt-4"><a class="btn btn-outline-dark rounded-pill" href="{{ '/reviews/' | localeUrl(currentLang) | url }}">{{ 'All customer reviews' if currentLang == 'en' else 'كل آراء العملاء' }}</a></div>{% endif %}
 </section>
 {% endif %}

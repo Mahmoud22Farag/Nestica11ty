@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  {% set staticPaths = ['/', '/products/', '/offers/', '/real-deliveries/', '/guides/', '/about/', '/materials/', '/shipping-delivery/', '/warranty/', '/returns/', '/contact/'] %}
+  {% set staticPaths = ['/', '/products/', '/offers/', '/real-deliveries/', '/reviews/', '/guides/', '/about/', '/materials/', '/shipping-delivery/', '/warranty/', '/returns/', '/contact/'] %}
   {% for path in staticPaths %}
   {% set enPath = path | localeUrl('en') %}
   <url><loc>{{ settings.siteUrl }}{{ path }}</loc><xhtml:link rel="alternate" hreflang="ar-EG" href="{{ settings.siteUrl }}{{ path }}"/><xhtml:link rel="alternate" hreflang="en-EG" href="{{ settings.siteUrl }}{{ enPath }}"/><changefreq>{% if path == '/' or path == '/products/' or path == '/offers/' %}weekly{% else %}monthly{% endif %}</changefreq><priority>{% if path == '/' %}1.0{% elif path == '/products/' or path == '/real-deliveries/' %}0.9{% else %}0.7{% endif %}</priority></url>

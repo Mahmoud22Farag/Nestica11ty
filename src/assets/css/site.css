@@ -377,8 +377,8 @@ button, input, select, textarea { font: inherit; }
   .delivery-intro { grid-template-columns: 1fr; }
   .process-list { grid-template-columns: repeat(2,1fr); }
   .article-sidebar { position: static; }
-  .mobile-bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1050; display: grid; grid-template-columns: repeat(5,1fr); background: #fff; border-top: 1px solid var(--border); box-shadow: 0 -8px 30px rgba(16,34,56,.1); padding: 7px 5px calc(7px + env(safe-area-inset-bottom)); }
-  .mobile-bottom-nav a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; text-decoration: none; color: var(--text); font-size: .68rem; font-weight: 800; }
+  .mobile-bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1050; display: grid; grid-template-columns: repeat(6,1fr); background: #fff; border-top: 1px solid var(--border); box-shadow: 0 -8px 30px rgba(16,34,56,.1); padding: 7px 5px calc(7px + env(safe-area-inset-bottom)); }
+  .mobile-bottom-nav a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; text-decoration: none; color: var(--text); font-size: .62rem; font-weight: 800; white-space: nowrap; min-width: 0; }
   .mobile-bottom-nav i { font-size: 18px; }
   .mobile-bottom-nav .mobile-whatsapp { color: var(--success); }
   .mobile-bottom-nav b { display: inline-grid; place-items: center; min-width: 17px; height: 17px; background: var(--navy); color: #fff; border-radius: 50%; font-size: .6rem; }
@@ -1645,3 +1645,13 @@ textarea:focus-visible,
 .cart-deposit { background: var(--cream); border: 1px solid rgba(202,164,106,.35); border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; }
 .cart-deposit strong { color: var(--gold-dark); }
 .cart-deposit small { display: block; margin-top: 4px; color: var(--muted); font-size: .78rem; line-height: 1.6; }
+
+/* Reviews page */
+.testimonials-page-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 991px) { .testimonials-page-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 575px) { .testimonials-track.testimonials-page-grid { display: grid; grid-template-columns: 1fr; overflow: visible; margin-inline: 0; padding-inline: 0; } .testimonials-page-grid .testimonial-card { flex: none; } }
+.reviews-hero { min-height: 320px; }
+.reviews-cta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; background: var(--cream); border: 1px solid rgba(202,164,106,.3); border-radius: 22px; padding: 28px; }
+.reviews-cta h2 { font-weight: 900; font-size: 1.4rem; }
+.reviews-cta p { margin: 0; color: var(--muted); }
+.reviews-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
