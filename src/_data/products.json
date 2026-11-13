@@ -6309,5 +6309,62 @@
     "dimensions": "المقاس: 4 متر · القاعدة 100 × 100 سم",
     "dimensions_en": "Size: 4 m · Base 100 × 100 cm",
     "old_price": 38000
+  },
+  {
+    "id": 235,
+    "name": "كرسي هزاز ريلاكس",
+    "price": 4500,
+    "category": "حديد",
+    "category_id": 1,
+    "is_active": true,
+    "slug": "product-235-كرسي-هزاز-ريلاكس-حديد-مخدة-بيج",
+    "main_image": "/assets/images/optimized/23e99d2259cd.webp",
+    "gallery": [
+      "/assets/images/optimized/23e99d2259cd.webp",
+      "/assets/images/optimized/2b629ea45b8b.webp"
+    ],
+    "catalog_title": "كرسي هزاز ريلاكس | EGP 4,500",
+    "card_description": "كرسي هزاز فردي | شاسيه بني ومخدة بيج",
+    "feed_title": "كرسي هزاز ريلاكس | EGP 4,500",
+    "description": "كرسي هزاز مريح بتصميم عصري، مناسب للاسترخاء في التراس أو الروف أو الجاردن، وكمان في الليفينج وأوض النوم.\n\nالخامات\n\n» شاسيه حديد قوي بدهان إلكتروستاتيك ضد الصدأ والعوامل الجوية\n» قاعدة هزازة منحنية لحركة ناعمة وثابتة\n» مخدة واحدة كبيرة منجدة بتنجيد كابتونيه للظهر والقعدة\n» حشو سميك ومريح يحافظ على شكله\n» المخدة قابلة للفك لسهولة التنظيف\n\nالألوان\n» الشاسيه: بني غامق\n» المخدة: بيج\nمتاح التعديل في الألوان\n\nمقاس قعدة واسع ومريح لفرد واحد",
+    "category_name": "أثاث Outdoor حديد",
+    "category_slug": "حديد",
+    "material": "حديد بدهان إلكتروستاتيك ومخدة منجدة",
+    "spaces": [
+      "terrace",
+      "roof",
+      "garden"
+    ],
+    "sku": "NST-0235",
+    "is_featured": false,
+    "is_ready": false,
+    "has_real_delivery": false,
+    "description_ar": "كرسي هزاز مريح بتصميم عصري، مناسب للاسترخاء في التراس أو الروف أو الجاردن، وكمان في الليفينج وأوض النوم.\n\nالخامات\n\n» شاسيه حديد قوي بدهان إلكتروستاتيك ضد الصدأ والعوامل الجوية\n» قاعدة هزازة منحنية لحركة ناعمة وثابتة\n» مخدة واحدة كبيرة منجدة بتنجيد كابتونيه للظهر والقعدة\n» حشو سميك ومريح يحافظ على شكله\n» المخدة قابلة للفك لسهولة التنظيف\n\nالألوان\n» الشاسيه: بني غامق\n» المخدة: بيج\nمتاح التعديل في الألوان\n\nمقاس قعدة واسع ومريح لفرد واحد",
+    "seo_title": "كرسي هزاز ريلاكس | نستيكا",
+    "seo_description": "كرسي هزاز ريلاكس من نستيكا بسعر 4,500 جنيه. شاسيه حديد بدهان إلكتروستاتيك وقاعدة هزازة ومخدة بيج كابتونيه سميكة قابلة للفك، مع إمكانية تعديل الألوان.",
+    "main_image_width": 900,
+    "main_image_height": 1600,
+    "name_en": "Relax Rocking Chair",
+    "card_description_en": "Single rocking chair | Brown frame, beige cushion",
+    "material_en": "Electrostatic-coated metal with upholstered cushion",
+    "category_name_en": "Metal Outdoor Furniture",
+    "description_en": "A comfortable modern rocking chair for relaxing on terraces, rooftops and gardens, as well as living rooms and bedrooms.\n\nMaterials\n\n» Sturdy metal frame with electrostatic coating against rust and weather\n» Curved rocking base for smooth, stable motion\n» One large tufted cushion covering the back and seat\n» Thick, comfortable filling that keeps its shape\n» Removable cushion for easy cleaning\n\nColors\n» Frame: Dark brown\n» Cushion: Beige\nColor customization available\n\nWide, comfortable single seat\n\nCustomization, final dimensions, colors and availability should be confirmed with Nestica before ordering.",
+    "seo_title_en": "Relax Rocking Chair | Nestica",
+    "seo_description_en": "Relax Rocking Chair from Nestica at EGP 4,500. Electrostatic-coated metal frame, curved rocking base and a thick removable tufted beige cushion. Colors can be customized.",
+    "catalog_title_en": "Relax Rocking Chair | EGP 4,500",
+    "feed_title_en": "Relax Rocking Chair | EGP 4,500",
+    "slug_en": "p235-relax-rocking-chair",
+    "is_offer": false,
+    "image_variants": [
+      {
+        "src": "/assets/images/optimized/23e99d2259cd-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/images/optimized/23e99d2259cd.webp",
+        "width": 900
+      }
+    ],
+    "category_slug_en": "metal-outdoor-furniture"
   }
 ]
