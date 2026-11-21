@@ -1,0 +1,18 @@
+---
+pagination:
+  data: moves
+  size: 1
+  alias: move
+moves:
+  - from: "/en/products/p6-classic-umbrella-3-m/"
+    to: "/en/products/p6-classic-umbrella-4-m/"
+    title: "Classic Umbrella 4 m"
+    lang: en
+  - from: "/products/product-45-بين-باج-إسفنجي-D-1999-جنيه/"
+    to: "/products/product-45-بين-باج-إسفنجي-D/"
+    title: "بين باج إسفنجي D"
+    lang: ar
+permalink: "{{ move.from }}index.html"
+eleventyExcludeFromCollections: true
+---
+<!doctype html><html lang="{{ move.lang }}" dir="{{ 'ltr' if move.lang == 'en' else 'rtl' }}"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={{ move.to }}"><meta name="robots" content="noindex, follow"><link rel="canonical" href="{{ settings.siteUrl }}{{ move.to }}"><title>{{ 'Page moved' if move.lang == 'en' else 'تم نقل الصفحة' }}</title></head><body><p>{{ 'This page moved to' if move.lang == 'en' else 'تم نقل الصفحة إلى' }} <a href="{{ move.to }}">{{ move.title }}</a>.</p></body></html>
