@@ -16,7 +16,8 @@ eleventyExcludeFromCollections: true
 <g:image_link>{{ settings.siteUrl }}{{ product.main_image }}</g:image_link>
 <g:availability>{% if product.feed_availability %}{{ product.feed_availability }}{% elif product.is_ready %}in stock{% else %}available for order{% endif %}</g:availability>
 <g:condition>new</g:condition>
-<g:price>{{ product.price }} EGP</g:price>
+{% if product.is_offer and product.old_price and product.old_price > product.price %}<g:price>{{ product.old_price }} EGP</g:price>
+<g:sale_price>{{ product.price }} EGP</g:sale_price>{% else %}<g:price>{{ product.price }} EGP</g:price>{% endif %}
 <g:brand>Nestica</g:brand>
 </item>
 {% endif %}{% endfor %}
