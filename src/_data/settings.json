@@ -22,5 +22,8 @@
   },
   "payment": {
     "depositPercent": 25
+  },
+  "warranty": {
+    "years": 2
   }
 }
